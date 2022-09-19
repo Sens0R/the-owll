@@ -1,0 +1,135 @@
+/* ====================   HEADER   ==================== */
+
+
+
+.nav-toggler:focus-visible {
+  outline-style: none;
+  .nav-toggler__open,
+  .nav-toggler__closed {
+    outline: 3px solid $color-accent;
+    outline-offset: 3px;
+    border-radius: $border-radius-sm;
+  }
+}
+
+.tools a {
+  @include media-breakpoint-up(lg) {
+    border-radius: 0;
+
+    &:focus-visible {
+      .nav-tools__name {
+        text-decoration-color: $color-accent;
+        text-decoration-thickness: 2px;
+      }
+
+      svg {
+        fill: $color-accent !important;
+        scale: 1.25;
+        translate: -3px 1px;
+      }
+    }
+
+    @include hover {
+      .nav-tools__name {
+        text-decoration-color: $color-accent;
+      }
+
+      svg {
+        fill: $color-accent !important;
+        scale: 1.25;
+        translate: -3px 1px;
+      }
+    }
+  }
+}
+
+.nav-menu__item {
+  @include hover {
+    .nav-menu__link {
+      color: $color-accent;
+      text-decoration: underline;
+    }
+
+    .dropdown-btn-icon {
+      fill: $color-accent;
+    }
+  }
+}
+
+.nav-menu__link {
+  &:focus-visible {
+    color: $color-accent;
+    outline-style: none;
+    text-decoration: underline 3px;
+  }
+}
+
+.contact__link {
+  &:focus-visible {
+    outline-style: none;
+    color: $color-accent;
+    text-decoration: underline 3px;
+  }
+
+  @include hover {
+    color: $color-accent;
+    text-decoration: underline;
+  }
+}
+
+.dropdown-content__link {
+  @include hover {
+    background-color: lighten($color-primary, 10%);
+    color: $color-accent;
+  }
+
+  transition: background-color 0.1s ease-in-out;
+
+  &:focus-visible {
+    outline: none;
+    border-radius: 0;
+    color: $color-accent;
+    background-color: lighten($color-primary, 10%);
+    text-decoration: underline 3px solid $color-accent;
+  }
+}
+
+.nav-menu-dropdown__btn:focus-visible {
+  fill: $color-accent;
+  outline: none;
+
+  .dropdown-btn-icon {
+    scale: 2;
+    rotate: 90deg;
+  }
+}
+
+/* ====================   FOOTER   ==================== */
+
+.footer-phone__link {
+  @include hover {
+    text-decoration: underline 1px solid $color-light;
+  }
+  &:focus-visible {
+    outline-offset: -6px;
+    outline-color: $color-primary;
+  }
+}
+
+.logo-footer:focus-visible {
+  background-color: $color-primary;
+  outline-style: none;
+}
+
+.footer-nav__link {
+  @include hover {
+    color: $color-primary;
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    color: $color-primary;
+    outline: none;
+    text-decoration: underline;
+  }
+}

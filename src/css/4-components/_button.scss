@@ -1,0 +1,52 @@
+@mixin btn {
+  @include flex(
+    $display: inline-flex,
+    $justify-content: center,
+    $align-items: center
+  );
+
+  color: $color-light;
+  background-color: $color-secondary;
+  border-radius: $border-radius-sm;
+  font-weight: bold;
+  min-height: 2.625rem;
+  min-width: 8rem;
+  padding: 0.5rem 2rem;
+  transition: 0.2s ease-in-out;
+  @include depth();
+
+  &:focus-visible {
+    background-color: $color-accent;
+    outline-style: none;
+  }
+
+  @include hover {
+    background-color: $color-accent;
+  }
+}
+
+@mixin btn-light {
+  background-color: $color-accent;
+
+  &:focus-visible {
+    background-color: lighten($color-accent, 10%);
+    outline-style: solid;
+    outline-offset: 2px;
+    outline-color: $color-light;
+    border-radius: $border-radius-sm;
+    transition: none !important;
+  }
+
+  @include hover {
+    background-color: lighten($color-accent, 10%);
+  }
+}
+
+.btn {
+  @include btn();
+}
+
+.btn-light {
+  @extend .btn;
+  @include btn-light();
+}

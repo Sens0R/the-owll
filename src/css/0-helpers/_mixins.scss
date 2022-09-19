@@ -1,0 +1,128 @@
+@mixin flex(
+  $display: flex,
+  $justify-content: null,
+  $align-items: null,
+  $flex-direction: null,
+  $flex-wrap: null
+) {
+  display: $display;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+  flex-wrap: $flex-wrap;
+}
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin link-space($width: 100%, $height: 100%, $size: 48px) {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    width: $width;
+    height: $height;
+    min-width: $size;
+    min-height: $size;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+  }
+}
+
+@mixin image-cover($height: 100%, $width: 100%) {
+  width: $width;
+  height: $height;
+  object-fit: cover;
+  object-position: center;
+}
+
+@mixin position($position, $args) {
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number
+    {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+  position: $position;
+}
+
+// Positioning helpers
+@mixin absolute($args: '') {
+  @include position(absolute, $args);
+}
+
+@mixin fixed($args: '') {
+  @include position(fixed, $args);
+}
+
+@mixin sticky($args: '') {
+  @include position(sticky, $args);
+}
+
+@mixin relative($args: '') {
+  @include position(relative, $args);
+}
+
+@mixin margin-auto($direction: x) {
+  @if $direction == 'x' {
+    margin-left: auto;
+    margin-right: auto;
+  } @else if $direction == 'y' {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+@mixin center($position: both) {
+  position: absolute;
+
+  @if $position == 'vertical' {
+    top: 50%;
+    translate: 0 -50%;
+  } @else if $position == 'horizontal' {
+    left: 50%;
+    translate: -50%;
+  } @else if $position == 'both' {
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+  }
+}
+
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin media-xs {
+  @media (max-width: 359.98px) {
+    @content;
+  }
+}
+
+@mixin visually-hidden() {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

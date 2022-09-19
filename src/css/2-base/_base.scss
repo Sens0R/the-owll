@@ -1,0 +1,159 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-underline-offset: 30%;
+}
+
+ul,
+ol,
+dl {
+  padding: 0;
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  user-select: none;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ====================   RESET ENDS HERE   ==================== */
+
+html,
+body {
+  @include font-size($fs-base);
+  color: $color-secondary;
+  font-family: $ff-primary;
+  line-height: $lh-base;
+  background-color: $color-light;
+  -webkit-tap-highlight-color: transparent;
+}
+
+select,
+textarea,
+input,
+button {
+  font-family: $ff-primary;
+  @include font-size($fs-base);
+}
+
+.page-wrapper {
+  overflow: hidden;
+  min-height: 100%;
+  @include flex($flex-direction: column);
+}
+
+::selection {
+  background-color: $color-accent;
+  color: $color-light;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $headings-fw;
+  line-height: $headings-lh;
+}
+
+h1 {
+  @include font-size($fs-h1);
+}
+h2 {
+  @include font-size($fs-h2);
+}
+h3 {
+  @include font-size($fs-h3);
+}
+h4 {
+  @include font-size($fs-h4);
+}
+h5 {
+  @include font-size($fs-h5);
+}
+h6 {
+  @include font-size($fs-h6);
+}
+
+p,
+ul,
+ol,
+blockquote,
+address,
+table,
+.spacer,
+hr {
+  @include spacer-vertical('margin', $spacer);
+}
+
+button {
+  border-radius: 0;
+  border-width: 0;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline-color: $color-accent;
+}
+
+input {
+  outline: none;
+  border: none;
+  background-color: $color-light;
+}
+
+input[type='search']::-webkit-search-cancel-button {
+  display: none;
+}

@@ -1,0 +1,128 @@
+[hidden] {
+  display: none !important;
+}
+
+.disable-select {
+  user-select: none;
+}
+
+.color-light {
+  color: $color-light;
+}
+
+.color-dark {
+  color: $color-dark;
+}
+
+.color-primary {
+  color: $color-primary;
+}
+
+.color-accent {
+  color: $color-accent;
+}
+.color-accent-light {
+  color: $color-accent-light;
+}
+
+.color-secondary {
+  color: $color-secondary;
+}
+
+.text-link {
+  color: $color-accent;
+  font-weight: bold;
+}
+
+.text-sm {
+  @include font-size($fs-sm);
+}
+
+.text-lg {
+  @include font-size($fs-lg);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.fst-italic {
+  font-style: italic;
+}
+
+.fst-normal {
+  font-style: normal;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.fw-normal {
+  font-weight: normal;
+}
+
+.fw-light {
+  font-weight: light;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.text-underline {
+  text-decoration: underline 1px solid $color-dark;
+}
+
+.visually-hidden {
+  @include visually-hidden();
+}
+
+.link-space {
+  @include link-space();
+
+  &-none {
+    position: auto;
+    content: none;
+  }
+}
+
+.stop-transition {
+  transition: none !important;
+}
+
+/* ====================   POSITION   ==================== */
+
+.position-static {
+  position: static;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+.position-sticky {
+  position: sticky;
+}
+
+

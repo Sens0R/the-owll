@@ -1,0 +1,32 @@
+@mixin underline(
+  $color: $color-dark,
+  $size: 1px,
+  $bottom: 0,
+  $top: null,
+  $round-cap: true,
+  $depth: false
+) {
+  position: relative;
+  text-decoration: none;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: $top;
+    bottom: $bottom;
+    width: 100%;
+
+    @if $depth {
+      @include depth();
+    }
+
+    @if not $round-cap {
+      border-bottom: $size solid $color;
+    } @else {
+      height: $size;
+      background-color: $color;
+      border-radius: $size * 2;
+    }
+  }
+}

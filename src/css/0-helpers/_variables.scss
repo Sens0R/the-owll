@@ -1,0 +1,122 @@
+/* ====================   COLORS   ==================== */
+// search buttons focus 
+// swiper a11y
+// burger backdrop
+// add accecability for burger menu
+// backdrop same as google
+// https://web.dev/content-visibility/
+// accordion snippet
+// все page-banner в одной папке
+// rework tab code and make separate js file
+// all images Alt = '' кроме контентніх
+// попробовать сделать бургер через scrollheight, сделать бекап
+// spacer map for bootstram with rfs
+// Critical css
+// picture shop sizes
+// Модернизировать линк Спейс миксин
+// Кнопка закрытия нотификейшена
+// px to rem plugin
+// после ресайза с Aipad air landscape > portrait бургер закрывается мгновенно без анимации транзишена
+// only burger elements focusable https://bholmes.dev/blog/accessible-show-hide-animations/
+// переделать бекдроп анимацию, чтоб была анимация при закрытии
+// Переделать бургер анимации в js
+// Burger сделать автофокус на первый айтем
+// LAZY image loading
+// переделать swiper pagination
+// проверить purgeCss и build
+// очистить консоль логи
+// хедрум хедер
+// javascript for separate pages
+// Make hover CSS local
+// css magic для хедера
+// mutation observer
+// js source map gulp-uglify
+// усовершенствовать все миксины и снипеты
+
+$color-pink: hsl(336, 95%, 84%);
+$color-black: hsl(0, 0%, 0%);
+$color-black-100: hsl(0, 0%, 12%);
+$color-gray: hsl(0, 0%, 40%);
+$color-white: hsl(0, 0%, 100%);
+
+$color-primary: $color-pink;
+$color-secondary: $color-black-100;
+$color-accent: darken($color-primary, 38%);
+$color-accent-light: darken($color-primary, 18%);
+
+$color-light: $color-white;
+$color-dark: $color-black;
+
+/* ====================   TYPOGRAPHY   ==================== */
+
+// Fonts
+$ff-primary: DMSans, Arial, sans-serif;
+$ff-secondary: null;
+
+$fs-base: 1rem;
+$fs-sm: $fs-base * 0.875; // 14px HTML text-sm
+$fs-lg: $fs-base * 1.125; // 18px HTML text-lg
+
+$lh-base: 1.6; // HTML lh-base    // HTML lh-1
+$lh-sm: 1.25; // HTML lh-sm
+$lh-lg: 2; // HTML lh-lg
+
+// Headings
+$headings-color: null;
+$headings-ff: null;
+$headings-fs: null;
+$headings-fw: bold;
+$headings-lh: 1.2;
+
+$headings-fs: $fs-base * 1;
+$fs-h1: $headings-fs * 3;
+$fs-h2: $headings-fs * 2;
+$fs-h3: $headings-fs * 1.25;
+$fs-h4: $headings-fs * 1.375;
+$fs-h5: $headings-fs * 1.125;
+$fs-h6: $headings-fs * 0.875;
+
+/* ====================   STRUCTURE   ==================== */
+
+// GRID
+$grid-gutter-width: 1.5rem;
+
+// Spacers
+$spacer: 1.5rem;
+$spacer-sm: $spacer * 0.5;
+$spacer-lg: $spacer * 1.5;
+$spacer-xl: $spacer * 3.5;
+$spacer-headings: $spacer * 1;
+
+// bootstrap spacer map
+/* $spacers: (
+  0: 0,
+  sm: $spacer-sm,
+  md: $spacer,
+  lg: $spacer-lg,
+  xl: $spacer-xl,
+  heading: $spacer-headings,
+); */
+
+// Shadows
+$shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
+$shadow-sm: 0 0.225rem 0.35rem rgba($color-black, 0.075);
+$shadow-lg: 0 1rem 3rem rgba($color-black, 0.175);
+$shadow-inset: inset 0 1px 2px rgba($color-black, 0.075);
+
+// z-index map
+$z-index: (
+  nav-search: 50,
+  nav-menu: 100,
+  header: 50,
+  above-header: 25,
+);
+
+$border-1: 1px;
+$border-2: 2px;
+$border-3: 3px;
+
+$border-radius: 0.4rem;
+$border-radius-sm: 0.2rem;
+$border-radius-lg: 0.6rem;
+$border-radius-pill: 50rem;

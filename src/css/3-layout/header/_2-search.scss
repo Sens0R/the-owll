@@ -1,0 +1,144 @@
+.nav-search {
+  @include absolute(left 0);
+  @include flex($justify-content: space-between, $align-items: center);
+  visibility: hidden;
+  height: auto;
+  height: 2.5rem;
+  max-width: 30rem;
+  border-radius: $border-radius-pill;
+  outline: 1px solid $color-primary;
+  background: $color-white;
+  width: calc(100% - 4.5rem);
+  margin-left: 0.75rem;
+
+  &.active {
+    visibility: visible;
+    @include z-index(nav-search);
+  }
+
+  &:focus-within {
+    max-width: 100%;
+    outline: 1px solid $color-accent;
+  }
+
+  &:focus-within:valid {
+    .nav-search-buttons__icon {
+      fill: $color-accent;
+    }
+
+    .nav-search-buttons__search svg {
+      scale: 1.25;
+    }
+
+    .nav-search-buttons__reset {
+      @include media-breakpoint-only(md) {
+        display: flex;
+      }
+    }
+  }
+}
+
+.nav-search-input {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 0.5rem 0 1rem;
+
+  &::placeholder {
+    color: $color-secondary;
+    font-size: $fs-sm;
+  }
+
+  &:focus-visible::placeholder {
+    color: transparent;
+  }
+}
+
+.nav-search-buttons {
+  @include flex($justify-content: center, $align-items: center);
+  padding: 0 0.75rem;
+  height: 100%;
+  outline: none;
+
+  &__open {
+    display: flex;
+    margin-left: auto;
+  }
+
+  &__close {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    outline: 1px solid $color-primary;
+    background-color: lighten($color-primary, 10%);
+    border-radius: 0 100rem 100rem 0;
+
+    &:focus-visible {
+      background-color: $color-accent;
+      color: $color-light;
+    }
+  }
+
+  &__reset {
+    display: none;
+  }
+
+  &__icon {
+    @include flex($justify-content: center, $align-items: center);
+    @include box(1rem, 1rem);
+    fill: $color-primary;
+  }
+
+  &:focus-visible {
+    background-color: $color-accent;
+    svg {
+      fill: $color-light !important;
+    }
+  }
+
+  @include hover {
+    background-color: $color-accent;
+    svg {
+      fill: $color-light !important;
+    }
+  }
+}
+
+/* ====================   DESKTOP   ==================== */
+
+@include media-breakpoint-up(md) {
+  .nav-search {
+    position: static;
+    visibility: visible;
+    width: 100%;
+    margin-left: 0;
+    transition: max-width 0.4s ease-in-out;
+  }
+
+  .nav-search-input {
+    &::placeholder {
+      font-size: $fs-base;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+
+  .nav-search-buttons {
+    &__close {
+      display: none;
+    }
+
+    &__open {
+      display: none !important;
+    }
+
+    &__reset {
+      border-right: 1px solid $color-accent;
+    }
+
+    &__search {
+      border-radius: 0 100rem 100rem 0;
+      svg {
+        transition: scale 0.3s ease-in-out;
+      }
+    }
+  }
+}

@@ -1,0 +1,152 @@
+<div class="row nav-belt">
+
+  <!-- ====================   LOGO   ==================== -->
+
+  <div class="logo col-auto justify-content-start">
+    <a class="logo-header" href="index.html" aria-label="Skin clinica home. Skin clinica logo.">
+      <svg aria-hidden="true" class="logo-header-icon hvr-icon">
+        <use href="images/icons/sprite-multi.svg#logo-header"></use>
+      </svg>
+      <span class="logo-text">skin clinica</span>
+    </a>
+  </div>
+
+  <!-- ====================   SEARCH   ==================== -->
+
+  <div class="gx-0 col search-col">
+
+    <button type="button" data-search-btn="open" class="rounded-icon nav-search-buttons__open" aria-label="Open search">
+      <svg aria-hidden="true" class="icon-rounded hvr-icon">
+        <use href="images/icons/sprite-mono.svg#search"></use>
+      </svg>
+    </button>
+
+    <form role="search" data-search class="nav-search">
+
+      <label for="nav-search-input" class="visually-hidden">
+        Search for products
+      </label>
+
+      <input type="search" class="nav-search-input text-sm" placeholder="Search for products" id="nav-search-input"
+        autocomplete="off" required>
+
+      <button type="reset" class="nav-search-buttons nav-search-buttons__reset" aria-label="Clear search text">
+        <svg aria-hidden="true" class="nav-search-buttons__icon hvr-icon">
+          <use href="images/icons/sprite-mono.svg#toggler-closed"></use>
+        </svg>
+      </button>
+
+      <button type="submit" class="nav-search-buttons nav-search-buttons__search" aria-label="Submit search">
+        <svg aria-hidden="true" class="nav-search-buttons__icon hvr-icon">
+          <use href="images/icons/sprite-mono.svg#search"></use>
+        </svg>
+      </button>
+
+      <button type="button" data-search-btn="close" class="nav-search-buttons nav-search-buttons__close"
+        aria-label="Close search">close
+      </button>
+
+    </form>
+
+
+
+  </div>
+
+  <!-- ====================   TOOLS   ==================== -->
+
+  <div class="col-auto tools pe-0">
+    <div class="nav-tools">
+
+      <a href="#" class="rounded-icon" aria-labelledby="tools-account">
+        <svg aria-hidden="true" class="icon-rounded hvr-icon">
+          <use href="images/icons/sprite-mono.svg#account"></use>
+        </svg>
+        <p id="tools-account" class="nav-tools__name">Account</p>
+      </a>
+
+      <a href="#" class="rounded-icon" aria-labelledby="tools-wishlist">
+        <svg aria-hidden="true" class="icon-rounded hvr-icon">
+          <use href="images/icons/sprite-mono.svg#wishlist"></use>
+        </svg>
+        <p id="tools-wishlist" class="nav-tools__name">Wishlist</p>
+      </a>
+
+      <a href="#" class="rounded-icon" aria-labelledby="tools-cart">
+        <svg aria-hidden="true" class="icon-rounded hvr-icon">
+          <use href="images/icons/sprite-mono.svg#cart"></use>
+        </svg>
+        <p id="tools-cart" class="nav-tools__name">Cart (0)</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ====================   NAV-TOGGLER   ==================== -->
+
+  <button type="button" data-hamburger-btn class="nav-toggler col-auto">
+    <span class="nav-toggler__open">
+      <svg aria-hidden="true" class="nav-toggler-icon hvr-icon">
+        <use href="images/icons/sprite-mono.svg#toggler-open"></use>
+      </svg>
+      <span class="nav-toggler__text">menu</span>
+    </span>
+
+    <span class="nav-toggler__close">
+      <svg aria-hidden="true" class="nav-toggler-icon hvr-icon">
+        <use href="images/icons/sprite-mono.svg#toggler-closed"></use>
+      </svg>
+    </span>
+  </button>
+
+</div>
+
+<!-- ====================   NAVIGATION   ==================== -->
+
+<nav data-hamburger class="navigation" aria-label="Main">
+
+  <div class="nav-body">@@include('nav-menu.html',{})</div>
+  <div class="nav-mobile-socials">@@include('social.html',{})</div>
+  <!--          <p style="background: red">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsum
+      quos laborum assumenda harum fugit inventore, error dicta sapiente
+      iste. Necessitatibus fugiat recusandae, vel nesciunt perferendis sunt,
+      sapiente neque debitis, repellendus harum excepturi quam hic
+      obcaecati. Consequatur laborum rem, maiores officia veritatis
+      assumenda iusto libero, soluta minus dolorum corrupti fugit. Lorem
+      ipsum dolor sit amet consectetur adipisicing elit. Laboriosam debitis
+      delectus aut deleniti quos ut nulla, provident error atque hic. Ea
+      suscipit enim similique veritatis molestiae incidunt quidem animi,
+      harum necessitatibus, id ratione odio doloribus laudantium accusantium
+      fuga blanditiis sapiente et nisi nam saepe illum consequuntur
+      praesentium porro cupiditate? Laudantium.
+    </p>
+    <p style="background: rgb(115, 255, 0)">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsum
+      quos laborum assumenda harum fugit inventore, error dicta sapiente
+      iste. Necessitatibus fugiat recusandae, vel nesciunt perferendis sunt,
+      sapiente neque debitis, repellendus harum excepturi quam hic
+      obcaecati. Consequatur laborum rem, maiores officia veritatis
+      assumenda iusto libero, soluta minus dolorum corrupti fugit. Lorem
+      ipsum dolor sit amet consectetur adipisicing elit. Laboriosam debitis
+      delectus aut deleniti quos ut nulla, provident error atque hic. Ea
+      suscipit enim similique veritatis molestiae incidunt quidem animi,
+      harum necessitatibus, id ratione odio doloribus laudantium accusantium
+      fuga blanditiis sapiente et nisi nam saepe illum consequuntur
+      praesentium porro cupiditate? Laudantium.
+    </p>
+    <p style="background: rgb(0, 4, 255)">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsum
+      quos laborum assumenda harum fugit inventore, error dicta sapiente
+      iste. Necessitatibus fugiat recusandae, vel nesciunt perferendis sunt,
+      sapiente neque debitis, repellendus harum excepturi quam hic
+      obcaecati. Consequatur laborum rem, maiores officia veritatis
+      assumenda iusto libero, soluta minus dolorum corrupti fugit. Lorem
+      ipsum dolor sit amet consectetur adipisicing elit. Laboriosam debitis
+      delectus aut deleniti quos ut nulla, provident error atque hic. Ea
+      suscipit enim similique veritatis molestiae incidunt quidem animi,
+      harum necessitatibus, id ratione odio doloribus laudantium accusantium
+      fuga blanditiis sapiente et nisi nam saepe illum consequuntur
+      praesentium porro cupiditate? Laudantium.
+      <span style="color: white">END</span>
+    </p>  -->
+
+</nav>
