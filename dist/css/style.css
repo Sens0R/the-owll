@@ -6494,8 +6494,8 @@ input[type=search]::-webkit-search-cancel-button {
           flex-direction: column;
   height: 100%;
   border-radius: 0.5rem;
-  border: 1px solid hsl(20deg, 6%, 90%);
-  outline: none;
+  -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -6505,14 +6505,14 @@ input[type=search]::-webkit-search-cancel-button {
 }
 @media (hover: hover) and (pointer: fine) {
   .card-blog-post__img:hover .regular-img {
-    -webkit-filter: brightness(1.05) contrast(115%);
-            filter: brightness(1.05) contrast(115%);
+    -webkit-filter: brightness(1.05) contrast(110%);
+            filter: brightness(1.05) contrast(110%);
   }
   .card-blog-post__img:hover .box-btn {
     translate: -25% -5%;
     scale: 1.1;
-    -webkit-box-shadow: 2px 2px 0 hsl(0deg, 0%, 18%);
-            box-shadow: 2px 2px 0 hsl(0deg, 0%, 18%);
+    -webkit-box-shadow: 4px 5px 0 hsl(0deg, 0%, 18%);
+            box-shadow: 4px 5px 0 hsl(0deg, 0%, 18%);
     border: 1px solid hsl(0deg, 0%, 18%);
   }
   .card-blog-post__img:hover .box-btn .arrow-right-icon {
@@ -6563,11 +6563,6 @@ input[type=search]::-webkit-search-cancel-button {
   bottom: -1.3889rem;
   position: absolute;
 }
-@media (hover: hover) and (pointer: fine) {
-  .card-blog-post:hover {
-    border: 1px solid hsl(0deg, 0%, 18%);
-  }
-}
 
 .card-services {
   display: -webkit-box;
@@ -6580,7 +6575,9 @@ input[type=search]::-webkit-search-cancel-button {
   position: relative;
   height: 100%;
   border-radius: 0.5rem;
-  border: 1px solid hsl(20deg, 6%, 90%);
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
   padding: 1.5rem;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -6985,7 +6982,7 @@ input[type=search]::-webkit-search-cancel-button {
   font-size: 0.7778rem;
 }
 .box-list li {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
   margin-right: 0.5rem;
 }
 .box-list li a {
@@ -7023,8 +7020,8 @@ input[type=search]::-webkit-search-cancel-button {
 }
 @media (hover: hover) and (pointer: fine) {
   .box-btn:hover {
-    -webkit-box-shadow: 2px 2px 0 hsl(0deg, 0%, 18%);
-            box-shadow: 2px 2px 0 hsl(0deg, 0%, 18%);
+    -webkit-box-shadow: 4px 5px 0 hsl(0deg, 0%, 18%);
+            box-shadow: 4px 5px 0 hsl(0deg, 0%, 18%);
     border: 1px solid hsl(0deg, 0%, 18%);
   }
   .box-btn:hover .arrow-right-icon {
@@ -7032,8 +7029,8 @@ input[type=search]::-webkit-search-cancel-button {
   }
 }
 .box-btn:focus-visible {
-  -webkit-box-shadow: 2px 2px 0 hsl(0deg, 0%, 18%);
-          box-shadow: 2px 2px 0 hsl(0deg, 0%, 18%);
+  -webkit-box-shadow: 4px 5px 0 hsl(0deg, 0%, 18%);
+          box-shadow: 4px 5px 0 hsl(0deg, 0%, 18%);
   border: 1px solid hsl(0deg, 0%, 18%);
 }
 .box-btn:focus-visible .arrow-right-icon {
@@ -7371,6 +7368,8 @@ input[type=search]::-webkit-search-cancel-button {
 
 .about .regular-img {
   margin-top: calc(1.275rem + 0.3vw);
+  -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
 }
 @media (min-width: 1200px) {
   .about .regular-img {
@@ -7395,7 +7394,8 @@ input[type=search]::-webkit-search-cancel-button {
 
 .portfolio__item {
   border-radius: 0.5rem;
-  outline: 1px solid hsl(20deg, 6%, 90%);
+  -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
 }
 .portfolio__item:not(:last-child) {
   margin-bottom: calc(1.425rem + 2.1vw);
@@ -7430,8 +7430,8 @@ input[type=search]::-webkit-search-cancel-button {
 @media (hover: hover) and (pointer: fine) {
   .portfolio__img a:hover {
     scale: 1.05;
-    -webkit-filter: brightness(1.05) contrast(115%);
-            filter: brightness(1.05) contrast(115%);
+    -webkit-filter: brightness(1.05) contrast(110%);
+            filter: brightness(1.05) contrast(110%);
   }
 }
 .portfolio__content {
@@ -7459,7 +7459,8 @@ input[type=search]::-webkit-search-cancel-button {
   aspect-ratio: 1/1;
   padding: 0.75rem;
   border-radius: 0.5rem;
-  border: 1px solid hsl(20deg, 6%, 90%);
+  -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

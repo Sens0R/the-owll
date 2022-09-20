@@ -1,7 +1,7 @@
 .portfolio {
   &__item {
     border-radius: $br;
-    outline: 1px solid $color-stroke;
+    @include depth();
 
     &:not(:last-child) {
       @include spacer-bottom('margin', $spacer-lg);
@@ -28,7 +28,7 @@
       transition: all 0.4s ease-in-out;
       @include hover {
         scale: 1.05;
-        filter: brightness(1.05) contrast(115%);
+        filter: brightness(1.05) contrast(110%);
       }
     }
   }

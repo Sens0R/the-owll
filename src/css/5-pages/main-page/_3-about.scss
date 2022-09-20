@@ -1,5 +1,6 @@
 .about .regular-img {
   @include spacer-top('margin', $spacer);
+  @include depth();
 }
 
 .about__attachment {

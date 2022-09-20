@@ -7,7 +7,7 @@
   transition: all 0.3s ease-in-out;
 
   @include hover {
-    box-shadow: $shadow-sm;
+    box-shadow: $shadow;
     border: 1px solid $color-dark;
     .arrow-right-icon {
       scale: 1.5;
@@ -15,7 +15,7 @@
   }
 
   &:focus-visible {
-    box-shadow: $shadow-sm;
+    box-shadow: $shadow;
     border: 1px solid $color-dark;
     .arrow-right-icon {
       scale: 1.5;

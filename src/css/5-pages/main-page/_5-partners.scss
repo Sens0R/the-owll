@@ -3,7 +3,7 @@
     aspect-ratio: 1 / 1;
     padding: $spacer-sm;
     border-radius: $br;
-    border: 1px solid $color-stroke;
+    @include depth();
     @include flex($justify-content: center, $align-items: center);
   }
 

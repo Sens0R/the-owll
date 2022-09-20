@@ -2,21 +2,20 @@
   @include flex($flex-direction: column, $align-items: center);
   height: 100%;
   border-radius: $br;
-  border: 1px solid $color-stroke;
-  outline: none;
+  @include depth();
   transition: all 0.3s ease-in-out;
 
   &__img {
     position: relative;
     @include hover {
       .regular-img {
-        filter: brightness(1.05) contrast(115%);
+        filter: brightness(1.05) contrast(110%);
       }
 
       .box-btn {
         translate: -25% -5%;
         scale: 1.1;
-        box-shadow: $shadow-sm;
+        box-shadow: $shadow;
         border: 1px solid $color-dark;
 
         .arrow-right-icon {
@@ -56,9 +55,5 @@
 
   .box-btn {
     @include absolute(right 1.3889rem bottom -1.3889rem);
-  }
-
-  @include hover {
-    border: 1px solid $color-dark;
   }
 }
