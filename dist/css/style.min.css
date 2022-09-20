@@ -6509,7 +6509,7 @@ input[type=search]::-webkit-search-cancel-button {
             filter: brightness(1.05) contrast(110%);
   }
   .card-blog-post__img:hover .box-btn {
-    translate: -25% -5%;
+    translate: -15% -5%;
     scale: 1.1;
     -webkit-box-shadow: 4px 5px 0 hsl(0deg, 0%, 18%);
             box-shadow: 4px 5px 0 hsl(0deg, 0%, 18%);
