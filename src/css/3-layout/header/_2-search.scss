@@ -1,21 +1,13 @@
 .nav-search {
-  @include absolute(left 0);
+  display: none;
   @include flex($justify-content: space-between, $align-items: center);
-  visibility: hidden;
   height: auto;
-  height: 2.5rem;
-  max-width: 30rem;
-  border-radius: $border-radius-pill;
-  outline: 1px solid $color-primary;
-  background: $color-white;
-  width: calc(100% - 4.5rem);
+  height: 2.2778rem;
+  max-width: 7.7778rem;
+  border-radius: $br-sm;
+  outline: 1px solid $color-dark;
   margin-left: 0.75rem;
-
-  &.active {
-    visibility: visible;
-    @include z-index(nav-search);
-  }
-
+ 
   &:focus-within {
     max-width: 100%;
     outline: 1px solid $color-accent;
@@ -40,12 +32,12 @@
 
 .nav-search-input {
   width: 100%;
-  height: 2.5rem;
+
   padding: 0 0.5rem 0 1rem;
 
   &::placeholder {
-    color: $color-secondary;
-    font-size: $fs-sm;
+    color: $color-dark;
+    font-weight: $medium;
   }
 
   &:focus-visible::placeholder {
@@ -69,8 +61,6 @@
     text-transform: uppercase;
     font-weight: bold;
     outline: 1px solid $color-primary;
-    background-color: lighten($color-primary, 10%);
-    border-radius: 0 100rem 100rem 0;
 
     &:focus-visible {
       background-color: $color-accent;
@@ -84,21 +74,21 @@
 
   &__icon {
     @include flex($justify-content: center, $align-items: center);
-    @include box(1rem, 1rem);
-    fill: $color-primary;
+    @include box(1.1111rem, 1.1111rem);
+    fill: $color-dark;
   }
 
   &:focus-visible {
-    background-color: $color-accent;
+    background-color: $color-secondary;
     svg {
       fill: $color-light !important;
     }
   }
 
   @include hover {
-    background-color: $color-accent;
+    background-color: $color-secondary;
     svg {
-      fill: $color-light !important;
+      fill: $color-light;
     }
   }
 }
@@ -107,8 +97,7 @@
 
 @include media-breakpoint-up(md) {
   .nav-search {
-    position: static;
-    visibility: visible;
+   
     width: 100%;
     margin-left: 0;
     transition: max-width 0.4s ease-in-out;
@@ -135,7 +124,6 @@
     }
 
     &__search {
-      border-radius: 0 100rem 100rem 0;
       svg {
         transition: scale 0.3s ease-in-out;
       }

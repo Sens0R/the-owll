@@ -18,17 +18,16 @@
 }
 
 .nav-menu-dropdown.active {
-  color: $color-accent;
+  color: $color-secondary;
   text-decoration: none;
 
   .nav-menu-dropdown__content {
-    color: $color-secondary;
     visibility: visible;
     pointer-events: all;
   }
 
   .dropdown-btn-icon {
-    fill: $color-accent;
+    fill: $color-secondary;
     rotate: 90deg;
   }
 }

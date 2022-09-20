@@ -1,7 +1,3 @@
-[hidden] {
-  display: none !important;
-}
-
 .disable-select {
   user-select: none;
 }
@@ -27,11 +23,6 @@
 
 .color-secondary {
   color: $color-secondary;
-}
-
-.text-link {
-  color: $color-accent;
-  font-weight: bold;
 }
 
 .text-sm {
@@ -103,6 +94,16 @@
   transition: none !important;
 }
 
+.regular-img {
+  @include image-cover();
+}
+
+/* ====================   ARROWS   ==================== */
+
+.arrow-right-icon {
+  rotate: -90deg;
+}
+
 /* ====================   POSITION   ==================== */
 
 .position-static {
@@ -124,5 +125,3 @@
 .position-sticky {
   position: sticky;
 }
-
-

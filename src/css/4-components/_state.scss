@@ -6,59 +6,28 @@
   outline-style: none;
   .nav-toggler__open,
   .nav-toggler__closed {
-    outline: 3px solid $color-accent;
+    outline: 3px solid $color-primary;
     outline-offset: 3px;
     border-radius: $border-radius-sm;
-  }
-}
-
-.tools a {
-  @include media-breakpoint-up(lg) {
-    border-radius: 0;
-
-    &:focus-visible {
-      .nav-tools__name {
-        text-decoration-color: $color-accent;
-        text-decoration-thickness: 2px;
-      }
-
-      svg {
-        fill: $color-accent !important;
-        scale: 1.25;
-        translate: -3px 1px;
-      }
-    }
-
-    @include hover {
-      .nav-tools__name {
-        text-decoration-color: $color-accent;
-      }
-
-      svg {
-        fill: $color-accent !important;
-        scale: 1.25;
-        translate: -3px 1px;
-      }
-    }
   }
 }
 
 .nav-menu__item {
   @include hover {
     .nav-menu__link {
-      color: $color-accent;
+      color: $color-secondary;
       text-decoration: underline;
     }
 
     .dropdown-btn-icon {
-      fill: $color-accent;
+      fill: $color-secondary;
     }
   }
 }
 
 .nav-menu__link {
   &:focus-visible {
-    color: $color-accent;
+    color: $color-dark;
     outline-style: none;
     text-decoration: underline 3px;
   }
@@ -67,20 +36,20 @@
 .contact__link {
   &:focus-visible {
     outline-style: none;
-    color: $color-accent;
+    color: $color-dark;
     text-decoration: underline 3px;
   }
 
   @include hover {
-    color: $color-accent;
+    color: $color-dark;
     text-decoration: underline;
   }
 }
 
 .dropdown-content__link {
   @include hover {
-    background-color: lighten($color-primary, 10%);
-    color: $color-accent;
+    background-color: $color-secondary;
+    color: $color-light;
   }
 
   transition: background-color 0.1s ease-in-out;
@@ -88,9 +57,9 @@
   &:focus-visible {
     outline: none;
     border-radius: 0;
-    color: $color-accent;
-    background-color: lighten($color-primary, 10%);
-    text-decoration: underline 3px solid $color-accent;
+    color: $color-light;
+    background-color: $color-secondary;
+    text-decoration: underline 3px solid $color-light;
   }
 }
 

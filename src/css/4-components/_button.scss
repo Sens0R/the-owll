@@ -5,40 +5,47 @@
     $align-items: center
   );
 
-  color: $color-light;
-  background-color: $color-secondary;
-  border-radius: $border-radius-sm;
-  font-weight: bold;
-  min-height: 2.625rem;
-  min-width: 8rem;
-  padding: 0.5rem 2rem;
-  transition: 0.2s ease-in-out;
-  @include depth();
+  outline: none;
+  color: $color-dark;
+  background-color: $color-primary;
+  border-radius: $br-sm;
+  font-weight: $semibold;
+  min-height: 2.7778rem;
+  min-width: 10rem;
+  padding: 0.8333rem 2rem;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  box-shadow: $shadow;
+  border: 1px solid $color-dark;
+  user-select: none;
 
   &:focus-visible {
-    background-color: $color-accent;
-    outline-style: none;
+    background-color: $color-secondary;
+    color: $color-light;
+    box-shadow: $shadow-sm;
   }
 
   @include hover {
-    background-color: $color-accent;
+    background-color: $color-secondary;
+    color: $color-light;
+    box-shadow: $shadow-sm;
   }
 }
 
-@mixin btn-light {
-  background-color: $color-accent;
+@mixin btn-secondary {
+  background-color: $color-secondary;
+  color: $color-light;
 
   &:focus-visible {
-    background-color: lighten($color-accent, 10%);
-    outline-style: solid;
-    outline-offset: 2px;
-    outline-color: $color-light;
-    border-radius: $border-radius-sm;
-    transition: none !important;
+    color: $color-dark;
+    background-color: $color-primary;
+    box-shadow: $shadow-sm;
   }
 
   @include hover {
-    background-color: lighten($color-accent, 10%);
+    color: $color-dark;
+    background-color: $color-primary;
+    box-shadow: $shadow-sm;
   }
 }
 
@@ -46,7 +53,7 @@
   @include btn();
 }
 
-.btn-light {
+.btn-secondary {
   @extend .btn;
-  @include btn-light();
+  @include btn-secondary();
 }

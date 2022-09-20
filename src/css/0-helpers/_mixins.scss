@@ -37,9 +37,10 @@
   }
 }
 
-@mixin image-cover($height: 100%, $width: 100%) {
-  width: $width;
-  height: $height;
+@mixin image-cover() {
+  max-width: 100%;
+  min-height: 100%;
+  height: auto;
   object-fit: cover;
   object-position: center;
 }
@@ -72,13 +73,18 @@
   @include position(relative, $args);
 }
 
-@mixin margin-auto($direction: x) {
+@mixin margin-auto($direction: both) {
   @if $direction == 'x' {
     margin-left: auto;
     margin-right: auto;
   } @else if $direction == 'y' {
     margin-top: auto;
     margin-bottom: auto;
+  } @else if $direction == 'both' {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

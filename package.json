@@ -25,7 +25,6 @@
   "homepage": "https://github.com/Sens0R/the-owl#readme",
   "devDependencies": {
     "@popperjs/core": "^2.11.5",
-    "aos": "^2.3.4",
     "bootstrap": "^5.2.0-beta1",
     "browser-sync": "latest",
     "del": "latest",

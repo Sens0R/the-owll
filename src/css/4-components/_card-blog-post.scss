@@ -46,9 +46,7 @@
     .card-blog-post-img {
       transition: scale 0.3s ease-in-out;
     }
-
-    @include icon-pulse-grow();
-    
+        
     &:before {
       content: '';
       @include absolute(bottom 0);

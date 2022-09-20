@@ -1,0 +1,21 @@
+.partners {
+  &__box {
+    aspect-ratio: 1 / 1;
+    padding: $spacer-sm;
+    border-radius: $br;
+    border: 1px solid $color-stroke;
+    @include flex($justify-content: center, $align-items: center);
+  }
+
+  &__icon {
+    fill: $color-gray;
+    @include box(100%, 4.5556rem);
+  }
+
+  &__content {
+    @include margin-auto(y);
+    @include media-breakpoint-down(lg) {
+      @include spacer-bottom('padding', $spacer);
+    }
+  }
+}

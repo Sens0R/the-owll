@@ -10,13 +10,10 @@
 @import '0-helpers/variable-mixins';
 @import '0-helpers/spacer-mixins';
 
-
 // 1 - TOOLS
 @import '1-tools/bootstrap';
 @import '1-tools/rfs';
-@import '1-tools/hover';
 @import '1-tools/swiper';
-@import '1-tools/headroom';
 
 // 2 - BASE
 @import '2-base/fonts';
@@ -29,14 +26,13 @@
 
 // 4 - COMPONENTS
 @import '4-components/card-blog-post';
-@import '4-components/card-shop-product';
+@import '4-components/card-services';
 @import '4-components/rounded-icons';
 @import '4-components/overlay';
 @import '4-components/button';
 @import '4-components/state';
-@import '4-components/accordion';
+@import '4-components/box-link';
 @import '4-components/dropdown';
-@import '4-components/notification';
 @import '4-components/animations';
 @import '4-components/skip-link';
 
@@ -48,5 +44,3 @@
 @import '5-pages/about-company-founder';
 @import '5-pages/contact';
 @import '5-pages/blog';
-
-

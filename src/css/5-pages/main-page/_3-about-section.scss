@@ -1,0 +1,19 @@
+.about .regular-img {
+  @include spacer-top('margin', $spacer);
+}
+
+.about__attachment {
+  display: inline-block;
+  translate: 15% -50%;
+  max-width: 85%;
+  background-color: $color-dark;
+  border-radius: $br;
+  color: $color-light;
+  padding: 1rem 1.25rem;
+  margin: 0;
+  font-size: $fs-sm;
+
+  span {
+    font-weight: $semibold;
+  }
+}

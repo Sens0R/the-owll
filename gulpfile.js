@@ -50,7 +50,6 @@ const mainTasks = gulp.series(fonts, gulp.parallel(html, scss, js, svgSprites));
 // Построение сценариев выполнения задач
 const dev = gulp.series(reset, copy, mainTasks, gulp.parallel(watcher, server));
 const devReset = gulp.series(reset, copy, gulp.parallel(mainTasks, imageTasks), gulp.parallel(watcher, server));
-
 const build = gulp.series(reset, copy, gulp.parallel(mainTasks, imageTasks));
 
 const deployZIP = gulp.series(

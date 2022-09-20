@@ -1,0 +1,54 @@
+.card-services {
+  @include flex($flex-direction: column);
+  position: relative;
+  height: 100%;
+  border-radius: $br-sm;
+  border: 1px solid $color-stroke;
+  padding: $spacer;
+  @include media-breakpoint-up(lg) {
+    @include spacer('padding', $spacer-lg);
+  }
+  transition: all 0.3s ease-in-out;
+
+  &__logo {
+    @include flex($justify-content: center, $align-items: center);
+    @include box(4.4444rem, 4.4444rem);
+    background-color: $black;
+    border-radius: $br;
+    box-shadow: $shadow;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__icon {
+    @include box(2rem, 2rem);
+    fill: $color-light;
+  }
+
+  @include hover {
+    border: 1px solid $color-dark;
+    box-shadow: $shadow;
+
+    .card-services__logo {
+      box-shadow: none;
+    }
+
+    .box-link {
+      visibility: visible;
+      opacity: 1;
+      translate: none;
+    }
+  }
+
+  &__header {
+    @include font-size(1.4444rem);
+    @include spacer-top('margin', $spacer);
+  }
+
+  .box-link {
+    @include absolute(bottom 1.75rem);
+    translate: 0 1rem;
+    transition: all 0.3s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+  }
+}

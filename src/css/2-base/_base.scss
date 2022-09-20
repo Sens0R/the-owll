@@ -33,8 +33,6 @@ a:not([class]) {
 
 img,
 picture {
-  max-width: 100%;
-  display: block;
   user-select: none;
 }
 
@@ -62,10 +60,11 @@ svg {
 
 html,
 body {
-  @include font-size($fs-base);
-  color: $color-secondary;
+  color: $color-dark;
+  font-size: $fs-base;
   font-family: $ff-primary;
   line-height: $lh-base;
+  font-weight: $regular;
   background-color: $color-light;
   -webkit-tap-highlight-color: transparent;
 }
@@ -85,7 +84,7 @@ button {
 }
 
 ::selection {
-  background-color: $color-accent;
+  background-color: $color-primary;
   color: $color-light;
 }
 
@@ -124,8 +123,9 @@ ol,
 blockquote,
 address,
 table,
-.spacer,
-hr {
+hr,
+.btn,
+.spacer {
   @include spacer-vertical('margin', $spacer);
 }
 
@@ -145,7 +145,7 @@ a {
 }
 
 :focus-visible {
-  outline-color: $color-accent;
+  outline-color: $color-primary;
 }
 
 input {
