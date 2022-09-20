@@ -1,6 +1,5 @@
 .hero {
-  @include spacer-top('padding', $spacer-xl);
-  @include spacer-bottom('padding', $spacer);
+  @include spacer-vertical('padding', $spacer-lg);
 
   P {
     font-weight: $medium;

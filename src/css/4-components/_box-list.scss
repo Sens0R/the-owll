@@ -1,0 +1,21 @@
+.box-list {
+  @include flex($flex-wrap: wrap, $align-items: center);
+  margin-top: 0;
+  font-size: 0.7778rem;
+
+  li {
+    margin-bottom: 0.25rem;
+    margin-right: 0.5rem;
+  }
+
+  li a {
+    background-color: $color-secondary-light;
+    padding: 0.1667rem 0.5556rem;
+    transition: all 0.2s ease-in-out;
+
+    @include hover {
+      background-color: $color-secondary-dark;
+      color: $color-light;
+    }
+  }
+}

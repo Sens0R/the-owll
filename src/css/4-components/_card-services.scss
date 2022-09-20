@@ -2,12 +2,14 @@
   @include flex($flex-direction: column);
   position: relative;
   height: 100%;
-  border-radius: $br-sm;
+  border-radius: $br;
   border: 1px solid $color-stroke;
   padding: $spacer;
+
   @include media-breakpoint-up(lg) {
     @include spacer('padding', $spacer-lg);
   }
+  
   transition: all 0.3s ease-in-out;
 
   &__logo {
@@ -37,11 +39,6 @@
       opacity: 1;
       translate: none;
     }
-  }
-
-  &__header {
-    @include font-size(1.4444rem);
-    @include spacer-top('margin', $spacer);
   }
 
   .box-link {

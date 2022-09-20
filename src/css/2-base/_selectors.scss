@@ -2,6 +2,17 @@
   user-select: none;
 }
 
+.header-link {
+  transition: all 0.4s ease-in-out;
+  text-decoration: underline solid 2px transparent;
+  text-underline-offset: 10%;
+
+  @include hover {
+    color: $color-secondary-dark;
+    text-decoration-color: $color-secondary-dark;
+  }
+}
+
 .color-light {
   color: $color-light;
 }
@@ -19,6 +30,10 @@
 }
 .color-accent-light {
   color: $color-accent-light;
+}
+
+.text-accent {
+  color: $color-primary;
 }
 
 .color-secondary {
@@ -96,6 +111,14 @@
 
 .regular-img {
   @include image-cover();
+}
+
+.spacer {
+  @include spacer-vertical('margin', $spacer);
+}
+
+.section-btn {
+  @include flex($justify-content: center, $align-items: center);
 }
 
 /* ====================   ARROWS   ==================== */

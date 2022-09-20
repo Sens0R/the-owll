@@ -3,30 +3,21 @@
     @include spacer-vertical('padding', $spacer-xl);
   }
 
-  &__header {
-    font-size: $fs-base;
-    text-transform: uppercase;
-    font-weight: $semibold;
-   
-  }
-
-  &__description {
-    @include font-size(2.6667rem);
-    font-weight: $semibold;
-    line-height: $lh-sm;
-  }
-
   &__desc-accent {
     color: $color-primary;
+  }
+
+  .h-5 {
+    text-transform: uppercase;
   }
 }
 
 
 /* ====================   IMPORTS   ==================== */
 
-@import '1-hero-section';
-@import '2-services-section';
-@import '3-about-section';
-@import '4-portfolio-section';
-@import '5-partners-section';
-@import '6-blog-section';
+@import '1-hero';
+@import '2-services';
+@import '3-about';
+@import '4-portfolio';
+@import '5-partners';
+@import '6-blog';

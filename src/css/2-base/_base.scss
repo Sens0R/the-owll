@@ -93,27 +93,43 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.h-1,
+.h-2,
+.h-3,
+.h-4,
+.h-5,
+.h-6 {
   font-weight: $headings-fw;
   line-height: $headings-lh;
 }
 
-h1 {
+h1,
+.h-1 {
   @include font-size($fs-h1);
 }
-h2 {
+
+h2,
+.h-2 {
   @include font-size($fs-h2);
 }
-h3 {
+
+h3,
+.h-3 {
   @include font-size($fs-h3);
 }
-h4 {
+
+h4,
+.h-4 {
   @include font-size($fs-h4);
 }
-h5 {
+h5,
+.h-5 {
   @include font-size($fs-h5);
 }
-h6 {
+
+h6,
+.h-6 {
   @include font-size($fs-h6);
 }
 
@@ -123,9 +139,21 @@ ol,
 blockquote,
 address,
 table,
-hr,
-.btn,
-.spacer {
+hr {
+  @include spacer-bottom('margin', $spacer);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+.h-1,
+.h-2,
+.h-3,
+.h-4,
+.h-5,
+.h-6 {
   @include spacer-vertical('margin', $spacer);
 }
 

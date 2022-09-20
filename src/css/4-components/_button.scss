@@ -5,6 +5,7 @@
     $align-items: center
   );
 
+  @include spacer-vertical('margin', $spacer);
   outline: none;
   color: $color-dark;
   background-color: $color-primary;

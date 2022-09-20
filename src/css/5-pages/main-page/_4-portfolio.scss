@@ -1,0 +1,44 @@
+.portfolio {
+  &__item {
+    border-radius: $br;
+    outline: 1px solid $color-stroke;
+
+    &:not(:last-child) {
+      @include spacer-bottom('margin', $spacer-lg);
+    }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+
+      .portfolio__img {
+        border-top-right-radius: $br !important;
+        border-bottom-right-radius: $br !important;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+      }
+    }
+  }
+
+  &__img {
+    overflow: hidden;
+    border-top-left-radius: $br;
+    border-bottom-left-radius: $br;
+
+    a {
+      transition: all 0.4s ease-in-out;
+      @include hover {
+        scale: 1.05;
+        filter: brightness(1.05) contrast(115%);
+      }
+    }
+  }
+
+  &__content {
+    @include spacer('padding', $spacer);
+    @include margin-auto();
+  }
+
+  &__header {
+    @include font-size(2rem);
+  }
+}

@@ -4,7 +4,7 @@ $color-orange: hsl(32, 92%, 54%);
 $color-blue: hsl(206, 60%, 50%);
 $color-dark-blue: hsl(206, 100%, 34%);
 $color-gray: hsl(206, 22%, 58%);
-//$color-gray: hsl(206, 33%, 70%);
+$color-gray-light: hsl(206, 33%, 70%);
 $color-blue-light: hsl(208, 60%, 95%);
 $color-white: hsl(0, 0%, 100%);
 $color-border: hsl(0, 0%, 0%, 0.3);
@@ -46,13 +46,13 @@ $headings-fs: null;
 $headings-fw: $semibold;
 $headings-lh: 1.2;
 
-$headings-fs: $fs-base * 1;
+$headings-fs: 1rem;
 $fs-h1: $headings-fs * 4;
-$fs-h2: $headings-fs * 3;
-$fs-h3: $headings-fs * 1.25;
-$fs-h4: $headings-fs * 1.375;
-$fs-h5: $headings-fs * 1.125;
-$fs-h6: $headings-fs * 0.875;
+$fs-h2: $headings-fs * 2.666;
+$fs-h3: $headings-fs * 2;
+$fs-h4: $headings-fs * 1.444;
+$fs-h5: $headings-fs * 1;
+$fs-h6: $headings-fs * 0.77;
 
 /* ====================   STRUCTURE   ==================== */
 
@@ -64,7 +64,7 @@ $spacer-xl: $spacer * 2.3;
 $spacer-headings: $spacer * 1;
 
 // Shadows
-$shadow: 5px 5px 0 $color-dark;
+$shadow: 4px 5px 0 $color-dark;
 $shadow-sm: 2px 2px 0 $color-dark;
 
 // z-index map
@@ -74,6 +74,6 @@ $z-index: (
   header: 50,
 );
 
-$br: .4444rem;
-$br-sm: .3333rem;
+$br: .5rem;
+$br-sm: 4px;
 $br-pill: 100rem;

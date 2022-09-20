@@ -1,83 +1,64 @@
 .card-blog-post {
-  @include flex($flex-direction: column);
+  @include flex($flex-direction: column, $align-items: center);
   height: 100%;
-
-  &__header {
-    @include spacer-vertical('padding', $spacer);
-    @include font-size(1.25rem);
-  }
+  border-radius: $br;
+  border: 1px solid $color-stroke;
+  outline: none;
+  transition: all 0.3s ease-in-out;
 
   &__img {
-    overflow: hidden;
-  }
-
-  &-img {
-    @include image-cover();
-    aspect-ratio: 4 / 3;
-    border-radius: $border-radius-sm;
-  }
-
-  &__text {
-    color: $color-gray;
-    margin-top: 0;
-  }
-
-  &__link {
-    font-size: 0.75rem;
-    font-weight: bold;
-    color: $color-accent;
-    text-transform: uppercase;
-    margin-top: auto;
-    @include flex($align-items: center);
-    @include spacer-bottom('margin', $spacer-sm);
-  }
-}
-
-.link-arrow-right-icon {
-  @include box(0.625rem, 10px);
-  fill: $color-accent;
-  margin-left: 0.25rem;
-}
-
-/* ====================   LINK AND FOCUS   ==================== */
-
-@media (hover: hover) and (pointer: fine) {
-  .card-blog-post {
-    .card-blog-post-img {
-      transition: scale 0.3s ease-in-out;
-    }
-        
-    &:before {
-      content: '';
-      @include absolute(bottom 0);
-      position: absolute;
-      width: 0px;
-      height: 2px;
-      background: $color-accent;
-      transition: 0.3s ease-in-out;
-    }
-
-    &:hover {
-      &:before {
-        width: 100%;
+    position: relative;
+    @include hover {
+      .regular-img {
+        filter: brightness(1.05) contrast(115%);
       }
 
-      .card-blog-post-img {
+      .box-btn {
+        translate: -25% -5%;
         scale: 1.1;
+        box-shadow: $shadow-sm;
+        border: 1px solid $color-dark;
+
+        .arrow-right-icon {
+          scale: 1.5;
+        }
       }
     }
+
+    .regular-img {
+      border-top-left-radius: $br;
+      border-top-right-radius: $br;
+      transition: all 0.3s ease-in-out;
+    }
   }
-}
 
-.card-blog-post {
-  &:focus-visible {
-    outline: none;
-    .card-blog-post-img {
-      scale: 1.1;
-    }
+  .h-4 {
+    margin-top: $spacer-sm;
+  }
 
-    &:before {
-      width: 100%;
+  &__content {
+    @include flex($flex-direction: column, $justify-content: center);
+    @include spacer('padding', $spacer-lg);
+    height: 100%;
+
+    > :last-child {
+      margin-bottom: 0;
+      margin-top: auto;
     }
+  }
+
+  .box-time {
+    color: $color-gray-light;
+    font-size: $fs-sm;
+    font-weight: $medium;
+    margin: 0;
+  }
+
+  .box-btn {
+    @include absolute(right 1.3889rem bottom -1.3889rem);
+  }
+
+  @include hover {
+    border: 1px solid $color-dark;
   }
 }

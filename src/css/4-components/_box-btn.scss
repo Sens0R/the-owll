@@ -1,0 +1,30 @@
+.box-btn {
+  @include flex($justify-content: center, $align-items: center);
+  @include box(2.7778rem, 2.7778rem);
+  border-radius: $br-sm;
+  background-color: $color-secondary;
+  border: 1px solid transparent;
+  transition: all 0.3s ease-in-out;
+
+  @include hover {
+    box-shadow: $shadow-sm;
+    border: 1px solid $color-dark;
+    .arrow-right-icon {
+      scale: 1.5;
+    }
+  }
+
+  &:focus-visible {
+    box-shadow: $shadow-sm;
+    border: 1px solid $color-dark;
+    .arrow-right-icon {
+      scale: 1.5;
+    }
+  }
+}
+
+.box-btn .arrow-right-icon {
+  fill: $color-light;
+  @include box(0.6667rem, 0.6667rem);
+  transition: all 0.3s ease-in-out;
+}
