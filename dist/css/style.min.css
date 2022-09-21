@@ -7017,6 +7017,8 @@ input[type=search]::-webkit-search-cancel-button {
 }
 
 .box-link {
+  position: relative;
+  display: inline-block;
   color: hsl(206deg, 60%, 50%);
   font-size: 0.8889rem;
   font-weight: 500;
@@ -7024,6 +7026,19 @@ input[type=search]::-webkit-search-cancel-button {
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.box-link:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 48px;
+  min-height: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
 }
 .box-link__body {
   display: -webkit-box;
@@ -7074,6 +7089,19 @@ input[type=search]::-webkit-search-cancel-button {
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  position: relative;
+}
+.box-list li a:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 48px;
+  min-height: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
 }
 @media (hover: hover) and (pointer: fine) {
   .box-list li a:hover {

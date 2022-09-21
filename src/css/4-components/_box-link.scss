@@ -1,9 +1,12 @@
 .box-link {
+  @include link-space();
+  display: inline-block;
   color: $color-secondary;
   font-size: $fs-sm;
   font-weight: $medium;
   text-transform: uppercase;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 
   &__body {
     @include flex($align-items: center);
