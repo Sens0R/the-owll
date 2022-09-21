@@ -1,18 +1,31 @@
-.about .regular-img {
-  @include spacer-top('margin', $spacer);
-  @include depth();
+.section.about {
+  padding-top: 0;
+}
+
+.about {
+  &__content {
+    @include spacer-vertical('padding', $spacer-lg);
+
+    @include media-breakpoint-up(lg) {
+      @include spacer-right('padding', $spacer-lg);
+    }
+  }
+
+  &__img {
+    position: relative;
+  }
 }
 
 .about__attachment {
-  display: inline-block;
-  translate: 15% -50%;
-  max-width: 85%;
-  background-color: $color-dark;
-  border-radius: $br;
-  color: $color-light;
-  padding: 1rem 1.25rem;
+  @include absolute(left 15% bottom 0);
+  translate: 0 50%;
+  max-width: 80vw;
+  padding: 0.75rem 1.15rem;
   margin: 0;
+  border-radius: $br;
+  background-color: $color-dark;
   font-size: $fs-sm;
+  color: $color-light;
 
   span {
     font-weight: $semibold;

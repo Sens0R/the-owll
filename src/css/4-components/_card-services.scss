@@ -2,16 +2,15 @@
   @include flex($flex-direction: column);
   position: relative;
   height: 100%;
-  border-radius: $br;
-  border: 1px solid transparent;
-  @include depth();
-  padding: $spacer;
+   border-radius: $br;
+  border: 1px solid $color-stroke;
+  transition: all 0.3s ease-in-out;
 
+  padding: $spacer;
+  padding-bottom: 0;
   @include media-breakpoint-up(lg) {
     @include spacer('padding', $spacer-lg);
   }
-
-  transition: all 0.3s ease-in-out;
 
   &__logo {
     @include flex($justify-content: center, $align-items: center);
@@ -27,11 +26,20 @@
     fill: $color-light;
   }
 
+  .box-link {
+    @include absolute(bottom 1.75rem);
+    translate: 0 1rem;
+    transition: all 0.3s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+  }
+
   @include hover {
     border: 1px solid $color-dark;
     box-shadow: $shadow;
 
     .card-services__logo {
+      translate: 5px 5px;
       box-shadow: none;
     }
 
@@ -39,14 +47,7 @@
       visibility: visible;
       opacity: 1;
       translate: none;
+     
     }
-  }
-
-  .box-link {
-    @include absolute(bottom 1.75rem);
-    translate: 0 1rem;
-    transition: all 0.3s ease-in-out;
-    visibility: hidden;
-    opacity: 0;
   }
 }

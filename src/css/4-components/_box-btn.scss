@@ -7,17 +7,21 @@
   transition: all 0.3s ease-in-out;
 
   @include hover {
+    background-color: $color-primary;
     box-shadow: $shadow;
     border: 1px solid $color-dark;
     .arrow-right-icon {
+      fill: $color-primary;
       scale: 1.5;
     }
   }
 
   &:focus-visible {
+    background-color: $color-primary;
     box-shadow: $shadow;
     border: 1px solid $color-dark;
     .arrow-right-icon {
+      fill: $color-primary;
       scale: 1.5;
     }
   }

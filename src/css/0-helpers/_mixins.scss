@@ -38,11 +38,11 @@
 }
 
 @mixin image-cover() {
-  max-width: 100%;
-  min-height: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
+  aspect-ratio: auto;
 }
 
 @mixin position($position, $args) {

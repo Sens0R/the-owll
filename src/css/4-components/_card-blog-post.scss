@@ -1,35 +1,9 @@
 .card-blog-post {
-  @include flex($flex-direction: column, $align-items: center);
+  @include flex($flex-direction: column);
   height: 100%;
   border-radius: $br;
-  @include depth();
+  border: 1px solid $color-stroke;
   transition: all 0.3s ease-in-out;
-
-  &__img {
-    position: relative;
-    @include hover {
-      .regular-img {
-        filter: brightness(1.05) contrast(110%);
-      }
-
-      .box-btn {
-        translate: -15% -5%;
-        scale: 1.1;
-        box-shadow: $shadow;
-        border: 1px solid $color-dark;
-
-        .arrow-right-icon {
-          scale: 1.5;
-        }
-      }
-    }
-
-    .regular-img {
-      border-top-left-radius: $br;
-      border-top-right-radius: $br;
-      transition: all 0.3s ease-in-out;
-    }
-  }
 
   .h-4 {
     margin-top: $spacer-sm;
@@ -46,14 +20,45 @@
     }
   }
 
-  .box-time {
-    color: $color-gray-light;
-    font-size: $fs-sm;
-    font-weight: $medium;
-    margin: 0;
+  &__img {
+    position: relative;
+
+    @include hover {
+      .image {
+        filter: contrast(125%);
+      }
+
+      .box-btn {
+        background-color: $color-primary;
+        translate: -15% -5%;
+        scale: 1.025;
+        box-shadow: $shadow;
+        border: 1px solid $color-dark;
+
+        .arrow-right-icon {
+          scale: 1.5;
+          fill: $color-dark;
+        }
+      }
+    }
+  }
+
+  .image {
+    border-top-left-radius: $br;
+    border-top-right-radius: $br;
+    transition: all 0.3s ease-in-out;
+    aspect-ratio: 5 / 3;
   }
 
   .box-btn {
     @include absolute(right 1.3889rem bottom -1.3889rem);
   }
+}
+
+.box-time {
+  z-index: 1;
+  color: $color-gray-light;
+  font-size: $fs-sm;
+  font-weight: $medium;
+  margin: 0;
 }

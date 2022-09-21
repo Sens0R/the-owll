@@ -1,4 +1,8 @@
 .section {
+  h1 {
+    margin-top: -1rem;
+  }
+
   &:not(:first-child) {
     @include spacer-vertical('padding', $spacer-xl);
   }

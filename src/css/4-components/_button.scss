@@ -23,13 +23,15 @@
   &:focus-visible {
     background-color: $color-secondary;
     color: $color-light;
-    box-shadow: $shadow-sm;
+    box-shadow: none;
+    translate: 5px 5px;
   }
 
   @include hover {
     background-color: $color-secondary;
     color: $color-light;
-    box-shadow: $shadow-sm;
+    box-shadow: none;
+    translate: 5px 5px;
   }
 }
 
@@ -40,13 +42,16 @@
   &:focus-visible {
     color: $color-dark;
     background-color: $color-primary;
-    box-shadow: $shadow-sm;
+    box-shadow: none;
+    translate: 5px 5px;
   }
 
   @include hover {
     color: $color-dark;
     background-color: $color-primary;
-    box-shadow: $shadow-sm;
+    box-shadow: none;
+    translate: 5px 5px;
+   
   }
 }
 

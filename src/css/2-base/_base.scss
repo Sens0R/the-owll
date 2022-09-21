@@ -143,6 +143,10 @@ hr {
   @include spacer-bottom('margin', $spacer);
 }
 
+h1 {
+  @include spacer-bottom('margin', $spacer);
+}
+
 h2,
 h3,
 h4,

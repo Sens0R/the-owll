@@ -1,21 +1,24 @@
 .box-link {
-  @include flex($align-items: center);
-  transition: all 0.3s ease-in-out;
   color: $color-secondary;
+  font-size: $fs-sm;
   font-weight: $medium;
   text-transform: uppercase;
-  font-size: $fs-sm;
+  transition: all 0.3s ease-in-out;
+
+  &__body {
+    @include flex($align-items: center);
+  }
 
   &__icon {
-    margin-left: 3px;
     @include box(0.7rem, 0.7rem);
+    margin-left: 3px;
     fill: $color-secondary;
     transition: all 0.3s ease-in-out;
   }
 
   @include hover {
     color: $color-primary;
-    
+
     .box-link__icon {
       fill: $color-primary;
       translate: 5px;

@@ -9,7 +9,7 @@
 
 .banner-bg {
   @include image-cover();
-  height: 50vh;
+  height: 60vh;
   @include media-breakpoint-up(lg) {
     height: 100vh;
   }
