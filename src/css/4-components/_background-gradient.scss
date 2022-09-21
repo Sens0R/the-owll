@@ -1,0 +1,23 @@
+.bg-gradient {
+  position: absolute;
+  @include box(25%, 25%);
+  display: block;
+  border-radius: 100%;
+  scale: 5 0.5;
+  rotate: -15deg;
+  translate: 0 -50%;
+  filter: blur(300px);
+  z-index: -1;
+}
+
+.bg-primary {
+  background-color: $color-primary;
+  left: 0;
+  bottom: 25%;
+}
+
+.bg-secondary {
+  background-color: $color-secondary-dark;
+  right: 0;
+  bottom: 0;
+}

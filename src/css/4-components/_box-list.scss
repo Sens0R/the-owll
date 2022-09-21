@@ -13,11 +13,16 @@
     padding: 0.1667rem 0.5556rem;
     transition: all 0.2s ease-in-out;
     @include link-space();
-    
+
     @include hover {
       background-color: $color-secondary-dark;
       color: $color-light;
-      
+    }
+
+    &:focus-visible {
+      background-color: $color-secondary-dark;
+      color: $color-light;
+      outline: none;
     }
   }
 }

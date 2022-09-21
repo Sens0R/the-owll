@@ -10,6 +10,16 @@
 
   &__body {
     @include flex($align-items: center);
+
+    &:focus-visible {
+      outline: none;
+      color: $color-primary;
+
+      .box-link__icon {
+        fill: $color-primary;
+        translate: 5px;
+      }
+    }
   }
 
   &__icon {

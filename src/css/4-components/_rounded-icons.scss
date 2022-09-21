@@ -1,46 +1,43 @@
-.icon-rounded {
-  @include box(1rem, 1rem);
-  fill: $color-dark;
-}
-
 .rounded-icon {
   @include flex($justify-content: center, $align-items: center);
-  padding: 0.75rem;
-  background: $color-primary;
-  border-radius: 100%;
-}
-
-.rounded-icon {
   @include link-space();
+  padding: 0.75rem;
+  background: $color-dark;
+  border-radius: 100%;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+
   &:focus-visible {
-    background-color: $color-accent;
-    outline-color: $color-light;
-    transition: none;
-    svg {
-      fill: $color-light;
-      transition: none;
+    background-color: $color-primary;
+    box-shadow: $shadow-sm;
+
+    .icon-rounded {
+      fill: $color-dark;
     }
   }
 
   @include hover {
-    background: $color-accent;
-    transition: 0.4s ease-in-out;
-    svg {
-      transition: 0.4s ease-in-out;
-    }
+    background: $color-primary;
+    box-shadow: $shadow-sm;
 
     .icon-rounded {
-      fill: $color-light;
+      fill: $color-dark;
     }
   }
 }
 
+.icon-rounded {
+  @include box(1rem, 1rem);
+  transition: all 0.3s ease-in-out;
+  fill: $color-light;
+}
+
 .social-icons {
   @include flex($align-items: center, $flex-wrap: wrap);
+  @include spacer-vertical('margin', $spacer);
 
   &__item {
-    &:not(:last-child) {
-      margin-right: 0.625rem;
-    }
+    margin-right: 0.625rem;
+    margin-bottom: 0.625rem;
   }
 }

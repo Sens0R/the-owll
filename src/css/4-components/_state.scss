@@ -1,6 +1,26 @@
-/* ====================   HEADER   ==================== */
+.logo-hover:focus-visible {
+  outline: none;
+  filter: drop-shadow(0 0 1rem $color-secondary);
+}
 
+.header-link {
+  transition: all 0.4s ease-in-out;
+  text-decoration: underline solid 2px transparent;
+  text-underline-offset: 10%;
 
+  @include hover {
+    color: $color-secondary-dark;
+    text-decoration-color: $color-secondary-dark;
+  }
+
+  &:focus-visible {
+    outline: none;
+    color: $color-secondary-dark;
+    text-decoration-color: $color-secondary-dark;
+  }
+}
+
+/* ====================      ==================== */
 
 .nav-toggler:focus-visible {
   outline-style: none;
@@ -70,35 +90,5 @@
   .dropdown-btn-icon {
     scale: 2;
     rotate: 90deg;
-  }
-}
-
-/* ====================   FOOTER   ==================== */
-
-.footer-phone__link {
-  @include hover {
-    text-decoration: underline 1px solid $color-light;
-  }
-  &:focus-visible {
-    outline-offset: -6px;
-    outline-color: $color-primary;
-  }
-}
-
-.logo-footer:focus-visible {
-  background-color: $color-primary;
-  outline-style: none;
-}
-
-.footer-nav__link {
-  @include hover {
-    color: $color-primary;
-    text-decoration: underline;
-  }
-
-  &:focus-visible {
-    color: $color-primary;
-    outline: none;
-    text-decoration: underline;
   }
 }

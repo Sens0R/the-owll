@@ -20,27 +20,6 @@
     }
   }
 
-  &__img {
-    position: relative;
-
-    @include hover {
-      .image {
-        filter: contrast(125%);
-      }
-
-      .box-btn {
-        background-color: $color-primary;
-        translate: -5px -5px;
-        box-shadow: $shadow;
-
-        .arrow-right-icon {
-          scale: 1.5;
-          fill: $color-dark;
-        }
-      }
-    }
-  }
-
   .image {
     border-top-left-radius: $br;
     border-top-right-radius: $br;
@@ -50,6 +29,49 @@
 
   .box-btn {
     @include absolute(right 1.3889rem bottom -1.3889rem);
+  }
+
+  .header-link:focus-visible {
+    color: $color-primary;
+    text-decoration-color: $color-primary;
+  }
+}
+
+.card-blog-post__img {
+  position: relative;
+
+  @include hover {
+    .image {
+      filter: contrast(125%);
+    }
+
+    .box-btn {
+      background-color: $color-primary;
+      translate: -5px -5px;
+      box-shadow: $shadow;
+
+      .arrow-right-icon {
+        scale: 1.5;
+        fill: $color-dark;
+      }
+    }
+  }
+}
+
+.card-blog-post:focus-within {
+  .image {
+    filter: contrast(125%);
+  }
+
+  .box-btn {
+    background-color: $color-primary;
+    translate: -5px -5px;
+    box-shadow: $shadow;
+
+    .arrow-right-icon {
+      scale: 1.5;
+      fill: $color-dark;
+    }
   }
 }
 

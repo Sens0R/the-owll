@@ -1,9 +1,5 @@
 @mixin btn {
-  @include flex(
-    $display: inline-flex,
-    $justify-content: center,
-    $align-items: center
-  );
+  @include flex($display: inline-flex, $justify-content: center, $align-items: center);
 
   @include spacer-vertical('margin', $spacer);
   outline: none;
@@ -25,6 +21,7 @@
     color: $color-light;
     box-shadow: none;
     translate: 5px 5px;
+    filter: drop-shadow(0 0 1rem $color-secondary-dark);
   }
 
   @include hover {
@@ -44,6 +41,7 @@
     background-color: $color-primary;
     box-shadow: none;
     translate: 5px 5px;
+    filter: drop-shadow(0 0 1rem $color-primary);
   }
 
   @include hover {
@@ -51,7 +49,6 @@
     background-color: $color-primary;
     box-shadow: none;
     translate: 5px 5px;
-   
   }
 }
 
