@@ -30,10 +30,8 @@
 
       .box-btn {
         background-color: $color-primary;
-        translate: -15% -5%;
-        scale: 1.025;
+        translate: -5px -5px;
         box-shadow: $shadow;
-        border: 1px solid $color-dark;
 
         .arrow-right-icon {
           scale: 1.5;

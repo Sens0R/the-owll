@@ -2,10 +2,10 @@
   @include flex($flex-direction: column);
   position: relative;
   height: 100%;
-   border-radius: $br;
+  border-radius: $br;
   border: 1px solid $color-stroke;
   transition: all 0.3s ease-in-out;
-
+  outline: none;
   padding: $spacer;
   padding-bottom: 0;
   @include media-breakpoint-up(lg) {
@@ -47,7 +47,22 @@
       visibility: visible;
       opacity: 1;
       translate: none;
-     
+    }
+  }
+
+  &:focus-visible {
+    border: 1px solid $color-dark;
+    box-shadow: $shadow;
+
+    .card-services__logo {
+      translate: 5px 5px;
+      box-shadow: none;
+    }
+
+    .box-link {
+      visibility: visible;
+      opacity: 1;
+      translate: none;
     }
   }
 }

@@ -9,7 +9,7 @@
   @include hover {
     background-color: $color-primary;
     box-shadow: $shadow;
-    border: 1px solid $color-dark;
+    translate: -5px -5px;
     .arrow-right-icon {
       fill: $color-primary;
       scale: 1.5;
@@ -19,7 +19,8 @@
   &:focus-visible {
     background-color: $color-primary;
     box-shadow: $shadow;
-    border: 1px solid $color-dark;
+    translate: -5px -5px;
+
     .arrow-right-icon {
       fill: $color-primary;
       scale: 1.5;
