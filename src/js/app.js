@@ -99,7 +99,7 @@ particlesJS(
   }
 )
 
-const obsParticles = new IntersectionObserver(entries =>
+/* const obsParticles = new IntersectionObserver(entries =>
   entries.forEach(entry => {
     if (entry.isIntersecting) return pJSDom[0].pJS.fn.vendors.start()
 
@@ -110,7 +110,7 @@ const obsParticles = new IntersectionObserver(entries =>
   })
 )
 
-obsParticles.observe(JSparticleEl)
+obsParticles.observe(JSparticleEl) */
 
 activePageHighlight()
 animateOnScroll()
