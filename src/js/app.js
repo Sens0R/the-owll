@@ -101,8 +101,16 @@ particlesJS(
 
 const obsParticles = new IntersectionObserver(entries =>
   entries.forEach(entry => {
-    if (entry.isIntersecting) 
-    if (!entry.isIntersecting) window.pJSDom[0].pJS.fn.vendors.destroypJS()
+    if (entry.isIntersecting) {
+      pJSDom[0].pJS.fn.vendors.start()
+    }
+
+    if (!entry.isIntersecting) {
+      cancelRequestAnimFrame(pJSDom[0].pJS.fn.checkAnimFrame)
+      cancelRequestAnimFrame(pJSDom[0].pJS.fn.drawAnimFrame)
+      pJSDom[0].pJS.fn.particlesEmpty()
+      pJSDom[0].pJS.fn.canvasClear()
+    }
   })
 )
 
