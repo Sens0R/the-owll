@@ -1,23 +1,42 @@
-/* .bg-gradient {
+.bg-gradient {
   position: absolute;
-  @include box(25%, 25%);
-  display: block;
-  border-radius: 100%;
-  scale: 5 0.5;
-  rotate: -15deg;
-  translate: 0 -50%;
-  filter: blur(300px);
+  @include box(100%, 100%);
   z-index: -1;
+  inset: 0;
+  scale: 2 1;
+  display: block;
 }
 
-.bg-primary {
-  background-color: $color-primary;
-  left: 0;
-  bottom: 25%;
+.bg-gradient-bottom {
+  background-image: linear-gradient(
+    135deg,
+    hsla(0deg, 0%, 100%, 0.3) 0%,
+    hsla(30deg, 100%, 90%, 0.3) 6%,
+    hsla(29deg, 100%, 81%, 0.3) 11%,
+    hsla(29deg, 100%, 72%, 0.3) 17%,
+    hsla(31deg, 96%, 61%, 0.3) 22%,
+    hsla(31deg, 96%, 61%, 0.3) 28%,
+    hsla(29deg, 100%, 72%, 0.3) 33%,
+    hsla(29deg, 100%, 81%, 0.3) 39%,
+    hsla(30deg, 100%, 90%, 0.3) 44%,
+    hsla(0deg, 0%, 100%, 0.3) 50%,
+    hsla(223deg, 43%, 88%, 0.3) 56%,
+    hsla(221deg, 43%, 75%, 0.3) 61%,
+    hsla(218deg, 44%, 62%, 0.3) 67%,
+    hsla(214deg, 50%, 48%, 0.3) 72%,
+    hsla(214deg, 50%, 48%, 0.3) 78%,
+    hsla(218deg, 44%, 62%, 0.3) 83%,
+    hsla(221deg, 43%, 75%, 0.3) 89%,
+    hsla(223deg, 43%, 88%, 0.3) 94%,
+    hsla(0deg, 0%, 100%, 0.3) 100%
+  );
 }
 
-.bg-secondary {
-  background-color: $color-secondary-dark;
-  right: 0;
-  bottom: 0;
-} */
+.bg-gradient-up {
+  background-image: linear-gradient(
+    0deg,
+    hsla(0deg, 0%, 100%, 1) 0%,
+    hsla(29deg, 100%, 72%, 0) 50%,
+    hsla(0deg, 0%, 100%, 1) 100%
+  );
+}
