@@ -10,16 +10,17 @@ import { animateOnScroll } from './modules/animate-on-scroll.js'
 import { search } from './modules/search.js'
 import { md, lg, sm } from './modules/breakpoints.js'
 
-/* particlesJS(
+const JSparticleEl = document.getElementById('banner__particles')
+particlesJS(
   'banner__particles',
 
   {
     particles: {
       number: {
-        value: 50,
+        value: 8,
         density: {
           enable: true,
-          value_area: 300
+          value_area: 400
         }
       },
       color: {
@@ -46,25 +47,25 @@ import { md, lg, sm } from './modules/breakpoints.js'
         }
       },
       size: {
-        value: 3,
+        value: 8,
         random: true,
         anim: {
           enable: true,
           speed: 1,
-          size_min: 0.1,
+          size_min: 0.25,
           sync: false
         }
       },
       line_linked: {
         enable: true,
-        distance: 150,
+        distance: 300,
         color: '#348ACC',
-        opacity: 0.75,
-        width: 1
+        opacity: 1,
+        width: 0
       },
       move: {
         enable: true,
-        speed: 1,
+        speed: 2,
         direction: 'none',
         random: false,
         straight: false,
@@ -84,29 +85,29 @@ import { md, lg, sm } from './modules/breakpoints.js'
           enable: true,
           mode: 'repulse'
         },
-        onclick: {
-          enable: true,
-          mode: 'push'
-        },
+
         resize: true
       },
       modes: {
         repulse: {
-          distance: 350,
+          distance: 250,
           duration: 0.4
-        },
-        push: {
-          particles_nb: 4
-        },
-        remove: {
-          particles_nb: 2
         }
       }
     },
     retina_detect: true
   }
 )
- */
+
+const obsParticles = new IntersectionObserver(entries =>
+  entries.forEach(entry => {
+    if (entry.isIntersecting) 
+    if (!entry.isIntersecting) window.pJSDom[0].pJS.fn.vendors.destroypJS()
+  })
+)
+
+obsParticles.observe(JSparticleEl)
+
 activePageHighlight()
 animateOnScroll()
 
