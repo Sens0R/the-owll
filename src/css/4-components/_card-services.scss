@@ -8,6 +8,8 @@
   outline: none;
   padding: $spacer;
   padding-bottom: 0;
+  background-color: $color-light;
+  
   @include media-breakpoint-up(lg) {
     @include spacer('padding', $spacer-lg);
   }

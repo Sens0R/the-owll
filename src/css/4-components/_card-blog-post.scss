@@ -3,7 +3,7 @@
   height: 100%;
   border-radius: $br;
   border: 1px solid $color-stroke;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-out;
 
   .h-4 {
     margin-top: $spacer-sm;
@@ -23,7 +23,7 @@
   .image {
     border-top-left-radius: $br;
     border-top-right-radius: $br;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-out;
     aspect-ratio: 5 / 3;
   }
 

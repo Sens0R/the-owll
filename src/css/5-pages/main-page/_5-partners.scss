@@ -1,12 +1,12 @@
 .partners {
   position: relative;
   isolation: isolate;
-  
+
   &__box {
     aspect-ratio: 1 / 1;
     padding: $spacer-sm;
     border-radius: $br;
-    @include depth();
+    border: 1px solid $color-stroke;
     @include flex($justify-content: center, $align-items: center);
     background-color: $color-light;
   }

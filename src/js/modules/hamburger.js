@@ -49,6 +49,7 @@ export function hamburger(userOptions) {
 
   const content = wrapAll(mainElement);
   content.style.overflowY = 'auto';
+  
 
   mainElement.id = hamburgerId;
   toggler = document.querySelector(toggler);

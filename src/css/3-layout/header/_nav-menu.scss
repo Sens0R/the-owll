@@ -1,108 +1,33 @@
-.nav-toggler {
-  min-height: 100%;
-  min-width: 2rem;
-  margin-left: auto;
-
-  &__open {
-    @include flex(
-      $flex-direction: column,
-      $justify-content: center,
-      $align-items: center
-    );
-
-    .nav-toggler-icon {
-      @include box(36px, 18px);
-    }
-  }
-
-  &__close {
-    @include flex($justify-content: center, $align-items: center);
-    display: none;
-
-    .nav-toggler-icon {
-      @include box(24px, 24px);
-    }
-  }
-
-  &__text {
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 0.75;
-    margin-top: 0.5rem;
-  }
-}
-
-.nav-toggler.active {
-  .nav-toggler__open {
-    display: none;
-  }
-
-  .nav-toggler__close {
-    display: block;
-  }
-}
-
 .nav-body {
   position: relative;
-  hr {
-    width: 100%;
-  }
-}
-
-.nav-mobile-socials .social-icons__item {
-  padding: $spacer-sm 0;
 }
 
 .nav-menu {
-  @include flex($flex-direction: column, $flex-wrap: wrap);
+  @include flex($flex-direction: column);
+  width: 100%;
 
   &__link {
     padding: $spacer-sm;
     font-weight: $medium;
+
+    &:focus-visible {
+      color: $color-secondary;
+      outline-style: none;
+      text-decoration: underline 3px;
+    }
   }
 }
 
-.nav-menu-dropdown {
-  &__btn {
-    @include flex(
-      $display: inline-flex,
-      $justify-content: center,
-      $align-items: center
-    );
-    padding: 1rem;
-    margin-left: -(calc($spacer-sm + 0.875rem));
-  }
+.nav-menu__item {
+  @include hover {
+    .nav-menu__link {
+      color: $color-secondary;
+      text-decoration: underline;
+    }
 
-  &__content {
-    cursor: auto;
-  }
-}
-
-.dropdown-content {
-  @include flex($flex-wrap: wrap);
-
-  &__list {
-    margin: 0;
-  }
-
-  &__link {
-    padding: 0.75rem;
-    @include flex($flex-direction: column);
-  }
-}
-
-/* ====================   MEDIA   ==================== */
-
-@include media-breakpoint-up(xl) {
-  .nav-toggler {
-    display: none;
-  }
-
-  .dropdown-content {
-    display: flex;
-    background-color: $color-light;
-    border-top: 3px solid $color-secondary;
+    .dropdown__icon {
+      fill: $color-secondary;
+    }
   }
 }
 
@@ -110,22 +35,23 @@
 
 @include media-breakpoint-down(xl) {
   .navigation {
+    position: absolute;
+    right: 0;
+    display: block;
     will-change: auto;
-    translate: 100%;
     visibility: hidden;
-
     height: 0;
-    width: 0;
-    transition: all 0.3s, translate 0.6s, opacity 1s;
-    transition-timing-function: ease-in-out;
+    width: 100%;
+    //transition: all 0.3s, translate 0.6s, opacity 1s;
+    transition-timing-function: ease-out;
     overflow: hidden;
     opacity: 0;
     background: $color-light;
 
     &.active {
-      width: 100%;
+      order: 5;
+      position: static;
       height: 100vh;
-      translate: none;
       visibility: visible;
       @include z-index(nav-menu);
       opacity: 1;
@@ -157,11 +83,7 @@
   }
 
   .nav-body {
-    @include flex(
-      $justify-content: space-between,
-      $align-items: center,
-      $flex-direction: row
-    );
+    @include flex($justify-content: space-between, $align-items: center, $flex-direction: row);
   }
 
   .nav-menu {
@@ -169,4 +91,11 @@
     flex-direction: row;
     align-items: center;
   }
+}
+
+.nav-search-burger {
+  @include flex($justify-content: center, $align-items: center);
+  border: 2px solid $color-primary;
+  height: 3rem;
+  @include spacer-vertical('margin', $spacer-lg);
 }

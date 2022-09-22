@@ -24,7 +24,8 @@
     
     <header class="header container-fluid"><!-- ====================   LOGO   ==================== -->
 
-<a class="logo col-auto justify-content-start logo-hover" href="index.html" aria-label="The Owl home. The Owl logo.">
+<a class="logo col-auto justify-content-start logo-hover" href="index.html"
+  aria-label="The Owl home. The Owl logo.">
   <svg aria-hidden="true" class="logo-icon">
     <use href="images/icons/sprite-multi.svg#logo"></use>
   </svg>
@@ -40,83 +41,25 @@
 </div>
 
 
-<!-- ====================   SEARCH   ==================== -->
-
-<div class="col-auto col-xl-2 justify-content-end d-none d-xl-flex order-last">
-
-  <form role="search" data-search class="nav-search">
-
-    <label for="nav-search-input" class="visually-hidden">
-      Search
-    </label>
-
-    <input type="search" class="nav-search-input text-sm" placeholder="Search" id="nav-search-input" autocomplete="off"
-      required>
-
-    <button type="reset" class="nav-search-buttons nav-search-buttons__reset" aria-label="Clear search text">
-      <svg aria-hidden="true" class="nav-search-buttons__icon hvr-icon">
-        <use href="images/icons/sprite-mono.svg#toggler-closed"></use>
-      </svg>
-    </button>
-
-    <button type="submit" class="nav-search-buttons nav-search-buttons__search" aria-label="Submit search">
-      <svg aria-hidden="true" class="nav-search-buttons__icon hvr-icon">
-        <use href="images/icons/sprite-mono.svg#search"></use>
-      </svg>
-    </button>
-
-    <button type="button" data-search-btn="close" class="nav-search-buttons nav-search-buttons__close"
-      aria-label="Close search">close
-    </button>
-
-  </form>
-
-</div>
-
-<!-- ====================   NAV-TOGGLER   ==================== -->
-
-<button type="button" data-hamburger-btn class="nav-toggler col-auto">
-  <span class="nav-toggler__open">
-    <svg aria-hidden="true" class="nav-toggler-icon">
-      <use href="images/icons/sprite-mono.svg#hamburger"></use>
-    </svg>
-    <span class="nav-toggler__text">menu</span>
-  </span>
-
-  <span class="nav-toggler__close">
-    <svg aria-hidden="true" class="nav-toggler-icon">
-      <use href="images/icons/sprite-mono.svg#cancel"></use>
-    </svg>
-  </span>
-</button>
-
 <!-- ====================   NAVIGATION   ==================== -->
 
 <nav data-hamburger class="navigation col-xl" aria-label="Main">
-
+ 
   <form role="search" data-search class="nav-search-burger d-xl-none">
 
     <label for="nav-search-input" class="visually-hidden">
       Search
     </label>
 
-    <input type="search" class="nav-search-input text-sm" placeholder="Search" id="nav-search-input" autocomplete="off"
+    <input type="search" class="nav-search-input text-sm" placeholder="Search"
+      id="nav-search-input" autocomplete="off"
       required>
 
-    <button type="reset" class="nav-search-buttons nav-search-buttons__reset" aria-label="Clear search text">
-      <svg aria-hidden="true" class="nav-search-buttons__icon hvr-icon">
-        <use href="images/icons/sprite-mono.svg#toggler-closed"></use>
-      </svg>
-    </button>
-
-    <button type="submit" class="nav-search-buttons nav-search-buttons__search" aria-label="Submit search">
+    <button type="submit" class="nav-search-buttons nav-search-buttons__search"
+      aria-label="Submit search">
       <svg aria-hidden="true" class="nav-search-buttons__icon hvr-icon">
         <use href="images/icons/sprite-mono.svg#search"></use>
       </svg>
-    </button>
-
-    <button type="button" data-search-btn="close" class="nav-search-buttons nav-search-buttons__close"
-      aria-label="Close search">close
     </button>
 
   </form>
@@ -127,18 +70,19 @@
     <a href="about.html" class="nav-menu__link">About</a>
   </li>
 
-  <li data-dropdown data-nav-page class="nav-menu__item nav-menu-dropdown">
-    <a href="services.html" class="nav-menu__link nav-menu-dropdown__link">Services</a>
-
-    <button type="button" class="nav-menu-dropdown__btn" data-dropdown-btn aria-label="Dropdown menu for Services">
-      <svg aria-hidden="true" class="dropdown-btn-icon nav-menu-dropdown__btn-icon">
+  <li data-dropdown data-nav-page class="nav-menu__item dropdown">
+    <a href="services.html" class="nav-menu__link dropdown__link">Services</a>
+    <button type="button" class="dropdown__btn" data-dropdown-btn
+      aria-label="Dropdown menu for Services">
+      <svg aria-hidden="true" class="dropdown__icon">
         <use href="images/icons/sprite-mono.svg#arrow"></use>
       </svg>
     </button>
 
-    <div class="nav-menu-dropdown__content">
+    <div class="dropdown__content">
       <div class="dropdown-content">
         <ul class="dropdown-content__list">
+          
           <li>
             <a href="#" class="dropdown-content__link">Lorem, ipsum dolor.</a>
           </li>
@@ -151,9 +95,7 @@
           <li>
             <a href="#" class="dropdown-content__link">Lorem, ipsum dolor.</a>
           </li>
-          <li>
-            <a href="#" class="dropdown-content__link">Lorem, ipsum.</a>
-          </li>
+
         </ul>
       </div>
     </div>
@@ -172,8 +114,8 @@
   </li>
 
 </ul>
+</div>
 
-<hr class="d-lg-none my-lg"></div>
   <div class="nav-mobile-socials"><ul class="social-icons">
 
   <li class="social-icons__item">
@@ -202,14 +144,74 @@
 
 </ul>
 </div>
-</nav></header>
+
+
+</nav>
+
+
+<!-- ====================   SEARCH   ==================== -->
+
+<div class="col-auto col-xl-2 justify-content-end d-none d-xl-flex">
+
+  <form role="search" data-search class="nav-search">
+
+    <label for="nav-search-input" class="visually-hidden">
+      Search
+    </label>
+
+    <input type="search" class="nav-search-input text-sm" placeholder="Search"
+      id="nav-search-input" autocomplete="off"
+      required>
+
+    <button type="reset" class="nav-search-buttons nav-search-buttons__reset"
+      aria-label="Clear search text">
+      <svg aria-hidden="true" class="nav-search-buttons__icon hvr-icon">
+        <use href="images/icons/sprite-mono.svg#toggler-closed"></use>
+      </svg>
+    </button>
+
+    <button type="submit" class="nav-search-buttons nav-search-buttons__search"
+      aria-label="Submit search">
+      <svg aria-hidden="true" class="nav-search-buttons__icon hvr-icon">
+        <use href="images/icons/sprite-mono.svg#search"></use>
+      </svg>
+    </button>
+
+    <button type="button" data-search-btn="close" class="nav-search-buttons
+      nav-search-buttons__close"
+      aria-label="Close search">close
+    </button>
+
+  </form>
+
+</div>
+
+
+<!-- ====================   NAV-TOGGLER   ==================== -->
+
+<button type="button" data-hamburger-btn class="nav-toggler col-auto">
+
+  <span class="nav-toggler__open">
+    <svg aria-hidden="true" class="nav-toggler-icon">
+      <use href="images/icons/sprite-mono.svg#hamburger"></use>
+    </svg>
+    <span class="nav-toggler__text">menu</span>
+  </span>
+
+  <span class="nav-toggler__close">
+    <svg aria-hidden="true" class="nav-toggler-icon">
+      <use href="images/icons/sprite-mono.svg#cancel"></use>
+    </svg>
+  </span>
+
+</button></header>
 
 <main id="main-content">
   <!-- ====================   HERO   ==================== -->
 
 <section class="section container-fluid container-xxl hero">
   <div class="row justify-content-between">
-    <div class="col-12 col-xl-6">
+    <div data-animate="hero" class="col-12 col-xl-6">
 
       <h1>
         <span class="color-primary">IT Managed Services</span> for Your Business<span
@@ -220,7 +222,7 @@
 
     <div class="col-12 col-xl-5">
       <p>We offer business-focused IT services and solutions to help your
-        business be more efficient and flexible</p>
+        business be more efficient and flexible.</p>
     </div>
   </div>
 
@@ -231,10 +233,11 @@
 <!-- ====================   BANNER   ==================== -->
 
 <div class="banner">
+
   <picture>
     <source
-      sizes="100vw"
       type="image/avif"
+      sizes="100vw"
       srcset="
       images/main-page/hero-banner-320.avif 320w,
       images/main-page/hero-banner-640.avif 640w,
@@ -244,8 +247,8 @@
       images/main-page/hero-banner-2560.avif 2560w
       ">
     <source
-      sizes="100vw"
       type="image/webp"
+      sizes="100vw"
       srcset="
       images/main-page/hero-banner-320.webp 320w,
       images/main-page/hero-banner-640.webp 640w,
@@ -255,8 +258,8 @@
       images/main-page/hero-banner-2560.webp 2560w
       ">
     <source
-      sizes="100vw"
       type="image/jpeg"
+      sizes="100vw"
       srcset="
       images/main-page/hero-banner-320.jpg 320w,
       images/main-page/hero-banner-640.jpg 640w,
@@ -267,21 +270,30 @@
       ">
     <img
       draggable="false"
-      class="banner-bg"
-      src="images/main-page/hero-banner-960.jpg"
-      alt=""
+      height="2560"
       width="2560"
-      height="2560">
+      class="image"
+      src="images/main-page/hero-banner-960.jpg"
+      alt="">
   </picture>
+
+  <div class="banner__gradient"></div>
+  <div id="banner__particles" class="banner__particles"></div>
 </div>
 
 <!-- ====================   SERVICES   ==================== -->
 
-<section class="section container-fluid container-xxl services">
+<section class="section container-fluid container-xxl
+  services">
+
+  <span>
+    <div class="bg-gradient bg-primary"></div>
+    <div class="bg-gradient bg-secondary"></div>
+  </span>
 
   <h2 class="h-5 text-center">Our services</h2>
 
-  <p class="h-2 text-center">
+  <p data-animate="section-header" class="h-2 text-center">
     <span class="text-accent">What</span> We Offer<span class="text-accent">.</span>
   </p>
 
@@ -296,6 +308,7 @@
             </svg>
           </div>
         </div>
+
         <h3 class="h-4">Cloud Solutions</h3>
 
         <p>
@@ -470,7 +483,7 @@
     <div class="col-12 col-lg-6 about__content">
       <h2 class="h-5">About us</h2>
 
-      <p class="h-2">
+      <p data-animate="section-header" class="h-2">
         <span class="text-accent">Managed IT</span> Supports<span
           class="text-accent">.</span>
       </p>
@@ -550,7 +563,7 @@
 
   <h2 class="h-5">Portfolio</h2>
 
-  <p class="h-2">
+  <p data-animate="section-header" class="h-2">
     <span class="text-accent">Case </span>Studies<span class="text-accent">.</span>
   </p>
 
@@ -614,7 +627,7 @@
         </li>
       </ul>
 
-      <h3 class="h-3">
+      <h3 data-animate="fade-in" class="h-3">
         <a href="#" class="header-link">Buddy Jane</a>
       </h3>
 
@@ -698,7 +711,7 @@
         </li>
       </ul>
 
-      <h3 class="h-3">
+      <h3 data-animate="fade-in" class="h-3">
         <a href="#" class="header-link">Healing with Modern</a>
       </h3>
 
@@ -781,7 +794,7 @@
         </li>
       </ul>
 
-      <h3 class="h-3">
+      <h3 data-animate="fade-in" class="h-3">
         <a href="#" class="header-link">OLX Motors Europe</a>
       </h3>
 
@@ -813,16 +826,20 @@
 
 <!-- ====================  PARTNERS  ==================== -->
 
-<section class="section container-fluid container-xxl partners">
-  <span class="bg-gradient bg-primary"></span>
-  <span class="bg-gradient bg-secondary"></span>
+<section class="section container-fluid container-xxl
+  partners">
+
+  <span>
+    <div class="bg-gradient bg-primary"></div>
+    <div class="bg-gradient bg-secondary"></div>
+  </span>
 
   <div class="row justify-content-between">
 
     <div class="col-12 col-lg-4 partners__content">
       <h2 class="h-5">Our Partners</h2>
 
-      <p class="h-2">
+      <p data-animate="section-header" class="h-2">
         <span class="text-accent">Working</span> With the Best<span
           class="text-accent">.</span>
       </p>
@@ -897,7 +914,7 @@
 <section class="section container-fluid container-xxl blog">
   <h2 class="h-5">IT Blog</h2>
 
-  <p class="h-2">
+  <p data-animate="section-header" class="h-2">
     <span class="text-accent">Expert</span> research<span class="text-accent">.</span>
   </p>
 
@@ -958,7 +975,7 @@
         <div class="card-blog-post__content">
           <p class="box-time">12 April 2022</p>
 
-          <h3 class="h-4">
+          <h3 data-animate="blog-header-1" class="h-4">
             <a href="#" class="header-link"> Packet Pushers Heavy Networking
               Podcast </a>
           </h3>
@@ -1036,7 +1053,7 @@
         <div class="card-blog-post__content">
           <p class="box-time">12 April 2022</p>
 
-          <h3 class="h-4">
+          <h3 data-animate="blog-header-2" class="h-4">
             <a href="#" class="header-link"> Tips For Efficient Communication
               With Your IT Support Team </a>
           </h3>
@@ -1110,7 +1127,7 @@
         <div class="card-blog-post__content">
           <p class="box-time">15 March 2022</p>
 
-          <h3 class="h-4">
+          <h3 data-animate="blog-header-3" class="h-4">
             <a href="#" class="header-link"> Packet Pushers Heavy Networking
               Podcast </a>
           </h3>

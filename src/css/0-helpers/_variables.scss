@@ -1,4 +1,5 @@
 /* ====================   COLORS   ==================== */
+
 $color-black: hsl(0, 0%, 18%);
 $color-orange: hsl(32, 92%, 54%);
 $color-blue: hsl(206, 60%, 50%);
@@ -28,8 +29,8 @@ $ff-primary: GeneralSans, Arial, sans-serif;
 $ff-secondary: null;
 
 $fs-base: 18px;
-$fs-sm: .8889rem; 
-$fs-lg: 1.1111rem; 
+$fs-sm: 0.8889rem;
+$fs-lg: 1.1111rem;
 
 $lh-base: 1.6; // HTML lh-base    // HTML lh-1
 $lh-sm: 1.25; // HTML lh-sm
@@ -47,7 +48,7 @@ $headings-fw: $semibold;
 $headings-lh: 1.2;
 
 $headings-fs: 1rem;
-$fs-h1: $headings-fs * 4;
+$fs-h1: $headings-fs * 3.5;
 $fs-h2: $headings-fs * 2.666;
 $fs-h3: $headings-fs * 2;
 $fs-h4: $headings-fs * 1.444;
@@ -74,6 +75,6 @@ $z-index: (
   header: 50,
 );
 
-$br: .5rem;
+$br: 0.5rem;
 $br-sm: 4px;
 $br-pill: 100rem;

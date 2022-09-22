@@ -4,18 +4,19 @@
     <a href="about.html" class="nav-menu__link">About</a>
   </li>
 
-  <li data-dropdown data-nav-page class="nav-menu__item nav-menu-dropdown">
-    <a href="services.html" class="nav-menu__link nav-menu-dropdown__link">Services</a>
-
-    <button type="button" class="nav-menu-dropdown__btn" data-dropdown-btn aria-label="Dropdown menu for Services">
-      <svg aria-hidden="true" class="dropdown-btn-icon nav-menu-dropdown__btn-icon">
+  <li data-dropdown data-nav-page class="nav-menu__item dropdown">
+    <a href="services.html" class="nav-menu__link dropdown__link">Services</a>
+    <button type="button" class="dropdown__btn" data-dropdown-btn
+      aria-label="Dropdown menu for Services">
+      <svg aria-hidden="true" class="dropdown__icon">
         <use href="images/icons/sprite-mono.svg#arrow"></use>
       </svg>
     </button>
 
-    <div class="nav-menu-dropdown__content">
+    <div class="dropdown__content">
       <div class="dropdown-content">
         <ul class="dropdown-content__list">
+          
           <li>
             <a href="#" class="dropdown-content__link">Lorem, ipsum dolor.</a>
           </li>
@@ -28,9 +29,7 @@
           <li>
             <a href="#" class="dropdown-content__link">Lorem, ipsum dolor.</a>
           </li>
-          <li>
-            <a href="#" class="dropdown-content__link">Lorem, ipsum.</a>
-          </li>
+
         </ul>
       </div>
     </div>
@@ -49,5 +48,3 @@
   </li>
 
 </ul>
-
-<hr class="d-lg-none my-lg">

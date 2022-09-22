@@ -132,3 +132,12 @@
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+
+@mixin transition($items, $time: 0.2s, $delay: 0.1) {
+  @for $i from 1 through $items {
+    &:nth-child(#{$i}) {
+      transition: all $time #{$i * $delay}s ease-out;
+    }
+  }
+}
