@@ -8,6 +8,10 @@
 }
 
 .banner {
+  .image {
+    object-position: top;
+  }
+
   position: relative;
   height: 75vh;
   @include media-breakpoint-up(lg) {

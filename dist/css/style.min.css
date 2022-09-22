@@ -7214,6 +7214,10 @@ input[type=search]::-webkit-search-cancel-button {
   position: relative;
   height: 75vh;
 }
+.banner .image {
+  -o-object-position: top;
+     object-position: top;
+}
 @media (min-width: 992px) {
   .banner {
     min-height: 100vh;

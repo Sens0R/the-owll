@@ -40,7 +40,7 @@ particlesJS(
         }
       },
       opacity: {
-        value: 0.5,
+        value: 0.6,
         random: false,
         anim: {
           enable: false,
@@ -61,9 +61,9 @@ particlesJS(
       },
       line_linked: {
         enable: true,
-        distance: 400,
+        distance: 300,
         color: '#348acc',
-        opacity: 0.4,
+        opacity: 0.9,
         width: 1
       },
       move: {
@@ -98,7 +98,7 @@ particlesJS(
         grab: {
           distance: 400,
           line_linked: {
-            opacity: 1
+            opacity: 0.9
           }
         },
         bubble: {
