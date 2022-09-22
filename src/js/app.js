@@ -10,7 +10,7 @@ import { animateOnScroll } from './modules/animate-on-scroll.js'
 import { search } from './modules/search.js'
 import { md, lg, sm } from './modules/breakpoints.js'
 
-particlesJS(
+/* particlesJS(
   'banner__particles',
 
   {
@@ -106,7 +106,7 @@ particlesJS(
     retina_detect: true
   }
 )
-
+ */
 activePageHighlight()
 animateOnScroll()
 
