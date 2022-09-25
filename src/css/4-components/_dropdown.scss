@@ -38,6 +38,8 @@
     @include media-breakpoint-down(xl) {
       transition: var(--transition);
       max-height: 0;
+      background-color: var(--color-secondary-light);
+      border-radius: var(--br-sm);
     }
   }
 }

@@ -5249,16 +5249,16 @@
   translate: none;
 }
 
-/* ====================   FADE IN   ==================== */
-[data-animate=fade-in] {
-  -webkit-transition: all 2s ease-out;
-  -o-transition: all 2s ease-out;
-  transition: all 2s ease-out;
-  opacity: 0;
+/* ====================   POP IN   ==================== */
+[data-animate=pop-in] {
+  -webkit-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  scale: 0.75;
 }
 
-[data-animate=fade-in].show {
-  opacity: 1;
+[data-animate=pop-in].show {
+  scale: 1;
 }
 
 /* ====================   PAGE SECTION   ==================== */
@@ -5764,20 +5764,10 @@ input[type=search]::-webkit-search-cancel-button {
     -webkit-text-decoration: underline 2px solid var(--color-primary);
             text-decoration: underline 2px solid var(--color-primary);
   }
-  .phone__number:hover .phone-icon {
-    rotate: 15deg;
-    scale: 1.25;
-    translate: -5px;
-  }
 }
 .phone__number:focus-visible {
   -webkit-text-decoration: underline 2px solid var(--color-primary);
           text-decoration: underline 2px solid var(--color-primary);
-}
-.phone__number:focus-visible .phone-icon {
-  rotate: 15deg;
-  scale: 1.25;
-  translate: -5px;
 }
 
 .phone-icon {
@@ -5907,7 +5897,7 @@ input[type=search]::-webkit-search-cancel-button {
   margin-right: 2px;
   margin-left: 2px;
   outline: 1px solid var(--color-secondary);
-  height: 2.25rem;
+  height: 2.75rem;
 }
 .nav-search-mobile:focus-within {
   outline-width: 2px;
@@ -5948,17 +5938,14 @@ input[type=search]::-webkit-search-cancel-button {
           align-items: center;
   max-width: 8.75rem;
   border-radius: var(--br-sm);
-  outline: 1px solid var(--color-dark);
+  border: 1px solid var(--color-dark);
   height: 2.5rem;
 }
 .nav-search:focus-within {
-  -webkit-box-shadow: 0 0 0 1000vmax rgba(0, 0, 0, 0.25);
-          box-shadow: 0 0 0 1000vmax rgba(0, 0, 0, 0.25);
   max-width: 100%;
-  outline: 2px solid var(--color-secondary);
 }
 .nav-search:focus-within svg {
-  fill: var(--color-secondary);
+  fill: var(--color-dark);
 }
 .nav-search:focus-within:valid .nav-search-buttons__search svg {
   scale: 1.25;
@@ -6672,6 +6659,7 @@ input[type=search]::-webkit-search-cancel-button {
 .box-list li {
   margin-bottom: 0.5rem;
   margin-right: 0.5rem;
+  border-bottom: 1px solid var(--color-secondary);
 }
 .box-list li a {
   background-color: var(--color-secondary-light);
@@ -6804,6 +6792,8 @@ input[type=search]::-webkit-search-cancel-button {
     -o-transition: var(--transition);
     transition: var(--transition);
     max-height: 0;
+    background-color: var(--color-secondary-light);
+    border-radius: var(--br-sm);
   }
 }
 

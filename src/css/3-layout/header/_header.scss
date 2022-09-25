@@ -44,22 +44,10 @@
 
     @include hover {
       text-decoration: underline 2px solid var(--color-primary);
-
-      .phone-icon {
-        rotate: 15deg;
-        scale: 1.25;
-        translate: -5px;
-      }
     }
 
     &:focus-visible {
       text-decoration: underline 2px solid var(--color-primary);
-
-      .phone-icon {
-        rotate: 15deg;
-        scale: 1.25;
-        translate: -5px;
-      }
     }
   }
 }
