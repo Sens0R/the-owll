@@ -99,4 +99,8 @@
   @include flex($justify-content: center, $align-items: center);
   border: 1px solid var(--color-secondary);
   height: 2.75rem;
+
+  .nav-search-buttons__icon {
+    fill: var(--color-secondary);
+  }
 }

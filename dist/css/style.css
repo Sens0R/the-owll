@@ -5914,6 +5914,9 @@ input[type=search]::-webkit-search-cancel-button {
   border: 1px solid var(--color-secondary);
   height: 2.75rem;
 }
+.nav-search-mobile .nav-search-buttons__icon {
+  fill: var(--color-secondary);
+}
 
 .nav-search-container {
   display: none;
