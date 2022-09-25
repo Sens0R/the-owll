@@ -1,59 +1,59 @@
-@mixin spacer($type: padding, $value: $spacer) {
+@mixin spacer($type: padding, $value: var(--spacer)) {
   @if $type == 'margin' {
-    @include margin($value);
+    margin: $value;
   } @else if $type == 'padding' {
-    @include padding($value);
+    padding: $value;
   }
 }
 
-@mixin spacer-top($type: padding, $value: $spacer) {
+@mixin spacer-top($type: padding, $value: var(--spacer)) {
   @if $type == 'margin' {
-    @include margin-top($value);
+    margin-top: $value;
   } @else if $type == 'padding' {
-    @include padding-top($value);
+    padding-top: $value;
   }
 }
 
-@mixin spacer-left($type: padding, $value: $spacer) {
+@mixin spacer-left($type: padding, $value: var(--spacer)) {
   @if $type == 'margin' {
-    @include margin-left($value);
+    margin-left: $value;
   } @else if $type == 'padding' {
-    @include padding-left($value);
+    padding-left: $value;
   }
 }
 
-@mixin spacer-right($type: padding, $value: $spacer) {
+@mixin spacer-right($type: padding, $value: var(--spacer)) {
   @if $type == 'margin' {
-    @include margin-right($value);
+    margin-right: $value;
   } @else if $type == 'padding' {
-    @include padding-right($value);
+    padding-right: $value;
   }
 }
 
-@mixin spacer-bottom($type: padding, $value: $spacer) {
+@mixin spacer-bottom($type: padding, $value: var(--spacer)) {
   @if $type == 'margin' {
-    @include margin-bottom($value);
+    margin-bottom: $value;
   } @else if $type == 'padding' {
-    @include padding-bottom($value);
+    padding-bottom: $value;
   }
 }
 
-@mixin spacer-vertical($type: padding, $value: $spacer) {
+@mixin spacer-vertical($type: padding, $value: var(--spacer)) {
   @if $type == 'margin' {
-    @include margin-top($value);
-    @include margin-bottom($value);
+    margin-top: $value;
+    margin-bottom: $value;
   } @else if $type == 'padding' {
-    @include padding-top($value);
-    @include padding-bottom($value);
+    padding-top: $value;
+    padding-bottom: $value;
   }
 }
 
-@mixin spacer-horizontal($type: padding, $value: $spacer) {
+@mixin spacer-horizontal($type: padding, $value: var(--spacer)) {
   @if $type == 'margin' {
-    @include margin-left($value);
-    @include margin-right($value);
+    margin-left: $value;
+    margin-right: $value;
   } @else if $type == 'padding' {
-    @include padding-left($value);
-    @include padding-right($value);
+    padding-left: $value;
+    padding-right: $value;
   }
 }

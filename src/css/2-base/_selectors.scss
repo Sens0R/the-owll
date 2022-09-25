@@ -3,39 +3,23 @@
 }
 
 .color-light {
-  color: $color-light;
+  color: var(--color-light);
 }
 
 .color-dark {
-  color: $color-dark;
+  color: var(--color-dark);
 }
 
 .color-primary {
-  color: $color-primary;
-}
-
-.color-accent {
-  color: $color-accent;
-}
-
-.color-accent-light {
-  color: $color-accent-light;
-}
-
-.text-accent {
-  color: $color-primary;
+  color: var(--color-primary);
 }
 
 .color-secondary {
-  color: $color-secondary;
+  color: var(--color-secondary);
 }
 
-.text-sm {
-  @include font-size($fs-sm);
-}
-
-.text-lg {
-  @include font-size($fs-lg);
+.text-accent {
+  color: var(--color-accent);
 }
 
 .text-center {
@@ -54,32 +38,28 @@
   text-transform: capitalize;
 }
 
-.fst-italic {
+.font-style-italic {
   font-style: italic;
 }
 
-.fst-normal {
+.font-style-normal {
   font-style: normal;
-}
-
-.fw-bold {
-  font-weight: bold;
 }
 
 .fw-normal {
   font-weight: normal;
 }
 
-.fw-light {
-  font-weight: light;
+.fw-semibold {
+  font-weight: var(--fw-semibold);
+}
+
+.fw-medium {
+  font-weight: var(--fw-medium);
 }
 
 .nowrap {
   white-space: nowrap;
-}
-
-.text-underline {
-  text-decoration: underline 1px solid $color-dark;
 }
 
 .visually-hidden {
@@ -99,16 +79,8 @@
   transition: none !important;
 }
 
-.image {
-  @include image-cover();
-}
-
 .spacer {
-  @include spacer-vertical('margin', $spacer);
-}
-
-.section-btn {
-  @include flex($justify-content: center, $align-items: center);
+  @include spacer-vertical('margin', var(--spacer));
 }
 
 /* ====================   ARROWS   ==================== */

@@ -7,30 +7,57 @@
 * {
   margin: 0;
   padding: 0;
-  text-underline-offset: 30%;
+}
+
+html {
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 100%;
+}
+
+body {
+  font-size: var(--base-fs);
+  font-family: var(--ff-primary);
+  font-weight: var(--base-fw);
+  color: var(--color-base);
+  background-color: var(--color-bg-base);
+  line-height: var(--lh);
+  text-underline-offset: var(--base-underline-offset);
+  border-radius: var(--base-br);
+
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrapper {
+  @include flex($flex-direction: column);
+  min-height: 100%;
+  overflow: hidden;
+}
+
+header {
+  z-index: var(--z-header);
+  background-color: var(--color-bg-header-base);
+}
+
+footer {
+  background-color: var(--color-bg-footer-base);
+  margin-top: auto;
 }
 
 ul,
 ol,
 dl {
-  padding: 0;
   list-style: none;
 }
 
-html:focus-within {
-  scroll-behavior: smooth;
+:focus-visible {
+  outline-color: var(--base-color-focus-outline);
+  outline: none;
 }
 
-body {
-  text-rendering: optimizeSpeed;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.7;
-}
-
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
+header,
+button,
 img,
 picture {
   user-select: none;
@@ -39,6 +66,119 @@ picture {
 img,
 svg {
   vertical-align: middle;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: auto;
+}
+
+.fs-0 {
+  font-size: 1rem;
+}
+
+h1,
+.h-1,
+.fs-1 {
+  font-size: var(--fs-1);
+}
+
+h2,
+.h-2,
+.fs-2 {
+  font-size: var(--fs-2);
+}
+
+h3,
+.h-3,
+.fs-3 {
+  font-size: var(--fs-3);
+}
+
+h4,
+.h-4,
+.fs-4 {
+  font-size: var(--fs-4);
+}
+
+h5,
+.h-5,
+.fs-5 {
+  font-size: var(--fs-5);
+}
+
+h6,
+.h-6,
+.fs-6 {
+  font-size: var(--fs-6);
+}
+
+p,
+ul,
+ol,
+dl,
+blockquote,
+address,
+table,
+hr {
+  @include spacer-bottom('margin', var(--spacer));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h-1,
+.h-2,
+.h-3,
+.h-4,
+.h-5,
+.h-6 {
+  font-weight: var(--base-fw-headings);
+  line-height: var(--base-lh-headings);
+  @include spacer-vertical('margin', var(--spacer));
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+  border: none;
+  background-color: var(--color-bg-input-base);
+
+  &[type='search']::-webkit-search-cancel-button {
+    display: none;
+  }
+}
+
+:focus-within {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--color-bg-selection-base);
+  color: var(--color-selection-base);
+}
+
+select,
+textarea,
+input,
+button {
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -54,138 +194,4 @@ svg {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-/* ====================   RESET ENDS HERE   ==================== */
-
-html,
-body {
-  color: $color-dark;
-  font-size: $fs-base;
-  font-family: $ff-primary;
-  line-height: $lh-base;
-  font-weight: $regular;
-  background-color: $color-light;
-  -webkit-tap-highlight-color: transparent;
-}
-
-select,
-textarea,
-input,
-button {
-  font-family: $ff-primary;
-  @include font-size($fs-base);
-}
-
-.page-wrapper {
-  overflow: hidden;
-  min-height: 100%;
-  @include flex($flex-direction: column);
-}
-
-::selection {
-  background-color: $color-primary;
-  color: $color-light;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h-1,
-.h-2,
-.h-3,
-.h-4,
-.h-5,
-.h-6 {
-  font-weight: $headings-fw;
-  line-height: $headings-lh;
-}
-
-h1,
-.h-1 {
-  @include font-size($fs-h1);
-}
-
-h2,
-.h-2 {
-  @include font-size($fs-h2);
-}
-
-h3,
-.h-3 {
-  @include font-size($fs-h3);
-}
-
-h4,
-.h-4 {
-  @include font-size($fs-h4);
-}
-h5,
-.h-5 {
-  @include font-size($fs-h5);
-}
-
-h6,
-.h-6 {
-  @include font-size($fs-h6);
-}
-
-p,
-ul,
-ol,
-blockquote,
-address,
-table,
-hr {
-  @include spacer-bottom('margin', $spacer);
-}
-
-h1 {
-  @include spacer-bottom('margin', $spacer);
-}
-
-h2,
-h3,
-h4,
-h5,
-h6,
-.h-1,
-.h-2,
-.h-3,
-.h-4,
-.h-5,
-.h-6 {
-  @include spacer-vertical('margin', $spacer);
-}
-
-button {
-  border-radius: 0;
-  border-width: 0;
-  background-color: transparent;
-  cursor: pointer;
-  user-select: none;
-}
-
-a {
-  display: inline-block;
-  color: inherit;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-:focus-visible {
-  outline-color: $color-primary;
-}
-
-input {
-  outline: none;
-  border: none;
-  background-color: $color-light;
-}
-
-input[type='search']::-webkit-search-cancel-button {
-  display: none;
 }

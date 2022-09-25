@@ -6,7 +6,6 @@
   @include box(100%, 100%);
 }
 
-
 .swiper-slide {
   height: auto;
 }
@@ -27,7 +26,7 @@
 
   &:before {
     content: '';
-    background: lighten($color-secondary, 70%);
+    //background: lighten($color-secondary, 70%);
     border-radius: 50%;
     @include box(0.5rem, 0.5rem);
   }
@@ -36,7 +35,7 @@
 .swiper-pagination-bullet-active {
   &:before {
     content: '';
-    background: $color-primary;
+    background: var(--color-primary);
     border-radius: 50%;
     @include box(0.75rem, 0.75rem);
   }
@@ -56,7 +55,7 @@
 
 .arrow-icon-shop {
   @include box(0.75rem, 0.75rem);
-  fill: $color-secondary;
+  fill: var(--color-secondary);
   @include media-breakpoint-up(md) {
     @include box(1rem, 1rem);
   }
@@ -65,14 +64,14 @@
 .swiper-btn--left-shop,
 .swiper-btn--right-shop {
   @include flex($justify-content: center, $align-items: center);
-  background: $color-primary;
+  background: var(--color-primary);
 }
 
 /* ====================   TESTIMONIALS   ==================== */
 
 .arrow-icon-testimonials {
   @include box(1.5rem, 1.5rem);
-  fill: $color-gray;
+  //fill: $color-gray;
 }
 
 .swiper-btn--left-testimonials,

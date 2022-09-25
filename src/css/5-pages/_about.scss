@@ -1,4 +1,4 @@
-.about__welcome-msg {
+/* .about__welcome-msg {
   @include flex($flex-direction: column, $align-items: center);
   @include margin-auto(x);
 }
@@ -30,7 +30,6 @@
 }
 
 .about-img {
-  @include image-cover();
   @include spacer-top('margin', $spacer-xl);
   @include media-breakpoint-up(sm) {
     margin-top: 0;
@@ -55,4 +54,4 @@
       margin-top: 0;
     }
   }
-}
+} */

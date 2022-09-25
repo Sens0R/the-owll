@@ -29,44 +29,43 @@
     
     <header class="header container-fluid"><!-- ====================   LOGO   ==================== -->
 
-<a class="logo col-auto justify-content-start logo-hover" href="index.html"
-  aria-label="The Owl home. The Owl logo.">
+<a aria-label="The Owl home. The Owl logo." class="logo col-auto justify-content-start logo-hover" href="index.html">
   <svg aria-hidden="true" class="logo-icon">
-    <use href="images/icons/sprite-multi.svg#logo"></use>
+    <use href="images/icons/sprite-multi.svg#logo" />
   </svg>
 </a>
 
 <!-- ====================   PHONE   ==================== -->
 
 <div class="phone col-auto">
-  <svg aria-hidden="true" class="phone-icon">
-    <use href="images/icons/sprite-mono.svg#phone"></use>
-  </svg>
-  <a class="phone__number" href="tel:1800843695">1800&nbsp;843&nbsp;695</a>
+  <a href="tel:1800843695" class="phone__number">
+    <svg aria-hidden="true" class="phone-icon">
+      <use href="images/icons/sprite-mono.svg#phone" />
+    </svg>
+    1800&nbsp;843&nbsp;695
+  </a>
 </div>
-
 
 <!-- ====================   NAVIGATION   ==================== -->
 
-<nav data-hamburger class="navigation col-xl" aria-label="Main">
- 
-  <form role="search" data-search class="nav-search-burger d-xl-none">
+<nav aria-label="Main" class="navigation col-xl" data-hamburger>
+  <form class="nav-search-mobile d-md-none" data-search role="search">
+    <label class="visually-hidden" for="nav-search-input">Search</label>
 
-    <label for="nav-search-input" class="visually-hidden">
-      Search
-    </label>
+    <input
+      autocomplete="off"
+      class="nav-search-input text-sm"
+      id="nav-search-input"
+      placeholder="Search"
+      required
+      type="search"
+    />
 
-    <input type="search" class="nav-search-input text-sm" placeholder="Search"
-      id="nav-search-input" autocomplete="off"
-      required>
-
-    <button type="submit" class="nav-search-buttons nav-search-buttons__search"
-      aria-label="Submit search">
+    <button aria-label="Submit search" class="nav-search-buttons nav-search-buttons__search" type="submit">
       <svg aria-hidden="true" class="nav-search-buttons__icon hvr-icon">
-        <use href="images/icons/sprite-mono.svg#search"></use>
+        <use href="images/icons/sprite-mono.svg#search" />
       </svg>
     </button>
-
   </form>
 
   <div class="nav-body"><ul class="nav-menu">
@@ -77,7 +76,7 @@
 
   <li data-dropdown data-nav-page class="nav-menu__item dropdown">
     <a href="services.html" class="nav-menu__link dropdown__link">Services</a>
-    <button type="button" class="dropdown__btn" data-dropdown-btn
+    <button type="button" class="dropdown__btn"
       aria-label="Dropdown menu for Services">
       <svg aria-hidden="true" class="dropdown__icon">
         <use href="images/icons/sprite-mono.svg#arrow"></use>
@@ -149,222 +148,188 @@
 
 </ul>
 </div>
-
-
 </nav>
-
 
 <!-- ====================   SEARCH   ==================== -->
 
-<div class="col-auto col-xl-2 justify-content-end d-none d-xl-flex">
+<div class="col-auto col-md col-xl-2 col-xxl-3 nav-search-container">
+  <form class="nav-search" data-search role="search">
+    <label class="visually-hidden" for="nav-search-input">Search</label>
+    <input
+      autocomplete="off"
+      class="nav-search-input text-sm"
+      id="nav-search-input"
+      placeholder="Search"
+      required
+      type="search"
+    />
 
-  <form role="search" data-search class="nav-search">
-
-    <label for="nav-search-input" class="visually-hidden">
-      Search
-    </label>
-
-    <input type="search" class="nav-search-input text-sm" placeholder="Search"
-      id="nav-search-input" autocomplete="off"
-      required>
-
-    <button type="reset" class="nav-search-buttons nav-search-buttons__reset"
-      aria-label="Clear search text">
+    <button aria-label="Clear search text" class="nav-search-buttons nav-search-buttons__reset" type="reset">
       <svg aria-hidden="true" class="nav-search-buttons__icon hvr-icon">
-        <use href="images/icons/sprite-mono.svg#toggler-closed"></use>
+        <use href="images/icons/sprite-mono.svg#toggler-closed" />
       </svg>
     </button>
 
-    <button type="submit" class="nav-search-buttons nav-search-buttons__search"
-      aria-label="Submit search">
+    <button aria-label="Submit search" class="nav-search-buttons nav-search-buttons__search" type="submit">
       <svg aria-hidden="true" class="nav-search-buttons__icon hvr-icon">
-        <use href="images/icons/sprite-mono.svg#search"></use>
+        <use href="images/icons/sprite-mono.svg#search" />
       </svg>
     </button>
-
-    <button type="button" data-search-btn="close" class="nav-search-buttons
-      nav-search-buttons__close"
-      aria-label="Close search">close
-    </button>
-
   </form>
-
 </div>
-
 
 <!-- ====================   NAV-TOGGLER   ==================== -->
 
-<button type="button" data-hamburger-btn class="nav-toggler col-auto">
-
+<button class="nav-toggler col-auto" data-hamburger-btn type="button">
   <span class="nav-toggler__open">
     <svg aria-hidden="true" class="nav-toggler-icon">
-      <use href="images/icons/sprite-mono.svg#hamburger"></use>
+      <use href="images/icons/sprite-mono.svg#hamburger" />
     </svg>
     <span class="nav-toggler__text">menu</span>
   </span>
 
   <span class="nav-toggler__close">
     <svg aria-hidden="true" class="nav-toggler-icon">
-      <use href="images/icons/sprite-mono.svg#cancel"></use>
+      <use href="images/icons/sprite-mono.svg#cancel" />
     </svg>
   </span>
-
-</button></header>
+</button>
+</header>
 
 <main id="main-content">
   <!-- ====================   HERO   ==================== -->
 
 <section class="section container-fluid container-xxl hero">
   <div class="row justify-content-between">
-    <div data-animate="hero" class="col-12 col-xl-6">
-
+    <div class="col-12 col-xl-6" data-animate="hero">
       <h1>
-        <span class="color-primary">IT Managed Services</span> for Your Business<span
-          class="color-primary">.</span>
+        <span class="color-primary">IT Managed Services</span> for Your Business
+        <span class="color-primary">.</span>
       </h1>
-
     </div>
-
     <div class="col-12 col-xl-5">
-      <p>We offer business-focused IT services and solutions to help your
-        business be more efficient and flexible.</p>
+      <p>We offer business-focused IT services and solutions to help your business be more efficient and flexible.</p>
     </div>
   </div>
-
-  <a href="#" class="btn">Get started</a>
-
+  <a class="btn" href="#">Get started</a>
 </section>
 
 <!-- ====================   BANNER   ==================== -->
 
 <div class="banner">
-
   <picture>
     <source
+      sizes="100vw"
+      srcset="
+        images/main-page/hero-banner-320.avif   320w,
+        images/main-page/hero-banner-640.avif   640w,
+        images/main-page/hero-banner-960.avif   960w,
+        images/main-page/hero-banner-1280.avif 1280w,
+        images/main-page/hero-banner-1920.avif 1920w,
+        images/main-page/hero-banner-2560.avif 2560w
+      "
       type="image/avif"
+    />
+    <source
       sizes="100vw"
       srcset="
-      images/main-page/hero-banner-320.avif 320w,
-      images/main-page/hero-banner-640.avif 640w,
-      images/main-page/hero-banner-960.avif 960w,
-      images/main-page/hero-banner-1280.avif 1280w,
-      images/main-page/hero-banner-1920.avif 1920w,
-      images/main-page/hero-banner-2560.avif 2560w
-      ">
-    <source
+        images/main-page/hero-banner-320.webp   320w,
+        images/main-page/hero-banner-640.webp   640w,
+        images/main-page/hero-banner-960.webp   960w,
+        images/main-page/hero-banner-1280.webp 1280w,
+        images/main-page/hero-banner-1920.webp 1920w,
+        images/main-page/hero-banner-2560.webp 2560w
+      "
       type="image/webp"
-      sizes="100vw"
-      srcset="
-      images/main-page/hero-banner-320.webp 320w,
-      images/main-page/hero-banner-640.webp 640w,
-      images/main-page/hero-banner-960.webp 960w,
-      images/main-page/hero-banner-1280.webp 1280w,
-      images/main-page/hero-banner-1920.webp 1920w,
-      images/main-page/hero-banner-2560.webp 2560w
-      ">
+    />
     <source
-      type="image/jpeg"
       sizes="100vw"
       srcset="
-      images/main-page/hero-banner-320.jpg 320w,
-      images/main-page/hero-banner-640.jpg 640w,
-      images/main-page/hero-banner-960.jpg 960w,
-      images/main-page/hero-banner-1280.jpg 1280w,
-      images/main-page/hero-banner-1920.jpg 1920w,
-      images/main-page/hero-banner-2560.jpg 2560w
-      ">
-    <img
-      draggable="false"
-      height="2560"
-      width="2560"
-      class="image"
-      src="images/main-page/hero-banner-960.jpg"
-      alt="">
+        images/main-page/hero-banner-320.jpg   320w,
+        images/main-page/hero-banner-640.jpg   640w,
+        images/main-page/hero-banner-960.jpg   960w,
+        images/main-page/hero-banner-1280.jpg 1280w,
+        images/main-page/hero-banner-1920.jpg 1920w,
+        images/main-page/hero-banner-2560.jpg 2560w
+      "
+      type="image/jpeg"
+    />
+    <img alt class="image" draggable="false" height="2560" src="images/main-page/hero-banner-960.jpg" width="2560" />
   </picture>
-
   <div class="banner__gradient"></div>
-  <div id="banner__particles" class="banner__particles"></div>
+  <div class="banner__particles" id="banner__particles"></div>
 </div>
 
 <!-- ====================   SERVICES   ==================== -->
 
-<section class="section container-fluid container-xxl
-  services">
-
+<section class="section container-fluid container-xxl services">
   <div class="bg-gradient bg-gradient-bottom"></div>
   <div class="bg-gradient bg-gradient-up"></div>
-
   <h2 class="h-5 text-center">Our services</h2>
-
-  <p data-animate="section-header" class="h-2 text-center">
-    <span class="text-accent">What</span> We Offer<span class="text-accent">.</span>
+  <p class="h-2 text-center" data-animate="section-header">
+    <span class="text-accent">What</span> We Offer
+    <span class="text-accent">.</span>
   </p>
-
   <div class="row gy-3">
     <div class="col-12 col-md-6 col-xl-4">
-      <a href="#" class="card-services">
+      <a class="card-services" href="#">
         <div>
           <div class="card-services__logo" style="background-color: #348acc">
             <svg aria-hidden="true" class="card-services__icon">
-              <use
-                href="images/icons/sprite-mono.svg#service-icons--cloud-computing"></use>
+              <use href="images/icons/sprite-mono.svg#service-icons--cloud-computing" />
             </svg>
           </div>
         </div>
-
         <h3 class="h-4">Cloud Solutions</h3>
-
         <p>
-          Run your business entirely from the cloud, with email, data storage,
-          systems management, data backup, disaster
+          Run your business entirely from the cloud, with email, data storage, systems management, data backup, disaster
           recovery, telephony, and more.
         </p>
-
         <div class="box-link">
-          <span class="box-link__body">Read more<svg aria-hidden="true"
-              class="arrow-right-icon box-link__icon">
-              <use href="images/icons/sprite-mono.svg#arrow"></use>
+          <span class="box-link__body">
+            Read more
+            <svg aria-hidden="true" class="arrow-right-icon box-link__icon">
+              <use href="images/icons/sprite-mono.svg#arrow" />
             </svg>
           </span>
         </div>
-
       </a>
     </div>
 
     <div class="col-12 col-md-6 col-xl-4">
-      <a href="#" class="card-services">
+      <a class="card-services" href="#">
         <div>
           <div class="card-services__logo" style="background-color: #c263e2">
             <svg aria-hidden="true" class="card-services__icon">
-              <use href="images/icons/sprite-mono.svg#service-icons--support"></use>
+              <use href="images/icons/sprite-mono.svg#service-icons--support" />
             </svg>
           </div>
         </div>
 
         <h3 class="h-4">Your Local IT Help desk</h3>
 
-        <p> Get your business its own IT Help desk, located in Melbourne. It
-          costs far less, and we have business experience most internal techs
-          don't.
+        <p>
+          Get your business its own IT Help desk, located in Melbourne. It costs far less, and we have business
+          experience most internal techs don't.
         </p>
 
         <div class="box-link">
-          <span class="box-link__body">Read more<svg aria-hidden="true"
-              class="arrow-right-icon box-link__icon">
-              <use href="images/icons/sprite-mono.svg#arrow"></use>
+          <span class="box-link__body">
+            Read more
+            <svg aria-hidden="true" class="arrow-right-icon box-link__icon">
+              <use href="images/icons/sprite-mono.svg#arrow" />
             </svg>
           </span>
         </div>
-
       </a>
     </div>
 
     <div class="col-12 col-md-6 col-xl-4">
-      <a href="#" class="card-services">
+      <a class="card-services" href="#">
         <div>
           <div class="card-services__logo" style="background-color: #00b188">
             <svg aria-hidden="true" class="card-services__icon">
-              <use href="images/icons/sprite-mono.svg#service-icons--turn"></use>
+              <use href="images/icons/sprite-mono.svg#service-icons--turn" />
             </svg>
           </div>
         </div>
@@ -372,28 +337,27 @@
         <h3 class="h-4">Disaster Recovery</h3>
 
         <p>
-          Our team will work with your business to configure the best fit
-          disaster recovery solution to protect your
+          Our team will work with your business to configure the best fit disaster recovery solution to protect your
           important business data.
         </p>
 
         <div class="box-link">
-          <span class="box-link__body">Read more<svg aria-hidden="true"
-              class="arrow-right-icon box-link__icon">
-              <use href="images/icons/sprite-mono.svg#arrow"></use>
+          <span class="box-link__body">
+            Read more
+            <svg aria-hidden="true" class="arrow-right-icon box-link__icon">
+              <use href="images/icons/sprite-mono.svg#arrow" />
             </svg>
           </span>
         </div>
-
       </a>
     </div>
 
     <div class="col-12 col-md-6 col-xl-4">
-      <a href="#" class="card-services">
+      <a class="card-services" href="#">
         <div>
           <div class="card-services__logo" style="background-color: #f6921d">
             <svg aria-hidden="true" class="card-services__icon">
-              <use href="images/icons/sprite-mono.svg#service-icons--verified"></use>
+              <use href="images/icons/sprite-mono.svg#service-icons--verified" />
             </svg>
           </div>
         </div>
@@ -401,28 +365,27 @@
         <h3 class="h-4">Systems Security</h3>
 
         <p>
-          Ensure your important business data is protected with security
-          software designed to find malware, prevent
+          Ensure your important business data is protected with security software designed to find malware, prevent
           intrusions, and adapt to new threats fast.
         </p>
 
         <div class="box-link">
-          <span class="box-link__body">Read more<svg aria-hidden="true"
-              class="arrow-right-icon box-link__icon">
-              <use href="images/icons/sprite-mono.svg#arrow"></use>
+          <span class="box-link__body">
+            Read more
+            <svg aria-hidden="true" class="arrow-right-icon box-link__icon">
+              <use href="images/icons/sprite-mono.svg#arrow" />
             </svg>
           </span>
         </div>
-
       </a>
     </div>
 
     <div class="col-12 col-md-6 col-xl-4">
-      <a href="#" class="card-services">
+      <a class="card-services" href="#">
         <div>
           <div class="card-services__logo" style="background-color: #33c1e0">
             <svg aria-hidden="true" class="card-services__icon">
-              <use href="images/icons/sprite-mono.svg#service-icons--laptop"></use>
+              <use href="images/icons/sprite-mono.svg#service-icons--laptop" />
             </svg>
           </div>
         </div>
@@ -430,27 +393,26 @@
         <h3 class="h-4">Hardware Procurement</h3>
 
         <p>
-          Computers, laptops, servers, network devices, custom workstations,
-          boardroom conference systems, anything.
+          Computers, laptops, servers, network devices, custom workstations, boardroom conference systems, anything.
         </p>
 
         <div class="box-link">
-          <span class="box-link__body">Read more<svg aria-hidden="true"
-              class="arrow-right-icon box-link__icon">
-              <use href="images/icons/sprite-mono.svg#arrow"></use>
+          <span class="box-link__body">
+            Read more
+            <svg aria-hidden="true" class="arrow-right-icon box-link__icon">
+              <use href="images/icons/sprite-mono.svg#arrow" />
             </svg>
           </span>
         </div>
-
       </a>
     </div>
 
     <div class="col-12 col-md-6 col-xl-4">
-      <a href="#" class="card-services">
+      <a class="card-services" href="#">
         <div>
           <div class="card-services__logo" style="background-color: #e15b73">
             <svg aria-hidden="true" class="card-services__icon">
-              <use href="images/icons/sprite-mono.svg#service-icons--earth"></use>
+              <use href="images/icons/sprite-mono.svg#service-icons--earth" />
             </svg>
           </div>
         </div>
@@ -458,169 +420,152 @@
         <h3 class="h-4">Phones and Internet</h3>
 
         <p>
-          We'll set your business up with a cloud-based telephone system that
-          allows your staff to work from anywhere.
+          We'll set your business up with a cloud-based telephone system that allows your staff to work from anywhere.
           And we can connect your office with internet too!
         </p>
 
         <div class="box-link">
-          <span class="box-link__body">Read more<svg aria-hidden="true"
-              class="arrow-right-icon box-link__icon">
-              <use href="images/icons/sprite-mono.svg#arrow"></use>
+          <span class="box-link__body">
+            Read more
+            <svg aria-hidden="true" class="arrow-right-icon box-link__icon">
+              <use href="images/icons/sprite-mono.svg#arrow" />
             </svg>
           </span>
         </div>
-
       </a>
     </div>
   </div>
-
 </section>
 
 <!-- ====================  ABOUT   ==================== -->
 
 <section class="section container-fluid container-xxl about">
-
   <div class="row justify-content-between">
-
     <div class="col-12 col-lg-6 about__content">
       <h2 class="h-5">About us</h2>
-
-      <p data-animate="section-header" class="h-2">
-        <span class="text-accent">Managed IT</span> Supports<span
-          class="text-accent">.</span>
+      <p class="h-2" data-animate="section-header">
+        <span class="text-accent">Managed IT</span> Supports
+        <span class="text-accent">.</span>
       </p>
-
       <p>
-        We offer business-focused IT services and solutions to help your
-        business be more efficient and flexible, work
-        reliably, grow comfortably, and be secure in an era of constant threats
-        to business data.
+        We offer business-focused IT services and solutions to help your business be more efficient and flexible, work
+        reliably, grow comfortably, and be secure in an era of constant threats to business data.
       </p>
-
-      <a href="about.html" class="btn mt-0">Get started</a>
+      <a class="btn mt-0" href="about.html">Get started</a>
     </div>
-
     <div class="col-12 col-lg-6 about__img">
       <picture>
         <source
+          sizes="(min-width: 992px) 50vw, 100vw"
+          srcset="
+            images/main-page/about-us-320.avif   320w,
+            images/main-page/about-us-640.avif   640w,
+            images/main-page/about-us-960.avif   960w,
+            images/main-page/about-us-1280.avif 1280w,
+            images/main-page/about-us-1920.avif 1920w,
+            images/main-page/about-us-2560.avif 2560w
+          "
           type="image/avif"
+        />
+        <source
           sizes="(min-width: 992px) 50vw, 100vw"
           srcset="
-          images/main-page/about-us-320.avif 320w,
-          images/main-page/about-us-640.avif 640w,
-          images/main-page/about-us-960.avif 960w,
-          images/main-page/about-us-1280.avif 1280w,
-          images/main-page/about-us-1920.avif 1920w,
-          images/main-page/about-us-2560.avif 2560w
-          ">
-        <source
+            images/main-page/about-us-320.webp   320w,
+            images/main-page/about-us-640.webp   640w,
+            images/main-page/about-us-960.webp   960w,
+            images/main-page/about-us-1280.webp 1280w,
+            images/main-page/about-us-1920.webp 1920w,
+            images/main-page/about-us-2560.webp 2560w
+          "
           type="image/webp"
-          sizes="(min-width: 992px) 50vw, 100vw"
-          srcset="
-          images/main-page/about-us-320.webp 320w,
-          images/main-page/about-us-640.webp 640w,
-          images/main-page/about-us-960.webp 960w,
-          images/main-page/about-us-1280.webp 1280w,
-          images/main-page/about-us-1920.webp 1920w,
-          images/main-page/about-us-2560.webp 2560w
-          ">
+        />
         <source
-          type="image/jpeg"
           sizes="(min-width: 992px) 50vw, 100vw"
           srcset="
-          images/main-page/about-us-320.jpg 320w,
-          images/main-page/about-us-640.jpg 640w,
-          images/main-page/about-us-960.jpg 960w,
-          images/main-page/about-us-1280.jpg 1280w,
-          images/main-page/about-us-1920.jpg 1920w,
-          images/main-page/about-us-2560.jpg 2560w
-          ">
-        <img
-          draggable="false"
-          height="2560"
-          width="2560"
-          class="image"
-          src="images/main-page/about-us-960.jpg"
-          alt="">
+            images/main-page/about-us-320.jpg   320w,
+            images/main-page/about-us-640.jpg   640w,
+            images/main-page/about-us-960.jpg   960w,
+            images/main-page/about-us-1280.jpg 1280w,
+            images/main-page/about-us-1920.jpg 1920w,
+            images/main-page/about-us-2560.jpg 2560w
+          "
+          type="image/jpeg"
+        />
+        <img alt class="image" draggable="false" height="2560" src="images/main-page/about-us-960.jpg" width="2560" />
       </picture>
 
       <p class="about__attachment">
         Lorem ipsum
-
         <span class="fw-bold">
           +250 dolor sit amet
-
           <span class="color-primary">.</span>
         </span>
       </p>
     </div>
-
   </div>
-
 </section>
 
 <!-- ====================   PORTFOLIO  ==================== -->
 
 <section class="section container-fluid container-xxl portfolio">
-
   <h2 class="h-5">Portfolio</h2>
-
-  <p data-animate="section-header" class="h-2">
-    <span class="text-accent">Case </span>Studies<span class="text-accent">.</span>
+  <p class="h-2" data-animate="section-header">
+    <span class="text-accent">Case</span>Studies
+    <span class="text-accent">.</span>
   </p>
-
   <div class="row g-0 card">
-
     <div class="col-12 col-md-6 card__img">
-      <a href="#" class="card__img-link" tabindex="-1">
+      <a class="card__img-link" href="#" tabindex="-1">
         <picture>
           <source
+            sizes="(min-width: 992px) 50vw, 100vw"
+            srcset="
+              images/main-page/portfolio-1-320.avif   320w,
+              images/main-page/portfolio-1-640.avif   640w,
+              images/main-page/portfolio-1-960.avif   960w,
+              images/main-page/portfolio-1-1280.avif 1280w,
+              images/main-page/portfolio-1-1920.avif 1920w,
+              images/main-page/portfolio-1-2560.avif 2560w
+            "
             type="image/avif"
+          />
+          <source
             sizes="(min-width: 992px) 50vw, 100vw"
             srcset="
-            images/main-page/portfolio-1-320.avif 320w,
-            images/main-page/portfolio-1-640.avif 640w,
-            images/main-page/portfolio-1-960.avif 960w,
-            images/main-page/portfolio-1-1280.avif 1280w,
-            images/main-page/portfolio-1-1920.avif 1920w,
-            images/main-page/portfolio-1-2560.avif 2560w
-            ">
-          <source
+              images/main-page/portfolio-1-320.webp   320w,
+              images/main-page/portfolio-1-640.webp   640w,
+              images/main-page/portfolio-1-960.webp   960w,
+              images/main-page/portfolio-1-1280.webp 1280w,
+              images/main-page/portfolio-1-1920.webp 1920w,
+              images/main-page/portfolio-1-2560.webp 2560w
+            "
             type="image/webp"
-            sizes="(min-width: 992px) 50vw, 100vw"
-            srcset="
-            images/main-page/portfolio-1-320.webp 320w,
-            images/main-page/portfolio-1-640.webp 640w,
-            images/main-page/portfolio-1-960.webp 960w,
-            images/main-page/portfolio-1-1280.webp 1280w,
-            images/main-page/portfolio-1-1920.webp 1920w,
-            images/main-page/portfolio-1-2560.webp 2560w
-            ">
+          />
           <source
-            type="image/jpeg"
             sizes="(min-width: 992px) 50vw, 100vw"
             srcset="
-            images/main-page/portfolio-1-320.jpg 320w,
-            images/main-page/portfolio-1-640.jpg 640w,
-            images/main-page/portfolio-1-960.jpg 960w,
-            images/main-page/portfolio-1-1280.jpg 1280w,
-            images/main-page/portfolio-1-1920.jpg 1920w,
-            images/main-page/portfolio-1-2560.jpg 2560w
-            ">
+              images/main-page/portfolio-1-320.jpg   320w,
+              images/main-page/portfolio-1-640.jpg   640w,
+              images/main-page/portfolio-1-960.jpg   960w,
+              images/main-page/portfolio-1-1280.jpg 1280w,
+              images/main-page/portfolio-1-1920.jpg 1920w,
+              images/main-page/portfolio-1-2560.jpg 2560w
+            "
+            type="image/jpeg"
+          />
           <img
+            alt="Buddy Jane"
+            class="image"
             draggable="false"
             height="2560"
-            width="2560"
-            class="image"
             src="images/main-page/portfolio-1-960.jpg"
-            alt="Buddy Jane">
+            width="2560"
+          />
         </picture>
       </a>
     </div>
 
     <div class="col-12 col-md-6 card__content">
-
       <ul class="box-list">
         <li>
           <a href="#">System management</a>
@@ -630,81 +575,78 @@
         </li>
       </ul>
 
-      <h3 data-animate="fade-in" class="h-3">
-        <a href="#" class="header-link">Buddy Jane</a>
+      <h3 class="h-3" data-animate="fade-in">
+        <a class="header-link" href="#">Buddy Jane</a>
       </h3>
 
       <p>
-        Ensure your important business data is protected with security
-        software
-        designed to find malware, prevent
+        Ensure your important business data is protected with security software designed to find malware, prevent
         intrusions, and adapt to new threats fast.
       </p>
 
       <div class="box-link">
-        <a href="#" class="box-link__body">
+        <a class="box-link__body" href="#">
           Read more
           <svg aria-hidden="true" class="arrow-right-icon box-link__icon">
-            <use href="images/icons/sprite-mono.svg#arrow"></use>
+            <use href="images/icons/sprite-mono.svg#arrow" />
           </svg>
         </a>
       </div>
-
     </div>
-
   </div>
-
   <div class="row g-0 card">
-
     <div class="col-12 col-md-6 card__img">
-      <a href="#" class="card__img-link" tabindex="-1">
+      <a class="card__img-link" href="#" tabindex="-1">
         <picture>
           <source
+            sizes="(min-width: 992px) 50vw, 100vw"
+            srcset="
+              images/main-page/portfolio-2-320.avif   320w,
+              images/main-page/portfolio-2-640.avif   640w,
+              images/main-page/portfolio-2-960.avif   960w,
+              images/main-page/portfolio-2-1280.avif 1280w,
+              images/main-page/portfolio-2-1920.avif 1920w,
+              images/main-page/portfolio-2-2560.avif 2560w
+            "
             type="image/avif"
+          />
+          <source
             sizes="(min-width: 992px) 50vw, 100vw"
             srcset="
-            images/main-page/portfolio-2-320.avif 320w,
-            images/main-page/portfolio-2-640.avif 640w,
-            images/main-page/portfolio-2-960.avif 960w,
-            images/main-page/portfolio-2-1280.avif 1280w,
-            images/main-page/portfolio-2-1920.avif 1920w,
-            images/main-page/portfolio-2-2560.avif 2560w
-            ">
-          <source
+              images/main-page/portfolio-2-320.webp   320w,
+              images/main-page/portfolio-2-640.webp   640w,
+              images/main-page/portfolio-2-960.webp   960w,
+              images/main-page/portfolio-2-1280.webp 1280w,
+              images/main-page/portfolio-2-1920.webp 1920w,
+              images/main-page/portfolio-2-2560.webp 2560w
+            "
             type="image/webp"
-            sizes="(min-width: 992px) 50vw, 100vw"
-            srcset="
-            images/main-page/portfolio-2-320.webp 320w,
-            images/main-page/portfolio-2-640.webp 640w,
-            images/main-page/portfolio-2-960.webp 960w,
-            images/main-page/portfolio-2-1280.webp 1280w,
-            images/main-page/portfolio-2-1920.webp 1920w,
-            images/main-page/portfolio-2-2560.webp 2560w
-            ">
+          />
           <source
-            type="image/jpeg"
             sizes="(min-width: 992px) 50vw, 100vw"
             srcset="
-            images/main-page/portfolio-2-320.jpg 320w,
-            images/main-page/portfolio-2-640.jpg 640w,
-            images/main-page/portfolio-2-960.jpg 960w,
-            images/main-page/portfolio-2-1280.jpg 1280w,
-            images/main-page/portfolio-2-1920.jpg 1920w,
-            images/main-page/portfolio-2-2560.jpg 2560w
-            ">
+              images/main-page/portfolio-2-320.jpg   320w,
+              images/main-page/portfolio-2-640.jpg   640w,
+              images/main-page/portfolio-2-960.jpg   960w,
+              images/main-page/portfolio-2-1280.jpg 1280w,
+              images/main-page/portfolio-2-1920.jpg 1920w,
+              images/main-page/portfolio-2-2560.jpg 2560w
+            "
+            type="image/jpeg"
+          />
           <img
+            alt="Healing with Modern"
+            class="image"
             draggable="false"
             height="2560"
-            width="2560"
-            class="image"
             src="images/main-page/portfolio-2-960.jpg"
-            alt="Healing with Modern">
+            width="2560"
+          />
         </picture>
       </a>
     </div>
 
     <div class="col-12 col-md-6 card__content">
-
       <ul class="box-list">
         <li>
           <a href="#">System management</a>
@@ -714,80 +656,78 @@
         </li>
       </ul>
 
-      <h3 data-animate="fade-in" class="h-3">
-        <a href="#" class="header-link">Healing with Modern</a>
+      <h3 class="h-3" data-animate="fade-in">
+        <a class="header-link" href="#">Healing with Modern</a>
       </h3>
 
       <p>
-        Ensure your important business data is protected with secure software
-        designed to find malware, prevent
+        Ensure your important business data is protected with secure software designed to find malware, prevent
         intrusions, and adapt to new threats fast.
       </p>
 
       <div class="box-link">
-        <a href="#" class="box-link__body">
+        <a class="box-link__body" href="#">
           Read more
           <svg aria-hidden="true" class="arrow-right-icon box-link__icon">
-            <use href="images/icons/sprite-mono.svg#arrow"></use>
+            <use href="images/icons/sprite-mono.svg#arrow" />
           </svg>
         </a>
       </div>
-
     </div>
-
   </div>
-
   <div class="row g-0 card">
-
     <div class="col-12 col-md-6 card__img">
-      <a href="#" class="card__img-link" tabindex="-1">
+      <a class="card__img-link" href="#" tabindex="-1">
         <picture>
           <source
+            sizes="(min-width: 992px) 50vw, 100vw"
+            srcset="
+              images/main-page/portfolio-3-320.avif   320w,
+              images/main-page/portfolio-3-640.avif   640w,
+              images/main-page/portfolio-3-960.avif   960w,
+              images/main-page/portfolio-3-1280.avif 1280w,
+              images/main-page/portfolio-3-1920.avif 1920w,
+              images/main-page/portfolio-3-2560.avif 2560w
+            "
             type="image/avif"
+          />
+          <source
             sizes="(min-width: 992px) 50vw, 100vw"
             srcset="
-            images/main-page/portfolio-3-320.avif 320w,
-            images/main-page/portfolio-3-640.avif 640w,
-            images/main-page/portfolio-3-960.avif 960w,
-            images/main-page/portfolio-3-1280.avif 1280w,
-            images/main-page/portfolio-3-1920.avif 1920w,
-            images/main-page/portfolio-3-2560.avif 2560w
-            ">
-          <source
+              images/main-page/portfolio-3-320.webp   320w,
+              images/main-page/portfolio-3-640.webp   640w,
+              images/main-page/portfolio-3-960.webp   960w,
+              images/main-page/portfolio-3-1280.webp 1280w,
+              images/main-page/portfolio-3-1920.webp 1920w,
+              images/main-page/portfolio-3-2560.webp 2560w
+            "
             type="image/webp"
-            sizes="(min-width: 992px) 50vw, 100vw"
-            srcset="
-            images/main-page/portfolio-3-320.webp 320w,
-            images/main-page/portfolio-3-640.webp 640w,
-            images/main-page/portfolio-3-960.webp 960w,
-            images/main-page/portfolio-3-1280.webp 1280w,
-            images/main-page/portfolio-3-1920.webp 1920w,
-            images/main-page/portfolio-3-2560.webp 2560w
-            ">
+          />
           <source
-            type="image/jpeg"
             sizes="(min-width: 992px) 50vw, 100vw"
             srcset="
-            images/main-page/portfolio-3-320.jpg 320w,
-            images/main-page/portfolio-3-640.jpg 640w,
-            images/main-page/portfolio-3-960.jpg 960w,
-            images/main-page/portfolio-3-1280.jpg 1280w,
-            images/main-page/portfolio-3-1920.jpg 1920w,
-            images/main-page/portfolio-3-2560.jpg 2560w
-            ">
+              images/main-page/portfolio-3-320.jpg   320w,
+              images/main-page/portfolio-3-640.jpg   640w,
+              images/main-page/portfolio-3-960.jpg   960w,
+              images/main-page/portfolio-3-1280.jpg 1280w,
+              images/main-page/portfolio-3-1920.jpg 1920w,
+              images/main-page/portfolio-3-2560.jpg 2560w
+            "
+            type="image/jpeg"
+          />
           <img
+            alt="OLX Motors Europe"
+            class="image"
             draggable="false"
             height="2560"
-            width="2560"
-            class="image"
             src="images/main-page/portfolio-3-960.jpg"
-            alt="OLX Motors Europe">
+            width="2560"
+          />
         </picture>
       </a>
     </div>
 
     <div class="col-12 col-md-6 card__content">
-
       <ul class="box-list">
         <li>
           <a href="#">System management</a>
@@ -797,69 +737,54 @@
         </li>
       </ul>
 
-      <h3 data-animate="fade-in" class="h-3">
-        <a href="#" class="header-link">OLX Motors Europe</a>
+      <h3 class="h-3" data-animate="fade-in">
+        <a class="header-link" href="#">OLX Motors Europe</a>
       </h3>
 
       <p>
-        Ensure your important business data is protected with security
-        software
-        designed to find malware, prevent
+        Ensure your important business data is protected with security software designed to find malware, prevent
         intrusions, and adapt to new threats fast.
       </p>
 
       <div class="box-link">
-        <a href="#" class="box-link__body">
+        <a class="box-link__body" href="#">
           Read more
           <svg aria-hidden="true" class="arrow-right-icon box-link__icon">
-            <use href="images/icons/sprite-mono.svg#arrow"></use>
+            <use href="images/icons/sprite-mono.svg#arrow" />
           </svg>
         </a>
       </div>
-
     </div>
-
   </div>
-
-  <div class="section-btn">
-    <a href="#" class="btn m-0">Explore more</a>
+  <div class="btn-section">
+    <a class="btn m-0" href="#">Explore more</a>
   </div>
-
 </section>
 
 <!-- ====================  PARTNERS  ==================== -->
 
-<section class="section container-fluid container-xxl
-  partners">
-
+<section class="section container-fluid container-xxl partners">
   <div class="bg-gradient bg-gradient-bottom"></div>
   <div class="bg-gradient bg-gradient-up"></div>
-
   <div class="row justify-content-between">
-
     <div class="col-12 col-lg-4 partners__content">
       <h2 class="h-5">Our Partners</h2>
-
-      <p data-animate="section-header" class="h-2">
-        <span class="text-accent">Working</span> With the Best<span
-          class="text-accent">.</span>
+      <p class="h-2" data-animate="section-header">
+        <span class="text-accent">Working</span> With the Best
+        <span class="text-accent">.</span>
       </p>
-
       <p>
-        Run your business entirely from the cloud, with email, data storage,
-        systems management, data backup, disaster
+        Run your business entirely from the cloud, with email, data storage, systems management, data backup, disaster
         recovery, telephony, and more.
       </p>
-
-      <a href="partners.html" class="btn mt-0">Get started</a>
+      <a class="btn mt-0" href="partners.html">Get started</a>
     </div>
     <div class="col-12 col-lg-7">
-
       <div class="row gy-3">
         <div class="col-6 col-sm-4">
           <div class="partners__box">
             <svg aria-hidden="true" class="partners__icon">
-              <use href="images/icons/sprite-mono.svg#partners--microsoft"></use>
+              <use href="images/icons/sprite-mono.svg#partners--microsoft" />
             </svg>
           </div>
         </div>
@@ -867,7 +792,7 @@
         <div class="col-6 col-sm-4">
           <div class="partners__box">
             <svg aria-hidden="true" class="partners__icon">
-              <use href="images/icons/sprite-mono.svg#partners--hp"></use>
+              <use href="images/icons/sprite-mono.svg#partners--hp" />
             </svg>
           </div>
         </div>
@@ -875,7 +800,7 @@
         <div class="col-6 col-sm-4">
           <div class="partners__box">
             <svg aria-hidden="true" class="partners__icon">
-              <use href="images/icons/sprite-mono.svg#partners--cisco"></use>
+              <use href="images/icons/sprite-mono.svg#partners--cisco" />
             </svg>
           </div>
         </div>
@@ -883,7 +808,7 @@
         <div class="col-6 col-sm-4">
           <div class="partners__box">
             <svg aria-hidden="true" class="partners__icon">
-              <use href="images/icons/sprite-mono.svg#partners--cove"></use>
+              <use href="images/icons/sprite-mono.svg#partners--cove" />
             </svg>
           </div>
         </div>
@@ -891,7 +816,7 @@
         <div class="col-6 col-sm-4">
           <div class="partners__box">
             <svg aria-hidden="true" class="partners__icon">
-              <use href="images/icons/sprite-mono.svg#partners--lenovo"></use>
+              <use href="images/icons/sprite-mono.svg#partners--lenovo" />
             </svg>
           </div>
         </div>
@@ -899,76 +824,77 @@
         <div class="col-6 col-sm-4">
           <div class="partners__box">
             <svg aria-hidden="true" class="partners__icon">
-              <use href="images/icons/sprite-mono.svg#partners--hp-enterprise"></use>
+              <use href="images/icons/sprite-mono.svg#partners--hp-enterprise" />
             </svg>
           </div>
         </div>
       </div>
     </div>
-
   </div>
-
 </section>
 
 <!-- ====================   BLOG   ==================== -->
 
 <section class="section container-fluid container-xxl blog">
   <h2 class="h-5">IT Blog</h2>
-
-  <p data-animate="section-header" class="h-2">
-    <span class="text-accent">Expert</span> research<span class="text-accent">.</span>
+  <p class="h-2" data-animate="section-header">
+    <span class="text-accent">Expert</span> research
+    <span class="text-accent">.</span>
   </p>
-
   <div class="row gy-4">
     <div class="col-12 col-md-6 col-lg-4 blog-col">
       <div class="card-blog-post">
-        <a href="#" tabindex="-1" class="card-blog-post__img">
+        <a class="card-blog-post__img" href="#" tabindex="-1">
           <picture>
             <source
+              sizes="(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw"
+              srcset="
+                images/main-page/blog-1-320.avif   320w,
+                images/main-page/blog-1-640.avif   640w,
+                images/main-page/blog-1-960.avif   960w,
+                images/main-page/blog-1-1280.avif 1280w,
+                images/main-page/blog-1-1920.avif 1920w,
+                images/main-page/blog-1-2560.avif 2560w
+              "
               type="image/avif"
+            />
+            <source
               sizes="(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw"
               srcset="
-              images/main-page/blog-1-320.avif 320w,
-              images/main-page/blog-1-640.avif 640w,
-              images/main-page/blog-1-960.avif 960w,
-              images/main-page/blog-1-1280.avif 1280w,
-              images/main-page/blog-1-1920.avif 1920w,
-              images/main-page/blog-1-2560.avif 2560w
-              ">
-            <source
+                images/main-page/blog-1-320.webp   320w,
+                images/main-page/blog-1-640.webp   640w,
+                images/main-page/blog-1-960.webp   960w,
+                images/main-page/blog-1-1280.webp 1280w,
+                images/main-page/blog-1-1920.webp 1920w,
+                images/main-page/blog-1-2560.webp 2560w
+              "
               type="image/webp"
-              sizes="(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw"
-              srcset="
-              images/main-page/blog-1-320.webp 320w,
-              images/main-page/blog-1-640.webp 640w,
-              images/main-page/blog-1-960.webp 960w,
-              images/main-page/blog-1-1280.webp 1280w,
-              images/main-page/blog-1-1920.webp 1920w,
-              images/main-page/blog-1-2560.webp 2560w
-              ">
+            />
             <source
-              type="image/jpeg"
               sizes="(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw"
               srcset="
-              images/main-page/blog-1-320.jpg 320w,
-              images/main-page/blog-1-640.jpg 640w,
-              images/main-page/blog-1-960.jpg 960w,
-              images/main-page/blog-1-1280.jpg 1280w,
-              images/main-page/blog-1-1920.jpg 1920w,
-              images/main-page/blog-1-2560.jpg 2560w
-              ">
+                images/main-page/blog-1-320.jpg   320w,
+                images/main-page/blog-1-640.jpg   640w,
+                images/main-page/blog-1-960.jpg   960w,
+                images/main-page/blog-1-1280.jpg 1280w,
+                images/main-page/blog-1-1920.jpg 1920w,
+                images/main-page/blog-1-2560.jpg 2560w
+              "
+              type="image/jpeg"
+            />
             <img
+              alt="Packet Pushers Heavy Networking Podcast"
+              class="image"
               draggable="false"
               height="2560"
-              width="2560"
-              class="image"
               src="images/main-page/blog-1-960.jpg"
-              alt="Packet Pushers Heavy Networking Podcast">
+              width="2560"
+            />
           </picture>
 
           <span class="box-btn">
             <svg aria-hidden="true" class="arrow-right-icon">
-              <use href="images/icons/sprite-mono.svg#arrow"></use>
+              <use href="images/icons/sprite-mono.svg#arrow" />
             </svg>
           </span>
         </a>
@@ -976,9 +902,8 @@
         <div class="card-blog-post__content">
           <p class="box-time">12 April 2022</p>
 
-          <h3 data-animate="blog-header-1" class="h-4">
-            <a href="#" class="header-link"> Packet Pushers Heavy Networking
-              Podcast </a>
+          <h3 class="h-4" data-animate="blog-header-1">
+            <a class="header-link" href="#"> Packet Pushers Heavy Networking Podcast </a>
           </h3>
 
           <ul class="box-list">
@@ -1000,53 +925,57 @@
 
     <div class="col-12 col-md-6 col-lg-4 blog-col">
       <div class="card-blog-post">
-        <a href="#" tabindex="-1" class="card-blog-post__img">
+        <a class="card-blog-post__img" href="#" tabindex="-1">
           <picture>
             <source
+              sizes="(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw"
+              srcset="
+                images/main-page/blog-2-320.avif   320w,
+                images/main-page/blog-2-640.avif   640w,
+                images/main-page/blog-2-960.avif   960w,
+                images/main-page/blog-2-1280.avif 1280w,
+                images/main-page/blog-2-1920.avif 1920w,
+                images/main-page/blog-2-2560.avif 2560w
+              "
               type="image/avif"
+            />
+            <source
               sizes="(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw"
               srcset="
-              images/main-page/blog-2-320.avif 320w,
-              images/main-page/blog-2-640.avif 640w,
-              images/main-page/blog-2-960.avif 960w,
-              images/main-page/blog-2-1280.avif 1280w,
-              images/main-page/blog-2-1920.avif 1920w,
-              images/main-page/blog-2-2560.avif 2560w
-              ">
-            <source
+                images/main-page/blog-2-320.webp   320w,
+                images/main-page/blog-2-640.webp   640w,
+                images/main-page/blog-2-960.webp   960w,
+                images/main-page/blog-2-1280.webp 1280w,
+                images/main-page/blog-2-1920.webp 1920w,
+                images/main-page/blog-2-2560.webp 2560w
+              "
               type="image/webp"
-              sizes="(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw"
-              srcset="
-              images/main-page/blog-2-320.webp 320w,
-              images/main-page/blog-2-640.webp 640w,
-              images/main-page/blog-2-960.webp 960w,
-              images/main-page/blog-2-1280.webp 1280w,
-              images/main-page/blog-2-1920.webp 1920w,
-              images/main-page/blog-2-2560.webp 2560w
-              ">
+            />
             <source
-              type="image/jpeg"
               sizes="(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw"
               srcset="
-              images/main-page/blog-2-320.jpg 320w,
-              images/main-page/blog-2-640.jpg 640w,
-              images/main-page/blog-2-960.jpg 960w,
-              images/main-page/blog-2-1280.jpg 1280w,
-              images/main-page/blog-2-1920.jpg 1920w,
-              images/main-page/blog-2-2560.jpg 2560w
-              ">
+                images/main-page/blog-2-320.jpg   320w,
+                images/main-page/blog-2-640.jpg   640w,
+                images/main-page/blog-2-960.jpg   960w,
+                images/main-page/blog-2-1280.jpg 1280w,
+                images/main-page/blog-2-1920.jpg 1920w,
+                images/main-page/blog-2-2560.jpg 2560w
+              "
+              type="image/jpeg"
+            />
             <img
+              alt="Tips For Efficient Communication With Your IT Support Team"
+              class="image"
               draggable="false"
               height="2560"
-              width="2560"
-              class="image"
               src="images/main-page/blog-2-960.jpg"
-              alt="Tips For Efficient Communication With Your IT Support Team">
+              width="2560"
+            />
           </picture>
 
           <span class="box-btn">
             <svg aria-hidden="true" class="arrow-right-icon">
-              <use href="images/icons/sprite-mono.svg#arrow"></use>
+              <use href="images/icons/sprite-mono.svg#arrow" />
             </svg>
           </span>
         </a>
@@ -1054,9 +983,8 @@
         <div class="card-blog-post__content">
           <p class="box-time">12 April 2022</p>
 
-          <h3 data-animate="blog-header-2" class="h-4">
-            <a href="#" class="header-link"> Tips For Efficient Communication
-              With Your IT Support Team </a>
+          <h3 class="h-4" data-animate="blog-header-2">
+            <a class="header-link" href="#"> Tips For Efficient Communication With Your IT Support Team </a>
           </h3>
 
           <ul class="box-list">
@@ -1074,53 +1002,57 @@
 
     <div class="col-12 col-lg-4 blog-col">
       <div class="card-blog-post">
-        <a href="#" tabindex="-1" class="card-blog-post__img">
+        <a class="card-blog-post__img" href="#" tabindex="-1">
           <picture>
             <source
+              sizes="(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw"
+              srcset="
+                images/main-page/blog-3-320.avif   320w,
+                images/main-page/blog-3-640.avif   640w,
+                images/main-page/blog-3-960.avif   960w,
+                images/main-page/blog-3-1280.avif 1280w,
+                images/main-page/blog-3-1920.avif 1920w,
+                images/main-page/blog-3-2560.avif 2560w
+              "
               type="image/avif"
+            />
+            <source
               sizes="(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw"
               srcset="
-              images/main-page/blog-3-320.avif 320w,
-              images/main-page/blog-3-640.avif 640w,
-              images/main-page/blog-3-960.avif 960w,
-              images/main-page/blog-3-1280.avif 1280w,
-              images/main-page/blog-3-1920.avif 1920w,
-              images/main-page/blog-3-2560.avif 2560w
-              ">
-            <source
+                images/main-page/blog-3-320.webp   320w,
+                images/main-page/blog-3-640.webp   640w,
+                images/main-page/blog-3-960.webp   960w,
+                images/main-page/blog-3-1280.webp 1280w,
+                images/main-page/blog-3-1920.webp 1920w,
+                images/main-page/blog-3-2560.webp 2560w
+              "
               type="image/webp"
-              sizes="(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw"
-              srcset="
-              images/main-page/blog-3-320.webp 320w,
-              images/main-page/blog-3-640.webp 640w,
-              images/main-page/blog-3-960.webp 960w,
-              images/main-page/blog-3-1280.webp 1280w,
-              images/main-page/blog-3-1920.webp 1920w,
-              images/main-page/blog-3-2560.webp 2560w
-              ">
+            />
             <source
-              type="image/jpeg"
               sizes="(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw"
               srcset="
-              images/main-page/blog-3-320.jpg 320w,
-              images/main-page/blog-3-640.jpg 640w,
-              images/main-page/blog-3-960.jpg 960w,
-              images/main-page/blog-3-1280.jpg 1280w,
-              images/main-page/blog-3-1920.jpg 1920w,
-              images/main-page/blog-3-2560.jpg 2560w
-              ">
+                images/main-page/blog-3-320.jpg   320w,
+                images/main-page/blog-3-640.jpg   640w,
+                images/main-page/blog-3-960.jpg   960w,
+                images/main-page/blog-3-1280.jpg 1280w,
+                images/main-page/blog-3-1920.jpg 1920w,
+                images/main-page/blog-3-2560.jpg 2560w
+              "
+              type="image/jpeg"
+            />
             <img
+              alt="Packet Pushers Heavy Networking Podcast"
+              class="image"
               draggable="false"
               height="2560"
-              width="2560"
-              class="image"
               src="images/main-page/blog-3-960.jpg"
-              alt="Packet Pushers Heavy Networking Podcast">
+              width="2560"
+            />
           </picture>
 
           <span class="box-btn">
             <svg aria-hidden="true" class="arrow-right-icon">
-              <use href="images/icons/sprite-mono.svg#arrow"></use>
+              <use href="images/icons/sprite-mono.svg#arrow" />
             </svg>
           </span>
         </a>
@@ -1128,9 +1060,8 @@
         <div class="card-blog-post__content">
           <p class="box-time">15 March 2022</p>
 
-          <h3 data-animate="blog-header-3" class="h-4">
-            <a href="#" class="header-link"> Packet Pushers Heavy Networking
-              Podcast </a>
+          <h3 class="h-4" data-animate="blog-header-3">
+            <a class="header-link" href="#"> Packet Pushers Heavy Networking Podcast </a>
           </h3>
 
           <ul class="box-list">
@@ -1152,18 +1083,12 @@
 
 <footer class="footer">
   <div class="container-fluid container-xxl footer-container">
-
   <nav aria-label="Footer" class="footer-nav">
-
     <div class="row">
-
       <div class="col-12 col-sm-6 col-lg-3 footer-nav__column">
-
         <ul class="footer-nav__list">
-
           <li>
-            <a class="logo-hover" href="index.html"
-              aria-label="The Owl home. The Owl logo.">
+            <a class="logo-hover" href="index.html" aria-label="The Owl home. The Owl logo.">
               <svg aria-hidden="true" class="logo-icon">
                 <use href="images/icons/sprite-multi.svg#logo"></use>
               </svg>
@@ -1200,29 +1125,23 @@
 </ul>
 </div>
           </li>
-
         </ul>
       </div>
 
       <div class="col-12 col-sm-6 col-lg-3 footer-nav__column">
-
         <h2 class="footer-nav__header">Services</h2>
 
         <ul class="footer-nav__list">
           <li><a class="footer-nav__link" href="about.html">Cloud Solutions</a></li>
-          <li><a class="footer-nav__link" href="faq.html"> Your Local IT Help
-              desk</a></li>
+          <li><a class="footer-nav__link" href="faq.html"> Your Local IT Help desk</a></li>
           <li><a class="footer-nav__link" href="blog.html"> Disaster Recovery</a></li>
           <li><a class="footer-nav__link" href="contact.html">Systems Security</a></li>
           <li><a class="footer-nav__link" href="blog.html">Hardware Procurement</a></li>
-          <li><a class="footer-nav__link" href="contact.html">Phones and
-              Internet</a></li>
+          <li><a class="footer-nav__link" href="contact.html">Phones and Internet</a></li>
         </ul>
-
       </div>
 
       <div class="col-12 col-sm-6 col-lg-3 footer-nav__column">
-
         <h2 class="footer-nav__header">Company</h2>
 
         <ul class="footer-nav__list">
@@ -1235,55 +1154,42 @@
           </li>
           <li><a class="footer-nav__link" href="brands.html">Contact</a></li>
           <li>
-            <a class="footer-nav__link" href="skin-care-packages.html">Privacy
-              Policy</a>
+            <a class="footer-nav__link" href="skin-care-packages.html">Privacy Policy</a>
           </li>
           <li><a class="footer-nav__link" href="brands.html">Terms & Conditions</a></li>
         </ul>
-
       </div>
 
       <div class="col-12 col-sm-6 col-lg-3 footer-nav__column">
-
         <h2 class="footer-nav__header">Contact</h2>
 
         <ul class="footer-nav__list">
-
           <li>
-
             <div class="h-5">Phone</div>
             <a href="tel:1800843695" class="footer-nav__link">1800&nbsp;843&nbsp;695</a>
           </li>
 
           <li>
-
             <div class="h-5">Address</div>
-            <a class="footer-nav__link"
-              href="https://goo.gl/maps/cWDnimrLcYismybL7"
-              target="_blank">Suite 6, Level 13, 350 Collins Street, Melbourne
-              VIC 3000</a>
-
+            <a class="footer-nav__link" href="https://goo.gl/maps/cWDnimrLcYismybL7" target="_blank"
+              >Suite 6, Level 13, 350 Collins Street, Melbourne VIC 3000</a
+            >
           </li>
 
           <li class="footer-nav__btn">
             <a class="btn" href="#">Contact us</a>
           </li>
-
         </ul>
       </div>
-
     </div>
-
   </nav>
 
   <div class="copyright">
-
     <p>© 2022 Owl IT Services</p>
     <p>Website by SGD</p>
-
   </div>
-
 </div>
+
 </footer>
 </div>
 </body>

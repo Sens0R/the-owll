@@ -1,21 +1,18 @@
 .section {
+  @include spacer-vertical('padding', var(--spacer-xl));
+
   h1 {
     margin-top: -1rem;
-  }
-
-  &:not(:first-child) {
-    @include spacer-vertical('padding', $spacer-xl);
-  }
-
-  &__desc-accent {
-    color: $color-primary;
   }
 
   .h-5 {
     text-transform: uppercase;
   }
-}
 
+  &__desc-accent {
+    color: var(--color-primary);
+  }
+}
 
 /* ====================   IMPORTS   ==================== */
 

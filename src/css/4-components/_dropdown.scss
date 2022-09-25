@@ -6,12 +6,14 @@
   &__btn {
     @include flex($display: inline-flex, $justify-content: center, $align-items: center);
     padding: 1rem;
-    margin-left: -(calc($spacer-sm + 0.875rem));
+    margin-left: -15px;
+    @include media-breakpoint-up(xl) {
+      margin-left: -25px;
+    }
   }
 
   &__btn:focus-visible {
-    fill: $color-secondary;
-    outline: none;
+    fill: var(--color-secondary);
 
     .dropdown__icon {
       scale: 1.5;
@@ -25,7 +27,7 @@
 
   &__icon {
     @include box(0.75rem, 0.75rem);
-    transition: all 0.3s ease-out;
+    transition: var(--transition);
   }
 
   &__content {
@@ -33,15 +35,15 @@
     visibility: hidden;
     pointer-events: none;
 
-    @include media-breakpoint-down(lg) {
-      transition: all 0.3s ease-in;
+    @include media-breakpoint-down(xl) {
+      transition: var(--transition);
       max-height: 0;
     }
   }
 }
 
 .dropdown.active {
-  color: $color-secondary;
+  color: var(--color-secondary);
   text-decoration: none;
 
   .dropdown__content {
@@ -50,7 +52,7 @@
   }
 
   .dropdown__icon {
-    fill: $color-secondary;
+    fill: var(--color-secondary);
     rotate: 90deg;
   }
 }
@@ -63,20 +65,19 @@
   &__link {
     @include flex($flex-direction: column);
     padding: 0.75rem;
-    color: $color-dark;
-    font-size: $fs-sm;
+    color: var(--color-dark);
+    font-size: var(--fs-0);
 
     @include hover {
-      background-color: $color-secondary;
-      color: $color-light;
+      background-color: var(--color-secondary);
+      color: var(--color-light);
     }
 
     &:focus-visible {
-      outline: none;
       border-radius: 0;
-      color: $color-light;
-      background-color: $color-secondary;
-      text-decoration: underline 3px solid $color-light;
+      color: var(--color-light);
+      background-color: var(--color-secondary);
+      text-decoration: underline 3px solid var(--color-light);
     }
   }
 }
@@ -88,17 +89,17 @@
     @include absolute(top 100);
     z-index: -1;
     opacity: 0;
-    transition: all 0.3s ease-out;
-    border-radius: $border-radius-sm;
+    transition: var(--transition);
+    border-radius: var(--br-sm);
     filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
   }
 
   .dropdown-content {
     display: flex;
-    background-color: $color-light;
-    border-top: 3px solid $color-secondary;
+    background-color: var(--color-light);
+    border-top: 3px solid var(--color-secondary);
     translate: 0 -100%;
-    transition: all 0.3s ease-out;
+    transition: var(--transition);
   }
 
   .dropdown.active {

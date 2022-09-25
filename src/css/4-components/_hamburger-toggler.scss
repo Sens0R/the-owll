@@ -37,9 +37,9 @@
 
     .nav-toggler__open,
     .nav-toggler__close {
-      outline: 3px solid $color-primary;
+      outline: 3px solid var(--color-primary);
       outline-offset: 3px;
-      border-radius: $border-radius-sm;
+      border-radius: var(--br-sm);
     }
   }
 }

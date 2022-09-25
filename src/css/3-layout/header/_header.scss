@@ -1,17 +1,13 @@
 .header._sticky-header {
   @include fixed(top 0 left 0);
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 1.5em 1.25em -1.5em;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 8px;
 }
 
 .header {
-  @include z-index(header);
-  @include spacer-vertical('padding', $spacer-sm);
-  background-color: $color-light;
-  user-select: none;
+  @include spacer-vertical('padding', var(--spacer-sm));
   @include media-breakpoint-up(xxl) {
-    @include spacer-horizontal('padding', $spacer-lg);
+    @include spacer-horizontal('padding', var(--spacer-lg));
   }
-
   @include flex($flex-wrap: wrap, $align-items: center);
 }
 
@@ -19,39 +15,60 @@
   @include flex($justify-content: center, $align-items: center);
 }
 
-.logo {
-  @include flex($justify-content: center, $align-items: center);
-  @include media-breakpoint-up(xxl) {
-    @include spacer-right('margin', $spacer-lg);
+.logo-icon {
+  width: clamp(3.75rem, calc(1.02rem + 13.64vw), 11.25rem);
+  height: clamp(2.5rem, calc(0.68rem + 9.09vw), 7.5rem);
+}
+
+.logo-hover {
+  transition: var(--transition);
+
+  @include hover {
+    filter: drop-shadow(0 0 0.75rem var(--color-secondary));
+  }
+
+  &:focus-visible {
+    filter: drop-shadow(0 0 0.75rem var(--color-secondary));
   }
 }
 
 .phone {
-  @include spacer-horizontal('margin', $spacer-sm);
+  @include spacer-horizontal('margin', var(--spacer-lg));
 
   &__number {
-    @include media-breakpoint-up(md) {
-      @include font-size(1.3333rem);
+    font-size: clamp(1.06rem, calc(0.9rem + 0.8vw), 1.5rem);
+    font-weight: var(--fw-semibold);
+    color: var(--color-primary);
+    transition: var(--transition);
+    text-decoration: underline 2px solid transparent;
+
+    @include hover {
+      text-decoration: underline 2px solid var(--color-primary);
+
+      .phone-icon {
+        rotate: 15deg;
+        scale: 1.25;
+        translate: -5px;
+      }
     }
 
-    font-weight: $semibold;
-    color: $color-primary;
+    &:focus-visible {
+      text-decoration: underline 2px solid var(--color-primary);
+
+      .phone-icon {
+        rotate: 15deg;
+        scale: 1.25;
+        translate: -5px;
+      }
+    }
   }
 }
 
 .phone-icon {
-  @include box(1.5rem, 1.5rem);
-  @include media-breakpoint-up(md) {
-    @include box(2.25rem, 2.25rem);
-  }
-
-  margin-right: 0.5rem;
-  fill: $color-primary;
-}
-
-.logo-icon {
-  @include rfs(9.7778rem, max-width);
-  @include rfs(6.1667rem, max-height);
+  @include box(clamp(1.5rem, calc(1.23rem + 1.36vw), 2.25rem), clamp(1.5rem, calc(1.23rem + 1.36vw), 2.25rem));
+  margin-right: 0.75rem;
+  fill: var(--color-primary);
+  transition: var(--transition);
 }
 
 /* ====================   IMPORTS   ==================== */

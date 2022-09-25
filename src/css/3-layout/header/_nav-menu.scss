@@ -7,12 +7,11 @@
   width: 100%;
 
   &__link {
-    padding: $spacer-sm;
-    font-weight: $medium;
+    @include spacer('padding', var(--spacer-sm));
+    font-weight: var(--fw-medium);
 
     &:focus-visible {
-      color: $color-secondary;
-      outline-style: none;
+      color: var(--color-secondary);
       text-decoration: underline 3px;
     }
   }
@@ -21,12 +20,12 @@
 .nav-menu__item {
   @include hover {
     .nav-menu__link {
-      color: $color-secondary;
+      color: var(--color-secondary);
       text-decoration: underline;
     }
 
     .dropdown__icon {
-      fill: $color-secondary;
+      fill: var(--color-secondary);
     }
   }
 }
@@ -34,6 +33,10 @@
 /* ====================   NAVIGATION MEDIA   ==================== */
 
 @include media-breakpoint-down(xl) {
+  .nav-body {
+    @include spacer-top('margin', var(--spacer-lg));
+  }
+
   .navigation {
     position: absolute;
     right: 0;
@@ -43,38 +46,36 @@
     height: 0;
     width: 100%;
     //transition: all 0.3s, translate 0.6s, opacity 1s;
-    transition-timing-function: ease-out;
     overflow: hidden;
     opacity: 0;
-    background: $color-light;
 
     &.active {
+      z-index: var(--z-hamburger);
       order: 5;
       position: static;
       height: 100vh;
       visibility: visible;
-      @include z-index(nav-menu);
+
       opacity: 1;
       box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
     }
   }
 
   .nav-menu {
-    @include font-size($fs-base);
     &__link {
       padding-left: 0;
     }
   }
 }
 
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-up(xl) {
   .active-page {
     .nav-menu__link {
-      color: $color-secondary;
+      color: var(--color-secondary);
     }
 
     .nav-menu-dropdown__btn {
-      fill: $color-secondary;
+      fill: var(--color-secondary);
     }
   }
 
@@ -93,9 +94,15 @@
   }
 }
 
-.nav-search-burger {
+.nav-search-mobile {
+  @include spacer-top('margin', var(--spacer-lg));
   @include flex($justify-content: center, $align-items: center);
-  border: 2px solid $color-primary;
-  height: 3rem;
-  @include spacer-vertical('margin', $spacer-lg);
+  margin-right: 2px;
+  margin-left: 2px;
+  outline: 1px solid var(--color-secondary);
+  height: 2.25rem;
+
+  &:focus-within {
+    outline-width: 2px;
+  }
 }

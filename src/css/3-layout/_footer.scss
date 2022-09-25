@@ -1,12 +1,10 @@
 .footer {
-  margin-top: auto;
-  background-color: $color-blue-light;
-  @include spacer-top('padding', $spacer-xl);
+  @include spacer-top('padding', var(--spacer-xl));
 }
 
 .footer-nav {
   .h-5 {
-    padding-top: $spacer-sm;
+    padding-top: var(--spacer-sm);
     margin: 0;
   }
 
@@ -15,7 +13,7 @@
   }
 
   &__column {
-    @include spacer-bottom('margin', $spacer-lg);
+    @include spacer-bottom('margin', var(--spacer-lg));
     @include flex($flex-direction: column);
   }
 
@@ -26,34 +24,34 @@
   }
 
   &__header {
-    font-size: $fs-base;
+    font-size: var(--fs-5);
     font-weight: bold;
     text-transform: uppercase;
-    color: $color-secondary;
+    color: var(--color-secondary);
     margin-top: 0;
   }
 
   &__link {
     @include flex($justify-content: center, $flex-direction: column);
-    padding: $spacer-sm 0;
-    font-size: $fs-sm;
-    font-weight: $medium;
-    outline: none;
+    @include spacer-vertical('padding', var(--spacer-sm));
+    font-size: var(--fs-0);
+    font-weight: var(--fw-medium);
+
 
     @include hover {
-      color: $color-secondary-dark;
+      color: var(--color-secondary-dark);
       text-decoration: underline;
     }
 
     &:focus-visible {
-      color: $color-secondary-dark;
+      color: var(--color-secondary-dark);
       text-decoration: underline;
     }
   }
 
   &__btn {
     margin-top: auto;
-    padding: $spacer-sm 0;
+    @include spacer-vertical('padding', var(--spacer-sm));
   }
 
   .btn {
@@ -61,13 +59,13 @@
   }
 
   .logo-icon {
-    min-height: 7.0556rem;
-    min-width: 11.1111rem;
+    height: 8rem;
+    width: 12.5rem;
   }
 }
 
 .copyright {
   @include flex($justify-content: space-between, $align-items: center);
-  color: $color-gray;
-  font-size: 0.7778rem;
+  color: var(--color-secondary-gray);
+  font-size: var(--fs-6);
 }

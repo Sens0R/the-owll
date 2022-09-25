@@ -1,23 +1,22 @@
 .card {
-  border-radius: $br;
-  border: 1px solid $color-stroke;
+  border: var(--border);
 
   &__content {
-    @include spacer('padding', $spacer-lg);
+    @include spacer('padding', var(--spacer-lg));
   }
 
   &__img {
     overflow: hidden;
 
     @include media-breakpoint-down(md) {
-      border-top-right-radius: $br;
-      border-top-left-radius: $br;
+      border-top-right-radius: var(--br);
+      border-top-left-radius: var(--br);
     }
   }
 
   &__img-link {
     height: 100%;
-    transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-out;
 
     @include hover {
       scale: 1.05;
@@ -37,13 +36,13 @@
     }
 
     &:nth-child(even) .card__img {
-      border-top-right-radius: $br;
-      border-bottom-right-radius: $br;
+      border-top-right-radius: var(--br);
+      border-bottom-right-radius: var(--br);
     }
 
     &:nth-child(odd) .card__img {
-      border-top-left-radius: $br;
-      border-bottom-left-radius: $br;
+      border-top-left-radius: var(--br);
+      border-bottom-left-radius: var(--br);
     }
   }
 }

@@ -1,17 +1,13 @@
 .card-blog-post {
   @include flex($flex-direction: column);
   height: 100%;
-  border-radius: $br;
-  border: 1px solid $color-stroke;
+  border-radius: var(--br);
+  border: var(--border);
   transition: all 0.3s ease-out;
-
-  .h-4 {
-    margin-top: $spacer-sm;
-  }
-
+ 
   &__content {
     @include flex($flex-direction: column, $justify-content: center);
-    @include spacer('padding', $spacer-lg);
+    @include spacer('padding', var(--spacer-lg));
     height: 100%;
 
     > :last-child {
@@ -21,8 +17,8 @@
   }
 
   .image {
-    border-top-left-radius: $br;
-    border-top-right-radius: $br;
+    border-top-left-radius: var(--br);
+    border-top-right-radius: var(--br);
     transition: all 0.3s ease-out;
     aspect-ratio: 5 / 3;
   }
@@ -32,8 +28,8 @@
   }
 
   .header-link:focus-visible {
-    color: $color-primary;
-    text-decoration-color: $color-primary;
+    color: var(--color-primary);
+    text-decoration-color: var(--color-primary);
   }
 }
 
@@ -46,13 +42,13 @@
     }
 
     .box-btn {
-      background-color: $color-primary;
+      background-color: var(--color-primary);
       translate: -5px -5px;
-      box-shadow: $shadow;
+      box-shadow: var(--shadow);
 
       .arrow-right-icon {
         scale: 1.5;
-        fill: $color-dark;
+        fill: var(--color-dark);
       }
     }
   }
@@ -64,21 +60,21 @@
   }
 
   .box-btn {
-    background-color: $color-primary;
+    background-color: var(--color-primary);
     translate: -5px -5px;
-    box-shadow: $shadow;
+    box-shadow: var(--shadow);
 
     .arrow-right-icon {
       scale: 1.5;
-      fill: $color-dark;
+      fill: var(--color-dark);
     }
   }
 }
 
 .box-time {
   z-index: 1;
-  color: $color-gray-light;
-  font-size: $fs-sm;
-  font-weight: $medium;
+  color: var(--color-secondary-gray-light);
+  font-size: var(--fs-0);
+  font-weight: var(--fw-medium);
   margin: 0;
 }

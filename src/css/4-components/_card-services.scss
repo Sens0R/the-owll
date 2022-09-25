@@ -1,44 +1,43 @@
 .card-services {
   @include flex($flex-direction: column);
+  @include spacer('padding', var(--spacer-lg));
   position: relative;
   height: 100%;
-  border-radius: $br;
-  border: 1px solid $color-stroke;
-  transition: all 0.3s ease-in-out;
-  outline: none;
-  padding: $spacer;
-  padding-bottom: 0;
-  background-color: $color-light;
-  
-  @include media-breakpoint-up(lg) {
-    @include spacer('padding', $spacer-lg);
+  border-radius: var(--br);
+  border: var(--border);
+  transition: var(--transition);
+  background-color: var(--color-light);
+
+  .h-4 {
+    padding-top: 5px;
   }
 
   &__logo {
     @include flex($justify-content: center, $align-items: center);
-    @include box(4.4444rem, 4.4444rem);
-    background-color: $black;
-    border-radius: $br;
-    box-shadow: $shadow;
-    transition: all 0.3s ease-in-out;
+    @include box(4.75rem, 4.75rem);
+    border-radius: var(--br);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
   }
 
   &__icon {
     @include box(2rem, 2rem);
-    fill: $color-light;
+    fill: var(--color-light);
   }
 
   .box-link {
-    @include absolute(bottom 1.75rem);
-    translate: 0 1rem;
-    transition: all 0.3s ease-in-out;
-    visibility: hidden;
-    opacity: 0;
+    @include media-breakpoint-up(lg) {
+      @include absolute(bottom 1.75rem);
+      translate: 0 1rem;
+      transition: var(--transition);
+      visibility: hidden;
+      opacity: 0;
+    }
   }
 
   @include hover {
-    border: 1px solid $color-dark;
-    box-shadow: $shadow;
+    border: 1px solid var(--color-dark);
+    box-shadow: var(--shadow);
 
     .card-services__logo {
       translate: 5px 5px;
@@ -53,8 +52,8 @@
   }
 
   &:focus-visible {
-    border: 1px solid $color-dark;
-    box-shadow: $shadow;
+    border: 1px solid var(--color-dark);
+    box-shadow: var(--shadow);
 
     .card-services__logo {
       translate: 5px 5px;

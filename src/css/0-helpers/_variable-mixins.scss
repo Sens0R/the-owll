@@ -1,5 +1,5 @@
 @mixin underline(
-  $color: $color-dark,
+  $color: var(--color-dark),
   $size: 1px,
   $bottom: 0,
   $top: null,

@@ -1,22 +1,22 @@
 .box-link {
   @include link-space();
   display: inline-block;
-  color: $color-secondary;
-  font-size: $fs-sm;
-  font-weight: $medium;
+  color: var(--color-secondary);
+  font-size: var(--fs-0);
+  font-weight: var(--fw-medium);
   text-transform: uppercase;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-out;
   cursor: pointer;
 
   &__body {
     @include flex($align-items: center);
 
     &:focus-visible {
-      outline: none;
-      color: $color-primary;
+     
+      color: var(--color-primary);
 
       .box-link__icon {
-        fill: $color-primary;
+        fill: var(--color-primary);
         translate: 5px;
       }
     }
@@ -25,15 +25,15 @@
   &__icon {
     @include box(0.7rem, 0.7rem);
     margin-left: 3px;
-    fill: $color-secondary;
-    transition: all 0.3s ease-in-out;
+    fill: var(--color-secondary);
+    transition: all 0.3s ease-out;
   }
 
   @include hover {
-    color: $color-primary;
+    color: var(--color-primary);
 
     .box-link__icon {
-      fill: $color-primary;
+      fill: var(--color-primary);
       translate: 5px;
     }
   }

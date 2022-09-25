@@ -1,23 +1,32 @@
-.nav-search {
+.nav-search-container {
   display: none;
+  @include media-breakpoint-up(md) {
+    @include flex($justify-content: flex-end, $align-items: center);
+    @include spacer-right('margin', var(--spacer-lg));
+  }
+  @include media-breakpoint-up(xl) {
+    margin-right: 0;
+  }
+}
+
+.nav-search {
   @include flex($justify-content: space-between, $align-items: center);
-  height: auto;
-  height: 2.2778rem;
-  max-width: 7.7778rem;
-  border-radius: $br-sm;
-  outline: 1px solid $color-dark;
-  margin-left: 0.75rem;
- 
+
+  max-width: 8.75rem;
+  border-radius: var(--br-sm);
+  outline: 1px solid var(--color-dark);
+  height: 2.5rem;
+
   &:focus-within {
+    box-shadow: 0 0 0 1000vmax rgba(0 0 0 / 0.25);
     max-width: 100%;
-    outline: 1px solid $color-accent;
+    outline: 2px solid var(--color-secondary);
+    svg {
+      fill: var(--color-secondary);
+    }
   }
 
   &:focus-within:valid {
-    .nav-search-buttons__icon {
-      fill: $color-accent;
-    }
-
     .nav-search-buttons__search svg {
       scale: 1.25;
     }
@@ -32,12 +41,12 @@
 
 .nav-search-input {
   width: 100%;
-
-  padding: 0 0.5rem 0 1rem;
+  font-size: var(--fs-5);
+  padding: 0 0.75rem;
 
   &::placeholder {
-    color: $color-dark;
-    font-weight: $medium;
+    color: var(--color-dark);
+    font-weight: var(--fw-medium);
   }
 
   &:focus-visible::placeholder {
@@ -49,24 +58,7 @@
   @include flex($justify-content: center, $align-items: center);
   padding: 0 0.75rem;
   height: 100%;
-  outline: none;
-
-  &__open {
-    display: flex;
-    margin-left: auto;
-  }
-
-  &__close {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    outline: 1px solid $color-primary;
-
-    &:focus-visible {
-      background-color: $color-accent;
-      color: $color-light;
-    }
-  }
+  transition: var(--transition);
 
   &__reset {
     display: none;
@@ -74,21 +66,22 @@
 
   &__icon {
     @include flex($justify-content: center, $align-items: center);
-    @include box(1.1111rem, 1.1111rem);
-    fill: $color-dark;
+    @include box(1.375rem, 1.375rem);
+    fill: var(--color-dark);
   }
 
   &:focus-visible {
-    background-color: $color-secondary;
+    background-color: var(--color-secondary);
+
     svg {
-      fill: $color-light !important;
+      fill: var(--color-light) !important;
     }
   }
 
   @include hover {
-    background-color: $color-secondary;
+    background-color: var(--color-secondary);
     svg {
-      fill: $color-light;
+      fill: var(--color-light);
     }
   }
 }
@@ -97,35 +90,24 @@
 
 @include media-breakpoint-up(md) {
   .nav-search {
-   
     width: 100%;
-    margin-left: 0;
-    transition: max-width 0.4s ease-in-out;
+    transition: max-width 0.4s ease-out;
   }
 
   .nav-search-input {
     &::placeholder {
-      font-size: $fs-base;
-      transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-out;
     }
   }
 
   .nav-search-buttons {
-    &__close {
-      display: none;
-    }
-
-    &__open {
-      display: none !important;
-    }
-
     &__reset {
-      border-right: 1px solid $color-accent;
+      border-right: 1px solid var(--color-primary);
     }
 
     &__search {
       svg {
-        transition: scale 0.3s ease-in-out;
+        transition: var(--transition);
       }
     }
   }

@@ -4,22 +4,22 @@
 
   &__box {
     aspect-ratio: 1 / 1;
-    padding: $spacer-sm;
-    border-radius: $br;
-    border: 1px solid $color-stroke;
+    padding: var(--spacer-sm);
+    border-radius: var(--br);
+    border: var(--border);
     @include flex($justify-content: center, $align-items: center);
-    background-color: $color-light;
+    background-color: var(--color-light);
   }
 
   &__icon {
-    fill: $color-gray;
-    @include box(100%, 4.5556rem);
+    fill: var(--color-secondary-gray);
+    @include box(100%, 5rem);
   }
 
   &__content {
     @include margin-auto(y);
     @include media-breakpoint-down(lg) {
-      @include spacer-bottom('padding', $spacer);
+      @include spacer-bottom('padding', var(--spacer));
     }
   }
 }

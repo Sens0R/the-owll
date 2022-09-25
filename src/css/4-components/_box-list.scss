@@ -1,7 +1,6 @@
 .box-list {
   @include flex($flex-wrap: wrap, $align-items: center);
-  margin-top: 0;
-  font-size: 0.7778rem;
+  font-size: var(--fs-6);
 
   li {
     margin-bottom: 0.5rem;
@@ -9,20 +8,20 @@
   }
 
   li a {
-    background-color: $color-secondary-light;
-    padding: 0.1667rem 0.5556rem;
-    transition: all 0.2s ease-in-out;
+    background-color: var(--color-secondary-light);
+    padding: 0.25rem 0.5rem;
+    transition: all 0.2s ease-out;
     @include link-space();
 
     @include hover {
-      background-color: $color-secondary-dark;
-      color: $color-light;
+      background-color: var(--color-secondary-dark);
+      color: var(--color-light);
     }
 
     &:focus-visible {
-      background-color: $color-secondary-dark;
-      color: $color-light;
-      outline: none;
+      background-color: var(--color-secondary-dark);
+      color: var(--color-light);
+     
     }
   }
 }

@@ -1,5 +1,5 @@
 .portfolio .card:not(:last-child) {
-  @include spacer-bottom('margin', $spacer-lg);
+  @include spacer-bottom('margin', var(--spacer-lg));
 }
 
 

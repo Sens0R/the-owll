@@ -2,39 +2,39 @@
   @include flex($justify-content: center, $align-items: center);
   @include link-space();
   padding: 0.75rem;
-  background: $color-dark;
+  background: var(--color-dark);
   border-radius: 100%;
-  transition: all 0.3s ease-in-out;
-  outline: none;
+  transition: all 0.3s ease-out;
+ 
 
   &:focus-visible {
-    background-color: $color-primary;
-    box-shadow: $shadow-sm;
+    background-color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
 
     .icon-rounded {
-      fill: $color-dark;
+      fill: var(--color-dark);
     }
   }
 
   @include hover {
-    background: $color-primary;
-    box-shadow: $shadow-sm;
+    background: var(--color-primary);
+    box-shadow: var(--shadow-sm);
 
     .icon-rounded {
-      fill: $color-dark;
+      fill: var(--color-dark);
     }
   }
 }
 
 .icon-rounded {
   @include box(1rem, 1rem);
-  transition: all 0.3s ease-in-out;
-  fill: $color-light;
+  transition: all 0.3s ease-out;
+  fill: var(--color-light);
 }
 
 .social-icons {
   @include flex($align-items: center, $flex-wrap: wrap);
-  @include spacer-vertical('margin', $spacer);
+  @include spacer-vertical('margin', var(--spacer));
 
   &__item {
     margin-right: 0.625rem;

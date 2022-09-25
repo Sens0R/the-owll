@@ -29,44 +29,43 @@
     
     <header class="header container-fluid"><!-- ====================   LOGO   ==================== -->
 
-<a class="logo col-auto justify-content-start logo-hover" href="index.html"
-  aria-label="The Owl home. The Owl logo.">
+<a aria-label="The Owl home. The Owl logo." class="logo col-auto justify-content-start logo-hover" href="index.html">
   <svg aria-hidden="true" class="logo-icon">
-    <use href="images/icons/sprite-multi.svg#logo"></use>
+    <use href="images/icons/sprite-multi.svg#logo" />
   </svg>
 </a>
 
 <!-- ====================   PHONE   ==================== -->
 
 <div class="phone col-auto">
-  <svg aria-hidden="true" class="phone-icon">
-    <use href="images/icons/sprite-mono.svg#phone"></use>
-  </svg>
-  <a class="phone__number" href="tel:1800843695">1800&nbsp;843&nbsp;695</a>
+  <a href="tel:1800843695" class="phone__number">
+    <svg aria-hidden="true" class="phone-icon">
+      <use href="images/icons/sprite-mono.svg#phone" />
+    </svg>
+    1800&nbsp;843&nbsp;695
+  </a>
 </div>
-
 
 <!-- ====================   NAVIGATION   ==================== -->
 
-<nav data-hamburger class="navigation col-xl" aria-label="Main">
- 
-  <form role="search" data-search class="nav-search-burger d-xl-none">
+<nav aria-label="Main" class="navigation col-xl" data-hamburger>
+  <form class="nav-search-mobile d-md-none" data-search role="search">
+    <label class="visually-hidden" for="nav-search-input">Search</label>
 
-    <label for="nav-search-input" class="visually-hidden">
-      Search
-    </label>
+    <input
+      autocomplete="off"
+      class="nav-search-input text-sm"
+      id="nav-search-input"
+      placeholder="Search"
+      required
+      type="search"
+    />
 
-    <input type="search" class="nav-search-input text-sm" placeholder="Search"
-      id="nav-search-input" autocomplete="off"
-      required>
-
-    <button type="submit" class="nav-search-buttons nav-search-buttons__search"
-      aria-label="Submit search">
+    <button aria-label="Submit search" class="nav-search-buttons nav-search-buttons__search" type="submit">
       <svg aria-hidden="true" class="nav-search-buttons__icon hvr-icon">
-        <use href="images/icons/sprite-mono.svg#search"></use>
+        <use href="images/icons/sprite-mono.svg#search" />
       </svg>
     </button>
-
   </form>
 
   <div class="nav-body"><ul class="nav-menu">
@@ -77,7 +76,7 @@
 
   <li data-dropdown data-nav-page class="nav-menu__item dropdown">
     <a href="services.html" class="nav-menu__link dropdown__link">Services</a>
-    <button type="button" class="dropdown__btn" data-dropdown-btn
+    <button type="button" class="dropdown__btn"
       aria-label="Dropdown menu for Services">
       <svg aria-hidden="true" class="dropdown__icon">
         <use href="images/icons/sprite-mono.svg#arrow"></use>
@@ -149,67 +148,53 @@
 
 </ul>
 </div>
-
-
 </nav>
-
 
 <!-- ====================   SEARCH   ==================== -->
 
-<div class="col-auto col-xl-2 justify-content-end d-none d-xl-flex">
+<div class="col-auto col-md col-xl-2 col-xxl-3 nav-search-container">
+  <form class="nav-search" data-search role="search">
+    <label class="visually-hidden" for="nav-search-input">Search</label>
+    <input
+      autocomplete="off"
+      class="nav-search-input text-sm"
+      id="nav-search-input"
+      placeholder="Search"
+      required
+      type="search"
+    />
 
-  <form role="search" data-search class="nav-search">
-
-    <label for="nav-search-input" class="visually-hidden">
-      Search
-    </label>
-
-    <input type="search" class="nav-search-input text-sm" placeholder="Search"
-      id="nav-search-input" autocomplete="off"
-      required>
-
-    <button type="reset" class="nav-search-buttons nav-search-buttons__reset"
-      aria-label="Clear search text">
+    <button aria-label="Clear search text" class="nav-search-buttons nav-search-buttons__reset" type="reset">
       <svg aria-hidden="true" class="nav-search-buttons__icon hvr-icon">
-        <use href="images/icons/sprite-mono.svg#toggler-closed"></use>
+        <use href="images/icons/sprite-mono.svg#toggler-closed" />
       </svg>
     </button>
 
-    <button type="submit" class="nav-search-buttons nav-search-buttons__search"
-      aria-label="Submit search">
+    <button aria-label="Submit search" class="nav-search-buttons nav-search-buttons__search" type="submit">
       <svg aria-hidden="true" class="nav-search-buttons__icon hvr-icon">
-        <use href="images/icons/sprite-mono.svg#search"></use>
+        <use href="images/icons/sprite-mono.svg#search" />
       </svg>
     </button>
-
-    <button type="button" data-search-btn="close" class="nav-search-buttons
-      nav-search-buttons__close"
-      aria-label="Close search">close
-    </button>
-
   </form>
-
 </div>
-
 
 <!-- ====================   NAV-TOGGLER   ==================== -->
 
-<button type="button" data-hamburger-btn class="nav-toggler col-auto">
-
+<button class="nav-toggler col-auto" data-hamburger-btn type="button">
   <span class="nav-toggler__open">
     <svg aria-hidden="true" class="nav-toggler-icon">
-      <use href="images/icons/sprite-mono.svg#hamburger"></use>
+      <use href="images/icons/sprite-mono.svg#hamburger" />
     </svg>
     <span class="nav-toggler__text">menu</span>
   </span>
 
   <span class="nav-toggler__close">
     <svg aria-hidden="true" class="nav-toggler-icon">
-      <use href="images/icons/sprite-mono.svg#cancel"></use>
+      <use href="images/icons/sprite-mono.svg#cancel" />
     </svg>
   </span>
-
-</button></header>
+</button>
+</header>
 
 <main>
   <div class="page-banner">
@@ -336,18 +321,12 @@
 
 <footer class="footer">
   <div class="container-fluid container-xxl footer-container">
-
   <nav aria-label="Footer" class="footer-nav">
-
     <div class="row">
-
       <div class="col-12 col-sm-6 col-lg-3 footer-nav__column">
-
         <ul class="footer-nav__list">
-
           <li>
-            <a class="logo-hover" href="index.html"
-              aria-label="The Owl home. The Owl logo.">
+            <a class="logo-hover" href="index.html" aria-label="The Owl home. The Owl logo.">
               <svg aria-hidden="true" class="logo-icon">
                 <use href="images/icons/sprite-multi.svg#logo"></use>
               </svg>
@@ -384,29 +363,23 @@
 </ul>
 </div>
           </li>
-
         </ul>
       </div>
 
       <div class="col-12 col-sm-6 col-lg-3 footer-nav__column">
-
         <h2 class="footer-nav__header">Services</h2>
 
         <ul class="footer-nav__list">
           <li><a class="footer-nav__link" href="about.html">Cloud Solutions</a></li>
-          <li><a class="footer-nav__link" href="faq.html"> Your Local IT Help
-              desk</a></li>
+          <li><a class="footer-nav__link" href="faq.html"> Your Local IT Help desk</a></li>
           <li><a class="footer-nav__link" href="blog.html"> Disaster Recovery</a></li>
           <li><a class="footer-nav__link" href="contact.html">Systems Security</a></li>
           <li><a class="footer-nav__link" href="blog.html">Hardware Procurement</a></li>
-          <li><a class="footer-nav__link" href="contact.html">Phones and
-              Internet</a></li>
+          <li><a class="footer-nav__link" href="contact.html">Phones and Internet</a></li>
         </ul>
-
       </div>
 
       <div class="col-12 col-sm-6 col-lg-3 footer-nav__column">
-
         <h2 class="footer-nav__header">Company</h2>
 
         <ul class="footer-nav__list">
@@ -419,55 +392,42 @@
           </li>
           <li><a class="footer-nav__link" href="brands.html">Contact</a></li>
           <li>
-            <a class="footer-nav__link" href="skin-care-packages.html">Privacy
-              Policy</a>
+            <a class="footer-nav__link" href="skin-care-packages.html">Privacy Policy</a>
           </li>
           <li><a class="footer-nav__link" href="brands.html">Terms & Conditions</a></li>
         </ul>
-
       </div>
 
       <div class="col-12 col-sm-6 col-lg-3 footer-nav__column">
-
         <h2 class="footer-nav__header">Contact</h2>
 
         <ul class="footer-nav__list">
-
           <li>
-
             <div class="h-5">Phone</div>
             <a href="tel:1800843695" class="footer-nav__link">1800&nbsp;843&nbsp;695</a>
           </li>
 
           <li>
-
             <div class="h-5">Address</div>
-            <a class="footer-nav__link"
-              href="https://goo.gl/maps/cWDnimrLcYismybL7"
-              target="_blank">Suite 6, Level 13, 350 Collins Street, Melbourne
-              VIC 3000</a>
-
+            <a class="footer-nav__link" href="https://goo.gl/maps/cWDnimrLcYismybL7" target="_blank"
+              >Suite 6, Level 13, 350 Collins Street, Melbourne VIC 3000</a
+            >
           </li>
 
           <li class="footer-nav__btn">
             <a class="btn" href="#">Contact us</a>
           </li>
-
         </ul>
       </div>
-
     </div>
-
   </nav>
 
   <div class="copyright">
-
     <p>© 2022 Owl IT Services</p>
     <p>Website by SGD</p>
-
   </div>
-
 </div>
+
 </footer>
 </div>
 </body>

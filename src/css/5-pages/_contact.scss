@@ -1,4 +1,4 @@
-.contact {
+/* .contact {
   @include spacer-top('margin', $spacer-xl);
   .row {
     justify-content: space-around;
@@ -47,7 +47,7 @@
     &:focus {
       transition: none;
       border-radius: 0;
-      outline: none;
+   
       border-color: $color-secondary;
     }
   }
@@ -68,3 +68,4 @@
 .contact-col {
   @include spacer-bottom('margin', $spacer-xl);
 }
+ */

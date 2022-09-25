@@ -1,18 +1,13 @@
-.section.about {
-  padding-top: 0;
-}
-
 .about {
   &__content {
-    @include spacer-vertical('padding', $spacer-lg);
-
     @include media-breakpoint-up(lg) {
-      @include spacer-right('padding', $spacer-lg);
+      padding-right: 6rem;
     }
   }
 
   &__img {
     position: relative;
+    @include spacer-vertical('margin', var(--spacer));
   }
 }
 
@@ -22,12 +17,12 @@
   max-width: 80vw;
   padding: 0.75rem 1.15rem;
   margin: 0;
-  border-radius: $br;
-  background-color: $color-dark;
-  font-size: $fs-sm;
-  color: $color-light;
+  border-radius: var(--br);
+  background-color: var(--color-dark);
+  font-size: var(--fs-0);
+  color: var(--color-light);
 
   span {
-    font-weight: $semibold;
+    font-weight: var(--fw-semibold);
   }
 }
