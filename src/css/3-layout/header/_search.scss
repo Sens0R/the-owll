@@ -18,14 +18,11 @@
 
   &:focus-within {
     max-width: 100%;
-    svg {
-      fill: var(--color-dark);
-    }
   }
 
   &:focus-within:valid {
     .nav-search-buttons__search svg {
-      scale: 1.25;
+      fill: var(--color-primary);
     }
 
     .nav-search-buttons__reset {
@@ -68,17 +65,14 @@
   }
 
   &:focus-visible {
-    background-color: var(--color-secondary);
-
     svg {
-      fill: var(--color-light) !important;
+      fill: var(--color-primary);
     }
   }
 
   @include hover {
-    background-color: var(--color-secondary);
     svg {
-      fill: var(--color-light);
+      fill: var(--color-primary);
     }
   }
 }
@@ -93,7 +87,7 @@
 
   .nav-search-input {
     &::placeholder {
-      transition: all 0.4s ease-out;
+      transition: var(--transition);
     }
   }
 
@@ -103,6 +97,8 @@
     }
 
     &__search {
+      @include bubble($text: 'Search', $position: right);
+
       svg {
         transition: var(--transition);
       }

@@ -10,17 +10,6 @@
   translate: none;
 }
 
-/* ====================   POP IN   ==================== */
-
-[data-animate='pop-in'] {
-  transition: all 0.5s ease-out;
-  scale: 0.75;
-}
-
-[data-animate='pop-in'].show {
-  scale: 1;
-}
-
 /* ====================   PAGE SECTION   ==================== */
 
 [data-animate='section-header'] {

@@ -97,12 +97,6 @@
 .nav-search-mobile {
   @include spacer-top('margin', var(--spacer-lg));
   @include flex($justify-content: center, $align-items: center);
-  margin-right: 2px;
-  margin-left: 2px;
-  outline: 1px solid var(--color-secondary);
+  border: 1px solid var(--color-secondary);
   height: 2.75rem;
-
-  &:focus-within {
-    outline-width: 2px;
-  }
 }

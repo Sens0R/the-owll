@@ -35,28 +35,29 @@
 .phone {
   @include spacer-horizontal('margin', var(--spacer-lg));
 
-  &__number {
+  &__icon {
+    @include box(clamp(1.5rem, calc(1.23rem + 1.36vw), 2.25rem), clamp(1.5rem, calc(1.23rem + 1.36vw), 2.25rem));
+    margin-right: 0.75rem;
+    fill: var(--color-primary);
+    transition: var(--transition);
+  }
+
+  &__link {
     font-size: clamp(1.06rem, calc(0.9rem + 0.8vw), 1.5rem);
     font-weight: var(--fw-semibold);
     color: var(--color-primary);
     transition: var(--transition);
-    text-decoration: underline 2px solid transparent;
+    text-decoration: underline 1px solid transparent;
+    @include bubble($text: 'Make a phone call');
 
     @include hover {
-      text-decoration: underline 2px solid var(--color-primary);
+      text-decoration: underline 1px solid var(--color-primary);
     }
 
     &:focus-visible {
-      text-decoration: underline 2px solid var(--color-primary);
+      text-decoration: underline 1px solid var(--color-primary);
     }
   }
-}
-
-.phone-icon {
-  @include box(clamp(1.5rem, calc(1.23rem + 1.36vw), 2.25rem), clamp(1.5rem, calc(1.23rem + 1.36vw), 2.25rem));
-  margin-right: 0.75rem;
-  fill: var(--color-primary);
-  transition: var(--transition);
 }
 
 /* ====================   IMPORTS   ==================== */

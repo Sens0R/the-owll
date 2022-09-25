@@ -17,7 +17,7 @@
 @mixin link-space($width: 100%, $height: 100%, $size: 48px) {
   position: relative;
 
-  &:before {
+  &::before {
     content: '';
     display: block;
     width: $width;
@@ -73,16 +73,9 @@
   }
 }
 
-
 @mixin box($width, $height) {
   width: $width;
   height: $height;
-}
-
-@mixin pseudo($display: block, $pos: absolute, $content: '') {
-  content: $content;
-  display: $display;
-  position: $pos;
 }
 
 @mixin media-xs {
@@ -102,8 +95,3 @@
   white-space: nowrap !important;
   border: 0 !important;
 }
-
-
-
- 
-

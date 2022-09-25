@@ -5249,18 +5249,6 @@
   translate: none;
 }
 
-/* ====================   POP IN   ==================== */
-[data-animate=pop-in] {
-  -webkit-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-  scale: 0.75;
-}
-
-[data-animate=pop-in].show {
-  scale: 1;
-}
-
 /* ====================   PAGE SECTION   ==================== */
 [data-animate=section-header] {
   opacity: 0;
@@ -5623,7 +5611,7 @@ input[type=search]::-webkit-search-cancel-button {
 .link-space {
   position: relative;
 }
-.link-space:before {
+.link-space::before {
   content: "";
   display: block;
   width: 100%;
@@ -5749,28 +5737,7 @@ input[type=search]::-webkit-search-cancel-button {
   margin-left: var(--spacer-lg);
   margin-right: var(--spacer-lg);
 }
-.phone__number {
-  font-size: clamp(1.06rem, 0.9rem + 0.8vw, 1.5rem);
-  font-weight: var(--fw-semibold);
-  color: var(--color-primary);
-  -webkit-transition: var(--transition);
-  -o-transition: var(--transition);
-  transition: var(--transition);
-  -webkit-text-decoration: underline 2px solid transparent;
-          text-decoration: underline 2px solid transparent;
-}
-@media (hover: hover) and (pointer: fine) {
-  .phone__number:hover {
-    -webkit-text-decoration: underline 2px solid var(--color-primary);
-            text-decoration: underline 2px solid var(--color-primary);
-  }
-}
-.phone__number:focus-visible {
-  -webkit-text-decoration: underline 2px solid var(--color-primary);
-          text-decoration: underline 2px solid var(--color-primary);
-}
-
-.phone-icon {
+.phone__icon {
   width: clamp(1.5rem, 1.23rem + 1.36vw, 2.25rem);
   height: clamp(1.5rem, 1.23rem + 1.36vw, 2.25rem);
   margin-right: 0.75rem;
@@ -5778,6 +5745,56 @@ input[type=search]::-webkit-search-cancel-button {
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
   transition: var(--transition);
+}
+.phone__link {
+  font-size: clamp(1.06rem, 0.9rem + 0.8vw, 1.5rem);
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
+  -webkit-text-decoration: underline 1px solid transparent;
+          text-decoration: underline 1px solid transparent;
+  position: relative;
+}
+.phone__link::before {
+  content: "Make a phone call";
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  padding: 0.5rem 0.75rem;
+  white-space: nowrap;
+  font-size: var(--fs-0);
+  font-weight: var(--fw-regular);
+  color: var(--color-secondary);
+  background-color: var(--color-secondary-light);
+  border-radius: var(--br-sm);
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
+  left: 50%;
+  bottom: -75%;
+  translate: -50% 50%;
+}
+@media (hover: hover) and (pointer: fine) {
+  .phone__link:hover::before {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.phone__link:focus-visible::before {
+  visibility: visible;
+  opacity: 1;
+}
+@media (hover: hover) and (pointer: fine) {
+  .phone__link:hover {
+    -webkit-text-decoration: underline 1px solid var(--color-primary);
+            text-decoration: underline 1px solid var(--color-primary);
+  }
+}
+.phone__link:focus-visible {
+  -webkit-text-decoration: underline 1px solid var(--color-primary);
+          text-decoration: underline 1px solid var(--color-primary);
 }
 
 /* ====================   IMPORTS   ==================== */
@@ -5894,13 +5911,8 @@ input[type=search]::-webkit-search-cancel-button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 2px;
-  margin-left: 2px;
-  outline: 1px solid var(--color-secondary);
+  border: 1px solid var(--color-secondary);
   height: 2.75rem;
-}
-.nav-search-mobile:focus-within {
-  outline-width: 2px;
 }
 
 .nav-search-container {
@@ -5944,11 +5956,8 @@ input[type=search]::-webkit-search-cancel-button {
 .nav-search:focus-within {
   max-width: 100%;
 }
-.nav-search:focus-within svg {
-  fill: var(--color-dark);
-}
 .nav-search:focus-within:valid .nav-search-buttons__search svg {
-  scale: 1.25;
+  fill: var(--color-primary);
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   .nav-search:focus-within:valid .nav-search-buttons__reset {
@@ -6032,18 +6041,12 @@ input[type=search]::-webkit-search-cancel-button {
   height: 1.375rem;
   fill: var(--color-dark);
 }
-.nav-search-buttons:focus-visible {
-  background-color: var(--color-secondary);
-}
 .nav-search-buttons:focus-visible svg {
-  fill: var(--color-light) !important;
+  fill: var(--color-primary);
 }
 @media (hover: hover) and (pointer: fine) {
-  .nav-search-buttons:hover {
-    background-color: var(--color-secondary);
-  }
   .nav-search-buttons:hover svg {
-    fill: var(--color-light);
+    fill: var(--color-primary);
   }
 }
 
@@ -6056,29 +6059,65 @@ input[type=search]::-webkit-search-cancel-button {
     transition: max-width 0.4s ease-out;
   }
   .nav-search-input::-webkit-input-placeholder {
-    -webkit-transition: all 0.4s ease-out;
-    transition: all 0.4s ease-out;
+    -webkit-transition: var(--transition);
+    transition: var(--transition);
   }
   .nav-search-input::-moz-placeholder {
-    -moz-transition: all 0.4s ease-out;
-    transition: all 0.4s ease-out;
+    -moz-transition: var(--transition);
+    transition: var(--transition);
   }
   .nav-search-input:-ms-input-placeholder {
-    -ms-transition: all 0.4s ease-out;
-    transition: all 0.4s ease-out;
+    -ms-transition: var(--transition);
+    transition: var(--transition);
   }
   .nav-search-input::-ms-input-placeholder {
-    -ms-transition: all 0.4s ease-out;
-    transition: all 0.4s ease-out;
+    -ms-transition: var(--transition);
+    transition: var(--transition);
   }
   .nav-search-input::placeholder {
-    -webkit-transition: all 0.4s ease-out;
-    -o-transition: all 0.4s ease-out;
-    transition: all 0.4s ease-out;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
   }
   .nav-search-buttons__reset {
     border-right: 1px solid var(--color-primary);
   }
+  .nav-search-buttons__search {
+    position: relative;
+  }
+  .nav-search-buttons__search::before {
+    content: "Search";
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    padding: 0.5rem 0.75rem;
+    white-space: nowrap;
+    font-size: var(--fs-0);
+    font-weight: var(--fw-regular);
+    color: var(--color-secondary);
+    background-color: var(--color-secondary-light);
+    border-radius: var(--br-sm);
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+    right: 0;
+    bottom: -75%;
+    translate: 0 50%;
+  }
+}
+@media (min-width: 768px) and (hover: hover) and (pointer: fine) {
+  .nav-search-buttons__search:hover::before {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@media (min-width: 768px) {
+  .nav-search-buttons__search:focus-visible::before {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@media (min-width: 768px) {
   .nav-search-buttons__search svg {
     -webkit-transition: var(--transition);
     -o-transition: var(--transition);
@@ -6430,7 +6469,7 @@ input[type=search]::-webkit-search-cancel-button {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-.rounded-icon:before {
+.rounded-icon::before {
   content: "";
   display: block;
   width: 100%;
@@ -6599,7 +6638,7 @@ input[type=search]::-webkit-search-cancel-button {
   transition: all 0.3s ease-out;
   cursor: pointer;
 }
-.box-link:before {
+.box-link::before {
   content: "";
   display: block;
   width: 100%;
@@ -6669,7 +6708,7 @@ input[type=search]::-webkit-search-cancel-button {
   transition: all 0.2s ease-out;
   position: relative;
 }
-.box-list li a:before {
+.box-list li a::before {
   content: "";
   display: block;
   width: 100%;
@@ -6835,8 +6874,6 @@ input[type=search]::-webkit-search-cancel-button {
   border-radius: 0;
   color: var(--color-light);
   background-color: var(--color-secondary);
-  -webkit-text-decoration: underline 3px solid var(--color-light);
-          text-decoration: underline 3px solid var(--color-light);
 }
 
 /* ====================   MEDIA   ==================== */

@@ -1,15 +1,8 @@
-@mixin underline(
-  $color: var(--color-dark),
-  $size: 1px,
-  $bottom: 0,
-  $top: null,
-  $round-cap: true,
-  $depth: false
-) {
+@mixin underline($color: var(--color-dark), $size: 1px, $bottom: 0, $top: null, $round-cap: true, $depth: false) {
   position: relative;
   text-decoration: none;
 
-  &:after {
+  &::after {
     content: '';
     position: absolute;
     left: 0;
@@ -27,6 +20,53 @@
       height: $size;
       background-color: $color;
       border-radius: $size * 2;
+    }
+  }
+}
+
+@mixin bubble($text: 'Hover bubble', $position: center) {
+  position: relative;
+
+  &::before {
+    content: $text;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    padding: 0.5rem 0.75rem;
+    white-space: nowrap;
+    font-size: var(--fs-0);
+    font-weight: var(--fw-regular);
+    color: var(--color-secondary);
+    background-color: var(--color-secondary-light);
+    border-radius: var(--br-sm);
+    transition: var(--transition);
+
+    @if $position == 'center' {
+      left: 50%;
+      bottom: -75%;
+      translate: -50% 50%;
+    } @else if $position == 'left' {
+      left: 0;
+      bottom: -75%;
+      translate: 0 50%;
+    } @else if $position == 'right' {
+      right: 0;
+      bottom: -75%;
+      translate: 0 50%;
+    }
+  }
+
+  @include hover() {
+    &::before {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &:focus-visible {
+    &::before {
+      visibility: visible;
+      opacity: 1;
     }
   }
 }
