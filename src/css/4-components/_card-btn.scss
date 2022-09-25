@@ -1,4 +1,4 @@
-.box-btn {
+.card-btn {
   @include flex($justify-content: center, $align-items: center);
   @include box(2.875rem, 2.875rem);
   border-radius: var(--br-sm);
@@ -28,7 +28,7 @@
   }
 }
 
-.box-btn .arrow-right-icon {
+.card-btn .arrow-right-icon {
   fill: var(--color-light);
   @include box(0.625rem, 0.625rem);
   transition: all 0.3s ease-out;

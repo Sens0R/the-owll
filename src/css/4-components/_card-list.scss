@@ -1,11 +1,9 @@
-.box-list {
+.card-list {
   @include flex($flex-wrap: wrap, $align-items: center);
   font-size: var(--fs-6);
 
   li {
-    margin-bottom: 0.5rem;
-    margin-right: 0.5rem;
-    border-bottom: 1px solid var(--color-secondary);
+    margin: 0 0.5rem 0.5rem 0;
   }
 
   li a {

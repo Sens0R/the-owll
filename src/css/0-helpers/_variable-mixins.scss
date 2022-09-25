@@ -1,3 +1,19 @@
+@mixin link($color: var(--color-secondary-dark), $offset: 10%, $width: 2px) {
+  transition: var(--transition);
+  text-decoration: underline solid $width transparent;
+  text-underline-offset: $offset;
+
+  @include hover {
+    color: $color;
+    text-decoration-color: $color;
+  }
+
+  &:focus-visible {
+    color: $color;
+    text-decoration-color: $color;
+  }
+}
+
 @mixin underline($color: var(--color-dark), $size: 1px, $bottom: 0, $top: null, $round-cap: true, $depth: false) {
   position: relative;
   text-decoration: none;
@@ -24,7 +40,12 @@
   }
 }
 
-@mixin bubble($text: 'Hover bubble', $position: center) {
+@mixin bubble(
+  $text: 'Hover bubble',
+  $position: center,
+  $color: var(--color-secondary),
+  $bg-color: var(--color-secondary-light)
+) {
   position: relative;
 
   &::before {
@@ -32,14 +53,13 @@
     position: absolute;
     visibility: hidden;
     opacity: 0;
-    padding: 0.5rem 0.75rem;
+    padding: 0.375rem 0.625rem;
     white-space: nowrap;
+    color: $color;
+    background-color: $bg-color;
     font-size: var(--fs-0);
     font-weight: var(--fw-regular);
-    color: var(--color-secondary);
-    background-color: var(--color-secondary-light);
     border-radius: var(--br-sm);
-    transition: var(--transition);
 
     @if $position == 'center' {
       left: 50%;
@@ -53,11 +73,20 @@
       right: 0;
       bottom: -75%;
       translate: 0 50%;
+    } @else if $position == 'top-left' {
+      left: 0;
+      top: -75%;
+      translate: 0 -50%;
+    } @else if $position == 'top-right' {
+      right: 0;
+      top: -75%;
+      translate: 0 -50%;
     }
   }
 
   @include hover() {
     &::before {
+      transition: var(--transition);
       visibility: visible;
       opacity: 1;
     }

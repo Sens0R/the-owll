@@ -75,6 +75,10 @@
   }
 }
 
+.link {
+  @include link;
+}
+
 .stop-transition {
   transition: none !important;
 }

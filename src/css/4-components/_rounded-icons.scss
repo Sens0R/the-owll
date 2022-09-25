@@ -1,11 +1,9 @@
 .rounded-icon {
   @include flex($justify-content: center, $align-items: center);
-  @include link-space();
   padding: 0.75rem;
   background: var(--color-dark);
   border-radius: 100%;
-  transition: all 0.3s ease-out;
- 
+  transition: var(--transition);
 
   &:focus-visible {
     background-color: var(--color-primary);
@@ -28,7 +26,7 @@
 
 .icon-rounded {
   @include box(1rem, 1rem);
-  transition: all 0.3s ease-out;
+  transition: var(--transition);
   fill: var(--color-light);
 }
 
@@ -39,5 +37,17 @@
   &__item {
     margin-right: 0.625rem;
     margin-bottom: 0.625rem;
+  }
+
+  [aria-label='Instagram'] {
+    @include bubble($text: 'Instagram', $color: var(--color-light), $bg-color: var(--color-secondary-gray));
+  }
+
+  [aria-label='Facebook'] {
+    @include bubble($text: 'Facebook', $color: var(--color-light), $bg-color: var(--color-secondary-gray));
+  }
+
+  [aria-label='Linkedin'] {
+    @include bubble($text: 'Linkedin', $color: var(--color-light), $bg-color: var(--color-secondary-gray));
   }
 }

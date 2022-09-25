@@ -21,10 +21,6 @@
   }
 
   &:focus-within:valid {
-    .nav-search-buttons__search svg {
-      scale: 1.15;
-    }
-
     .nav-search-buttons__reset {
       @include media-breakpoint-only(md) {
         display: flex;
@@ -64,13 +60,10 @@
     fill: var(--color-dark);
   }
 
-  &:focus-visible svg {
-    scale: 1.15;
-  }
-
-  @include hover {
+  &:focus-visible {
+    background-color: var(--color-secondary);
     svg {
-      scale: 1.15;
+      fill: var(--color-light);
     }
   }
 }

@@ -1,5 +1,11 @@
 .about {
+  .h-2,
+  .btn {
+    margin-top: 0;
+  }
+
   &__content {
+    @include flex($flex-direction: column, $justify-content: center, $align-items: flex-start);
     @include media-breakpoint-up(lg) {
       padding-right: 6rem;
     }

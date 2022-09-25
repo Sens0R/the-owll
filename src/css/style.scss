@@ -5,7 +5,6 @@
 // 0 - HELPERS
 
 @import '0-helpers/variables';
-@import '0-helpers/functions';
 @import '0-helpers/mixins';
 @import '0-helpers/variable-mixins';
 @import '0-helpers/spacer-mixins';
@@ -14,31 +13,30 @@
 @import '1-tools/bootstrap';
 @import '1-tools/swiper';
 @import '1-tools/animations';
+@import '1-tools/dropdown';
+
 
 // 2 - BASE
 @import '2-base/fonts';
 @import '2-base/base';
 @import '2-base/selectors';
+@import '2-base/skip-link';
 
 // 3 - LAYOUT
 @import '3-layout/header/header';
 @import '3-layout/footer';
+@import '3-layout/background-gradient';
+@import '3-layout/card';
+@import '3-layout/card-blog-post';
+@import '3-layout/card-services';
 
 // 4 - COMPONENTS
-@import '4-components/card';
-@import '4-components/card-blog-post';
-@import '4-components/card-services';
+
 @import '4-components/rounded-icons';
 @import '4-components/button';
-@import '4-components/state';
-@import '4-components/box-link';
-@import '4-components/box-list';
-@import '4-components/box-btn';
-@import '4-components/dropdown';
-
-@import '4-components/skip-link';
-@import '4-components/background-gradient';
-@import '4-components/hamburger-toggler';
+@import '4-components/card-link';
+@import '4-components/card-list';
+@import '4-components/card-btn';
 
 // 5 - PAGES
 @import '5-pages/page-banner';

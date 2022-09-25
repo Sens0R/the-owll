@@ -1,4 +1,4 @@
-.box-link {
+.card-link {
   @include link-space();
   display: inline-block;
   color: var(--color-secondary);
@@ -15,7 +15,7 @@
      
       color: var(--color-primary);
 
-      .box-link__icon {
+      .card-link__icon {
         fill: var(--color-primary);
         translate: 5px;
       }
@@ -32,7 +32,7 @@
   @include hover {
     color: var(--color-primary);
 
-    .box-link__icon {
+    .card-link__icon {
       fill: var(--color-primary);
       translate: 5px;
     }
