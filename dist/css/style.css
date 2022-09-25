@@ -5960,7 +5960,7 @@ input[type=search]::-webkit-search-cancel-button {
   max-width: 100%;
 }
 .nav-search:focus-within:valid .nav-search-buttons__search svg {
-  fill: var(--color-primary);
+  scale: 1.15;
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   .nav-search:focus-within:valid .nav-search-buttons__reset {
@@ -6045,11 +6045,11 @@ input[type=search]::-webkit-search-cancel-button {
   fill: var(--color-dark);
 }
 .nav-search-buttons:focus-visible svg {
-  fill: var(--color-primary);
+  scale: 1.15;
 }
 @media (hover: hover) and (pointer: fine) {
   .nav-search-buttons:hover svg {
-    fill: var(--color-primary);
+    scale: 1.15;
   }
 }
 

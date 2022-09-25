@@ -22,7 +22,7 @@
 
   &:focus-within:valid {
     .nav-search-buttons__search svg {
-      fill: var(--color-primary);
+      scale: 1.15;
     }
 
     .nav-search-buttons__reset {
@@ -64,15 +64,13 @@
     fill: var(--color-dark);
   }
 
-  &:focus-visible {
-    svg {
-      fill: var(--color-primary);
-    }
+  &:focus-visible svg {
+    scale: 1.15;
   }
 
   @include hover {
     svg {
-      fill: var(--color-primary);
+      scale: 1.15;
     }
   }
 }
