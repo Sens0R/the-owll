@@ -6,7 +6,8 @@
   &__btn {
     @include flex($display: inline-flex, $justify-content: center, $align-items: center);
     padding: 1rem;
-    margin-left: -15px;
+    border-radius: 100%;
+    
     @include media-breakpoint-up(xl) {
       margin-left: -25px;
     }

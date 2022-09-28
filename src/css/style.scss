@@ -3,7 +3,6 @@
 --------------------------------------------------------------*/
 
 // 0 - HELPERS
-
 @import '0-helpers/variables';
 @import '0-helpers/mixins';
 @import '0-helpers/variable-mixins';
@@ -21,6 +20,7 @@
 @import '2-base/base';
 @import '2-base/selectors';
 @import '2-base/skip-link';
+@import '2-base/active-page';
 
 // 3 - LAYOUT
 @import '3-layout/header/header';
@@ -32,8 +32,8 @@
 
 // 4 - COMPONENTS
 
-@import '4-components/rounded-icons';
-@import '4-components/button';
+@import '4-components/icons';
+@import '4-components/buttons';
 @import '4-components/card-link';
 @import '4-components/card-list';
 @import '4-components/card-btn';

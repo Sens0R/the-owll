@@ -1,0 +1,11 @@
+@include media-breakpoint-up(xl) {
+  .active-page {
+    .nav-menu__link {
+      color: var(--color-secondary);
+    }
+
+    .nav-menu-dropdown__btn {
+      fill: var(--color-secondary);
+    }
+  }
+}

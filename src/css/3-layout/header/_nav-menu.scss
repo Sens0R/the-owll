@@ -1,106 +1,38 @@
-.nav-body {
-  position: relative;
-}
-
 .nav-menu {
-  @include flex($flex-direction: column);
   width: 100%;
-
+  margin: 0;
+  
   &__link {
-    @include spacer('padding', var(--spacer-sm));
     font-weight: var(--fw-medium);
 
-    &:focus-visible {
-      color: var(--color-secondary);
-      text-decoration: underline 3px;
-    }
-  }
-}
-
-.nav-menu__item {
-  @include hover {
-    .nav-menu__link {
+    @include hover {
       color: var(--color-secondary);
       text-decoration: underline;
     }
 
-    .dropdown__icon {
-      fill: var(--color-secondary);
+    &:focus-visible {
+      color: var(--color-secondary);
+      text-decoration: underline 2px;
     }
   }
 }
 
-/* ====================   NAVIGATION MEDIA   ==================== */
-
 @include media-breakpoint-down(xl) {
-  .nav-body {
-    @include spacer-top('margin', var(--spacer-lg));
-  }
-
-  .navigation {
-    position: absolute;
-    right: 0;
-    display: block;
-    will-change: auto;
-    visibility: hidden;
-    height: 0;
-    width: 100%;
-    //transition: all 0.3s, translate 0.6s, opacity 1s;
-    overflow: hidden;
-    opacity: 0;
-
-    &.active {
-      z-index: var(--z-hamburger);
-      order: 5;
-      position: static;
-      height: 100vh;
-      visibility: visible;
-
-      opacity: 1;
-      box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-    }
-  }
-
   .nav-menu {
+    @include spacer-vertical('margin', var(--spacer-sm));
+
     &__link {
-      padding-left: 0;
+      @include spacer-vertical('padding', var(--spacer-sm));
     }
   }
 }
 
 @include media-breakpoint-up(xl) {
-  .active-page {
-    .nav-menu__link {
-      color: var(--color-secondary);
-    }
-
-    .nav-menu-dropdown__btn {
-      fill: var(--color-secondary);
-    }
-  }
-
-  .nav-mobile-socials {
-    display: none;
-  }
-
-  .nav-body {
-    @include flex($justify-content: space-between, $align-items: center, $flex-direction: row);
-  }
-
   .nav-menu {
-    margin: 0;
-    flex-direction: row;
-    align-items: center;
-  }
-}
+    @include flex($flex-wrap: wrap, $justify-content: center, $align-items: center);
 
-.nav-search-mobile {
-  @include spacer-top('margin', var(--spacer-lg));
-  @include flex($justify-content: center, $align-items: center);
-  border: 1px solid var(--color-secondary);
-  height: 2.75rem;
-
-  .nav-search-buttons__icon {
-    fill: var(--color-secondary);
+    &__link {
+      @include spacer('padding', var(--spacer-sm));
+    }
   }
 }

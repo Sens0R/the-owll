@@ -29,15 +29,31 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.page-wrapper {
+select,
+textarea,
+input,
+button {
+  font-family: var(--ff-primary);
+}
+
+/* .page-wrapper {
   @include flex($flex-direction: column);
   min-height: 100%;
   overflow: hidden;
-}
+} */
 
 header {
   z-index: var(--z-header);
+  position: relative;
   background-color: var(--color-bg-header-base);
+}
+
+
+
+body,
+footer,
+main {
+  overflow-x: hidden;
 }
 
 footer {
@@ -175,11 +191,7 @@ input {
   color: var(--color-selection-base);
 }
 
-select,
-textarea,
-input,
-button {
-}
+
 
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {

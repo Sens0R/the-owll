@@ -1,3 +1,4 @@
+// tooltips in html
 :root {
   /* ==================================================== */
   /* ====================   COLORS   ==================== */
@@ -92,9 +93,10 @@
   --shadow-sm: 2px 2px 0 var(--color-dark);
 
   // transition
-  --transition: all 0.3s ease-out;
+  --transition: 0.3s ease-out;
 
   // z-index
   --z-hamburger: 100;
+  --z-hamburger-backdrop: 90;
   --z-header: 50;
 }

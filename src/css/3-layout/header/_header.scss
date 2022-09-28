@@ -1,18 +1,25 @@
-.header._sticky-header {
-  @include fixed(top 0 left 0);
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 8px;
+.header.header-top {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  transition: var(--transition);
+  /*   .logo-icon {
+    width: 3.75rem;
+    height: 2.5rem;
+  } */
 }
 
 .header {
-  @include spacer-vertical('padding', var(--spacer-sm));
+  @include sticky(top 0 left 0);
+  
   @include media-breakpoint-up(xxl) {
     @include spacer-horizontal('padding', var(--spacer-lg));
   }
   @include flex($flex-wrap: wrap, $align-items: center);
+ 
 }
 
 .header > * {
   @include flex($justify-content: center, $align-items: center);
+  @include spacer-vertical('margin', var(--spacer-sm));
 }
 
 .logo-icon {
@@ -39,19 +46,20 @@
     @include box(clamp(1.5rem, calc(1.23rem + 1.36vw), 2.25rem), clamp(1.5rem, calc(1.23rem + 1.36vw), 2.25rem));
     margin-right: 0.75rem;
     fill: var(--color-primary);
-    transition: var(--transition);
+    
   }
 
   &__link {
     font-size: clamp(1.06rem, calc(0.9rem + 0.8vw), 1.5rem);
     font-weight: var(--fw-semibold);
     color: var(--color-primary);
-    transition: var(--transition);
+    transition: text-decoration var(--transition);
     text-decoration: underline 1px solid transparent;
-    @include bubble($text: 'Make a phone call');
+    @include hover-tooltip();
 
     @include hover {
       text-decoration: underline 1px solid var(--color-primary);
+     
     }
 
     &:focus-visible {
@@ -62,6 +70,7 @@
 
 /* ====================   IMPORTS   ==================== */
 
+@import 'navigation';
 @import 'nav-menu';
-@import 'search';
+@import 'nav-search';
 @import 'hamburger-toggler';

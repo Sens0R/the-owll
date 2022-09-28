@@ -40,9 +40,9 @@
   }
 }
 
-@mixin bubble(
-  $text: 'Hover bubble',
-  $position: center,
+@mixin hover-tooltip(
+  $text: ' ' attr(aria-label) ' ',
+  $position: bottom,
   $color: var(--color-secondary),
   $bg-color: var(--color-secondary-light)
 ) {
@@ -61,10 +61,14 @@
     font-weight: var(--fw-regular);
     border-radius: var(--br-sm);
 
-    @if $position == 'center' {
+    @if $position == 'bottom' {
       left: 50%;
       bottom: -75%;
       translate: -50% 50%;
+    } @else if $position == 'top' {
+      left: 0;
+      top: -75%;
+      translate: 0 -50%;
     } @else if $position == 'left' {
       left: 0;
       bottom: -75%;

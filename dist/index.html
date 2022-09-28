@@ -23,12 +23,11 @@
 </head>
 
 <body>
-  <div class="page-wrapper">
 
     <a class="skip-link" href="#main-content">Skip to main content</a>
-    
+   
     <header class="header container-fluid"><!-- ====================   LOGO   ==================== -->
-
+<div data-backdrop class="backdrop"></div>
 <a aria-label="The Owl home. The Owl logo." class="logo col-auto justify-content-start logo-hover" href="index.html">
   <svg aria-hidden="true" class="logo-icon">
     <use href="images/icons/sprite-multi.svg#logo" />
@@ -41,84 +40,83 @@
   <svg aria-hidden="true" class="phone__icon">
     <use href="images/icons/sprite-mono.svg#phone" />
   </svg>
-  <a href="tel:1800843695" class="phone__link"> 1800&nbsp;843&nbsp;695 </a>
+  <a href="tel:1800843695" class="phone__link" aria-label="Make a phone call"> 1800&nbsp;843&nbsp;695 </a>
 </div>
 
 <!-- ====================   NAVIGATION   ==================== -->
 
-<nav aria-label="Main" class="navigation col-xl" data-hamburger>
-  <form class="nav-search-mobile d-md-none" data-search role="search">
+<nav aria-label="Main" class="navigation col-12 col-xl" data-hamburger>
+  
+  <button class="nav-toggler nav-toggler_close" data-hamburger-btn="close" type="button">
+    <span class="nav-toggler__text nav-toggler__text_close">close menu</span>
+  </button>
+
+  <form class="nav-search" data-search role="search">
     <label class="visually-hidden" for="nav-search-input">Search</label>
 
     <input
       autocomplete="off"
-      class="nav-search-input text-sm"
+      class="nav-search__input"
       id="nav-search-input"
       placeholder="Search"
       required
       type="search"
     />
 
-    <button aria-label="Submit search" class="nav-search-buttons nav-search-buttons__search" type="submit">
-      <svg aria-hidden="true" class="nav-search-buttons__icon">
+    <button aria-label="Submit search" class="nav-search__btn nav-search__btn_search" type="submit">
+      <svg aria-hidden="true" class="nav-search__btn-icon nav-search__btn-icon_search">
         <use href="images/icons/sprite-mono.svg#search" />
       </svg>
     </button>
   </form>
 
-  <div class="nav-body"><ul class="nav-menu">
+  <ul class="nav-menu">
+    <li data-nav-page class="nav-menu__item">
+      <a href="about.html" class="nav-menu__link">About</a>
+    </li>
 
-  <li data-nav-page class="nav-menu__item">
-    <a href="about.html" class="nav-menu__link">About</a>
-  </li>
+    <li data-dropdown data-nav-page class="nav-menu__item dropdown">
+      <a href="services.html" class="nav-menu__link dropdown__link">Services</a>
+      <button type="button" class="dropdown__btn" aria-label="Dropdown menu for Services">
+        <svg aria-hidden="true" class="dropdown__icon">
+          <use href="images/icons/sprite-mono.svg#arrow"></use>
+        </svg>
+      </button>
 
-  <li data-dropdown data-nav-page class="nav-menu__item dropdown">
-    <a href="services.html" class="nav-menu__link dropdown__link">Services</a>
-    <button type="button" class="dropdown__btn"
-      aria-label="Dropdown menu for Services">
-      <svg aria-hidden="true" class="dropdown__icon">
-        <use href="images/icons/sprite-mono.svg#arrow"></use>
-      </svg>
-    </button>
-
-    <div class="dropdown__content">
-      <div class="dropdown-content">
-        <ul class="dropdown-content__list">
-          
-          <li>
-            <a href="#" class="dropdown-content__link">Lorem, ipsum dolor.</a>
-          </li>
-          <li>
-            <a href="#" class="dropdown-content__link">Lorem, ipsum.</a>
-          </li>
-          <li>
-            <a href="#" class="dropdown-content__link">Lorem ipsum dolor sit.</a>
-          </li>
-          <li>
-            <a href="#" class="dropdown-content__link">Lorem, ipsum dolor.</a>
-          </li>
-
-        </ul>
+      <div class="dropdown__content">
+        <div class="dropdown-content">
+          <ul class="dropdown-content__list">
+            <li>
+              <a href="#" class="dropdown-content__link">Lorem, ipsum dolor.</a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-content__link">Lorem, ipsum.</a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-content__link">Lorem ipsum dolor sit.</a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-content__link">Lorem, ipsum dolor.</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </li>
+    </li>
 
-  <li data-nav-page class="nav-menu__item">
-    <a href="portfolio.html" class="nav-menu__link nav-menu-dropdown__link">Portfolio</a>
-  </li>
+    <li data-nav-page class="nav-menu__item">
+      <a href="portfolio.html" class="nav-menu__link">Portfolio</a>
+    </li>
 
-  <li data-nav-page class="nav-menu__item">
-    <a href="blog.html" class="nav-menu__link ">Blog</a>
-  </li>
+    <li data-nav-page class="nav-menu__item">
+      <a href="blog.html" class="nav-menu__link">Blog</a>
+    </li>
 
-  <li data-nav-page class="nav-menu__item">
-    <a href="contact.html" class="nav-menu__link nav-menu-dropdown__link">Contact</a>
-  </li>
+    <li data-nav-page class="nav-menu__item">
+      <a href="contact.html" class="nav-menu__link">Contact</a>
+    </li>
+  </ul>
 
-</ul>
-</div>
-
-  <div class="nav-mobile-socials"><ul class="social-icons">
+  <ul class="social-icons">
 
   <li class="social-icons__item">
     <a href="#" class="rounded-icon" aria-label="Linkedin">
@@ -145,7 +143,8 @@
   </li>
 
 </ul>
-</div>
+
+
 </nav>
 
 <!-- ====================   SEARCH   ==================== -->
@@ -155,21 +154,21 @@
     <label class="visually-hidden" for="nav-search-input">Search</label>
     <input
       autocomplete="off"
-      class="nav-search-input text-sm"
+      class="nav-search__input"
       id="nav-search-input"
       placeholder="Search"
       required
       type="search"
     />
 
-    <button aria-label="Clear search text" class="nav-search-buttons nav-search-buttons__reset" type="reset">
-      <svg aria-hidden="true" class="nav-search-buttons__icon">
+    <button aria-label="Clear search text" class="nav-search__btn nav-search__btn_reset" type="reset">
+      <svg aria-hidden="true" class="nav-search__btn-icon nav-search__btn-icon_reset">
         <use href="images/icons/sprite-mono.svg#toggler-closed" />
       </svg>
     </button>
 
-    <button aria-label="Submit search" class="nav-search-buttons nav-search-buttons__search" type="submit">
-      <svg aria-hidden="true" class="nav-search-buttons__icon">
+    <button aria-label="Submit search" class="nav-search__btn nav-search__btn_search" type="submit">
+      <svg aria-hidden="true" class="nav-search__btn-icon nav-search__btn-icon_search">
         <use href="images/icons/sprite-mono.svg#search" />
       </svg>
     </button>
@@ -178,21 +177,16 @@
 
 <!-- ====================   NAV-TOGGLER   ==================== -->
 
-<button class="nav-toggler col-auto" data-hamburger-btn type="button">
-  <span class="nav-toggler__open">
-    <svg aria-hidden="true" class="nav-toggler-icon">
-      <use href="images/icons/sprite-mono.svg#hamburger" />
-    </svg>
-    <span class="nav-toggler__text">menu</span>
-  </span>
-
-  <span class="nav-toggler__close">
-    <svg aria-hidden="true" class="nav-toggler-icon">
-      <use href="images/icons/sprite-mono.svg#cancel" />
-    </svg>
-  </span>
+<button class="nav-toggler nav-toggler_open col-auto" data-hamburger-btn="open" type="button">
+  <svg aria-hidden="true" class="nav-toggler__icon">
+    <use href="images/icons/sprite-mono.svg#hamburger" />
+  </svg>
+  <span class="nav-toggler__text nav-toggler__text_open">menu</span>
 </button>
 </header>
+   
+    
+
 
 <main id="main-content">
   <!-- ====================   HERO   ==================== -->
@@ -259,15 +253,15 @@
 
 <!-- ====================   SERVICES   ==================== -->
 
-<section class="section container-fluid container-xxl services">
+<section class="section position-relative container-fluid container-xxl services">
   <div class="bg-gradient bg-gradient-bottom"></div>
   <div class="bg-gradient bg-gradient-up"></div>
   <h2 class="h-5 text-center">Our services</h2>
   <p class="h-2 text-center" data-animate="section-header">
     <span class="text-accent">What</span> We Offer<span class="text-accent">.</span>
   </p>
-  <div class="row gy-3">
-    <div class="col-12 col-md-6 col-xl-4">
+  <div class="row row-cols-md-2 row-cols-xl-3 gy-4">
+    <div class="col-12">
       <a class="card-services" href="#">
         <div>
           <div class="card-services__logo" style="background-color: #348acc">
@@ -292,7 +286,7 @@
       </a>
     </div>
 
-    <div class="col-12 col-md-6 col-xl-4">
+    <div class="col-12">
       <a class="card-services" href="#">
         <div>
           <div class="card-services__logo" style="background-color: #c263e2">
@@ -320,7 +314,7 @@
       </a>
     </div>
 
-    <div class="col-12 col-md-6 col-xl-4">
+    <div class="col-12">
       <a class="card-services" href="#">
         <div>
           <div class="card-services__logo" style="background-color: #00b188">
@@ -348,7 +342,7 @@
       </a>
     </div>
 
-    <div class="col-12 col-md-6 col-xl-4">
+    <div class="col-12">
       <a class="card-services" href="#">
         <div>
           <div class="card-services__logo" style="background-color: #f6921d">
@@ -376,7 +370,7 @@
       </a>
     </div>
 
-    <div class="col-12 col-md-6 col-xl-4">
+    <div class="col-12">
       <a class="card-services" href="#">
         <div>
           <div class="card-services__logo" style="background-color: #33c1e0">
@@ -403,7 +397,7 @@
       </a>
     </div>
 
-    <div class="col-12 col-md-6 col-xl-4">
+    <div class="col-12">
       <a class="card-services" href="#">
         <div>
           <div class="card-services__logo" style="background-color: #e15b73">
@@ -436,8 +430,8 @@
 <!-- ====================  ABOUT   ==================== -->
 
 <section class="section container-fluid container-xxl about">
-  <div class="row justify-content-between">
-    <div class="col-12 col-lg-6 about__content">
+  <div class="row row-cols-lg-2">
+    <div class="col-12 about__content">
       <h2 class="h-5">About us</h2>
       <p class="h-2" data-animate="section-header">
         <span class="text-accent">Managed IT</span> Supports<span class="text-accent">.</span>
@@ -448,7 +442,7 @@
       </p>
       <a class="btn" href="about.html">Get started</a>
     </div>
-    <div class="col-12 col-lg-6 about__img">
+    <div class="col-12 about__img">
       <picture>
         <source
           sizes="(min-width: 992px) 50vw, 100vw"
@@ -504,8 +498,9 @@
   <p class="h-2" data-animate="section-header">
     <span class="text-accent">Case</span>Studies<span class="text-accent">.</span>
   </p>
-  <div class="row g-0 card">
-    <div class="col-12 col-md-6 card__img">
+
+  <div class="row row-cols-md-2 g-0 card">
+    <div class="col-12 card__img">
       <a class="card__img-link" href="#" tabindex="-1">
         <picture>
           <source
@@ -556,7 +551,7 @@
       </a>
     </div>
 
-    <div class="col-12 col-md-6 card__content">
+    <div class="col-12 card__content">
       <ul class="card-list">
         <li>
           <a href="#">System management</a>
@@ -585,8 +580,9 @@
       </div>
     </div>
   </div>
-  <div class="row g-0 card">
-    <div class="col-12 col-md-6 card__img">
+
+  <div class="row row-cols-md-2 g-0 card">
+    <div class="col-12 card__img">
       <a class="card__img-link" href="#" tabindex="-1">
         <picture>
           <source
@@ -637,7 +633,7 @@
       </a>
     </div>
 
-    <div class="col-12 col-md-6 card__content">
+    <div class="col-12 card__content">
       <ul class="card-list">
         <li>
           <a href="#">System management</a>
@@ -666,8 +662,9 @@
       </div>
     </div>
   </div>
-  <div class="row g-0 card">
-    <div class="col-12 col-md-6 card__img">
+
+  <div class="row row-cols-md-2 g-0 card">
+    <div class="col-12 card__img">
       <a class="card__img-link" href="#" tabindex="-1">
         <picture>
           <source
@@ -718,7 +715,7 @@
       </a>
     </div>
 
-    <div class="col-12 col-md-6 card__content">
+    <div class="col-12 card__content">
       <ul class="card-list">
         <li>
           <a href="#">System management</a>
@@ -747,6 +744,7 @@
       </div>
     </div>
   </div>
+
   <div class="btn-section">
     <a class="btn m-0" href="#">Explore more</a>
   </div>
@@ -754,9 +752,10 @@
 
 <!-- ====================  PARTNERS  ==================== -->
 
-<section class="section container-fluid container-xxl partners">
+<section class="section position-relative container-fluid container-xxl partners">
   <div class="bg-gradient bg-gradient-bottom"></div>
   <div class="bg-gradient bg-gradient-up"></div>
+
   <div class="row justify-content-between">
     <div class="col-12 col-lg-4 partners__content">
       <h2 class="h-5">Our Partners</h2>
@@ -830,8 +829,9 @@
   <p class="h-2" data-animate="section-header">
     <span class="text-accent">Expert</span> research<span class="text-accent">.</span>
   </p>
+
   <div class="row gy-4">
-    <div class="col-12 col-md-6 col-lg-4 blog-col">
+    <div class="col-12 col-md-6 col-lg-4">
       <div class="card-blog-post">
         <a class="card-blog-post__img" href="#" tabindex="-1">
           <picture>
@@ -912,7 +912,7 @@
       </div>
     </div>
 
-    <div class="col-12 col-md-6 col-lg-4 blog-col">
+    <div class="col-12 col-md-6 col-lg-4">
       <div class="card-blog-post">
         <a class="card-blog-post__img" href="#" tabindex="-1">
           <picture>
@@ -989,7 +989,7 @@
       </div>
     </div>
 
-    <div class="col-12 col-lg-4 blog-col">
+    <div class="col-12 col-lg-4">
       <div class="card-blog-post">
         <a class="card-blog-post__img" href="#" tabindex="-1">
           <picture>
@@ -1180,7 +1180,7 @@
 </div>
 
 </footer>
-</div>
+
 </body>
 
 </html>

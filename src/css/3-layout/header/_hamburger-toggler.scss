@@ -1,55 +1,55 @@
-.nav-toggler {
-  @include media-breakpoint-up(xl) {
-    display: none;
-  }
-
-  min-height: 100%;
-  min-width: 2rem;
-  margin-left: auto;
-
-  &__text {
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 0.75;
-    margin-top: 0.5rem;
-  }
-
-  &__open {
-    @include flex($flex-direction: column, $justify-content: center, $align-items: center);
-
-    .nav-toggler-icon {
-      @include box(36px, 18px);
-    }
-  }
-
-  &__close {
-    @include flex($justify-content: center, $align-items: center);
-    display: none;
-
-    .nav-toggler-icon {
-      @include box(24px, 24px);
-    }
-  }
-
-  &:focus-visible {
-    outline-style: none;
-
-    .nav-toggler__open,
-    .nav-toggler__close {
-      outline: 3px solid var(--color-primary);
-      outline-offset: 3px;
-      border-radius: var(--br-sm);
-    }
+@include media-breakpoint-up(xl) {
+  .nav-toggler {
+    display: none !important;
   }
 }
 
-.nav-toggler.active {
-  .nav-toggler__open {
-    display: none;
+.nav-toggler {
+  margin-left: auto;
+  @include flex($justify-content: center, $align-items: center);
+
+  &_open {
+    flex-direction: column;
+    min-height: 100%;
+
+    &:focus-visible {
+      outline: 2px solid var(--color-secondary);
+      outline-offset: 4px;
+    }
   }
 
-  .nav-toggler__close {
-    display: block;
+  &_close {
+    @include sticky(top 0 left 0);
+    @include spacer-bottom('margin', var(--spacer));
+    min-height: 2.5rem;
+    width: 100%;
+    border-bottom: 1px solid var(--color-secondary);
+    background-color: var(--color-secondary-light);
+
+    &:focus-visible {
+      background-color: var(--color-secondary);
+      color: var(--color-light);
+      border-color: var(--color-secondary);
+    }
+  }
+
+  &__text {
+    text-transform: uppercase;
+    line-height: 1;
+
+    &_close {
+      font-size: var(--fs-6);
+      font-weight: var(--fw-regular);
+    }
+
+    &_open {
+      font-size: 0.75rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+  }
+
+  &__icon {
+    @include box(2.25rem, 1.125rem);
   }
 }

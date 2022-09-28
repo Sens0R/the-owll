@@ -1,0 +1,58 @@
+.navigation {
+  @include fixed(top 0 right 0 bottom 0);
+  @include flex($flex-direction: column, $justify-content: flex-start, $align-items: flex-start);
+  width: auto;
+  height: 100%;
+  margin: 0;
+  padding: 0 0.75rem;
+  background-color: var(--color-light);
+
+  will-change: auto;
+  z-index: var(--z-hamburger);
+  visibility: hidden;
+  translate: 100%;
+  transition: var(--transition);
+
+  @include media-breakpoint-up(xl) {
+    visibility: visible;
+    position: static;
+    translate: 0;
+  }
+
+  &.active {
+    isolation: isolate;
+    overflow-y: auto;
+    visibility: visible;
+    translate: 0;
+  }
+
+  .social-icons {
+    margin-bottom: 0;
+  }
+}
+
+/* ====================   MEDIA  ==================== */
+
+@include media-breakpoint-up(xl) {
+  .navigation .social-icons {
+    display: none;
+  }
+}
+
+.backdrop {
+  @include absolute(top 0 left 0);
+  @include box(100vw, 100vh);
+  z-index: var(--z-hamburger-backdrop);
+  background: rgba(0 0 0 / 0.4);
+  visibility: hidden;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s linear;
+}
+
+.backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}

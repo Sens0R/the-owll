@@ -40,14 +40,14 @@
   }
 
   [aria-label='Instagram'] {
-    @include bubble($text: 'Instagram', $color: var(--color-light), $bg-color: var(--color-secondary-gray));
+    @include hover-tooltip($color: var(--color-light), $bg-color: var(--color-secondary-gray));
   }
 
   [aria-label='Facebook'] {
-    @include bubble($text: 'Facebook', $color: var(--color-light), $bg-color: var(--color-secondary-gray));
+    @include hover-tooltip($color: var(--color-light), $bg-color: var(--color-secondary-gray));
   }
 
   [aria-label='Linkedin'] {
-    @include bubble($text: 'Linkedin', $color: var(--color-light), $bg-color: var(--color-secondary-gray));
+    @include hover-tooltip($color: var(--color-light), $bg-color: var(--color-secondary-gray));
   }
 }
