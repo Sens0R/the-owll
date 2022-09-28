@@ -21,7 +21,7 @@
   &_close {
     @include sticky(top 0 left 0);
     @include spacer-bottom('margin', var(--spacer));
-    min-height: 2.5rem;
+    min-height: 3.75rem;
     width: 100%;
     border-bottom: 1px solid var(--color-secondary);
     background-color: var(--color-secondary-light);

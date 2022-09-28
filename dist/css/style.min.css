@@ -6046,6 +6046,8 @@ input[type=search]::-webkit-search-cancel-button {
   overflow-y: auto;
   visibility: visible;
   translate: 0;
+  -webkit-box-shadow: 0.5rem 0 1rem 0.5rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0.5rem 0 1rem 0.5rem rgba(0, 0, 0, 0.25);
 }
 .navigation .social-icons {
   margin-bottom: 0;
@@ -6069,9 +6071,9 @@ input[type=search]::-webkit-search-cancel-button {
   opacity: 0;
   margin: 0;
   cursor: pointer;
-  -webkit-transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s linear;
-  -o-transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s linear;
-  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s linear;
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .backdrop.active {
@@ -6341,7 +6343,7 @@ input[type=search]::-webkit-search-cancel-button {
   left: 0;
   position: sticky;
   margin-bottom: var(--spacer);
-  min-height: 2.5rem;
+  min-height: 3.75rem;
   width: 100%;
   border-bottom: 1px solid var(--color-secondary);
   background-color: var(--color-secondary-light);
