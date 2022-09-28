@@ -5896,26 +5896,14 @@ input[type=search]::-webkit-search-cancel-button {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding-top: var(--spacer-sm);
+  padding-bottom: var(--spacer-sm);
 }
 @media (min-width: 1400px) {
   .header {
     padding-left: var(--spacer-lg);
     padding-right: var(--spacer-lg);
   }
-}
-
-.header > * {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: var(--spacer-sm);
-  margin-bottom: var(--spacer-sm);
 }
 
 .logo-icon {
@@ -6022,9 +6010,7 @@ input[type=search]::-webkit-search-cancel-button {
       -ms-flex-direction: column;
           flex-direction: column;
   width: auto;
-  height: 100%;
-  margin: 0;
-  padding: 0 0.75rem;
+  padding: 0 0.75rem 0.75rem 0.75rem;
   background-color: var(--color-light);
   will-change: auto;
   z-index: var(--z-hamburger);
@@ -6042,23 +6028,21 @@ input[type=search]::-webkit-search-cancel-button {
   }
 }
 .navigation.active {
-  isolation: isolate;
   overflow-y: auto;
   visibility: visible;
   translate: 0;
   -webkit-box-shadow: 0.5rem 0 1rem 0.5rem rgba(0, 0, 0, 0.25);
           box-shadow: 0.5rem 0 1rem 0.5rem rgba(0, 0, 0, 0.25);
 }
-.navigation .social-icons {
+.navigation .social {
   margin-bottom: 0;
 }
-
-/* ====================   MEDIA  ==================== */
 @media (min-width: 1200px) {
-  .navigation .social-icons {
+  .navigation .social {
     display: none;
   }
 }
+
 .backdrop {
   top: 0;
   left: 0;
@@ -6066,14 +6050,14 @@ input[type=search]::-webkit-search-cancel-button {
   width: 100vw;
   height: 100vh;
   z-index: var(--z-hamburger-backdrop);
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   visibility: hidden;
   opacity: 0;
   margin: 0;
   cursor: pointer;
-  -webkit-transition: var(--transition);
-  -o-transition: var(--transition);
-  transition: var(--transition);
+  -webkit-transition: opacity var(--transition), visibility var(--transition);
+  -o-transition: opacity var(--transition), visibility var(--transition);
+  transition: opacity var(--transition), visibility var(--transition);
 }
 
 .backdrop.active {
@@ -6340,8 +6324,9 @@ input[type=search]::-webkit-search-cancel-button {
 }
 .nav-toggler_close {
   top: 0;
-  left: 0;
+  right: 0;
   position: sticky;
+  z-index: 1;
   margin-bottom: var(--spacer);
   min-height: 3.75rem;
   width: 100%;
@@ -6723,7 +6708,33 @@ input[type=search]::-webkit-search-cancel-button {
   translate: none;
 }
 
-.rounded-icon {
+.social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: var(--spacer);
+  margin-bottom: var(--spacer);
+}
+.social__item {
+  /*    [aria-label='Instagram'] {
+       @include hover-tooltip($color: var(--color-light), $bg-color: var(--color-secondary-gray));
+     }
+
+     [aria-label='Facebook'] {
+       @include hover-tooltip($color: var(--color-light), $bg-color: var(--color-secondary-gray));
+     }
+
+     [aria-label='Linkedin'] {
+       @include hover-tooltip($color: var(--color-light), $bg-color: var(--color-secondary-gray));
+     } */
+}
+.social__link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6733,152 +6744,30 @@ input[type=search]::-webkit-search-cancel-button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.75rem;
-  background: var(--color-dark);
+  width: 2.75rem;
+  height: 2.75rem;
   border-radius: 100%;
+  background-color: var(--color-dark);
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
   transition: var(--transition);
 }
-.rounded-icon:focus-visible {
+@media (hover: hover) and (pointer: fine) {
+  .social__link:hover {
+    background-color: var(--color-primary);
+    -webkit-box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-sm);
+  }
+}
+.social__link:focus-visible {
   background-color: var(--color-primary);
   -webkit-box-shadow: var(--shadow-sm);
           box-shadow: var(--shadow-sm);
 }
-.rounded-icon:focus-visible .icon-rounded {
-  fill: var(--color-dark);
-}
-@media (hover: hover) and (pointer: fine) {
-  .rounded-icon:hover {
-    background: var(--color-primary);
-    -webkit-box-shadow: var(--shadow-sm);
-            box-shadow: var(--shadow-sm);
-  }
-  .rounded-icon:hover .icon-rounded {
-    fill: var(--color-dark);
-  }
-}
-
-.icon-rounded {
+.social__icon {
   width: 1rem;
   height: 1rem;
-  -webkit-transition: var(--transition);
-  -o-transition: var(--transition);
-  transition: var(--transition);
   fill: var(--color-light);
-}
-
-.social-icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-top: var(--spacer);
-  margin-bottom: var(--spacer);
-}
-.social-icons__item {
-  margin-right: 0.625rem;
-  margin-bottom: 0.625rem;
-}
-.social-icons [aria-label=Instagram] {
-  position: relative;
-}
-.social-icons [aria-label=Instagram]::before {
-  content: " " attr(aria-label) " ";
-  position: absolute;
-  visibility: hidden;
-  opacity: 0;
-  padding: 0.375rem 0.625rem;
-  white-space: nowrap;
-  color: var(--color-light);
-  background-color: var(--color-secondary-gray);
-  font-size: var(--fs-0);
-  font-weight: var(--fw-regular);
-  border-radius: var(--br-sm);
-  left: 50%;
-  bottom: -75%;
-  translate: -50% 50%;
-}
-@media (hover: hover) and (pointer: fine) {
-  .social-icons [aria-label=Instagram]:hover::before {
-    -webkit-transition: var(--transition);
-    -o-transition: var(--transition);
-    transition: var(--transition);
-    visibility: visible;
-    opacity: 1;
-  }
-}
-.social-icons [aria-label=Instagram]:focus-visible::before {
-  visibility: visible;
-  opacity: 1;
-}
-.social-icons [aria-label=Facebook] {
-  position: relative;
-}
-.social-icons [aria-label=Facebook]::before {
-  content: " " attr(aria-label) " ";
-  position: absolute;
-  visibility: hidden;
-  opacity: 0;
-  padding: 0.375rem 0.625rem;
-  white-space: nowrap;
-  color: var(--color-light);
-  background-color: var(--color-secondary-gray);
-  font-size: var(--fs-0);
-  font-weight: var(--fw-regular);
-  border-radius: var(--br-sm);
-  left: 50%;
-  bottom: -75%;
-  translate: -50% 50%;
-}
-@media (hover: hover) and (pointer: fine) {
-  .social-icons [aria-label=Facebook]:hover::before {
-    -webkit-transition: var(--transition);
-    -o-transition: var(--transition);
-    transition: var(--transition);
-    visibility: visible;
-    opacity: 1;
-  }
-}
-.social-icons [aria-label=Facebook]:focus-visible::before {
-  visibility: visible;
-  opacity: 1;
-}
-.social-icons [aria-label=Linkedin] {
-  position: relative;
-}
-.social-icons [aria-label=Linkedin]::before {
-  content: " " attr(aria-label) " ";
-  position: absolute;
-  visibility: hidden;
-  opacity: 0;
-  padding: 0.375rem 0.625rem;
-  white-space: nowrap;
-  color: var(--color-light);
-  background-color: var(--color-secondary-gray);
-  font-size: var(--fs-0);
-  font-weight: var(--fw-regular);
-  border-radius: var(--br-sm);
-  left: 50%;
-  bottom: -75%;
-  translate: -50% 50%;
-}
-@media (hover: hover) and (pointer: fine) {
-  .social-icons [aria-label=Linkedin]:hover::before {
-    -webkit-transition: var(--transition);
-    -o-transition: var(--transition);
-    transition: var(--transition);
-    visibility: visible;
-    opacity: 1;
-  }
-}
-.social-icons [aria-label=Linkedin]:focus-visible::before {
-  visibility: visible;
-  opacity: 1;
 }
 
 .btn, .btn-reverse {
@@ -7027,10 +6916,8 @@ input[type=search]::-webkit-search-cancel-button {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  gap: 0.5rem;
   font-size: var(--fs-6);
-}
-.card-list li {
-  margin: 0 0.5rem 0.5rem 0;
 }
 .card-list li a {
   background-color: var(--color-secondary-light);

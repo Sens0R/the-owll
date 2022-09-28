@@ -1,10 +1,6 @@
 .card-list {
-  @include flex($flex-wrap: wrap, $align-items: center);
+  @include flex($flex-wrap: wrap, $align-items: center, $gap: 0.5rem);
   font-size: var(--fs-6);
-
-  li {
-    margin: 0 0.5rem 0.5rem 0;
-  }
 
   li a {
     background-color: var(--color-secondary-light);

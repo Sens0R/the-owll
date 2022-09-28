@@ -2,7 +2,7 @@ const defaultOptions = {
   mainElement: '[data-hamburger]',
   togglerOpen: '[data-hamburger-btn="open"]',
   togglerClose: '[data-hamburger-btn="close"]',
-  hamburgerId: 'navigation',
+  aria: 'navigation',
   breakpoint: 1200,
 }
 
@@ -18,20 +18,26 @@ export function hamburger(userOptions) {
 
   if (userOptions) options = { ...defaultOptions, ...userOptions }
   // destructor
-  let { togglerOpen, togglerClose, hamburgerId, breakpoint } = options
-
-  mainElement.id = hamburgerId
-  mainElement.after(document.createElement('div'))
+  let { togglerOpen, togglerClose, aria, breakpoint } = options
+  
+ 
+  const createBackdrop = document.createElement('div')
+  createBackdrop.classList.add('backdrop')
+  mainElement.after(createBackdrop)
   const backdrop = document.querySelector('.backdrop')
-  backdrop.classList.add('backdrop')
 
   togglerOpen = document.querySelector(togglerOpen)
   togglerClose = document.querySelector(togglerClose)
 
+  if (aria) {
+    mainElement.id = aria
+    togglerOpen.setAttribute('aria-label', `Open ${aria}`)
+    togglerOpen.setAttribute('aria-controls', aria)
+    togglerClose.setAttribute('aria-label', `Close ${aria}`)
+  }
+
   //toggler.setAttribute('aria-expanded', 'false')
   //toggler.setAttribute('aria-hasPopup', 'true')
-  //toggler.setAttribute('aria-label', `Toggle ${hamburgerId}`)
-  //toggler.setAttribute('aria-controls', hamburgerId)
 
   /* const firstFocusableEl = mainElement.querySelector(
     'button, [href]:not(use), input, select, textarea, [tabindex]:not([tabindex="-1"])'
@@ -53,9 +59,9 @@ export function hamburger(userOptions) {
     watchBreakpoint.onchange = e => {
       if (mainElement.classList.contains('active') && !e.matches) {
         mainElement.classList.add('stop-transition')
-        // block backdrop transition
+        backdrop.remove()
         close()
-      }
+      } else mainElement.after(createBackdrop)
     }
   }
 
@@ -70,9 +76,7 @@ export function hamburger(userOptions) {
     //document.addEventListener('keydown', closeWithEsc)
 
     mainElement.classList.remove('stop-transition')
-
-    //addBackdrop(backdrop)
-    //backdrop.addEventListener('click', close)
+     
 
     backdrop.classList.add('active')
   }
@@ -86,7 +90,7 @@ export function hamburger(userOptions) {
     backdrop.classList.remove('active')
     document.body.style.overflow = null
     //document.removeEventListener('keyup', closeWithEsc)
-    //removeBackdrop()
+    
     mainElement.addEventListener('transitionend', () => mainElement.classList.add('stop-transition'), { once: true })
   }
 
