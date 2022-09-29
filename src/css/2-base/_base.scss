@@ -48,8 +48,6 @@ header {
   background-color: var(--color-bg-header-base);
 }
 
-
-
 body,
 footer,
 main {
@@ -190,8 +188,6 @@ input {
   background-color: var(--color-bg-selection-base);
   color: var(--color-selection-base);
 }
-
-
 
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {

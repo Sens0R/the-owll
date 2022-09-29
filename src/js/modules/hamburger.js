@@ -19,8 +19,7 @@ export function hamburger(userOptions) {
   if (userOptions) options = { ...defaultOptions, ...userOptions }
   // destructor
   let { togglerOpen, togglerClose, aria, breakpoint } = options
-  
- 
+
   const createBackdrop = document.createElement('div')
   createBackdrop.classList.add('backdrop')
   mainElement.after(createBackdrop)
@@ -36,22 +35,19 @@ export function hamburger(userOptions) {
     togglerClose.setAttribute('aria-label', `Close ${aria}`)
   }
 
-  //toggler.setAttribute('aria-expanded', 'false')
-  //toggler.setAttribute('aria-hasPopup', 'true')
+  const focusableElements = Array.from(
+    mainElement.querySelectorAll('button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+  )
 
-  /* const firstFocusableEl = mainElement.querySelector(
-    'button, [href]:not(use), input, select, textarea, [tabindex]:not([tabindex="-1"])'
-  ) */
-
-  //let contentHasTransition = getComputedStyle(mainElement).getPropertyValue('transition-duration')
-  //if (contentHasTransition === '0s') contentHasTransition = false
+  const firstFocusableElement = focusableElements.at(0)
+  const lastFocusableElement = focusableElements.at(-1)
+  console.log(lastFocusableElement)
 
   mainElement.classList.add('stop-transition')
-
   togglerOpen.addEventListener('click', open)
   togglerClose.addEventListener('click', close)
   backdrop.addEventListener('click', close)
-  //toggler.addEventListener('keydown', keyboardNavigation)
+  togglerOpen.addEventListener('keydown', keyboardNavigation)
 
   // media
   if (breakpoint) {
@@ -61,60 +57,54 @@ export function hamburger(userOptions) {
         mainElement.classList.add('stop-transition')
         backdrop.remove()
         close()
-      } else mainElement.after(createBackdrop)
+        return
+      }
+
+      mainElement.after(createBackdrop)
     }
   }
 
   /* ====================   FUNCTIONS   ==================== */
 
   function open() {
+    document.addEventListener('keydown', closeWithEsc)
+    document.body.style.overflow = 'hidden'
     mainElement.classList.add('active')
     mainElement.setAttribute('aria-modal', 'true')
     mainElement.setAttribute('role', 'dialog')
-    //toggler.setAttribute('aria-expanded', 'true')
-    document.body.style.overflow = 'hidden'
-    //document.addEventListener('keydown', closeWithEsc)
-
     mainElement.classList.remove('stop-transition')
-     
-
     backdrop.classList.add('active')
   }
 
   function close() {
+    document.removeEventListener('keydown', closeWithEsc)
+    document.body.style.overflow = null
     mainElement.classList.remove('active')
     mainElement.removeAttribute('aria-modal')
     mainElement.removeAttribute('role')
-    //toggler.classList.remove('active')
-    //toggler.setAttribute('aria-expanded', 'false')
-    backdrop.classList.remove('active')
-    document.body.style.overflow = null
-    //document.removeEventListener('keyup', closeWithEsc)
-    
     mainElement.addEventListener('transitionend', () => mainElement.classList.add('stop-transition'), { once: true })
+    backdrop.classList.remove('active')
   }
 
   function keyboardNavigation() {
-    mainElement.addEventListener('transitionend', () => firstFocusableEl.focus(), {
+    mainElement.addEventListener('transitionend', () => firstFocusableElement.focus(), {
       once: true,
     })
 
-    mainElement.addEventListener('focusout', focusOut)
-  }
-
-  function focusOut() {
-    setTimeout(() => {
-      if (!mainElement.contains(document.activeElement)) {
-        mainElement.removeEventListener('focusout', focusOut)
-        close()
-        toggler.focus()
+    mainElement.addEventListener('keydown', e => {
+      if (e.keyCode === 9) {
+        if (e.shiftKey && document.activeElement === firstFocusableElement) {
+          e.preventDefault()
+          lastFocusableElement.focus()
+        } else if (!e.shiftKey && document.activeElement === lastFocusableElement) {
+          e.preventDefault()
+          firstFocusableElement.focus()
+        }
       }
-    }, 25)
+    })
   }
 
   function closeWithEsc(e) {
-    if (e.key === 'Escape' || e.key === 'Esc' || e.code === 27) {
-      close()
-    }
+    if (e.key === 'Escape' || e.key === 'Esc' || e.code === 27) close()
   }
 }
