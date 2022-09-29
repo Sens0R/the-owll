@@ -1,6 +1,6 @@
 .social {
   @include flex($flex-wrap: wrap, $align-items: center, $gap: 1rem);
-
+  @include spacer-top('margin', var(--spacer));
 
   &__item {
  /*    [aria-label='Instagram'] {

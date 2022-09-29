@@ -1,6 +1,6 @@
-.header.header-top {
+/* .header.header-top {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-}
+} */
 
 .header {
   @include sticky(top 0 left 0);
@@ -66,10 +66,40 @@
 /* ====================   HEADROOM   ==================== */
 
 .headroom {
+  will-change: auto;
+  transition: all 0.6s ease-out;
 
+  &_pinned {
+    // when scrolling up
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  }
+
+  &_unpinned {
+    // when scrolling down
+    translate: 0 -100%;
+  }
+
+  &_top {
+    // when above offset
+    box-shadow: none;
+  }
+
+  &_not-top {
+    // when below offset
+  }
+
+  &_bottom {
+    // when at bottom of scroll area
+   
+  }
+
+  &_not-bottom {
+    // when not at bottom of scroll area
+  }
+  &_frozen {
+    // when frozen method has been called
+  }
 }
-
-
 
 /* ====================   IMPORTS   ==================== */
 
