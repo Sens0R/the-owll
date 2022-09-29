@@ -5517,6 +5517,10 @@ header {
   background-color: var(--color-bg-header-base);
 }
 
+header {
+  overflow: hidden;
+}
+
 body,
 footer,
 main {
@@ -6314,7 +6318,6 @@ input[type=search]::-webkit-search-cancel-button {
 }
 .headroom_unpinned {
   translate: 0 -100%;
-  overflow: hidden;
 }
 .headroom_top {
   -webkit-box-shadow: none;

@@ -48,6 +48,9 @@ header {
   background-color: var(--color-bg-header-base);
 }
 
+header {
+  overflow: hidden;
+}
 body,
 footer,
 main {

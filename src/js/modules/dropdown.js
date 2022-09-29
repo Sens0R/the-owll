@@ -3,7 +3,7 @@ let desktop
 let mobile
 
 const dropdownsMedia = window.matchMedia(`(max-width: 1200px)`)
-
+const header = document.querySelector('header')
 window.matchMedia('(orientation: landscape)').onchange = () => {
   const openContents = document.querySelectorAll('[data-dropdown] > [aria-hidden="false"]')
 
@@ -107,6 +107,7 @@ function renderDropdowns() {
         })
       }
 
+      header.style.overflow = 'visible'
       dropdown.classList.add('active')
       dropdownButton.setAttribute('aria-expanded', 'true')
       dropdownContent.setAttribute('aria-hidden', 'false')
@@ -118,6 +119,7 @@ function renderDropdowns() {
     }
 
     function closeDropdown() {
+      header.addEventListener('transitionend', () => (header.style.overflow = null), { once: true })
       dropdown.classList.remove('active')
       dropdownButton.setAttribute('aria-expanded', 'false')
       dropdownContent.setAttribute('aria-hidden', 'true')
