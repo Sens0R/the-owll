@@ -11,10 +11,11 @@
   transition: var(--transition);
 
   @include media-breakpoint-up(xl) {
-    padding-bottom: 0;
+    padding: 0;
     visibility: visible;
     position: static;
     translate: 0;
+    
   }
 
   &.active {

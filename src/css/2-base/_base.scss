@@ -130,17 +130,6 @@ h6,
   font-size: var(--fs-6);
 }
 
-p,
-ul,
-ol,
-dl,
-blockquote,
-address,
-table,
-hr {
-  @include spacer-bottom('margin', var(--spacer));
-}
-
 h1,
 h2,
 h3,
@@ -155,7 +144,6 @@ h6,
 .h-6 {
   font-weight: var(--base-fw-headings);
   line-height: var(--base-lh-headings);
-  @include spacer-vertical('margin', var(--spacer));
 }
 
 button {

@@ -3,23 +3,22 @@
 }
 
 .footer-nav {
+  @include spacer-bottom('padding', var(--spacer-xl));
+
   .h-5 {
-    padding-top: var(--spacer-sm);
-    margin: 0;
+    @include spacer-vertical('padding', var(--spacer-sm));
   }
 
   .row {
-    justify-content: space-between;
+    row-gap: var(--spacer-xl);
   }
 
   &__column {
-    @include spacer-bottom('margin', var(--spacer-lg));
     @include flex($flex-direction: column);
   }
 
   &__list {
     height: 100%;
-    margin-bottom: 0;
     @include flex($flex-direction: column);
   }
 
@@ -28,7 +27,7 @@
     font-weight: bold;
     text-transform: uppercase;
     color: var(--color-secondary);
-    margin-top: 0;
+    @include spacer-bottom('margin', var(--spacer));
   }
 
   &__link {
@@ -37,14 +36,13 @@
     font-size: var(--fs-0);
     font-weight: var(--fw-medium);
 
-
     @include hover {
-      color: var(--color-secondary-dark);
+      color: var(--color-secondary);
       text-decoration: underline;
     }
 
     &:focus-visible {
-      color: var(--color-secondary-dark);
+      color: var(--color-secondary);
       text-decoration: underline;
     }
   }
@@ -54,18 +52,19 @@
     @include spacer-vertical('padding', var(--spacer-sm));
   }
 
-  .btn {
-    margin: 0;
-  }
-
   .logo-icon {
     height: 8rem;
     width: 12.5rem;
+  }
+
+  .social {
+    @include spacer-top('margin', var(--spacer));
   }
 }
 
 .copyright {
   @include flex($justify-content: space-between, $align-items: center);
   color: var(--color-secondary-gray);
+  @include spacer-bottom('padding', var(--spacer-lg));
   font-size: var(--fs-6);
 }

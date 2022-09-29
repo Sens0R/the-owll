@@ -41,8 +41,7 @@ export function hamburger(userOptions) {
 
   const firstFocusableElement = focusableElements.at(0)
   const lastFocusableElement = focusableElements.at(-1)
-  console.log(lastFocusableElement)
-
+  
   mainElement.classList.add('stop-transition')
   togglerOpen.addEventListener('click', open)
   togglerClose.addEventListener('click', close)

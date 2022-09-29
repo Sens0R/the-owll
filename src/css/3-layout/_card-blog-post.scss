@@ -4,14 +4,13 @@
   border-radius: var(--br);
   border: var(--border);
   transition: all 0.3s ease-out;
- 
+
   &__content {
-    @include flex($flex-direction: column, $justify-content: center);
+    @include flex($flex-direction: column, $justify-content: center, $gap: var(--spacer));
     @include spacer('padding', var(--spacer-lg));
     height: 100%;
 
-    > :last-child {
-      margin-bottom: 0;
+    :last-child {
       margin-top: auto;
     }
   }

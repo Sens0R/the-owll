@@ -3,11 +3,6 @@
 
   @include media-breakpoint-up(md) {
     @include flex($justify-content: flex-end, $align-items: center);
-    @include spacer-right('margin', var(--spacer-lg));
-  }
-
-  @include media-breakpoint-up(xl) {
-    margin-right: 0;
   }
 }
 

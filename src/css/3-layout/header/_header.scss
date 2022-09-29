@@ -1,19 +1,24 @@
 .header.header-top {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-  transition: var(--transition);
-  /*   .logo-icon {
-    width: 3.75rem;
-    height: 2.5rem;
-  } */
 }
 
 .header {
   @include sticky(top 0 left 0);
-  @include flex($flex-wrap: wrap, $align-items: center);
+  @include flex($flex-wrap: wrap, $align-items: center, $gap: var(--spacer));
   @include spacer-vertical('padding', var(--spacer-sm));
+
+  @include media-breakpoint-up(sm) {
+    gap: var(--spacer-lg);
+  }
+
   @include media-breakpoint-up(xxl) {
     @include spacer-horizontal('padding', var(--spacer-lg));
   }
+}
+
+.logo {
+  width: clamp(3.75rem, calc(1.02rem + 13.64vw), 11.25rem);
+  height: clamp(2.5rem, calc(0.68rem + 9.09vw), 7.5rem);
 }
 
 .logo-icon {
@@ -34,8 +39,6 @@
 }
 
 .phone {
-  @include spacer-horizontal('margin', var(--spacer-lg));
-
   &__icon {
     @include box(clamp(1.5rem, calc(1.23rem + 1.36vw), 2.25rem), clamp(1.5rem, calc(1.23rem + 1.36vw), 2.25rem));
     margin-right: 0.75rem;
@@ -59,6 +62,14 @@
     }
   }
 }
+
+/* ====================   HEADROOM   ==================== */
+
+.headroom {
+
+}
+
+
 
 /* ====================   IMPORTS   ==================== */
 

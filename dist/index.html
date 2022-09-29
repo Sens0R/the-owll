@@ -51,12 +51,12 @@
   </button>
 
   <form class="nav-search" data-search role="search">
-    <label class="visually-hidden" for="nav-search-input">Search</label>
+    <label class="visually-hidden" for="nav-search-input-mobile">Search</label>
 
     <input
       autocomplete="off"
       class="nav-search__input"
-      id="nav-search-input"
+      id="nav-search-input-mobile"
       placeholder="Search"
       required
       type="search"
@@ -188,17 +188,17 @@
   <!-- ====================   HERO   ==================== -->
 
 <section class="section container-fluid container-xxl hero">
-  <div class="row justify-content-between">
-    <div class="col-12 col-xl-6" data-animate="hero">
-      <h1>
-        <span class="color-primary">IT Managed Services</span> for Your Business<span class="color-primary">.</span>
-      </h1>
-    </div>
-    <div class="col-12 col-xl-5">
-      <p>We offer business-focused IT services and solutions to help your business be more efficient and flexible.</p>
-    </div>
+  <div class="row hero__content">
+    <h1 class="col-12 col-xl-6" data-animate="hero">
+      <span class="color-primary">IT Managed Services</span> for Your Business<span class="color-primary">.</span>
+    </h1>
+    <p class="col-12 col-xl-5">
+      We offer business-focused IT services and solutions to help your business be more efficient and flexible.
+    </p>
   </div>
-  <a class="btn" href="#">Get started</a>
+  <div>
+    <a class="btn" href="#">Get started</a>
+  </div>
 </section>
 
 <!-- ====================   BANNER   ==================== -->
@@ -241,7 +241,15 @@
       "
       type="image/jpeg"
     />
-    <img alt class="image" draggable="false" height="2560" src="images/main-page/hero-banner-960.jpg" width="2560" />
+    <img
+      alt
+      class="image"
+      draggable="false"
+      loading="lazy"
+      height="2560"
+      src="images/main-page/hero-banner-960.jpg"
+      width="2560"
+    />
   </picture>
   <div class="banner__gradient"></div>
   <div class="banner__particles" id="banner__particles"></div>
@@ -252,20 +260,21 @@
 <section class="section position-relative container-fluid container-xxl services">
   <div class="bg-gradient bg-gradient-bottom"></div>
   <div class="bg-gradient bg-gradient-up"></div>
-  <h2 class="h-5 text-center">Our services</h2>
-  <p class="h-2 text-center" data-animate="section-header">
-    <span class="text-accent">What</span> We Offer<span class="text-accent">.</span>
-  </p>
+  <div class="section__headers">
+    <h2 class="h-5 text-center">Our services</h2>
+    <p class="h-2 text-center" data-animate="section-header">
+      <span class="text-accent">What</span> We Offer<span class="text-accent">.</span>
+    </p>
+  </div>
   <div class="row row-cols-md-2 row-cols-xl-3 gy-4">
     <div class="col-12">
       <a class="card-services" href="#">
-        <div>
-          <div class="card-services__logo" style="background-color: #348acc">
-            <svg aria-hidden="true" class="card-services__icon">
-              <use href="images/icons/sprite-mono.svg#service-icons--cloud-computing" />
-            </svg>
-          </div>
+        <div class="card-services__logo" style="background-color: #348acc">
+          <svg aria-hidden="true" class="card-services__icon">
+            <use href="images/icons/sprite-mono.svg#service-icons--cloud-computing" />
+          </svg>
         </div>
+
         <h3 class="h-4">Cloud Solutions</h3>
         <p>
           Run your business entirely from the cloud, with email, data storage, systems management, data backup, disaster
@@ -284,12 +293,10 @@
 
     <div class="col-12">
       <a class="card-services" href="#">
-        <div>
-          <div class="card-services__logo" style="background-color: #c263e2">
-            <svg aria-hidden="true" class="card-services__icon">
-              <use href="images/icons/sprite-mono.svg#service-icons--support" />
-            </svg>
-          </div>
+        <div class="card-services__logo" style="background-color: #c263e2">
+          <svg aria-hidden="true" class="card-services__icon">
+            <use href="images/icons/sprite-mono.svg#service-icons--support" />
+          </svg>
         </div>
 
         <h3 class="h-4">Your Local IT Help desk</h3>
@@ -312,12 +319,10 @@
 
     <div class="col-12">
       <a class="card-services" href="#">
-        <div>
-          <div class="card-services__logo" style="background-color: #00b188">
-            <svg aria-hidden="true" class="card-services__icon">
-              <use href="images/icons/sprite-mono.svg#service-icons--turn" />
-            </svg>
-          </div>
+        <div class="card-services__logo" style="background-color: #00b188">
+          <svg aria-hidden="true" class="card-services__icon">
+            <use href="images/icons/sprite-mono.svg#service-icons--turn" />
+          </svg>
         </div>
 
         <h3 class="h-4">Disaster Recovery</h3>
@@ -340,12 +345,10 @@
 
     <div class="col-12">
       <a class="card-services" href="#">
-        <div>
-          <div class="card-services__logo" style="background-color: #f6921d">
-            <svg aria-hidden="true" class="card-services__icon">
-              <use href="images/icons/sprite-mono.svg#service-icons--verified" />
-            </svg>
-          </div>
+        <div class="card-services__logo" style="background-color: #f6921d">
+          <svg aria-hidden="true" class="card-services__icon">
+            <use href="images/icons/sprite-mono.svg#service-icons--verified" />
+          </svg>
         </div>
 
         <h3 class="h-4">Systems Security</h3>
@@ -368,12 +371,10 @@
 
     <div class="col-12">
       <a class="card-services" href="#">
-        <div>
-          <div class="card-services__logo" style="background-color: #33c1e0">
-            <svg aria-hidden="true" class="card-services__icon">
-              <use href="images/icons/sprite-mono.svg#service-icons--laptop" />
-            </svg>
-          </div>
+        <div class="card-services__logo" style="background-color: #33c1e0">
+          <svg aria-hidden="true" class="card-services__icon">
+            <use href="images/icons/sprite-mono.svg#service-icons--laptop" />
+          </svg>
         </div>
 
         <h3 class="h-4">Hardware Procurement</h3>
@@ -395,12 +396,10 @@
 
     <div class="col-12">
       <a class="card-services" href="#">
-        <div>
-          <div class="card-services__logo" style="background-color: #e15b73">
-            <svg aria-hidden="true" class="card-services__icon">
-              <use href="images/icons/sprite-mono.svg#service-icons--earth" />
-            </svg>
-          </div>
+        <div class="card-services__logo" style="background-color: #e15b73">
+          <svg aria-hidden="true" class="card-services__icon">
+            <use href="images/icons/sprite-mono.svg#service-icons--earth" />
+          </svg>
         </div>
 
         <h3 class="h-4">Phones and Internet</h3>
@@ -426,19 +425,21 @@
 <!-- ====================  ABOUT   ==================== -->
 
 <section class="section container-fluid container-xxl about">
-  <div class="row row-cols-lg-2">
-    <div class="col-12 about__content">
-      <h2 class="h-5">About us</h2>
-      <p class="h-2" data-animate="section-header">
-        <span class="text-accent">Managed IT</span> Supports<span class="text-accent">.</span>
-      </p>
+  <div class="row g-xl justify-content-between">
+    <div class="col-12 col-lg-5 about__text-content">
+      <div class="section__headers">
+        <h2 class="h-5">About us</h2>
+        <p class="h-2" data-animate="section-header">
+          <span class="text-accent">Managed IT</span> Supports<span class="text-accent">.</span>
+        </p>
+      </div>
       <p>
         We offer business-focused IT services and solutions to help your business be more efficient and flexible, work
         reliably, grow comfortably, and be secure in an era of constant threats to business data.
       </p>
       <a class="btn" href="about.html">Get started</a>
     </div>
-    <div class="col-12 about__img">
+    <div class="col-12 col-lg-6 about__img">
       <picture>
         <source
           sizes="(min-width: 992px) 50vw, 100vw"
@@ -476,7 +477,15 @@
           "
           type="image/jpeg"
         />
-        <img alt class="image" draggable="false" height="2560" src="images/main-page/about-us-960.jpg" width="2560" />
+        <img
+          alt
+          class="image"
+          draggable="false"
+          loading="lazy"
+          height="2560"
+          src="images/main-page/about-us-960.jpg"
+          width="2560"
+        />
       </picture>
 
       <p class="about__attachment">
@@ -490,259 +499,264 @@
 <!-- ====================   PORTFOLIO  ==================== -->
 
 <section class="section container-fluid container-xxl portfolio">
-  <h2 class="h-5">Portfolio</h2>
-  <p class="h-2" data-animate="section-header">
-    <span class="text-accent">Case</span>Studies<span class="text-accent">.</span>
-  </p>
+  <div class="section__headers">
+    <h2 class="h-5">Portfolio</h2>
+    <p class="h-2" data-animate="section-header">
+      <span class="text-accent">Case</span>Studies<span class="text-accent">.</span>
+    </p>
+  </div>
+  <div class="gy-lg">
+    <div class="row row-cols-md-2 g-0 card">
+      <div class="col-12 card__img">
+        <a class="card__img-link" href="#" tabindex="-1">
+          <picture>
+            <source
+              sizes="(min-width: 992px) 50vw, 100vw"
+              srcset="
+                images/main-page/portfolio-1-320.avif   320w,
+                images/main-page/portfolio-1-640.avif   640w,
+                images/main-page/portfolio-1-960.avif   960w,
+                images/main-page/portfolio-1-1280.avif 1280w,
+                images/main-page/portfolio-1-1920.avif 1920w,
+                images/main-page/portfolio-1-2560.avif 2560w
+              "
+              type="image/avif"
+            />
+            <source
+              sizes="(min-width: 992px) 50vw, 100vw"
+              srcset="
+                images/main-page/portfolio-1-320.webp   320w,
+                images/main-page/portfolio-1-640.webp   640w,
+                images/main-page/portfolio-1-960.webp   960w,
+                images/main-page/portfolio-1-1280.webp 1280w,
+                images/main-page/portfolio-1-1920.webp 1920w,
+                images/main-page/portfolio-1-2560.webp 2560w
+              "
+              type="image/webp"
+            />
+            <source
+              sizes="(min-width: 992px) 50vw, 100vw"
+              srcset="
+                images/main-page/portfolio-1-320.jpg   320w,
+                images/main-page/portfolio-1-640.jpg   640w,
+                images/main-page/portfolio-1-960.jpg   960w,
+                images/main-page/portfolio-1-1280.jpg 1280w,
+                images/main-page/portfolio-1-1920.jpg 1920w,
+                images/main-page/portfolio-1-2560.jpg 2560w
+              "
+              type="image/jpeg"
+            />
+            <img
+              alt="Buddy Jane"
+              class="image"
+              draggable="false"
+              loading="lazy"
+              height="2560"
+              src="images/main-page/portfolio-1-960.jpg"
+              width="2560"
+            />
+          </picture>
+        </a>
+      </div>
 
-  <div class="row row-cols-md-2 g-0 card">
-    <div class="col-12 card__img">
-      <a class="card__img-link" href="#" tabindex="-1">
-        <picture>
-          <source
-            sizes="(min-width: 992px) 50vw, 100vw"
-            srcset="
-              images/main-page/portfolio-1-320.avif   320w,
-              images/main-page/portfolio-1-640.avif   640w,
-              images/main-page/portfolio-1-960.avif   960w,
-              images/main-page/portfolio-1-1280.avif 1280w,
-              images/main-page/portfolio-1-1920.avif 1920w,
-              images/main-page/portfolio-1-2560.avif 2560w
-            "
-            type="image/avif"
-          />
-          <source
-            sizes="(min-width: 992px) 50vw, 100vw"
-            srcset="
-              images/main-page/portfolio-1-320.webp   320w,
-              images/main-page/portfolio-1-640.webp   640w,
-              images/main-page/portfolio-1-960.webp   960w,
-              images/main-page/portfolio-1-1280.webp 1280w,
-              images/main-page/portfolio-1-1920.webp 1920w,
-              images/main-page/portfolio-1-2560.webp 2560w
-            "
-            type="image/webp"
-          />
-          <source
-            sizes="(min-width: 992px) 50vw, 100vw"
-            srcset="
-              images/main-page/portfolio-1-320.jpg   320w,
-              images/main-page/portfolio-1-640.jpg   640w,
-              images/main-page/portfolio-1-960.jpg   960w,
-              images/main-page/portfolio-1-1280.jpg 1280w,
-              images/main-page/portfolio-1-1920.jpg 1920w,
-              images/main-page/portfolio-1-2560.jpg 2560w
-            "
-            type="image/jpeg"
-          />
-          <img
-            alt="Buddy Jane"
-            class="image"
-            draggable="false"
-            height="2560"
-            src="images/main-page/portfolio-1-960.jpg"
-            width="2560"
-          />
-        </picture>
-      </a>
+      <div class="col-12 card__content">
+        <ul class="card-list">
+          <li>
+            <a href="#">System management</a>
+          </li>
+          <li>
+            <a href="#">Disaster Recovery</a>
+          </li>
+        </ul>
+
+        <h3 class="h-3">
+          <a class="link" href="#">Buddy Jane</a>
+        </h3>
+
+        <p>
+          Ensure your important business data is protected with security software designed to find malware, prevent
+          intrusions, and adapt to new threats fast.
+        </p>
+
+        <div class="card-link">
+          <a class="card-link__body" href="#">
+            Read more
+            <svg aria-hidden="true" class="arrow-right-icon card-link__icon">
+              <use href="images/icons/sprite-mono.svg#arrow" />
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
 
-    <div class="col-12 card__content">
-      <ul class="card-list">
-        <li>
-          <a href="#">System management</a>
-        </li>
-        <li>
-          <a href="#">Disaster Recovery</a>
-        </li>
-      </ul>
-
-      <h3 class="h-3">
-        <a class="link" href="#">Buddy Jane</a>
-      </h3>
-
-      <p>
-        Ensure your important business data is protected with security software designed to find malware, prevent
-        intrusions, and adapt to new threats fast.
-      </p>
-
-      <div class="card-link">
-        <a class="card-link__body" href="#">
-          Read more
-          <svg aria-hidden="true" class="arrow-right-icon card-link__icon">
-            <use href="images/icons/sprite-mono.svg#arrow" />
-          </svg>
+    <div class="row row-cols-md-2 g-0 card">
+      <div class="col-12 card__img">
+        <a class="card__img-link" href="#" tabindex="-1">
+          <picture>
+            <source
+              sizes="(min-width: 992px) 50vw, 100vw"
+              srcset="
+                images/main-page/portfolio-2-320.avif   320w,
+                images/main-page/portfolio-2-640.avif   640w,
+                images/main-page/portfolio-2-960.avif   960w,
+                images/main-page/portfolio-2-1280.avif 1280w,
+                images/main-page/portfolio-2-1920.avif 1920w,
+                images/main-page/portfolio-2-2560.avif 2560w
+              "
+              type="image/avif"
+            />
+            <source
+              sizes="(min-width: 992px) 50vw, 100vw"
+              srcset="
+                images/main-page/portfolio-2-320.webp   320w,
+                images/main-page/portfolio-2-640.webp   640w,
+                images/main-page/portfolio-2-960.webp   960w,
+                images/main-page/portfolio-2-1280.webp 1280w,
+                images/main-page/portfolio-2-1920.webp 1920w,
+                images/main-page/portfolio-2-2560.webp 2560w
+              "
+              type="image/webp"
+            />
+            <source
+              sizes="(min-width: 992px) 50vw, 100vw"
+              srcset="
+                images/main-page/portfolio-2-320.jpg   320w,
+                images/main-page/portfolio-2-640.jpg   640w,
+                images/main-page/portfolio-2-960.jpg   960w,
+                images/main-page/portfolio-2-1280.jpg 1280w,
+                images/main-page/portfolio-2-1920.jpg 1920w,
+                images/main-page/portfolio-2-2560.jpg 2560w
+              "
+              type="image/jpeg"
+            />
+            <img
+              alt="Healing with Modern"
+              class="image"
+              draggable="false"
+              loading="lazy"
+              height="2560"
+              src="images/main-page/portfolio-2-960.jpg"
+              width="2560"
+            />
+          </picture>
         </a>
+      </div>
+
+      <div class="col-12 card__content">
+        <ul class="card-list">
+          <li>
+            <a href="#">System management</a>
+          </li>
+          <li>
+            <a href="#">Disaster Recovery</a>
+          </li>
+        </ul>
+
+        <h3 class="h-3">
+          <a class="link" href="#">Healing with Modern</a>
+        </h3>
+
+        <p>
+          Ensure your important business data is protected with secure software designed to find malware, prevent
+          intrusions, and adapt to new threats fast.
+        </p>
+
+        <div class="card-link">
+          <a class="card-link__body" href="#">
+            Read more
+            <svg aria-hidden="true" class="arrow-right-icon card-link__icon">
+              <use href="images/icons/sprite-mono.svg#arrow" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row row-cols-md-2 g-0 card">
+      <div class="col-12 card__img">
+        <a class="card__img-link" href="#" tabindex="-1">
+          <picture>
+            <source
+              sizes="(min-width: 992px) 50vw, 100vw"
+              srcset="
+                images/main-page/portfolio-3-320.avif   320w,
+                images/main-page/portfolio-3-640.avif   640w,
+                images/main-page/portfolio-3-960.avif   960w,
+                images/main-page/portfolio-3-1280.avif 1280w,
+                images/main-page/portfolio-3-1920.avif 1920w,
+                images/main-page/portfolio-3-2560.avif 2560w
+              "
+              type="image/avif"
+            />
+            <source
+              sizes="(min-width: 992px) 50vw, 100vw"
+              srcset="
+                images/main-page/portfolio-3-320.webp   320w,
+                images/main-page/portfolio-3-640.webp   640w,
+                images/main-page/portfolio-3-960.webp   960w,
+                images/main-page/portfolio-3-1280.webp 1280w,
+                images/main-page/portfolio-3-1920.webp 1920w,
+                images/main-page/portfolio-3-2560.webp 2560w
+              "
+              type="image/webp"
+            />
+            <source
+              sizes="(min-width: 992px) 50vw, 100vw"
+              srcset="
+                images/main-page/portfolio-3-320.jpg   320w,
+                images/main-page/portfolio-3-640.jpg   640w,
+                images/main-page/portfolio-3-960.jpg   960w,
+                images/main-page/portfolio-3-1280.jpg 1280w,
+                images/main-page/portfolio-3-1920.jpg 1920w,
+                images/main-page/portfolio-3-2560.jpg 2560w
+              "
+              type="image/jpeg"
+            />
+            <img
+              alt="OLX Motors Europe"
+              class="image"
+              draggable="false"
+              loading="lazy"
+              height="2560"
+              src="images/main-page/portfolio-3-960.jpg"
+              width="2560"
+            />
+          </picture>
+        </a>
+      </div>
+
+      <div class="col-12 card__content">
+        <ul class="card-list">
+          <li>
+            <a href="#">System management</a>
+          </li>
+          <li>
+            <a href="#">Disaster Recovery</a>
+          </li>
+        </ul>
+
+        <h3 class="h-3">
+          <a class="link" href="#">OLX Motors Europe</a>
+        </h3>
+
+        <p>
+          Ensure your important business data is protected with security software designed to find malware, prevent
+          intrusions, and adapt to new threats fast.
+        </p>
+
+        <div class="card-link">
+          <a class="card-link__body" href="#">
+            Read more
+            <svg aria-hidden="true" class="arrow-right-icon card-link__icon">
+              <use href="images/icons/sprite-mono.svg#arrow" />
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="row row-cols-md-2 g-0 card">
-    <div class="col-12 card__img">
-      <a class="card__img-link" href="#" tabindex="-1">
-        <picture>
-          <source
-            sizes="(min-width: 992px) 50vw, 100vw"
-            srcset="
-              images/main-page/portfolio-2-320.avif   320w,
-              images/main-page/portfolio-2-640.avif   640w,
-              images/main-page/portfolio-2-960.avif   960w,
-              images/main-page/portfolio-2-1280.avif 1280w,
-              images/main-page/portfolio-2-1920.avif 1920w,
-              images/main-page/portfolio-2-2560.avif 2560w
-            "
-            type="image/avif"
-          />
-          <source
-            sizes="(min-width: 992px) 50vw, 100vw"
-            srcset="
-              images/main-page/portfolio-2-320.webp   320w,
-              images/main-page/portfolio-2-640.webp   640w,
-              images/main-page/portfolio-2-960.webp   960w,
-              images/main-page/portfolio-2-1280.webp 1280w,
-              images/main-page/portfolio-2-1920.webp 1920w,
-              images/main-page/portfolio-2-2560.webp 2560w
-            "
-            type="image/webp"
-          />
-          <source
-            sizes="(min-width: 992px) 50vw, 100vw"
-            srcset="
-              images/main-page/portfolio-2-320.jpg   320w,
-              images/main-page/portfolio-2-640.jpg   640w,
-              images/main-page/portfolio-2-960.jpg   960w,
-              images/main-page/portfolio-2-1280.jpg 1280w,
-              images/main-page/portfolio-2-1920.jpg 1920w,
-              images/main-page/portfolio-2-2560.jpg 2560w
-            "
-            type="image/jpeg"
-          />
-          <img
-            alt="Healing with Modern"
-            class="image"
-            draggable="false"
-            height="2560"
-            src="images/main-page/portfolio-2-960.jpg"
-            width="2560"
-          />
-        </picture>
-      </a>
-    </div>
-
-    <div class="col-12 card__content">
-      <ul class="card-list">
-        <li>
-          <a href="#">System management</a>
-        </li>
-        <li>
-          <a href="#">Disaster Recovery</a>
-        </li>
-      </ul>
-
-      <h3 class="h-3">
-        <a class="link" href="#">Healing with Modern</a>
-      </h3>
-
-      <p>
-        Ensure your important business data is protected with secure software designed to find malware, prevent
-        intrusions, and adapt to new threats fast.
-      </p>
-
-      <div class="card-link">
-        <a class="card-link__body" href="#">
-          Read more
-          <svg aria-hidden="true" class="arrow-right-icon card-link__icon">
-            <use href="images/icons/sprite-mono.svg#arrow" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="row row-cols-md-2 g-0 card">
-    <div class="col-12 card__img">
-      <a class="card__img-link" href="#" tabindex="-1">
-        <picture>
-          <source
-            sizes="(min-width: 992px) 50vw, 100vw"
-            srcset="
-              images/main-page/portfolio-3-320.avif   320w,
-              images/main-page/portfolio-3-640.avif   640w,
-              images/main-page/portfolio-3-960.avif   960w,
-              images/main-page/portfolio-3-1280.avif 1280w,
-              images/main-page/portfolio-3-1920.avif 1920w,
-              images/main-page/portfolio-3-2560.avif 2560w
-            "
-            type="image/avif"
-          />
-          <source
-            sizes="(min-width: 992px) 50vw, 100vw"
-            srcset="
-              images/main-page/portfolio-3-320.webp   320w,
-              images/main-page/portfolio-3-640.webp   640w,
-              images/main-page/portfolio-3-960.webp   960w,
-              images/main-page/portfolio-3-1280.webp 1280w,
-              images/main-page/portfolio-3-1920.webp 1920w,
-              images/main-page/portfolio-3-2560.webp 2560w
-            "
-            type="image/webp"
-          />
-          <source
-            sizes="(min-width: 992px) 50vw, 100vw"
-            srcset="
-              images/main-page/portfolio-3-320.jpg   320w,
-              images/main-page/portfolio-3-640.jpg   640w,
-              images/main-page/portfolio-3-960.jpg   960w,
-              images/main-page/portfolio-3-1280.jpg 1280w,
-              images/main-page/portfolio-3-1920.jpg 1920w,
-              images/main-page/portfolio-3-2560.jpg 2560w
-            "
-            type="image/jpeg"
-          />
-          <img
-            alt="OLX Motors Europe"
-            class="image"
-            draggable="false"
-            height="2560"
-            src="images/main-page/portfolio-3-960.jpg"
-            width="2560"
-          />
-        </picture>
-      </a>
-    </div>
-
-    <div class="col-12 card__content">
-      <ul class="card-list">
-        <li>
-          <a href="#">System management</a>
-        </li>
-        <li>
-          <a href="#">Disaster Recovery</a>
-        </li>
-      </ul>
-
-      <h3 class="h-3">
-        <a class="link" href="#">OLX Motors Europe</a>
-      </h3>
-
-      <p>
-        Ensure your important business data is protected with security software designed to find malware, prevent
-        intrusions, and adapt to new threats fast.
-      </p>
-
-      <div class="card-link">
-        <a class="card-link__body" href="#">
-          Read more
-          <svg aria-hidden="true" class="arrow-right-icon card-link__icon">
-            <use href="images/icons/sprite-mono.svg#arrow" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <div class="btn-section">
-    <a class="btn m-0" href="#">Explore more</a>
+    <a class="btn" href="#">Explore more</a>
   </div>
 </section>
 
@@ -752,17 +766,19 @@
   <div class="bg-gradient bg-gradient-bottom"></div>
   <div class="bg-gradient bg-gradient-up"></div>
 
-  <div class="row justify-content-between">
-    <div class="col-12 col-lg-4 partners__content">
-      <h2 class="h-5">Our Partners</h2>
-      <p class="h-2" data-animate="section-header">
-        <span class="text-accent">Working</span> With the Best<span class="text-accent">.</span>
-      </p>
+  <div class="row partners__content">
+    <div class="col-12 col-lg-4 partners__content gy-lg">
+      <div class="section__headers">
+        <h2 class="h-5">Our Partners</h2>
+        <p class="h-2" data-animate="section-header">
+          <span class="text-accent">Working</span> With the Best<span class="text-accent">.</span>
+        </p>
+      </div>
       <p>
         Run your business entirely from the cloud, with email, data storage, systems management, data backup, disaster
         recovery, telephony, and more.
       </p>
-      <a class="btn mt-0" href="partners.html">Get started</a>
+      <div><a class="btn mt-0" href="partners.html">Get started</a></div>
     </div>
     <div class="col-12 col-lg-7">
       <div class="row gy-4">
@@ -821,11 +837,12 @@
 <!-- ====================   BLOG   ==================== -->
 
 <section class="section container-fluid container-xxl blog">
-  <h2 class="h-5">IT Blog</h2>
-  <p class="h-2" data-animate="section-header">
-    <span class="text-accent">Expert</span> research<span class="text-accent">.</span>
-  </p>
-
+  <div class="section__headers">
+    <h2 class="h-5">IT Blog</h2>
+    <p class="h-2" data-animate="section-header">
+      <span class="text-accent">Expert</span> research<span class="text-accent">.</span>
+    </p>
+  </div>
   <div class="row gy-4">
     <div class="col-12 col-md-6 col-lg-4">
       <div class="card-blog-post">
@@ -871,6 +888,7 @@
               alt="Packet Pushers Heavy Networking Podcast"
               class="image"
               draggable="false"
+              loading="lazy"
               height="2560"
               src="images/main-page/blog-1-960.jpg"
               width="2560"
@@ -952,6 +970,7 @@
               alt="Tips For Efficient Communication With Your IT Support Team"
               class="image"
               draggable="false"
+              loading="lazy"
               height="2560"
               src="images/main-page/blog-2-960.jpg"
               width="2560"
@@ -1029,6 +1048,7 @@
               alt="Packet Pushers Heavy Networking Podcast"
               class="image"
               draggable="false"
+              loading="lazy"
               height="2560"
               src="images/main-page/blog-3-960.jpg"
               width="2560"
@@ -1069,8 +1089,8 @@
 <footer class="footer">
   <div class="container-fluid container-xxl footer-container">
   <nav aria-label="Footer" class="footer-nav">
-    <div class="row">
-      <div class="col-12 col-sm-6 col-lg-3 footer-nav__column">
+    <div class="row row-cols-sm-2 row-cols-lg-4">
+      <div class="col-12 footer-nav__column">
         <ul class="footer-nav__list">
           <li>
             <a class="logo-hover" href="index.html" aria-label="The Owl home. The Owl logo.">
@@ -1111,20 +1131,20 @@
         </ul>
       </div>
 
-      <div class="col-12 col-sm-6 col-lg-3 footer-nav__column">
+      <div class="col-12 footer-nav__column">
         <h2 class="footer-nav__header">Services</h2>
 
         <ul class="footer-nav__list">
           <li><a class="footer-nav__link" href="about.html">Cloud Solutions</a></li>
-          <li><a class="footer-nav__link" href="faq.html"> Your Local IT Help desk</a></li>
-          <li><a class="footer-nav__link" href="blog.html"> Disaster Recovery</a></li>
+          <li><a class="footer-nav__link" href="faq.html">Your Local IT Help desk</a></li>
+          <li><a class="footer-nav__link" href="blog.html">Disaster Recovery</a></li>
           <li><a class="footer-nav__link" href="contact.html">Systems Security</a></li>
           <li><a class="footer-nav__link" href="blog.html">Hardware Procurement</a></li>
           <li><a class="footer-nav__link" href="contact.html">Phones and Internet</a></li>
         </ul>
       </div>
 
-      <div class="col-12 col-sm-6 col-lg-3 footer-nav__column">
+      <div class="col-12 footer-nav__column">
         <h2 class="footer-nav__header">Company</h2>
 
         <ul class="footer-nav__list">
@@ -1143,7 +1163,7 @@
         </ul>
       </div>
 
-      <div class="col-12 col-sm-6 col-lg-3 footer-nav__column">
+      <div class="col-12 footer-nav__column">
         <h2 class="footer-nav__header">Contact</h2>
 
         <ul class="footer-nav__list">

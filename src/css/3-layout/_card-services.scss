@@ -1,5 +1,5 @@
 .card-services {
-  @include flex($flex-direction: column);
+  @include flex($flex-direction: column, $gap: var(--spacer));
   @include spacer('padding', var(--spacer-lg));
   position: relative;
   height: 100%;
@@ -8,13 +8,11 @@
   transition: var(--transition);
   background-color: var(--color-light);
 
-  .h-4 {
-    padding-top: 5px;
-  }
 
   &__logo {
     @include flex($justify-content: center, $align-items: center);
     @include box(4.75rem, 4.75rem);
+    margin-bottom: 5px; // space to match shadow 
     border-radius: var(--br);
     box-shadow: var(--shadow);
     transition: var(--transition);
@@ -28,8 +26,7 @@
   .card-link {
     margin-top: auto;
     @include media-breakpoint-up(xl) {
-      @include absolute(bottom 1.75rem);
-      translate: 0 1rem;
+      translate: 0 1.5rem;
       transition: var(--transition);
       visibility: hidden;
       opacity: 0;

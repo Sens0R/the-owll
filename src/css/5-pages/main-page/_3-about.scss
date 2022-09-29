@@ -1,19 +1,16 @@
 .about {
-  .h-2,
-  .btn {
-    margin-top: 0;
-  }
-
-  &__content {
-    @include flex($flex-direction: column, $justify-content: center, $align-items: flex-start);
-    @include media-breakpoint-up(lg) {
-      padding-right: 6rem;
-    }
+  &__text-content {
+    @include flex($flex-direction: column, $justify-content: center, $align-items: flex-start, $gap: var(--spacer-lg));
   }
 
   &__img {
     position: relative;
-    @include spacer-vertical('margin', var(--spacer));
+  }
+
+  .image {
+    @include media-breakpoint-down(lg) {
+      aspect-ratio: 2/1;
+    }
   }
 }
 
