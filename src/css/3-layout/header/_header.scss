@@ -1,24 +1,32 @@
-/* .header.header-top {
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-} */
-
 .header {
-  @include sticky(top 0 left 0);
   @include flex($flex-wrap: wrap, $align-items: center, $gap: var(--spacer));
-  @include spacer-vertical('padding', var(--spacer-sm));
-
   @include media-breakpoint-up(sm) {
     gap: var(--spacer-lg);
   }
-
-  @include media-breakpoint-up(xxl) {
+  @include media-breakpoint-up(xl) {
     @include spacer-horizontal('padding', var(--spacer-lg));
   }
+
+  @include sticky(top 0 left 0);
+  @include spacer-vertical('padding', var(--spacer-sm));
+  will-change: auto;
+  box-shadow: none;
+  translate: none;
+  transition: all 0.5s ease-out;
 }
 
-.logo {
-  width: clamp(3.75rem, calc(1.02rem + 13.64vw), 11.25rem);
-  height: clamp(2.5rem, calc(0.68rem + 9.09vw), 7.5rem);
+/* ====================   HEADROOM   ==================== */
+
+.headroom {
+  &_unpinned {
+    @include media-breakpoint-up(lg) {
+      translate: 0 -100%;
+    }
+  }
+
+  &_not-top.headroom_not-bottom {
+    box-shadow: 0 -1rem 3rem 0 rgba(0 0 0 / 0.5);
+  }
 }
 
 .logo-icon {
@@ -60,46 +68,6 @@
     &:focus-visible {
       text-decoration: underline 1px solid var(--color-primary);
     }
-  }
-}
-
-/* ====================   HEADROOM   ==================== */
-
-.headroom {
-  will-change: auto;
-  transition: all 0.6s ease-out;
-  
-
-  &_pinned {
-    // when scrolling up
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-  }
-
-  &_unpinned {
-    // when scrolling down
-    translate: 0 -100%;
-    
-  }
-
-  &_top {
-    // when above offset
-    box-shadow: none;
-  }
-
-  &_not-top {
-    // when below offset
-  }
-
-  &_bottom {
-    // when at bottom of scroll area
-   
-  }
-
-  &_not-bottom {
-    // when not at bottom of scroll area
-  }
-  &_frozen {
-    // when frozen method has been called
   }
 }
 

@@ -6189,13 +6189,7 @@ input[type=search]::-webkit-search-cancel-button {
     fill: var(--color-secondary);
   }
 }
-/* .header.header-top {
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-} */
 .header {
-  top: 0;
-  left: 0;
-  position: sticky;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6205,24 +6199,40 @@ input[type=search]::-webkit-search-cancel-button {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: var(--spacer);
+  top: 0;
+  left: 0;
+  position: sticky;
   padding-top: var(--spacer-sm);
   padding-bottom: var(--spacer-sm);
+  will-change: auto;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  translate: none;
+  -webkit-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 @media (min-width: 576px) {
   .header {
     gap: var(--spacer-lg);
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1200px) {
   .header {
     padding-left: var(--spacer-lg);
     padding-right: var(--spacer-lg);
   }
 }
 
-.logo {
-  width: clamp(3.75rem, 1.02rem + 13.64vw, 11.25rem);
-  height: clamp(2.5rem, 0.68rem + 9.09vw, 7.5rem);
+/* ====================   HEADROOM   ==================== */
+@media (min-width: 992px) {
+  .headroom_unpinned {
+    translate: 0 -100%;
+  }
+}
+.headroom_not-top.headroom_not-bottom {
+  -webkit-box-shadow: 0 -1rem 3rem 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 -1rem 3rem 0 rgba(0, 0, 0, 0.5);
 }
 
 .logo-icon {
@@ -6305,24 +6315,6 @@ input[type=search]::-webkit-search-cancel-button {
           text-decoration: underline 1px solid var(--color-primary);
 }
 
-/* ====================   HEADROOM   ==================== */
-.headroom {
-  will-change: auto;
-  -webkit-transition: all 0.6s ease-out;
-  -o-transition: all 0.6s ease-out;
-  transition: all 0.6s ease-out;
-}
-.headroom_pinned {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-}
-.headroom_unpinned {
-  translate: 0 -100%;
-}
-.headroom_top {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
 /* ====================   IMPORTS   ==================== */
 .navigation {
   top: 0;

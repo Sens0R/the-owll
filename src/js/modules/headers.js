@@ -4,10 +4,14 @@ export function headroom() {
   var header = document.querySelector('header')
   //header.classList.add('slide-down')
   const headroom = new Headroom(header, {
-    tolerance : {
-      up : 10,
-      down : 0
-  },
+    offset: {
+      up: 0,
+      down: 0,
+    },
+    tolerance: {
+      up: 10,
+      down: 0,
+    },
     // css classes to apply
     classes: {
       // when element is initialized
