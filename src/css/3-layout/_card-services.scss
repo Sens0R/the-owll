@@ -8,11 +8,10 @@
   transition: var(--transition);
   background-color: var(--color-light);
 
-
   &__logo {
     @include flex($justify-content: center, $align-items: center);
     @include box(4.75rem, 4.75rem);
-    margin-bottom: 5px; // space to match shadow 
+    margin-bottom: 5px; // space to match shadow
     border-radius: var(--br);
     box-shadow: var(--shadow);
     transition: var(--transition);
@@ -23,8 +22,11 @@
     fill: var(--color-light);
   }
 
-  .card-link {
+  > :last-child {
     margin-top: auto;
+  }
+
+  .card-link {
     @include media-breakpoint-up(xl) {
       translate: 0 1.5rem;
       transition: var(--transition);
