@@ -33,7 +33,7 @@
 
   &__link {
     @include flex($justify-content: center, $flex-direction: column);
-    @include space(var(--spacer-sm), padding, vertical);
+    @include space(0.75rem, padding, vertical);
     font-size: var(--fs-0);
     font-weight: var(--fw-medium);
 
@@ -50,7 +50,7 @@
 
   &__btn {
     margin-top: auto;
-    @include space(var(--spacer-sm), padding, vertical);
+    @include space(0.75rem, padding, vertical);
   }
 
   .logo-icon {
