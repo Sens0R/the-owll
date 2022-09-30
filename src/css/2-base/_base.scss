@@ -101,18 +101,21 @@ h1,
 .h-1,
 .fs-1 {
   font-size: var(--fs-1);
+  line-height: var(--base-lh-headings);
 }
 
 h2,
 .h-2,
 .fs-2 {
   font-size: var(--fs-2);
+  line-height: var(--base-lh-headings);
 }
 
 h3,
 .h-3,
 .fs-3 {
   font-size: var(--fs-3);
+  line-height: var(--base-lh-headings);
 }
 
 h4,
@@ -146,7 +149,6 @@ h6,
 .h-5,
 .h-6 {
   font-weight: var(--base-fw-headings);
-  line-height: var(--base-lh-headings);
 }
 
 button {

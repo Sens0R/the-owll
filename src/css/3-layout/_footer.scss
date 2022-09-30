@@ -6,7 +6,8 @@
   @include spacer-bottom('padding', var(--spacer-xl));
 
   .h-5 {
-    @include spacer-vertical('padding', var(--spacer-sm));
+    @include spacer-top('padding', var(--spacer-sm));
+    font-size: var(--fs-0);
   }
 
   .row {
