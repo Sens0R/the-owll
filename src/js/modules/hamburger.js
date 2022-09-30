@@ -79,7 +79,7 @@ export function hamburger(userOptions) {
   }
 
   function close() {
-    backdrop.addEventListener('transitionend', () => header.style.overflow = null, {once: true});
+    mainElement.addEventListener('transitionend', () => header.style.overflow = null, {once: true});
     document.removeEventListener('keydown', closeWithEsc)
     document.body.style.overflow = null
     mainElement.classList.remove('active')

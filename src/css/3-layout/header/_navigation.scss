@@ -4,7 +4,7 @@
   width: auto;
   padding: 0 0.75rem 0.75rem 0.75rem;
   background-color: var(--color-light);
-  will-change: auto;
+
   z-index: var(--z-hamburger);
   visibility: hidden;
   translate: 100%;
@@ -15,7 +15,6 @@
     visibility: visible;
     position: static;
     translate: 0;
-    
   }
 
   &.active {
@@ -31,6 +30,12 @@
     @include media-breakpoint-up(xl) {
       display: none;
     }
+  }
+}
+
+@include media-breakpoint-down(xl) {
+  .navigation {
+    will-change: auto;
   }
 }
 

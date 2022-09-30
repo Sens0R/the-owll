@@ -6347,7 +6347,6 @@ input[type=search]::-webkit-search-cancel-button {
   width: auto;
   padding: 0 0.75rem 0.75rem 0.75rem;
   background-color: var(--color-light);
-  will-change: auto;
   z-index: var(--z-hamburger);
   visibility: hidden;
   translate: 100%;
@@ -6379,6 +6378,11 @@ input[type=search]::-webkit-search-cancel-button {
   }
 }
 
+@media (max-width: 1199.98px) {
+  .navigation {
+    will-change: auto;
+  }
+}
 .backdrop {
   top: 0;
   left: 0;
