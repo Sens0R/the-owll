@@ -1,32 +1,29 @@
 .header {
+  @include sticky(top 0 left 0);
   @include flex($flex-wrap: wrap, $align-items: center, $gap: var(--spacer));
+  @include spacer-vertical('padding', var(--spacer-sm));
   @include media-breakpoint-up(sm) {
     gap: var(--spacer-lg);
   }
+
   @include media-breakpoint-up(xl) {
     @include spacer-horizontal('padding', var(--spacer-lg));
   }
 
-  @include sticky(top 0 left 0);
-  @include spacer-vertical('padding', var(--spacer-sm));
   will-change: auto;
   box-shadow: none;
   translate: none;
   transition: all 0.5s ease-out;
 }
 
-/* ====================   HEADROOM   ==================== */
-
-.headroom {
-  &_unpinned {
-    @include media-breakpoint-up(lg) {
-      translate: 0 -100%;
-    }
+.headroom_unpinned {
+  @include media-breakpoint-up(lg) {
+    translate: 0 -100%;
   }
+}
 
-  &_not-top.headroom_not-bottom {
-    box-shadow: 0 -1rem 3rem 0 rgba(0 0 0 / 0.5);
-  }
+.headroom_not-top.headroom_not-bottom {
+  box-shadow: 0 -1rem 3rem 0 rgba(0 0 0 / 0.5);
 }
 
 .logo-icon {
@@ -47,9 +44,11 @@
 }
 
 .phone {
+  @include flex($align-items: center);
+
   &__icon {
     @include box(clamp(1.5rem, calc(1.23rem + 1.36vw), 2.25rem), clamp(1.5rem, calc(1.23rem + 1.36vw), 2.25rem));
-    margin-right: 0.75rem;
+    margin-right: var(--spacer-sm);
     fill: var(--color-primary);
   }
 
