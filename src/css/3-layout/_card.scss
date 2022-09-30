@@ -4,7 +4,7 @@
 
   &__content {
     @include flex($flex-direction: column, $gap: var(--spacer));
-    @include spacer('padding', var(--spacer-lg));
+    @include space(var(--spacer-lg), padding, all);
   }
 
   &__img {

@@ -78,16 +78,21 @@
     margin-top: auto;
     margin-bottom: auto;
   } @else if $direction == 'both' {
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
   }
 }
 
-@mixin box($width, $height) {
-  width: $width;
-  height: $height;
+@mixin box($width, $height, $type: fixed) {
+  @if $type == 'min' {
+    min-width: $width;
+    max-height: $height;
+  } @else if $type == 'max' {
+    max-width: $width;
+    max-height: $height;
+  } @else if $type == 'fixed' {
+    width: $width;
+    height: $height;
+  }
 }
 
 @mixin media-xs {
@@ -106,4 +111,80 @@
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
+}
+
+@mixin space($amount: var(--spacer), $type: margin, $direction: vertical, $secondary-direction: null) {
+  @if $type == padding {
+    @if $direction == all {
+      padding: $amount;
+    } @else if $direction == top {
+      padding-top: $amount;
+    } @else if $direction == left {
+      padding-left: $amount;
+    } @else if $direction == right {
+      padding-right: $amount;
+    } @else if $direction == bottom {
+      padding-bottom: $amount;
+    } @else if $direction == horizontal {
+      padding-right: $amount;
+      padding-left: $amount;
+    } @else if $direction == vertical {
+      padding-top: $amount;
+      padding-bottom: $amount;
+    }
+
+    @if $secondary-direction == all {
+      padding: $amount;
+    } @else if $secondary-direction == top {
+      padding-top: $amount;
+    } @else if $secondary-direction == left {
+      padding-left: $amount;
+    } @else if $secondary-direction == right {
+      padding-right: $amount;
+    } @else if $secondary-direction == bottom {
+      padding-bottom: $amount;
+    } @else if $secondary-direction == horizontal {
+      padding-right: $amount;
+      padding-left: $amount;
+    } @else if $secondary-direction == vertical {
+      padding-top: $amount;
+      padding-bottom: $amount;
+    }
+  } @else if $type == 'margin' {
+    @if $direction == all {
+      margin: $amount;
+    } @else if $direction == top {
+      margin-top: $amount;
+    } @else if $direction == left {
+      margin-left: $amount;
+    } @else if $direction == right {
+      margin-right: $amount;
+    } @else if $direction == bottom {
+      margin-bottom: $amount;
+    } @else if $direction == horizontal {
+      margin-left: $amount;
+      margin-right: $amount;
+    } @else if $direction == vertical {
+      margin-bottom: $amount;
+      margin-top: $amount;
+    }
+
+    @if $secondary-direction == all {
+      margin: $amount;
+    } @else if $secondary-direction == top {
+      margin-top: $amount;
+    } @else if $secondary-direction == left {
+      margin-left: $amount;
+    } @else if $secondary-direction == right {
+      margin-right: $amount;
+    } @else if $secondary-direction == bottom {
+      margin-bottom: $amount;
+    } @else if $secondary-direction == horizontal {
+      margin-right: $amount;
+      margin-left: $amount;
+    } @else if $secondary-direction == vertical {
+      margin-top: $amount;
+      margin-bottom: $amount;
+    }
+  }
 }

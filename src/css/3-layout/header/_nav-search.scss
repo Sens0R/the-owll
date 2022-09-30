@@ -21,7 +21,7 @@
   }
 
   &__input {
-    @include spacer-horizontal('padding', var(--spacer-sm));
+    @include space(var(--spacer-sm), padding, horizontal);
     width: 100%;
     font-size: var(--fs-5);
 
@@ -77,7 +77,7 @@
 }
 
 .navigation .nav-search {
-  @include spacer-vertical('margin', var(--spacer-sm));
+  @include space(var(--spacer-sm), margin, vertical);
   max-width: 100%;
 
   @include media-breakpoint-up(md) {

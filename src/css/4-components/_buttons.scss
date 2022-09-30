@@ -1,6 +1,5 @@
 @mixin btn {
   @include flex($display: inline-flex, $justify-content: center, $align-items: center);
-  //@include spacer-vertical('margin', var(--spacer));
   margin-bottom: 0.25rem; // btn extra space to match shadow
   color: var(--color-dark);
   background-color: var(--color-primary);
@@ -59,7 +58,4 @@
 
 .btn-section {
   @include flex($justify-content: center, $align-items: center);
-  &-left {
-
-  }
 }

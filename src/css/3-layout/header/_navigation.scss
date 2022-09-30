@@ -1,10 +1,9 @@
 .navigation {
   @include fixed(right 0 top 0 bottom 0);
   @include flex($flex-direction: column, $justify-content: flex-start, $align-items: flex-start);
+  @include space(0.75rem, padding, horizontal, bottom);
   width: auto;
-  padding: 0 0.75rem 0.75rem 0.75rem;
   background-color: var(--color-light);
-
   z-index: var(--z-hamburger);
   visibility: hidden;
   translate: 100%;

@@ -1,12 +1,12 @@
 .footer {
-  @include spacer-top('padding', var(--spacer-xl));
+  @include space(var(--spacer-xl), padding, top);
 }
 
 .footer-nav {
-  @include spacer-bottom('padding', var(--spacer-xl));
+  @include space(var(--spacer-xl), padding, bottom);
 
   .h-5 {
-    @include spacer-top('padding', var(--spacer-sm));
+    @include space(var(--spacer-sm), padding, top);
     font-size: var(--fs-0);
   }
 
@@ -24,16 +24,16 @@
   }
 
   &__header {
+    @include space(var(--spacer), margin, bottom);
     font-size: var(--fs-5);
     font-weight: bold;
     text-transform: uppercase;
     color: var(--color-secondary);
-    @include spacer-bottom('margin', var(--spacer));
   }
 
   &__link {
     @include flex($justify-content: center, $flex-direction: column);
-    @include spacer-vertical('padding', var(--spacer-sm));
+    @include space(var(--spacer-sm), padding, vertical);
     font-size: var(--fs-0);
     font-weight: var(--fw-medium);
 
@@ -50,7 +50,7 @@
 
   &__btn {
     margin-top: auto;
-    @include spacer-vertical('padding', var(--spacer-sm));
+    @include space(var(--spacer-sm), padding, vertical);
   }
 
   .logo-icon {
@@ -61,7 +61,7 @@
 
 .copyright {
   @include flex($justify-content: space-between, $align-items: center);
+  @include space(var(--spacer-lg), padding, bottom);
   color: var(--color-secondary-gray);
-  @include spacer-bottom('padding', var(--spacer-lg));
   font-size: var(--fs-6);
 }

@@ -7,7 +7,7 @@
 
   &__content {
     @include flex($flex-direction: column, $justify-content: center, $gap: var(--spacer));
-    @include spacer('padding', var(--spacer-lg));
+    @include space(var(--spacer-lg), padding, all);
     height: 100%;
 
     :last-child {

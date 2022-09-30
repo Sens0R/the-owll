@@ -1,6 +1,6 @@
 .section {
-  @include spacer-vertical('padding', var(--spacer-xl));
   @include flex($flex-direction: column, $gap: var(--spacer-lg));
+  @include space(var(--spacer-xl), padding, vertical);
 
   .h-5 {
     text-transform: uppercase;

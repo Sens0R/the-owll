@@ -1,8 +1,10 @@
 .nav-menu {
+  @include space(var(--spacer-sm), margin, vertical);
   width: 100%;
   margin: 0;
-  
+
   &__link {
+    @include space(var(--spacer-sm), padding, vertical);
     font-weight: var(--fw-medium);
 
     @include hover {
@@ -15,24 +17,12 @@
       text-decoration: underline 2px;
     }
   }
-}
 
-@include media-breakpoint-down(xl) {
-  .nav-menu {
-    @include spacer-vertical('margin', var(--spacer-sm));
-
-    &__link {
-      @include spacer-vertical('padding', var(--spacer-sm));
-    }
-  }
-}
-
-@include media-breakpoint-up(xl) {
-  .nav-menu {
+  @include media-breakpoint-up(xl) {
     @include flex($flex-wrap: wrap, $justify-content: center, $align-items: center);
 
     &__link {
-      @include spacer('padding', var(--spacer-sm));
+      @include space(var(--spacer-sm), padding, horizontal);
     }
   }
 }
