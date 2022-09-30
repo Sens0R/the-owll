@@ -6481,9 +6481,9 @@ input[type=search]::-webkit-search-cancel-button {
   max-width: 8.75rem;
   border-radius: var(--br-sm);
   border: 1px solid var(--color-dark);
-  -webkit-transition: max-width var(--transition);
-  -o-transition: max-width var(--transition);
-  transition: max-width var(--transition);
+  -webkit-transition: max-width 0.6s ease-in-out;
+  -o-transition: max-width 0.6s ease-in-out;
+  transition: max-width 0.6s ease-in-out;
 }
 .nav-search:focus-within {
   max-width: 100%;
@@ -7368,6 +7368,9 @@ input[type=search]::-webkit-search-cancel-button {
 }
 
 /* ====================   IMPORTS   ==================== */
+.hero {
+  padding-bottom: var(--spacer);
+}
 .hero h1 {
   margin-top: -1rem;
 }
@@ -7384,16 +7387,7 @@ input[type=search]::-webkit-search-cancel-button {
 
 .banner {
   position: relative;
-  height: 75vh;
-}
-.banner .image {
-  -o-object-position: top;
-     object-position: top;
-}
-@media (min-width: 992px) {
-  .banner {
-    min-height: 100vh;
-  }
+  height: clamp(18.75rem, 15.568rem + 15.91vw, 27.5rem);
 }
 .banner__gradient {
   top: 0;
@@ -7401,9 +7395,9 @@ input[type=search]::-webkit-search-cancel-button {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.2)), color-stop(75%, rgba(255, 255, 255, 0.8)), to(rgb(255, 255, 255)));
-  background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.8) 75%, rgb(255, 255, 255) 100%);
-  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.8) 75%, rgb(255, 255, 255) 100%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(255, 255, 255, 0)), color-stop(75%, rgba(255, 255, 255, 0.75)), color-stop(90%, rgba(255, 255, 255, 0.95)), to(rgb(255, 255, 255)));
+  background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.75) 75%, rgba(255, 255, 255, 0.95) 90%, rgb(255, 255, 255) 100%);
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.75) 75%, rgba(255, 255, 255, 0.95) 90%, rgb(255, 255, 255) 100%);
 }
 .banner__particles {
   top: 0;

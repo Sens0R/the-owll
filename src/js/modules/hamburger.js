@@ -6,8 +6,6 @@ const defaultOptions = {
   breakpoint: 1200,
 }
 
-const header = document.querySelector('header')
-
 /*  ---------------------- RUN  -------------------------- */
 
 export function hamburger(userOptions) {
@@ -68,7 +66,6 @@ export function hamburger(userOptions) {
   /* ====================   FUNCTIONS   ==================== */
 
   function open() {
-    //header.style.overflow = 'visible'
     document.addEventListener('keydown', closeWithEsc)
     document.body.style.overflow = 'hidden'
     mainElement.classList.add('active')
@@ -79,7 +76,6 @@ export function hamburger(userOptions) {
   }
 
   function close() {
-    //mainElement.addEventListener('transitionend', () => header.style.overflow = null, {once: true});
     document.removeEventListener('keydown', closeWithEsc)
     document.body.style.overflow = null
     mainElement.classList.remove('active')

@@ -12,7 +12,7 @@
   max-width: 8.75rem;
   border-radius: var(--br-sm);
   border: 1px solid var(--color-dark);
-  transition: max-width var(--transition);
+  transition: max-width 0.6s ease-in-out;
 
   &:focus-within {
     max-width: 100%;
