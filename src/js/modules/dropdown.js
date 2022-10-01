@@ -65,41 +65,35 @@ function renderDropdowns() {
       return
     }
 
-    const dropdownContent = dropdownButton.nextElementSibling
+    const dropdownContent = dropdownButton.nextElementSibling // content after button
 
-    const firstFocusableEl = dropdownContent.querySelectorAll(
-      'button, [href]:not(use), input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    )[0]
-
-    dropdownButton.setAttribute('aria-hasPopup', 'true')
     dropdownButton.setAttribute('aria-expanded', 'false')
     dropdownContent.setAttribute('aria-hidden', 'true')
     dropdownContent.setAttribute('aria-label', 'submenu')
     dropdownContent.style.maxHeight = null
 
-    closeDropdown()
+    close()
 
-    dropdownButton.addEventListener('click', toggleDropdown)
-    dropdownButton.addEventListener('keydown', keyboardNavigation)
+    dropdownButton.addEventListener('click', toggle)
 
     if (desktop) {
       if (!dropdown.dataset.dropdown) {
-        dropdown.addEventListener('mouseenter', openDropdown)
-        dropdown.addEventListener('mouseleave', closeDropdown)
+        dropdown.addEventListener('mouseenter', open)
+        dropdown.addEventListener('mouseleave', close)
       }
     }
 
     /* ====================   FUNCTIONS  ==================== */
 
-    function toggleDropdown() {
-      if (dropdown.classList.contains('active')) return closeDropdown()
-      openDropdown()
+    function toggle() {
+      if (dropdown.classList.contains('active')) return close()
+      open()
       setTimeout(() => {
         document.addEventListener('click', clickOutside)
       }, 1)
     }
 
-    function openDropdown() {
+    function open() {
       if (desktop) {
         document.querySelectorAll('[data-dropdown]').forEach(activeDropdown => {
           activeDropdown.classList.remove('active')
@@ -107,8 +101,9 @@ function renderDropdowns() {
         })
       }
 
-      header.style.overflow = 'visible'
       dropdown.classList.add('active')
+      document.addEventListener('keydown', closeWithEsc)
+
       dropdownButton.setAttribute('aria-expanded', 'true')
       dropdownContent.setAttribute('aria-hidden', 'false')
 
@@ -118,8 +113,8 @@ function renderDropdowns() {
       }
     }
 
-    function closeDropdown() {
-      header.addEventListener('transitionend', () => (header.style.overflow = null), { once: true })
+    function close() {
+      document.removeEventListener('keydown', closeWithEsc)
       dropdown.classList.remove('active')
       dropdownButton.setAttribute('aria-expanded', 'false')
       dropdownContent.setAttribute('aria-hidden', 'true')
@@ -130,33 +125,16 @@ function renderDropdowns() {
     function clickOutside(e) {
       if (desktop) {
         if (e.target.closest('[aria-label="submenu"][aria-hidden="false"]')) return
-        closeDropdown()
+        close()
         document.removeEventListener('click', clickOutside)
       }
     }
 
-    function keyboardNavigation() {
-      const contentHasTransition = getComputedStyle(dropdown.querySelector('[aria-label="submenu"]')).getPropertyValue(
-        'transition-duration'
-      )
-
-      if (contentHasTransition === '0s') firstFocusableEl.focus()
-
-      if (!contentHasTransition === '0s')
-        dropdownContent.addEventListener('transitionend', () => firstFocusableEl.focus(), {
-          once: true,
-        })
-
-      dropdownContent.addEventListener('focusout', focusOut)
-    }
-
-    function focusOut() {
-      setTimeout(() => {
-        if (!dropdownContent.contains(document.activeElement)) {
-          closeDropdown()
-          dropdownContent.removeEventListener('focusout', focusOut)
-        }
-      }, 25)
+    function closeWithEsc(e) {
+      if (e.key === 'Escape' || e.key === 'Esc' || e.code === 27) {
+        close()
+        if (dropdown.contains(document.activeElement)) dropdownButton.focus()
+      }
     }
   })
 }

@@ -36,21 +36,10 @@ button {
   font-family: var(--ff-primary);
 }
 
-/* .page-wrapper {
-  @include flex($flex-direction: column);
-  min-height: 100%;
-  overflow: hidden;
-} */
-
 header {
-  z-index: var(--z-header);
-  position: relative;
   background-color: var(--color-bg-header-base);
 }
 
-header {
-  overflow: hidden;
-}
 body,
 footer,
 main {

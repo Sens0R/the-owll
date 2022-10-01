@@ -18,7 +18,12 @@
 
 .banner {
   position: relative;
-  height: clamp(18.75rem, 15.568rem + 15.91vw, 27.5rem);
+  
+
+  .image {
+    height: clamp(18.75rem, 15.568rem + 15.91vw, 27.5rem);
+    
+  }
 
   &__gradient {
     @include absolute(top 0 left 0);
@@ -26,7 +31,8 @@
     background-image: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0.75) 75%,
+      rgba(255, 255, 255, 0.7) 70%,
+      rgba(255, 255, 255, 0.85) 80%,
       rgba(255, 255, 255, 0.95) 90%,
       rgb(255, 255, 255, 1) 100%
     );

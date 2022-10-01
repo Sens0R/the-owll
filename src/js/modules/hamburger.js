@@ -32,6 +32,7 @@ export function hamburger(userOptions) {
     mainElement.id = aria
     togglerOpen.setAttribute('aria-label', `Open ${aria}`)
     togglerOpen.setAttribute('aria-controls', aria)
+    togglerOpen.setAttribute('aria-haspopup', 'dialog')
     togglerClose.setAttribute('aria-label', `Close ${aria}`)
   }
 
@@ -46,7 +47,7 @@ export function hamburger(userOptions) {
   togglerOpen.addEventListener('click', open)
   togglerClose.addEventListener('click', close)
   backdrop.addEventListener('click', close)
-  togglerOpen.addEventListener('keydown', keyboardNavigation)
+  togglerOpen.addEventListener('keydown', focusTrap)
 
   // media
   if (breakpoint) {
@@ -85,7 +86,7 @@ export function hamburger(userOptions) {
     backdrop.classList.remove('active')
   }
 
-  function keyboardNavigation() {
+  function focusTrap() {
     mainElement.addEventListener('transitionend', () => firstFocusableElement.focus(), {
       once: true,
     })
@@ -104,6 +105,9 @@ export function hamburger(userOptions) {
   }
 
   function closeWithEsc(e) {
-    if (e.key === 'Escape' || e.key === 'Esc' || e.code === 27) close()
+    if (e.key === 'Escape' || e.key === 'Esc' || e.code === 27) {
+      close()
+      if (mainElement.contains(document.activeElement)) togglerOpen.focus()
+    }
   }
 }

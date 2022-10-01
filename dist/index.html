@@ -25,7 +25,7 @@
 <body>
 
     <a class="skip-link" href="#main-content">Skip to main content</a>
-   
+    <div class="header-sticky-wrapper">
     <header class="header container-fluid"><!-- ====================   LOGO   ==================== -->
 
 <a aria-label="The Owl home. The Owl logo." class="logo col-auto justify-content-start logo-hover" href="index.html">
@@ -101,7 +101,33 @@
         </div>
       </div>
     </li>
+    <li data-dropdown data-nav-page class="nav-menu__item dropdown">
+      <a href="services.html" class="nav-menu__link dropdown__link">Services</a>
+      <button type="button" class="dropdown__btn" aria-label="Dropdown menu for Services">
+        <svg aria-hidden="true" class="dropdown__icon">
+          <use href="images/icons/sprite-mono.svg#arrow"></use>
+        </svg>
+      </button>
 
+      <div class="dropdown__content">
+        <div class="dropdown-content">
+          <ul class="dropdown-content__list">
+            <li>
+              <a href="#" class="dropdown-content__link">Lorem, ipsum dolor.</a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-content__link">Lorem, ipsum.</a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-content__link">Lorem ipsum dolor sit.</a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-content__link">Lorem, ipsum dolor.</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
     <li data-nav-page class="nav-menu__item">
       <a href="portfolio.html" class="nav-menu__link">Portfolio</a>
     </li>
@@ -180,6 +206,7 @@
   <span class="nav-toggler__text nav-toggler__text_open">menu</span>
 </button>
 </header>
+    </div>
    
     
 

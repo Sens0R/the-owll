@@ -1,7 +1,7 @@
 import Headroom from 'headroom.js'
 
 export function headroom() {
-  var header = document.querySelector('header')
+  var header = document.querySelector('.header-sticky-wrapper')
   //header.classList.add('slide-down')
   const headroom = new Headroom(header, {
     offset: {

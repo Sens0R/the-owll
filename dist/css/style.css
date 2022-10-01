@@ -5339,9 +5339,6 @@
   scale: 1.5;
   rotate: 90deg;
 }
-.dropdown__content {
-  cursor: auto;
-}
 .dropdown__icon {
   width: 0.75rem;
   height: 0.75rem;
@@ -5350,6 +5347,7 @@
   transition: var(--transition);
 }
 .dropdown__content {
+  cursor: auto;
   overflow: hidden;
   visibility: hidden;
   pointer-events: none;
@@ -5408,7 +5406,6 @@
 /* ====================   MEDIA   ==================== */
 @media (min-width: 1200px) {
   .dropdown__content {
-    top: 100;
     position: absolute;
     z-index: -1;
     opacity: 0;
@@ -5506,19 +5503,8 @@ button {
   font-family: var(--ff-primary);
 }
 
-/* .page-wrapper {
-  @include flex($flex-direction: column);
-  min-height: 100%;
-  overflow: hidden;
-} */
 header {
-  z-index: var(--z-header);
-  position: relative;
   background-color: var(--color-bg-header-base);
-}
-
-header {
-  overflow: hidden;
 }
 
 body,
@@ -6191,22 +6177,11 @@ input[type=search]::-webkit-search-cancel-button {
     fill: var(--color-secondary);
   }
 }
-.header {
+.header-sticky-wrapper {
   top: 0;
   left: 0;
   position: sticky;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: var(--spacer);
-  padding-top: var(--spacer-sm);
-  padding-bottom: var(--spacer-sm);
-  will-change: auto;
+  z-index: var(--z-header);
   -webkit-box-shadow: none;
           box-shadow: none;
   translate: none;
@@ -6214,15 +6189,9 @@ input[type=search]::-webkit-search-cancel-button {
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
-@media (min-width: 576px) {
-  .header {
-    gap: var(--spacer-lg);
-  }
-}
-@media (min-width: 1400px) {
-  .header {
-    padding-right: var(--spacer-lg);
-    padding-left: var(--spacer-lg);
+@media (min-width: 992px) {
+  .header-sticky-wrapper {
+    will-change: auto;
   }
 }
 
@@ -6235,6 +6204,31 @@ input[type=search]::-webkit-search-cancel-button {
 .headroom_not-top {
   -webkit-box-shadow: 0 -1rem 3rem 0 rgba(0, 0, 0, 0.5);
           box-shadow: 0 -1rem 3rem 0 rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: var(--spacer);
+  padding-top: var(--spacer-sm);
+  padding-bottom: var(--spacer-sm);
+}
+@media (min-width: 576px) {
+  .header {
+    gap: var(--spacer-lg);
+  }
+}
+@media (min-width: 1400px) {
+  .header {
+    padding-right: var(--spacer-lg);
+    padding-left: var(--spacer-lg);
+  }
 }
 
 .logo-icon {
@@ -7384,6 +7378,8 @@ input[type=search]::-webkit-search-cancel-button {
 
 .banner {
   position: relative;
+}
+.banner .image {
   height: clamp(18.75rem, 15.568rem + 15.91vw, 27.5rem);
 }
 .banner__gradient {
@@ -7392,9 +7388,9 @@ input[type=search]::-webkit-search-cancel-button {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(255, 255, 255, 0)), color-stop(75%, rgba(255, 255, 255, 0.75)), color-stop(90%, rgba(255, 255, 255, 0.95)), to(rgb(255, 255, 255)));
-  background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.75) 75%, rgba(255, 255, 255, 0.95) 90%, rgb(255, 255, 255) 100%);
-  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.75) 75%, rgba(255, 255, 255, 0.95) 90%, rgb(255, 255, 255) 100%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(255, 255, 255, 0)), color-stop(70%, rgba(255, 255, 255, 0.7)), color-stop(80%, rgba(255, 255, 255, 0.85)), color-stop(90%, rgba(255, 255, 255, 0.95)), to(rgb(255, 255, 255)));
+  background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.7) 70%, rgba(255, 255, 255, 0.85) 80%, rgba(255, 255, 255, 0.95) 90%, rgb(255, 255, 255) 100%);
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.7) 70%, rgba(255, 255, 255, 0.85) 80%, rgba(255, 255, 255, 0.95) 90%, rgb(255, 255, 255) 100%);
 }
 .banner__particles {
   top: 0;
