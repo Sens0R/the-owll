@@ -16,8 +16,6 @@
 
   &:focus-within {
     max-width: 100%;
-    &:valid {
-    }
   }
 
   &__input {
@@ -52,7 +50,7 @@
     }
 
     &_reset {
-      display: none;
+      @include hover-tooltip($position: right);
     }
 
     &:focus-visible {
@@ -69,6 +67,7 @@
     fill: var(--color-dark);
 
     &_reset {
+      @include box(0.75rem, 0.75rem);
     }
 
     &_search {
