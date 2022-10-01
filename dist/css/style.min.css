@@ -5247,20 +5247,6 @@
     right: 25%;
   }
 }
-/* ====================   HERO  ==================== */
-[data-animate=hero] {
-  opacity: 0;
-  translate: 0 -33%;
-  -webkit-transition: all 1s ease-out;
-  -o-transition: all 1s ease-out;
-  transition: all 1s ease-out;
-}
-
-[data-animate=hero].show {
-  opacity: 1;
-  translate: none;
-}
-
 /* ====================   PAGE SECTION   ==================== */
 [data-animate=section-header] {
   opacity: 0;
