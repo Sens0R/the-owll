@@ -3,17 +3,6 @@
   @include space(var(--spacer), margin, top);
 
   &__item {
- /*    [aria-label='Instagram'] {
-      @include hover-tooltip($color: var(--color-light), $bg-color: var(--color-secondary-gray));
-    }
-
-    [aria-label='Facebook'] {
-      @include hover-tooltip($color: var(--color-light), $bg-color: var(--color-secondary-gray));
-    }
-
-    [aria-label='Linkedin'] {
-      @include hover-tooltip($color: var(--color-light), $bg-color: var(--color-secondary-gray));
-    } */
   }
 
   &__link {

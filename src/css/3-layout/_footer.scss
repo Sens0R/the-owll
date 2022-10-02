@@ -36,10 +36,12 @@
     @include space(0.75rem, padding, vertical);
     font-size: var(--fs-0);
     font-weight: var(--fw-medium);
+    transition: padding-left var(--transition);
 
     @include hover {
-      color: var(--color-secondary);
-      text-decoration: underline;
+      color: var(--color-secondary-dark);
+      padding-left: 1rem;
+      
     }
 
     &:focus-visible {

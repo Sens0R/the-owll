@@ -4,7 +4,6 @@ export function search() {
   searchInstances.forEach(searchInstance => {
     const searchInput = searchInstance.querySelector('input[type="search"')
     const submitBtn = searchInstance.querySelector('button[type="submit"]')
-
     submitBtn.setAttribute('disabled', '')
 
     searchInput.addEventListener('input', () => {

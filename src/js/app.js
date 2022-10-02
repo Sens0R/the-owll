@@ -8,6 +8,7 @@ import { dropdown } from './modules/dropdown.js'
 import { hamburger } from './modules/hamburger.js'
 import { animateOnScroll } from './modules/animate-on-scroll.js'
 import { search } from './modules/search.js'
+import { tooltip } from './modules/tooltip.js'
 import { md, lg, sm } from './modules/breakpoints.js'
 
 particlesJS('banner__particles', {
@@ -122,6 +123,7 @@ particlesJS('banner__particles', {
 })
 
 activePageHighlight()
+
 animateOnScroll()
 
 headroom()
@@ -131,3 +133,5 @@ hamburger()
 dropdown()
 
 search()
+
+tooltip()

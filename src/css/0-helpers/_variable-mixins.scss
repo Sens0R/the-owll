@@ -1,20 +1,4 @@
-@mixin link($color: var(--color-secondary-dark), $offset: 10%, $width: 2px) {
-  transition: var(--transition);
-  text-decoration: underline solid $width transparent;
-  text-underline-offset: $offset;
-
-  @include hover {
-    color: $color;
-    text-decoration-color: $color;
-  }
-
-  &:focus-visible {
-    color: $color;
-    text-decoration-color: $color;
-  }
-}
-
-@mixin underline($color: var(--color-dark), $size: 1px, $bottom: 0, $top: null, $round-cap: true, $depth: false) {
+@mixin underline($color: var(--color-dark), $size: 1px, $bottom: 0, $top: null, $round-cap: true) {
   position: relative;
   text-decoration: none;
 
@@ -25,11 +9,7 @@
     top: $top;
     bottom: $bottom;
     width: 100%;
-
-    @if $depth {
-      @include depth();
-    }
-
+  
     @if not $round-cap {
       border-bottom: $size solid $color;
     } @else {
@@ -40,66 +20,4 @@
   }
 }
 
-@mixin hover-tooltip(
-  $text: ' ' attr(aria-label) ' ',
-  $position: bottom,
-  $color: var(--color-secondary),
-  $bg-color: var(--color-secondary-light)
-) {
-  position: relative;
 
-  &::before {
-    content: $text;
-    position: absolute;
-    visibility: hidden;
-    opacity: 0;
-    padding: 0.375rem 0.625rem;
-    white-space: nowrap;
-    color: $color;
-    background-color: $bg-color;
-    font-size: var(--fs-0);
-    font-weight: var(--fw-regular);
-    border-radius: var(--br-sm);
-
-    @if $position == 'bottom' {
-      left: 50%;
-      bottom: -75%;
-      translate: -50% 50%;
-    } @else if $position == 'top' {
-      left: 0;
-      top: -75%;
-      translate: 0 -50%;
-    } @else if $position == 'left' {
-      left: 0;
-      bottom: -75%;
-      translate: 0 50%;
-    } @else if $position == 'right' {
-      right: 0;
-      bottom: -75%;
-      translate: 0 50%;
-    } @else if $position == 'top-left' {
-      left: 0;
-      top: -75%;
-      translate: 0 -50%;
-    } @else if $position == 'top-right' {
-      right: 0;
-      top: -75%;
-      translate: 0 -50%;
-    }
-  }
-
-  @include hover() {
-    &::before {
-      transition: var(--transition);
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-  &:focus-visible {
-    &::before {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-}

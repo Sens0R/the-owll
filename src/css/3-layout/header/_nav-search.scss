@@ -42,15 +42,13 @@
     transition: var(--transition);
 
     &_search {
-      @include hover-tooltip($position: right);
-
-      svg {
+        svg {
         transition: var(--transition);
       }
     }
 
     &_reset {
-      @include hover-tooltip($position: right);
+    
     }
 
     &:focus-visible {
