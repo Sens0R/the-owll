@@ -2,8 +2,6 @@ let dropdowns
 let desktop
 let mobile
 
-const dropdownsMedia = window.matchMedia(`(max-width: 1200px)`)
-const header = document.querySelector('header')
 window.matchMedia('(orientation: landscape)').onchange = () => {
   const openContents = document.querySelectorAll('[data-dropdown] > [aria-hidden="false"]')
 
@@ -12,7 +10,9 @@ window.matchMedia('(orientation: landscape)').onchange = () => {
   })
 }
 
-export function dropdown() {
+export function dropdown(breakpoint = 1200) {
+  const dropdownsMedia = window.matchMedia(`(max-width: ${breakpoint}px)`)
+
   if (dropdownsMedia.matches) {
     desktop = false
     mobile = true

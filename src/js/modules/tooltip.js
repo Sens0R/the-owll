@@ -1,4 +1,8 @@
-export function tooltip() {
+export function tooltip(breakpoint = 1200) {
+  const watchBreakpoint = window.matchMedia(`(max-width: ${breakpoint}px)`)
+  let breakpointMatches = watchBreakpoint.matches
+  watchBreakpoint.onchange = e => (breakpointMatches = watchBreakpoint.matches)
+
   const tooltips = document.querySelectorAll('[data-tooltip]')
   tooltips.forEach(tooltipInstance => {
     let tooltipEl
@@ -7,6 +11,7 @@ export function tooltip() {
     if (!tooltipInstance.getAttribute('data-tooltip')) tooltipInstance.setAttribute('data-tooltip', 'bottom')
 
     tooltipInstance.addEventListener('mouseenter', () => {
+      if (breakpointMatches) return
       checkBoundingBox()
       tooltipEl.classList.add('active')
     })
@@ -15,7 +20,10 @@ export function tooltip() {
       tooltipEl.classList.remove('active')
     })
 
+    // add { focusVisible: true } option once it is supported and remove media
     tooltipInstance.addEventListener('focus', () => {
+      if (breakpointMatches) return
+
       tooltipEl.classList.add('active')
       document.addEventListener('keydown', closeWithEsc)
       checkBoundingBox()

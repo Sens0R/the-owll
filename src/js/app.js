@@ -9,7 +9,7 @@ import { hamburger } from './modules/hamburger.js'
 import { animateOnScroll } from './modules/animate-on-scroll.js'
 import { search } from './modules/search.js'
 import { tooltip } from './modules/tooltip.js'
-import { md, lg, sm } from './modules/breakpoints.js'
+import { xl } from './modules/breakpoints.js'
 
 particlesJS('banner__particles', {
   particles: {
@@ -130,8 +130,8 @@ headroom()
 
 hamburger()
 
-dropdown()
+dropdown(xl)
 
 search()
 
-tooltip()
+tooltip(xl)
