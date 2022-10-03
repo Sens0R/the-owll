@@ -3,10 +3,10 @@ export function tooltip() {
   tooltips.forEach(tooltipInstance => {
     let tooltipEl
 
+    createTooltip()
     if (!tooltipInstance.getAttribute('data-tooltip')) tooltipInstance.setAttribute('data-tooltip', 'bottom')
 
     tooltipInstance.addEventListener('mouseenter', () => {
-      if (!tooltipEl || !tooltipEl.classList.contains('tooltip')) createTooltip()
       checkBoundingBox()
       tooltipEl.classList.add('active')
     })
@@ -16,7 +16,6 @@ export function tooltip() {
     })
 
     tooltipInstance.addEventListener('focus', () => {
-      if (!tooltipEl || !tooltipEl.classList.contains('tooltip')) createTooltip()
       tooltipEl.classList.add('active')
       document.addEventListener('keydown', closeWithEsc)
       checkBoundingBox()
@@ -45,18 +44,38 @@ export function tooltip() {
 
     function checkBoundingBox() {
       let bounds = tooltipEl.getBoundingClientRect()
+      const tooltipDirection = tooltipInstance.getAttribute('data-tooltip')
 
       // bottom > top
-      if (bounds.bottom > window.innerHeight) tooltipInstance.setAttribute('data-tooltip', 'top')
+      if (bounds.bottom > window.innerHeight) {
+        tooltipInstance.setAttribute('data-tooltip', 'top')
+        if (bounds.left < 0) tooltipInstance.setAttribute('data-tooltip', 'top-left')
+        if (bounds.right > window.innerWidth) tooltipInstance.setAttribute('data-tooltip', 'top-right')
+        return
+      }
 
       // top > bottom
-      if (bounds.top < 0) tooltipInstance.setAttribute('data-tooltip', 'bottom')
+      if (bounds.top < 0) {
+        tooltipInstance.setAttribute('data-tooltip', 'bottom')
+        if (bounds.left < 0) tooltipInstance.setAttribute('data-tooltip', 'bottom-left')
+        if (bounds.right > window.innerWidth) tooltipInstance.setAttribute('data-tooltip', 'bottom-right')
+        return
+      }
 
       // right > left
-      if (bounds.right > window.innerWidth) tooltipInstance.setAttribute('data-tooltip', 'left')
+      if (bounds.right > window.innerWidth) {
+        if (tooltipDirection === 'top') tooltipInstance.setAttribute('data-tooltip', 'top-right')
+        if (tooltipDirection === 'right') tooltipInstance.setAttribute('data-tooltip', 'left')
+        if (tooltipDirection === 'bottom') tooltipInstance.setAttribute('data-tooltip', 'bottom-right')
+        return
+      }
 
       // left > right
-      if (bounds.left < 0) tooltipInstance.setAttribute('data-tooltip', 'right')
+      if (bounds.left < 0) {
+        if (tooltipDirection === 'top') tooltipInstance.setAttribute('data-tooltip', 'top-left')
+        if (tooltipDirection === 'left') tooltipInstance.setAttribute('data-tooltip', 'right')
+        if (tooltipDirection === 'bottom') tooltipInstance.setAttribute('data-tooltip', 'bottom-left')
+      }
     }
   })
 }
