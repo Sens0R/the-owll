@@ -2,6 +2,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding: 15%;
 }
 
 * {
@@ -25,6 +27,9 @@ body {
   text-underline-offset: var(--base-underline-offset);
   border-radius: var(--base-br);
 
+  @include flex($flex-direction: column);
+  min-height: 100vh;
+
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
 }
@@ -34,6 +39,7 @@ textarea,
 input,
 button {
   font-family: var(--ff-primary);
+  font-size: var(--base-fs);
 }
 
 header {
@@ -47,6 +53,7 @@ main {
 }
 
 footer {
+  z-index: var(--z-footer);
   background-color: var(--color-bg-footer-base);
   margin-top: auto;
 }
@@ -162,20 +169,12 @@ input {
   }
 }
 
-:focus-within {
-  scroll-behavior: smooth;
-}
-
 ::selection {
   background-color: var(--color-bg-selection-base);
   color: var(--color-selection-base);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
   *,
   *::before,
   *::after {

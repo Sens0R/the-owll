@@ -1,9 +1,13 @@
-/* .page-banner {
+.page-banner {
+  min-height: clamp(18.75rem, 15.568rem + 15.91vw, 27.5rem);
   position: relative;
+  @include flex($justify-content: center, $align-items: center);
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
 }
 
-.page-header {
-  width: 100%;
-  text-align: center;
-}
- */

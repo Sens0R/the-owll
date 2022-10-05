@@ -1,4 +1,7 @@
-// hamburger tooltip
+// code refactor 
+// prevent headroom.js header from showing when using keyboard
+
+// hamburger > modal
 // javascript breakpoints in app object
 
 :root {
@@ -101,5 +104,6 @@
   --z-hamburger: 100;
   --z-hamburger-backdrop: 90;
   --z-header: 50;
+  --z-footer: 40;
   --z-tooltip: 110;
 }
