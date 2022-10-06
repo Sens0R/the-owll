@@ -50,58 +50,28 @@
   <h1 class="page-header">Portfolio<span class="text-accent">.</span></h1>
 </div>
 <div class="section container-fluid container-xxl portfolio-page">
-  <div data-tabs class="tabs">
-    <h2 class="tabs__header">Default tabs</h2>
-    <div class="tabs__body">
-      <div role="tablist" class="tabs__tablist tablist">
-        <button type="button" role="tab" aria-selected="true" class="tablist__btn tablist__btn_manual">Tab 1</button>
-        <button type="button" role="tab" class="tablist__btn tablist__btn_manual">Tab 2</button>
-        <button type="button" role="tab" class="tablist__btn tablist__btn_manual">Tab 3</button>
+  <div data-tabs class="tabbed-interface">
+    <h2 class="tabbed-interface__header">Default tabs</h2>
+    <div class="tabbed-interface__body">
+      <div role="tablist" class="tabbed-interface__tablist">
+        <button type="button" class="tab tab_manual active">Tab 1</button>
+        <button type="button" class="tab tab_manual">Tab 2</button>
+        <button type="button" class="tab tab_manual">Tab 3</button>
       </div>
-      <div class="tabs__content-body">
-        <div role="tabpanel" class="tabs__content active">
+      <div class="tabbed-interface__content-area">
+        <div role="tabpanel" class="tabpanel active">
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
           <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
           <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
           <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
         </div>
-        <div role="tabpanel" class="tabs__content">
+        <div role="tabpanel" class="tabpanel">
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
           <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
           <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
           <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
         </div>
-        <div role="tabpanel" class="tabs__content">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
-          <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
-          <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
-          <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div data-tabs="manual" data-tabs-manual class="tabs">
-    <h2 class="tabs__header">Manual tabs</h2>
-    <div class="tabs__body">
-      <div role="tablist" class="tabs__tablist tablist">
-        <button type="button" role="tab" aria-selected="true" class="tablist__btn">Tab 1</button>
-        <button type="button" role="tab" class="tablist__btn">Tab 2</button>
-        <button type="button" role="tab" class="tablist__btn">Tab 3</button>
-      </div>
-      <div class="tabs__content-body">
-        <div role="tabpanel" class="tabs__content active">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
-          <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
-          <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
-          <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
-        </div>
-        <div role="tabpanel" class="tabs__content">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
-          <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
-          <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
-          <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
-        </div>
-        <div role="tabpanel" class="tabs__content">
+        <div role="tabpanel" class="tabpanel">
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
           <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
           <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
@@ -110,28 +80,58 @@
       </div>
     </div>
   </div>
-  <div data-tabs="vertical" class="tabs tabs_vertical" aria-orientation="vertical">
-    <h2 class="tabs__header">Vertical Tabs</h2>
-    <div class="tabs__body tabs__body_vertical">
-      <div role="tablist" class="tabs__tablist tabs__tablist_vertical tablist tablist_vertical">
-        <button type="button" role="tab" aria-selected="true" class="tablist__btn tablist__btn_vertical">Tab 1</button>
-        <button type="button" role="tab" class="tablist__btn tablist__btn_vertical">Tab 2</button>
-        <button type="button" role="tab" class="tablist__btn tablist__btn_vertical">Tab 3</button>
+  <div data-tabs="manual" data-tabs-manual class="tabbed-interface">
+    <h2 class="tabbed-interface__header">Manual tabs</h2>
+    <div class="tabbed-interface__body">
+      <div role="tablist" class="tabbed-interface__tablist">
+        <button type="button" class="tab">Tab 1</button>
+        <button type="button" class="tab active">Tab 2</button>
+        <button type="button" class="tab">Tab 3</button>
       </div>
-      <div class="tabs__content-body">
-        <div role="tabpanel" class="tabs__content tabs__content_vertical active">
+      <div class="tabbed-interface__content-area">
+        <div role="tabpanel" class="tabpanel ">
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
           <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
           <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
           <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
         </div>
-        <div role="tabpanel" class="tabs__content tabs__content_vertical">
+        <div role="tabpanel" class="tabpanel active">
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
           <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
           <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
           <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
         </div>
-        <div role="tabpanel" class="tabs__content tabs__content_vertical">
+        <div role="tabpanel" class="tabpanel">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
+          <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
+          <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
+          <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div data-tabs="vertical" class="tabbed-interface tabbed-interface_vertical" aria-orientation="vertical">
+    <h2 class="tabbed-interface__header">Vertical Tabs</h2>
+    <div class="tabbed-interface__body tabbed-interface__body_vertical">
+      <div role="tablist" class="tabbed-interface__tablist tabbed-interface__tablist_vertical">
+        <button type="button" class="tab tab_vertical active">Tab 1</button>
+        <button type="button" class="tab tab_vertical">Tab 2</button>
+        <button type="button" class="tab tab_vertical">Tab 3</button>
+      </div>
+      <div class="tabbed-interface__content-area">
+        <div role="tabpanel" class="tabpanel tabpanel_vertical active">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
+          <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
+          <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
+          <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
+        </div>
+        <div role="tabpanel" class="tabpanel tabpanel_vertical">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
+          <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
+          <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
+          <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
+        </div>
+        <div role="tabpanel" class="tabpanel tabpanel_vertical">
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
           <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
           <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>

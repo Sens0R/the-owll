@@ -2,7 +2,7 @@
   @include flex($justify-content: center, $align-items: center);
 }
 
-.tabs {
+.tabbed-interface {
   max-width: 50rem;
 
   &__header {
@@ -15,128 +15,123 @@
     display: flex;
   }
 
-  &__content {
-    @include flex($flex-direction: column, $gap: var(--spacer));
-    border-bottom-right-radius: var(--br);
-    background-color: var(--color-secondary-light);
-    visibility: hidden;
-    overflow: hidden;
-    height: 0;
-    opacity: 0;
-
-    p {
-      transition: all 1s ease-in-out;
-      color: transparent;
-      translate: 0 -2rem;
-      @include space(var(--spacer), padding, horizontal);
-
-      &:first-child {
-        @include space(var(--spacer), margin, top);
-      }
-
-      &:last-child {
-        @include space(var(--spacer), margin, bottom);
-      }
-    }
-
-    &:not(.tabs__content_vertical) {
-      border-bottom-left-radius: var(--br);
-    }
+  &__tablist {
+    @include flex($align-items: stretch);
+    background-color: var(--color-secondary);
+    border-top-right-radius: var(--br);
+    border-top-left-radius: var(--br);
 
     &_vertical {
-      border-top-right-radius: var(--br);
-      border-bottom-right-radius: var(--br);
-    }
-
-    &:focus-visible {
-      outline: 2px solid var(--color-secondary);
-      outline-offset: -1rem;
-    }
-
-    &.active {
-      visibility: visible;
-      height: 100%;
-      opacity: 1;
-
-      p {
-        visibility: visible;
-        color: var(--color-dark);
-
-        translate: 0;
-      }
+      flex-direction: column;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: var(--br);
     }
   }
 }
 
-.tablist {
-  @include flex($align-items: stretch);
+.tab {
+  @include space(var(--spacer), padding, all);
+  min-height: 2.75rem;
+  border-right: 1px solid var(--color-secondary-light);
   background-color: var(--color-secondary);
+  color: var(--color-secondary-light);
+  text-transform: uppercase;
+  font-size: clamp(0.75rem, 0.6136rem + 0.6818vw, 1.125rem);
+  font-weight: var(--fw-medium);
+  transition: var(--transition);
+  border-top: 0.375rem solid transparent;
 
-  &:not(.tabs_vertical) {
-    border-top-right-radius: var(--br);
+  &_vertical {
+    min-width: 4rem;
+    white-space: nowrap;
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid var(--color-secondary-light);
+    border-left: 0.375rem solid transparent;
+  }
+
+  &:first-child {
     border-top-left-radius: var(--br);
   }
 
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    &:last-child:not(.tab_vertical) {
+      border-top-right-radius: var(--br);
+    }
+  }
+
+  @include hover {
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+  }
+
+  &:focus-visible {
+    background-color: var(--color-primary) !important;
+    color: var(--color-dark) !important;
+  }
+}
+
+.tab.active {
+  @extend .tab;
+  color: var(--color-dark);
+  background-color: var(--color-secondary-light);
+  border-top: 0.375rem solid var(--color-primary);
+}
+
+.tab_vertical.active {
+  @extend .tab_vertical;
+  color: var(--color-dark);
+  background-color: var(--color-secondary-light);
+  border-top: 0;
+  border-left: 0.375rem solid var(--color-primary);
+}
+
+.tabpanel {
+  @include flex($flex-direction: column, $gap: var(--spacer));
+  border-bottom-right-radius: var(--br);
+  border-bottom-left-radius: var(--br);
+  background-color: var(--color-secondary-light);
+  visibility: hidden;
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+
   &_vertical {
-    flex-direction: column;
-    border-bottom-left-radius: var(--br);
+    border-bottom-left-radius: 0;
+    border-top-right-radius: var(--br);
+    border-bottom-right-radius: var(--br);
   }
 
-  &__btn {
-    @include space(var(--spacer), padding, all);
-    min-height: 2.75rem;
-    border-right: 1px solid var(--color-secondary-light);
-    background-color: var(--color-secondary);
-    color: var(--color-secondary-light);
-    text-transform: uppercase;
-    font-size: clamp(0.75rem, 0.6136rem + 0.6818vw, 1.125rem);
-    font-weight: var(--fw-medium);
-    transition: var(--transition);
-    border-top: 0.375rem solid transparent;
-    
+  p {
+    transition: all 1s ease-in-out;
+    color: transparent;
+    translate: 0 -2rem;
+    @include space(var(--spacer), padding, horizontal);
+
     &:first-child {
-      border-top-left-radius: var(--br);
+      @include space(var(--spacer), margin, top);
     }
 
-    @include media-breakpoint-down(sm) {
-      width: 100%;
-      &:last-child:not(.tablist__btn_vertical) {
-        border-top-right-radius: var(--br);
-      }
+    &:last-child {
+      @include space(var(--spacer), margin, bottom);
     }
+  }
 
-    &_vertical {
-      min-width: 4rem;
-      white-space: nowrap;
-      border-top: none;
-      border-right: none;
-      border-bottom: 1px solid var(--color-secondary-light);
-      border-left: 0.375rem solid transparent;
-    }
+  &:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: -1rem;
+  }
 
-    @include hover {
-      background-color: var(--color-primary);
+  &.active {
+    visibility: visible;
+    height: 100%;
+    opacity: 1;
+
+    p {
+      visibility: visible;
       color: var(--color-dark);
+      translate: none;
     }
-
-    &:focus-visible {
-      background-color: var(--color-primary) !important;
-      color: var(--color-dark) !important;
-    }
-  }
-
-  &__btn[aria-selected='true'] {
-    @extend .tablist__btn;
-    color: var(--color-dark);
-    background-color: var(--color-secondary-light);
-    border-top: 0.375rem solid var(--color-primary);
-  }
-
-  &__btn_vertical[aria-selected='true'] {
-    @extend .tablist__btn_vertical;
-    color: var(--color-dark);
-    background-color: var(--color-secondary-light);
-    border-top: none;
-    border-left: 0.375rem solid var(--color-primary);
   }
 }

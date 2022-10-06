@@ -92,7 +92,7 @@ export function hamburger(userOptions) {
     })
 
     mainElement.addEventListener('keydown', e => {
-      if (e.keyCode === 9) {
+      if (e.code === 9) {
         if (e.shiftKey && document.activeElement === firstFocusableElement) {
           e.preventDefault()
           lastFocusableElement.focus()
@@ -105,7 +105,7 @@ export function hamburger(userOptions) {
   }
 
   function closeWithEsc(e) {
-    if (e.key === 'Escape' || e.key === 'Esc' || e.code === 27) {
+    if (e.code === 'Escape') {
       close()
       if (mainElement.contains(document.activeElement)) togglerOpen.focus()
     }
