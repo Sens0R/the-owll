@@ -20,18 +20,20 @@ EXAMPLE:
 </div> 
 */
 
-export function tabs() {
-  const tabbedInterfacesArr = document.querySelectorAll('[data-tabs]')
+const tabbedInterfacesArr = document.querySelectorAll('[data-tabs]')
 
+export function tabs() {
   tabbedInterfacesArr.forEach(tabbedInterface => {
     const tabbedInterfaceAttrValue = tabbedInterface.dataset.tabs
-    const tablistIsVertical = tabbedInterface.hasAttribute('aria-orientation', 'vertical')
     const tablistEl = tabbedInterface.querySelector('[role="tablist"]')
     const tablistArr = Array.from(tablistEl.querySelectorAll('button'))
+    const tabPanelsArr = tabbedInterface.querySelectorAll('[role="tabpanel"')
+
     const firstTabEl = tablistArr.at(0)
     const lastTabEl = tablistArr.at(-1)
-    const tabPanelsArr = tabbedInterface.querySelectorAll('[role="tabpanel"')
+
     const interfaceIsManual = tabbedInterface.hasAttribute('data-tabs-manual')
+    const tablistIsVertical = tabbedInterface.hasAttribute('aria-orientation', 'vertical')
 
     tabPanelsArr.forEach((tabPanel, tabPanelNum) => {
       tabPanel.id = `tabpanel-${tabbedInterfaceAttrValue}-${tabPanelNum + 1}`
@@ -40,6 +42,9 @@ export function tabs() {
     })
 
     tablistArr.forEach((tab, tabNum) => {
+      const nextTabEl = tab.nextElementSibling
+      const prevTabEl = tab.previousElementSibling
+
       tab.id = `tab-${tabbedInterfaceAttrValue}-${tabNum + 1}`
       tab.setAttribute('aria-controls', `tabpanel-${tabbedInterfaceAttrValue}-${tabNum + 1}`)
       tab.setAttribute('role', 'tab')
@@ -68,9 +73,6 @@ export function tabs() {
       })
 
       tab.addEventListener('keydown', e => {
-        const nextTabEl = tab.nextElementSibling
-        const prevTabEl = tab.previousElementSibling
-
         if (e.code === 'Home') {
           e.preventDefault()
           activateTab(firstTabEl)
@@ -82,40 +84,40 @@ export function tabs() {
         }
 
         if (!tablistIsVertical) {
-          if (e.code === 'ArrowRight') selectNextTab()
-          if (e.code === 'ArrowLeft') selectPrevTab()
+          if (e.code === 'ArrowRight') nextTab()
+          if (e.code === 'ArrowLeft') prevTab()
           return
         }
 
         if (e.code === 'ArrowDown') {
           e.preventDefault()
-          selectNextTab()
+          nextTab()
         }
 
         if (e.code === 'ArrowUp') {
           e.preventDefault()
-          selectPrevTab()
-        }
-
-        function activateTab(tabElement) {
-          tabElement.focus()
-          tabElement.click()
-        }
-
-        function selectNextTab() {
-          if (nextTabEl && interfaceIsManual) return nextTabEl.focus()
-          if (!nextTabEl && interfaceIsManual) return firstTabEl.focus()
-          if (nextTabEl) return activateTab(nextTabEl)
-          activateTab(firstTabEl)
-        }
-
-        function selectPrevTab() {
-          if (prevTabEl && interfaceIsManual) return prevTabEl.focus()
-          if (!prevTabEl && interfaceIsManual) return lastTabEl.focus()
-          if (prevTabEl) return activateTab(prevTabEl)
-          activateTab(lastTabEl)
+          prevTab()
         }
       })
+
+      function nextTab() {
+        if (nextTabEl && interfaceIsManual) return nextTabEl.focus()
+        if (!nextTabEl && interfaceIsManual) return firstTabEl.focus()
+        if (nextTabEl) return activateTab(nextTabEl)
+        activateTab(firstTabEl)
+      }
+
+      function prevTab() {
+        if (prevTabEl && interfaceIsManual) return prevTabEl.focus()
+        if (!prevTabEl && interfaceIsManual) return lastTabEl.focus()
+        if (prevTabEl) return activateTab(prevTabEl)
+        activateTab(lastTabEl)
+      }
     })
   })
+}
+
+function activateTab(tabElement) {
+  tabElement.focus()
+  tabElement.click()
 }
