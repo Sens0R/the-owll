@@ -17,6 +17,7 @@
   }
 
   &.active {
+    overflow-x: hidden;
     overflow-y: auto;
     visibility: visible;
     translate: 0;

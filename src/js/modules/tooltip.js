@@ -5,7 +5,7 @@
 4. Tooltip element gets 'tooltip' class. Style it in css.
 
 EXAMPLE: 
-<a href="tel:1800843695" data-tooltip="top-right" aria-label="Make a phone call">1800843695</a>
+<a href="#" data-tooltip="top-right" aria-label="Tooltip text"></a>
 */
 
 export function tooltip(breakpoint = 1200) {

@@ -5445,8 +5445,9 @@
 .dropdown__content {
   left: 50%;
   position: absolute;
-  translate: -50% 0.75rem;
+  translate: -50%;
   visibility: hidden;
+  overflow: hidden;
   opacity: 0;
   white-space: nowrap;
   z-index: var(--z-dropdown);
@@ -5462,7 +5463,6 @@
 .dropdown.active .dropdown__content {
   visibility: visible;
   opacity: 1;
-  translate: -50% 0;
 }
 .dropdown.active .dropdown__icon {
   fill: var(--color-secondary);
@@ -6353,6 +6353,7 @@ input[type=search]::-webkit-search-cancel-button {
   }
 }
 .navigation.active {
+  overflow-x: hidden;
   overflow-y: auto;
   visibility: visible;
   translate: 0;
