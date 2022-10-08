@@ -4,10 +4,7 @@
   @include flex($justify-content: center, $align-items: center);
 
   &__img {
-    position: absolute;
-    top: 0;
-    left: 0;
+    @include absolute(top 0 left 0);
     z-index: -1;
   }
 }
-

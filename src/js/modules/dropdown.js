@@ -1,4 +1,56 @@
-let dropdowns
+/*
+1. Select container element with data-dropdown attribute. Default behavior (no value) - hover. Add "click" value to make dropdown that activates on click.
+2. Container element must have button element inside. 
+3. Container element must have content container after button. 
+
+
+EXAMPLE: 
+<a href="tel:1800843695" data-tooltip="top-right" aria-label="Make a phone call">1800843695</a>
+*/
+
+const dropdownsArr = document.querySelectorAll('[data-dropdown]')
+
+export function dropdown() {
+  dropdownsArr.forEach(dropdown => {
+    const dropdownButton = dropdown.querySelector('button')
+    const dropdownContent = dropdownButton.nextElementSibling
+    dropdownButton.setAttribute('aria-expanded', 'false')
+    //dropdownButton.addEventListener('click', toggle)
+
+    if (dropdown.dataset.dropdown === 'hover') {
+      dropdown.addEventListener('mouseenter', toggle)
+      dropdown.addEventListener('mouseleave', close)
+    }
+
+    /* ====================   functions   ==================== */
+
+    function toggle() {
+      if (dropdown.classList.contains('active')) return close()
+      dropdown.classList.add('active')
+      document.addEventListener('keydown', closeWithEsc)
+      dropdownButton.setAttribute('aria-expanded', 'true')
+      setTimeout(() => {
+        document.addEventListener('click', clickOutside)
+      }, 1)
+    }
+
+    function close() {
+      document.removeEventListener('keydown', closeWithEsc)
+      dropdown.classList.remove('active')
+      dropdownButton.setAttribute('aria-expanded', 'false')
+      document.removeEventListener('click', clickOutside)
+    }
+
+    function clickOutside(e) {
+      if (!dropdownContent.contains(e.target)) close()
+    }
+
+    function closeWithEsc(e) {
+      if (e.code === 'Escape') close()
+    }
+  })
+}
+/* 
 let desktop
 let mobile
 
@@ -12,6 +64,7 @@ window.matchMedia('(orientation: landscape)').onchange = () => {
 
 export function dropdown(breakpoint = 1200) {
   const dropdownsMedia = window.matchMedia(`(max-width: ${breakpoint}px)`)
+  console.log(dropdownsMedia)
 
   if (dropdownsMedia.matches) {
     desktop = false
@@ -22,7 +75,7 @@ export function dropdown(breakpoint = 1200) {
   }
 
   dropdownsMedia.onchange = e => {
-    dropdowns.forEach(dropdown => {
+    dropdownsArr.forEach(dropdown => {
       dropdown.replaceWith(dropdown.cloneNode(true))
     })
 
@@ -41,35 +94,11 @@ export function dropdown(breakpoint = 1200) {
 }
 
 function renderDropdowns() {
-  dropdowns = document.querySelectorAll('[data-dropdown]')
-  if (dropdowns.length === 0) {
-    console.error(
-      '%c Dropdown element is not set. Use' +
-        '%c data-dropdown' +
-        '%c attribute for hover-dropdown or' +
-        '%c data-dropdown="click"' +
-        '%c for click-dropdown',
-      'color: red;',
-      'color: white;',
-      'color: red;',
-      'color: white;',
-      'color: red;'
-    )
-    return
-  }
-
-  dropdowns.forEach(dropdown => {
+  dropdownsArr.forEach(dropdown => {
     const dropdownButton = dropdown.querySelector('button')
-    if (!dropdownButton) {
-      console.error('%c Dropdown button is not set.')
-      return
-    }
-
-    const dropdownContent = dropdownButton.nextElementSibling // content after button
+    const dropdownContent = dropdownButton.nextElementSibling 
 
     dropdownButton.setAttribute('aria-expanded', 'false')
-    dropdownContent.setAttribute('aria-hidden', 'true')
-    dropdownContent.setAttribute('aria-label', 'submenu')
     dropdownContent.style.maxHeight = null
 
     close()
@@ -83,7 +112,6 @@ function renderDropdowns() {
       }
     }
 
-    /* ====================   FUNCTIONS  ==================== */
 
     function toggle() {
       if (dropdown.classList.contains('active')) return close()
@@ -105,7 +133,7 @@ function renderDropdowns() {
       document.addEventListener('keydown', closeWithEsc)
 
       dropdownButton.setAttribute('aria-expanded', 'true')
-      dropdownContent.setAttribute('aria-hidden', 'false')
+      
 
       if (mobile) {
         let dropdownContentHeight = dropdownContent.scrollHeight
@@ -117,7 +145,7 @@ function renderDropdowns() {
       document.removeEventListener('keydown', closeWithEsc)
       dropdown.classList.remove('active')
       dropdownButton.setAttribute('aria-expanded', 'false')
-      dropdownContent.setAttribute('aria-hidden', 'true')
+      
 
       if (mobile) dropdownContent.style.maxHeight = null
     }
@@ -131,10 +159,10 @@ function renderDropdowns() {
     }
 
     function closeWithEsc(e) {
-      if (e.key === 'Escape' || e.key === 'Esc' || e.code === 27) {
+      if (e.code === 'Escape') {
         close()
         if (dropdown.contains(document.activeElement)) dropdownButton.focus()
       }
     }
   })
-}
+} */

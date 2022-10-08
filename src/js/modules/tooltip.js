@@ -1,35 +1,45 @@
+/*
+1. Select element for tooltip by adding data-tooltip attribute with anchor value (default value: bottom). Data-tooltip values: top, top-left, top-right bottom, bottom-left, bottom-right, left, right. Style them in css. 
+2. Specify tooltip text in aria-label attribute value. 
+3. Selected element gets 'position: relative'. 
+4. Tooltip element gets 'tooltip' class. Style it in css.
+
+EXAMPLE: 
+<a href="tel:1800843695" data-tooltip="top-right" aria-label="Make a phone call">1800843695</a>
+*/
+
 export function tooltip(breakpoint = 1200) {
   const watchBreakpoint = window.matchMedia(`(max-width: ${breakpoint}px)`)
-  let breakpointMatches = watchBreakpoint.matches
-  watchBreakpoint.onchange = e => (breakpointMatches = watchBreakpoint.matches)
+  let isMobile = watchBreakpoint.matches
+  watchBreakpoint.onchange = e => (isMobile = watchBreakpoint.matches)
 
-  const tooltips = document.querySelectorAll('[data-tooltip]')
-  tooltips.forEach(tooltipInstance => {
+  const tooltipsArr = document.querySelectorAll('[data-tooltip]')
+  tooltipsArr.forEach(tooltipTarget => {
     let tooltipEl
+    const tooltipTargetHasValue = tooltipTarget.getAttribute('data-tooltip')
 
     createTooltip()
-    if (!tooltipInstance.getAttribute('data-tooltip')) tooltipInstance.setAttribute('data-tooltip', 'bottom')
 
-    tooltipInstance.addEventListener('mouseenter', () => {
-      if (breakpointMatches) return
+    if (!tooltipTargetHasValue) tooltipTarget.setAttribute('data-tooltip', 'bottom')
+
+    tooltipTarget.addEventListener('mouseenter', () => {
+      if (isMobile) return
       checkBoundingBox()
       tooltipEl.classList.add('active')
     })
 
-    tooltipInstance.addEventListener('mouseleave', () => {
-      tooltipEl.classList.remove('active')
-    })
+    tooltipTarget.addEventListener('mouseleave', () => tooltipEl.classList.remove('active'))
 
-    // add { focusVisible: true } option once it is supported and remove media
-    tooltipInstance.addEventListener('focus', () => {
-      if (breakpointMatches) return
+    // add { focusVisible: true } option once it is supported and remove media query list
+    tooltipTarget.addEventListener('focus', () => {
+      if (isMobile) return
 
       tooltipEl.classList.add('active')
       document.addEventListener('keydown', closeWithEsc)
       checkBoundingBox()
     })
 
-    tooltipInstance.addEventListener('blur', () => {
+    tooltipTarget.addEventListener('blur', () => {
       tooltipEl.classList.remove('active')
       document.removeEventListener('keydown', closeWithEsc)
     })
@@ -37,52 +47,52 @@ export function tooltip(breakpoint = 1200) {
     /* ====================   FUNCTIONS   ==================== */
 
     function createTooltip() {
-      tooltipInstance.style.position = 'relative'
+      tooltipTarget.style.position = 'relative'
       const createTooltipEl = document.createElement('span')
       createTooltipEl.classList.add('tooltip')
-      tooltipInstance.prepend(createTooltipEl)
-      tooltipEl = tooltipInstance.firstElementChild
-      const tooltipElAttr = tooltipInstance.getAttribute('aria-label')
-      tooltipEl.textContent = tooltipElAttr
+      tooltipTarget.prepend(createTooltipEl)
+      tooltipEl = tooltipTarget.firstElementChild
+      const tooltipElAttrValue = tooltipTarget.getAttribute('aria-label')
+      tooltipEl.textContent = tooltipElAttrValue
     }
 
     function closeWithEsc(e) {
-      if (e.key === 'Escape' || e.key === 'Esc' || e.code === 27) tooltipEl.classList.remove('active')
+      if (e.code === 'Escape') tooltipEl.classList.remove('active')
     }
 
     function checkBoundingBox() {
       let bounds = tooltipEl.getBoundingClientRect()
-      const tooltipDirection = tooltipInstance.getAttribute('data-tooltip')
+      const tooltipDirection = tooltipTarget.getAttribute('data-tooltip')
 
       // bottom > top
       if (bounds.bottom > window.innerHeight) {
-        tooltipInstance.setAttribute('data-tooltip', 'top')
-        if (bounds.left < 0) tooltipInstance.setAttribute('data-tooltip', 'top-left')
-        if (bounds.right > window.innerWidth) tooltipInstance.setAttribute('data-tooltip', 'top-right')
+        tooltipTarget.setAttribute('data-tooltip', 'top')
+        if (bounds.left < 0) tooltipTarget.setAttribute('data-tooltip', 'top-left')
+        if (bounds.right > window.innerWidth) tooltipTarget.setAttribute('data-tooltip', 'top-right')
         return
       }
 
       // top > bottom
       if (bounds.top < 0) {
-        tooltipInstance.setAttribute('data-tooltip', 'bottom')
-        if (bounds.left < 0) tooltipInstance.setAttribute('data-tooltip', 'bottom-left')
-        if (bounds.right > window.innerWidth) tooltipInstance.setAttribute('data-tooltip', 'bottom-right')
+        tooltipTarget.setAttribute('data-tooltip', 'bottom')
+        if (bounds.left < 0) tooltipTarget.setAttribute('data-tooltip', 'bottom-left')
+        if (bounds.right > window.innerWidth) tooltipTarget.setAttribute('data-tooltip', 'bottom-right')
         return
       }
 
       // right > left
       if (bounds.right > window.innerWidth) {
-        if (tooltipDirection === 'top') tooltipInstance.setAttribute('data-tooltip', 'top-right')
-        if (tooltipDirection === 'right') tooltipInstance.setAttribute('data-tooltip', 'left')
-        if (tooltipDirection === 'bottom') tooltipInstance.setAttribute('data-tooltip', 'bottom-right')
+        if (tooltipDirection === 'top') tooltipTarget.setAttribute('data-tooltip', 'top-right')
+        if (tooltipDirection === 'right') tooltipTarget.setAttribute('data-tooltip', 'left')
+        if (tooltipDirection === 'bottom') tooltipTarget.setAttribute('data-tooltip', 'bottom-right')
         return
       }
 
       // left > right
       if (bounds.left < 0) {
-        if (tooltipDirection === 'top') tooltipInstance.setAttribute('data-tooltip', 'top-left')
-        if (tooltipDirection === 'left') tooltipInstance.setAttribute('data-tooltip', 'right')
-        if (tooltipDirection === 'bottom') tooltipInstance.setAttribute('data-tooltip', 'bottom-left')
+        if (tooltipDirection === 'top') tooltipTarget.setAttribute('data-tooltip', 'top-left')
+        if (tooltipDirection === 'left') tooltipTarget.setAttribute('data-tooltip', 'right')
+        if (tooltipDirection === 'bottom') tooltipTarget.setAttribute('data-tooltip', 'bottom-left')
       }
     }
   })

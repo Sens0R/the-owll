@@ -1,6 +1,3 @@
-/* .blog {
-  .row:not(:last-child) {
-    @include spacer-bottom('margin', $spacer-lg);
-  }
+.blog-page {
+@include flex($flex-direction: row, $flex-wrap: wrap);
 }
- */

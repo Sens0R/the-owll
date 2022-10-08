@@ -1,8 +1,5 @@
-.dropdown-left {
-  left: -0.75rem;
-}
-
-.dropdown {
+/* .dropdown {
+  position: relative;
   &__btn {
     @include flex($display: inline-flex, $justify-content: center, $align-items: center);
     padding: 1rem;
@@ -58,12 +55,13 @@
 }
 
 .dropdown-content {
+  
   &__list {
-    margin: 0;
   }
 
   &__link {
-    @include flex($flex-direction: column);
+    width: 100%;
+    white-space: nowrap;
     padding: 0.75rem;
     color: var(--color-dark);
     font-size: var(--fs-0);
@@ -80,12 +78,13 @@
     }
   }
 }
-
+ */
 /* ====================   MEDIA   ==================== */
 
-@include media-breakpoint-up(xl) {
+/* @include media-breakpoint-up(xl) {
   .dropdown__content {
-    position: absolute;
+    @include absolute(left 50%);
+    translate: -50%;
     z-index: -1;
     opacity: 0;
     transition: var(--transition);
@@ -94,7 +93,6 @@
   }
 
   .dropdown-content {
-    display: flex;
     background-color: var(--color-light);
     border-top: 3px solid var(--color-secondary);
     translate: 0 -100%;
@@ -116,5 +114,72 @@
 
   .dropdown__icon {
     @include box(0.625rem, 0.625rem);
+  }
+} */
+
+.dropdown {
+  position: relative;
+
+  &__link {
+  }
+
+  &__btn {
+    @include flex($display: inline-flex, $justify-content: center, $align-items: center);
+
+    &:focus-visible {
+      .dropdown__icon {
+        scale: 1.5;
+        rotate: 90deg;
+        fill: var(--color-secondary);
+      }
+    }
+  }
+
+  &__icon {
+    @include box(0.75rem, 0.75rem);
+    transition: var(--transition);
+  }
+
+  &__content {
+    @include absolute(left 50%);
+    translate: -50% 0.75rem;
+    visibility: hidden;
+    opacity: 0;
+    white-space: nowrap;
+    z-index: var(--z-dropdown);
+    border-radius: var(--br-sm);
+    border: 1px solid var(--color-dark);
+    background-color: var(--color-light);
+    transition: all 0.2s ease-in-out;
+    box-shadow: var(--shadow);
+  }
+
+  &.active {
+    .dropdown__content {
+      visibility: visible;
+      opacity: 1;
+      translate: -50% 0;
+    }
+
+    .dropdown__icon {
+      fill: var(--color-secondary);
+      rotate: 90deg;
+    }
+  }
+}
+
+.dropdown-list {
+  &__item {
+  }
+
+  &__link {
+    @include space(var(--spacer-sm), padding, all);
+    font-size: var(--fs-0);
+    width: 100%;
+
+    @include hover {
+      background-color: var(--color-secondary);
+      color: var(--color-light);
+    }
   }
 }

@@ -1,5 +1,4 @@
-/* ====================   REFRESH SITE ON TOP   ==================== */
-
+// REFRESH SITE ON TOP
 export function refreshSiteOnTOp() {
   history.scrollRestoration = 'manual';
   window.onbeforeunload = function () {
@@ -7,4 +6,7 @@ export function refreshSiteOnTOp() {
   };
 }
 
-
+// focus-check for debugging
+document.addEventListener('focusin', function() {
+  console.log('focused: ', document.activeElement)
+}, true);

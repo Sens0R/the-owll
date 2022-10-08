@@ -1,6 +1,7 @@
 // refactor dropdowns
+// refactor accordion
 // prevent headroom.js header from showing when using keyboard
-// hamburger > modal
+// make modal
 // javascript breakpoints in app object
 
 :root {
@@ -100,9 +101,12 @@
   --transition: 0.3s ease-out;
 
   // z-index
+  --z-tooltip: 500;
+  --z-dropdown: 400;
   --z-hamburger: 100;
   --z-hamburger-backdrop: 90;
   --z-header: 50;
   --z-footer: 40;
-  --z-tooltip: 110;
+
+  
 }

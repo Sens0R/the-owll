@@ -1,4 +1,4 @@
-/*
+/*  
 1. Select tab container element (tabbed interface) with data-tabs attribute.
 2. Select element that holds tabs (tablist) by adding role="tablist" attribute. Tabs in tablist element should have html button tag.
 3. Select elements that contain the corresponding content (tabpanel) by adding role="tabpanel" attribute.

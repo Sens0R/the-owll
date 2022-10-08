@@ -100,6 +100,7 @@ const swiperTestimonials = new Swiper('.swiper.swiper-testimonials', {
 });
 
 /* ====================   INTERSECTION OBSERVERS ==================== */
+
 const swiperShopEl = document.querySelector('.swiper-shop');
 const swiperTestimonialsEl = document.querySelector('.swiper-testimonials');
 
