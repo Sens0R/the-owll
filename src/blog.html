@@ -55,7 +55,7 @@
     <button type="button" class="nav-menu__link dropdown__btn" aria-label="Dropdown menu for Services">
       Mouseover
     </button>
-    <div class="dropdown__content">
+    <div data-dropdown-content class="dropdown__content">
       <ul class="dropdown-list">
         <li class="dropdown-list__item">
           <a href="#" class="dropdown-list__link">Lorem ipsum dolor sit.</a>
@@ -71,13 +71,15 @@
   </div>
 
   <div data-dropdown="hover" class="nav-menu__item dropdown col-auto">
-    <a href="#" class="nav-menu__link dropdown__link">Mouseover + link</a>
-    <button type="button" class="dropdown__btn" aria-label="Dropdown menu for Services">
-      <svg aria-hidden="true" class="dropdown__icon">
-        <use href="images/icons/sprite-mono.svg#arrow"></use>
-      </svg>
-    </button>
-    <div class="dropdown__content">
+    <div class="dropdown__controls">
+      <a href="#" class="nav-menu__link dropdown__link">Mouseover + link</a>
+      <button type="button" class="dropdown__btn" aria-label="Dropdown menu for Services">
+        <svg aria-hidden="true" class="dropdown__icon">
+          <use href="images/icons/sprite-mono.svg#arrow"></use>
+        </svg>
+      </button>
+    </div>
+    <div data-dropdown-content class="dropdown__content">
       <ul class="dropdown-list">
         <li class="dropdown-list__item">
           <a href="#" class="dropdown-list__link">Lorem, ipsum dolor.</a>
@@ -94,7 +96,7 @@
 
   <div data-dropdown class="nav-menu__item dropdown col-auto">
     <button type="button" class="nav-menu__link dropdown__btn" aria-label="Dropdown menu for Services">Click</button>
-    <div class="dropdown__content">
+    <div data-dropdown-content class="dropdown__content">
       <ul class="dropdown-list">
         <li class="dropdown-list__item">
           <a href="#" class="dropdown-list__link">Lorem, ipsum dolor.</a>
@@ -110,13 +112,15 @@
   </div>
 
   <div data-dropdown class="nav-menu__item dropdown col-auto">
+    <div class="dropdown__controls">
     <a href="#" class="nav-menu__link dropdown__link">Click + link</a>
     <button type="button" class="dropdown__btn" aria-label="Dropdown menu for Services">
       <svg aria-hidden="true" class="dropdown__icon">
         <use href="images/icons/sprite-mono.svg#arrow"></use>
       </svg>
     </button>
-    <div class="dropdown__content">
+    </div>
+    <div data-dropdown-content class="dropdown__content">
       <ul class="dropdown-list">
         <li class="dropdown-list__item">
           <a href="#" class="dropdown-list__link">Lorem, ipsum dolor.</a>

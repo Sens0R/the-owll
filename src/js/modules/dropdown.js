@@ -1,12 +1,12 @@
 /*
 1. Select container element with data-dropdown attribute. Default behavior (no value) - click. Add "hover" value to make dropdown that activates on click.
-2. Container element must have button element inside. 
-3. Container element must have content container after button. 
+2. Container element must have button element inside. This button opens dropdown. 
+3. Select container element that holds dropdown content with data-dropdown-content. 
 
 EXAMPLE: 
 <div data-dropdown="hover">
   <button type="button"></button>  
-  <div>
+  <div data-dropdown-content>
     <a href="#"></a>
     <a href="#"></a>
   </div>
@@ -21,8 +21,7 @@ const dropdownsArr = document.querySelectorAll('[data-dropdown]')
 window.matchMedia('(orientation: landscape)').onchange = () => {
   const activeDropdownsArr = document.querySelectorAll('[data-dropdown].active')
   activeDropdownsArr.forEach(activeDropdownEl => {
-    const activeDropdownButton = activeDropdownEl.querySelector('button')
-    const activeDropdownContent = activeDropdownButton.nextElementSibling
+    const activeDropdownContent = activeDropdownEl.querySelector('[data-dropdown-content]')
     activeDropdownContent.style.maxHeight = activeDropdownContent.scrollHeight + 'px'
   })
 }
@@ -30,14 +29,31 @@ window.matchMedia('(orientation: landscape)').onchange = () => {
 export function dropdown() {
   dropdownsArr.forEach(dropdownEl => {
     const dropdownButton = dropdownEl.querySelector('button')
-    const dropdownContent = dropdownButton.nextElementSibling
+    const dropdownContent = dropdownEl.querySelector('[data-dropdown-content]')
     dropdownButton.setAttribute('aria-expanded', 'false')
     dropdownContent.style.maxHeight = 0
+    const dropdownContentLinksArr = dropdownContent.querySelectorAll('a[href]')
 
     if (dropdownEl.dataset.dropdown === 'hover' && !mobileDevice) {
       dropdownEl.addEventListener('mouseenter', toggle)
       dropdownEl.addEventListener('mouseleave', close)
     }
+
+    dropdownContentLinksArr.forEach((dropdownContentLink, i) => {
+      dropdownContentLink.addEventListener('keydown', e => {
+        if (e.code === 'ArrowDown' || e.code === 'ArrowRight') {
+          const nextLink = dropdownContentLinksArr[i + 1]
+          e.preventDefault()
+          if (nextLink) nextLink.focus()
+        }
+
+        if (e.code === 'ArrowUp' || e.code === 'ArrowLeft') {
+          const prevLink = dropdownContentLinksArr[i - 1]
+          e.preventDefault()
+          if (prevLink) prevLink.focus()
+        }
+      })
+    })
 
     dropdownButton.addEventListener('click', toggle)
 
@@ -51,6 +67,7 @@ export function dropdown() {
       setTimeout(() => {
         document.addEventListener('click', clickOutside)
       }, 1)
+      dropdownButton.addEventListener('keydown', selectFirstLink)
     }
 
     function close() {
@@ -60,6 +77,14 @@ export function dropdown() {
       dropdownButton.setAttribute('aria-expanded', 'false')
       document.removeEventListener('click', clickOutside)
       resetBoundingBox()
+      dropdownButton.removeEventListener('keydown', selectFirstLink)
+    }
+
+    function selectFirstLink(e) {
+      if (e.code === 'ArrowDown' || e.code === 'ArrowRight') {
+        e.preventDefault()
+        dropdownContentLinksArr[0].focus()
+      }
     }
 
     function clickOutside(e) {

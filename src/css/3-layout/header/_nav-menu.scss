@@ -5,7 +5,9 @@
 
   &__link {
     @include space(var(--spacer-sm), padding, vertical);
+    @include space(var(--spacer-sm), padding, right);
     font-weight: var(--fw-medium);
+    transition: var(--transition);
 
     @include hover {
       color: var(--color-secondary);
