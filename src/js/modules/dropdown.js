@@ -1,16 +1,16 @@
 /*
-1. Select container element with data-dropdown attribute. Default behavior (no value) - click. Add "hover" value to make dropdown that activates on click.
-2. Container element must have button element inside. This button opens dropdown. 
-3. Select container element that holds dropdown content with data-dropdown-content. 
+* 1. Select container element with data-dropdown attribute. Default behavior (no value) - click. Add "hover" value to make dropdown that activates on click.
+* 2. Container element must have button element inside. This button opens dropdown. 
+* 3. Select container element that holds dropdown content with data-dropdown-content. 
 
-EXAMPLE: 
-<div data-dropdown="hover">
-  <button type="button"></button>  
-  <div data-dropdown-content>
-    <a href="#"></a>
-    <a href="#"></a>
-  </div>
-</div>
+* EXAMPLE: 
+* <div data-dropdown="hover">
+*   <button type="button"></button>  
+*   <div data-dropdown-content>
+*     <a href="#"></a>
+*     <a href="#"></a>
+*   </div>
+* </div>
 */
 
 let mobileDevice
@@ -30,32 +30,36 @@ export function dropdown() {
   dropdownsArr.forEach(dropdownEl => {
     const dropdownButton = dropdownEl.querySelector('button')
     const dropdownContent = dropdownEl.querySelector('[data-dropdown-content]')
+    const dropdownContentLinksArr = dropdownContent.querySelectorAll('a[href]')
+
     dropdownButton.setAttribute('aria-expanded', 'false')
     dropdownContent.style.maxHeight = 0
-    const dropdownContentLinksArr = dropdownContent.querySelectorAll('a[href]')
 
     if (dropdownEl.dataset.dropdown === 'hover' && !mobileDevice) {
       dropdownEl.addEventListener('mouseenter', toggle)
       dropdownEl.addEventListener('mouseleave', close)
     }
 
+    dropdownButton.addEventListener('click', toggle)
+
     dropdownContentLinksArr.forEach((dropdownContentLink, i) => {
+      const nextLink = dropdownContentLinksArr[i + 1]
+      const prevLink = dropdownContentLinksArr[i - 1]
+
       dropdownContentLink.addEventListener('keydown', e => {
         if (e.code === 'ArrowDown' || e.code === 'ArrowRight') {
-          const nextLink = dropdownContentLinksArr[i + 1]
           e.preventDefault()
+          console.log(nextLink)
           if (nextLink) nextLink.focus()
         }
 
         if (e.code === 'ArrowUp' || e.code === 'ArrowLeft') {
-          const prevLink = dropdownContentLinksArr[i - 1]
           e.preventDefault()
+          console.log(prevLink)
           if (prevLink) prevLink.focus()
         }
       })
     })
-
-    dropdownButton.addEventListener('click', toggle)
 
     function toggle() {
       if (dropdownEl.classList.contains('active')) return close()

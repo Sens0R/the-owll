@@ -1,0 +1,56 @@
+[data-accordion-content] {
+  max-height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+[data-accordion-content].active {
+  visibility: visible;
+}
+
+.accordions-page {
+  @include flex($flex-direction: column, $gap: var(--spacer-lg));
+  max-width: 50rem;
+}
+
+.accordion {
+  @include flex($flex-direction: column, $gap: var(--spacer));
+  
+  &__header {
+    text-align: center;
+  }
+
+  &__item {
+    background-color: var(--color-secondary-light);
+    border-radius: var(--br-sm);
+  }
+
+  &__button {
+    @include flex($justify-content: space-between, $column-gap: var(--spacer));
+    @include space(var(--spacer), padding, all);
+    width: 100%;
+    text-align: left;
+    font-weight: var(--fw-semibold);
+    background-color: var(--color-secondary);
+    color: var(--color-light);
+    border-radius: var(--br-sm);
+  }
+
+  &__button.active {
+    .accordion__icon {
+      rotate: 180deg;
+    }
+  }
+
+  &__icon {
+    @include box(1.25rem, 1.25rem);
+    fill: var(--color-light);
+    transition: var(--transition);
+  }
+
+  &__content {
+    @include flex($flex-direction: column, $gap: var(--spacer));
+    @include space(var(--spacer), padding, all);
+  }
+}

@@ -1,11 +1,11 @@
 /*
-1. Select navigation link container with data-page attribute. 
-2. Class active-page will be added to that element. Use it for CSS styling.
+* 1. Select navigation link container with data-page attribute. 
+* 2. Class active-page will be added to that element. Use it for CSS styling.
 
-EXAMPLE: 
-<li data-nav-page>
-  <a href="portfolio.html">Portfolio</a>
-</li>
+* EXAMPLE: 
+* <li data-nav-page>
+*   <a href="portfolio.html">Portfolio</a>
+* </li>
 */
 
 const pagesArr = document.querySelectorAll('[data-nav-page]')

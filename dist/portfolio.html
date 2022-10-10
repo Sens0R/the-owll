@@ -76,7 +76,7 @@
 
     <li data-dropdown="hover" class="nav-menu__item dropdown col-auto">
       <div class="dropdown__controls">
-        <a href="#" class="nav-menu__link dropdown__link">Services</a>
+        <a href="services.html" class="nav-menu__link dropdown__link">Services</a>
         <button type="button" class="dropdown__btn" aria-label="Dropdown menu for Services">
           <svg aria-hidden="true" class="dropdown__icon">
             <use href="images/icons/sprite-mono.svg#arrow"></use>
@@ -86,13 +86,13 @@
       <div data-dropdown-content class="dropdown__content">
         <ul class="dropdown-list">
           <li class="dropdown-list__item">
-            <a href="#" class="dropdown-list__link">Lorem, ipsum dolor.</a>
+            <a href="tabs.html" class="dropdown-list__link">Tabs</a>
           </li>
           <li class="dropdown-list__item">
-            <a href="#" class="dropdown-list__link">Lorem, ipsum dolor.</a>
+            <a href="dropdowns.html" class="dropdown-list__link">Dropdowns</a>
           </li>
           <li class="dropdown-list__item">
-            <a href="#" class="dropdown-list__link">Lorem ipsum dolor sit.</a>
+            <a href="accordions.html" class="dropdown-list__link">Accordions</a>
           </li>
           <li class="dropdown-list__item">
             <a href="#" class="dropdown-list__link">Lorem, ipsum dolor.</a>
@@ -240,96 +240,7 @@
   <h1 class="page-header">Portfolio<span class="text-accent">.</span></h1>
 </div>
 <div class="section container-fluid container-xxl portfolio-page">
-  <div data-tabs class="tabbed-interface">
-    <h2 class="tabbed-interface__header">Default tabs</h2>
-    <div class="tabbed-interface__body">
-      <div role="tablist" class="tabbed-interface__tablist">
-        <button type="button" class="tab tab_manual active">Tab 1</button>
-        <button type="button" class="tab tab_manual">Tab 2</button>
-        <button type="button" class="tab tab_manual">Tab 3</button>
-      </div>
-      <div class="tabbed-interface__content-area">
-        <div role="tabpanel" class="tabpanel active">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
-          <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
-          <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
-          <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
-        </div>
-        <div role="tabpanel" class="tabpanel">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
-          <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
-          <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
-          <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
-        </div>
-        <div role="tabpanel" class="tabpanel">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
-          <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
-          <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
-          <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div data-tabs="manual" data-tabs-manual class="tabbed-interface">
-    <h2 class="tabbed-interface__header">Manual tabs</h2>
-    <div class="tabbed-interface__body">
-      <div role="tablist" class="tabbed-interface__tablist">
-        <button type="button" class="tab">Tab 1</button>
-        <button type="button" class="tab active">Tab 2</button>
-        <button type="button" class="tab">Tab 3</button>
-      </div>
-      <div class="tabbed-interface__content-area">
-        <div role="tabpanel" class="tabpanel ">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
-          <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
-          <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
-          <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
-        </div>
-        <div role="tabpanel" class="tabpanel active">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
-          <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
-          <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
-          <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
-        </div>
-        <div role="tabpanel" class="tabpanel">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
-          <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
-          <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
-          <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div data-tabs="vertical" class="tabbed-interface tabbed-interface_vertical" aria-orientation="vertical">
-    <h2 class="tabbed-interface__header">Vertical Tabs</h2>
-    <div class="tabbed-interface__body tabbed-interface__body_vertical">
-      <div role="tablist" class="tabbed-interface__tablist tabbed-interface__tablist_vertical">
-        <button type="button" class="tab tab_vertical active">Tab 1</button>
-        <button type="button" class="tab tab_vertical">Tab 2</button>
-        <button type="button" class="tab tab_vertical">Tab 3</button>
-      </div>
-      <div class="tabbed-interface__content-area">
-        <div role="tabpanel" class="tabpanel tabpanel_vertical active">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
-          <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
-          <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
-          <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
-        </div>
-        <div role="tabpanel" class="tabpanel tabpanel_vertical">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
-          <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
-          <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
-          <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
-        </div>
-        <div role="tabpanel" class="tabpanel tabpanel_vertical">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, cumque.</p>
-          <p>Minima doloribus, enim laboriosam consequuntur sint maiores repudiandae voluptatibus nemo.</p>
-          <p>Ullam nisi possimus maxime voluptatum quia laboriosam neque totam voluptatem?</p>
-          <p>Eligendi quisquam ea cumque illo, magni sit accusantium voluptatibus? Officia.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+
 </div>
 
 </main>

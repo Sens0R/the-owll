@@ -2,7 +2,7 @@ import './modules/swiper.js'
 import 'particles.js'
 //import { notification } from './modules/notification.js'
 import { headroom } from './modules/headers.js'
-//import { accordion } from './modules/accordion.js'
+import { accordion } from './modules/accordion.js'
 import { tabs } from './modules/tabs.js'
 import { activePageHighlight } from './modules/active-page-highlight.js'
 import { dropdown } from './modules/dropdown.js'
@@ -140,3 +140,5 @@ search()
 tooltip(xl)
 
 tabs()
+
+accordion()

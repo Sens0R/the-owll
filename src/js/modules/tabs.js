@@ -1,23 +1,23 @@
-/*  
-1. Select tab container element (tabbed interface) with data-tabs attribute.
-2. Select element that holds tabs (tablist) by adding role="tablist" attribute. Tabs in tablist element should have html button tag.
-3. Select elements that contain the corresponding content (tabpanel) by adding role="tabpanel" attribute.
-4. Activate one tab and corresponding content (tabpanel) to that tab by adding active class.
-5. If you have multiple tab containers (tabbed interfaces) add value to data-tabs attribute. Example: data-tabs="two", data-tabs="secondary". Value is used for tab and corresponding tablist ID's. 
+/* 
+* 1. Select tab container element (tabbed interface) with data-tabs attribute.
+* 2. Select element that holds tabs (tablist) by adding role="tablist" attribute. Tabs in tablist element should have html button tag.
+* 3. Select elements that contain the corresponding content (tabpanel) by adding role="tabpanel" attribute.
+* 4. Activate one tab and corresponding content (tabpanel) to that tab by adding active class.
+* 5. If you have multiple tab containers (tabbed interfaces) add value to data-tabs attribute. Example: data-tabs="two", data-tabs="secondary". Value is used for tab and corresponding tablist ID's. 
 
-OPTIONAL A11Y IMPROVEMENTS:
-1. Add data-tabs-manual attribute to tab container element (tabbed interface) if you need manual tab selection (activating tab with enter or space key). Default behavior: tab is automatically selected when receives focus.
-2. Add aria-orientation="vertical" attribute to tab container element (tabbed interface) if you have vertically ordered tabs in tablist. This will change tab keyboard selection to ArrowUp and ArrowDown. Default behavior: ArrowLeft and ArrowRight. 
+*  OPTIONAL A11Y IMPROVEMENTS:
+* 1. Add data-tabs-manual attribute to tab container element (tabbed interface) if you need manual tab selection (activating tab with * enter or space key). Default behavior: tab is automatically selected when receives focus.
+* 2. Add aria-orientation="vertical" attribute to tab container element (tabbed interface) if you have vertically ordered tabs in tablist. This will change tab keyboard selection to ArrowUp and ArrowDown. Default behavior: ArrowLeft and ArrowRight. 
 
-EXAMPLE: 
-<div data-tabs>
-  <div role="tablist">
-    <button class="active"></button>
-    <button></button>
-  </div>
-  <div role="tabpanel" class="active"></div>
-  <div role="tabpanel"></div>
-</div> 
+* EXAMPLE: 
+* <div data-tabs>
+*   <div role="tablist">
+*    <button class="active"></button>
+*     <button></button>
+*   </div>
+*   <div role="tabpanel" class="active"></div>
+*   <div role="tabpanel"></div>
+* </div> 
 */
 
 const tabbedInterfacesArr = document.querySelectorAll('[data-tabs]')
