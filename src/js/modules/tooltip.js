@@ -1,8 +1,8 @@
 /*
-* 1. Select element for tooltip by adding data-tooltip attribute with anchor value (default value: bottom). Data-tooltip values: top, top-left, top-right bottom, bottom-left, bottom-right, left, right. Style them in css. 
+* 1. Select element for tooltip by adding data-tooltip attribute with anchor value (default value: bottom). Data-tooltip values: top, top-left, top-right bottom, bottom-left, bottom-right, left, right. Style their position in CSS. 
 * 2. Specify tooltip text in aria-label attribute value. 
 * 3. Selected element gets 'position: relative'. 
-* 4. Tooltip element gets 'tooltip' class. Style it in css.
+* 4. Tooltip element has 'tooltip' class for CSS styling.
 
 * EXAMPLE: 
 * <a href="#" data-tooltip="top-right" aria-label="Tooltip text"></a>

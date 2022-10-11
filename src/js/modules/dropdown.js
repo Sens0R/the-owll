@@ -1,7 +1,8 @@
 /*
-* 1. Select container element with data-dropdown attribute. Default behavior (no value) - click. Add "hover" value to make dropdown that activates on click.
+* 1. Select dropdown container element with data-dropdown attribute. Default behavior (no value) - click. Add "hover" value to make dropdown that activates on click.
 * 2. Container element must have button element inside. This button opens dropdown. 
 * 3. Select container element that holds dropdown content with data-dropdown-content. 
+* 4. Active dropdown container element has 'active' class for CSS styling.
 
 * EXAMPLE: 
 * <div data-dropdown="hover">

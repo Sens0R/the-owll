@@ -1,11 +1,27 @@
+/*
+* 1. Select accordion container element with data-accordion attribute. 
+* 2. If you have multiple accordions add any unique value to data-accordion attribute. Example: data-accordion="two", data-accordion="secondary". Value is used for accordion headers and corresponding panels ID's. 
+* 3. Select elements that contain accordion header by adding data-accordion-button attribute.
+* 4. Select elements that contain the corresponding content (accordion panel) by adding data-accordion-content attribute.
+* 5. Active accordion button (accordion header) and corresponding content (accordion panel) have 'active' class for CSS styling.
+
+* EXAMPLE: 
+* <div data-accordion="faq">
+*   <h2>
+*     <button data-accordion-button type="button">                 
+*     </button>
+*   </h2>
+*   <section data-accordion-content>       
+*   </section>
+* </div>
+*/
+
 const accordionsArr = document.querySelectorAll('[data-accordion]')
 
 window.matchMedia('(orientation: landscape)').onchange = () => {
-  const activeButtons = document.querySelectorAll('[data-accordion] * button[aria-expanded="true"]')
-
-  activeButtons.forEach(activeButton => {
-    const expandedContent = activeButton.parentNode.nextElementSibling
-    expandedContent.style.maxHeight = `${expandedContent.scrollHeight}px`
+  accordionsArr.forEach(accordion => {
+    const activeContentsArr = accordion.querySelectorAll('[data-accordion-content].active')
+    activeContentsArr.forEach(activeContent => (activeContent.style.maxHeight = `${activeContent.scrollHeight}px`))
   })
 }
 
@@ -16,27 +32,58 @@ export function accordion() {
     const accordionAttrValue = accordion.dataset.accordion
 
     buttonsArr.forEach((button, btnNum) => {
+      const firstButton = buttonsArr[0]
+      const lastButton = buttonsArr[buttonsArr.length - 1]
+      const nextButton = buttonsArr[btnNum + 1]
+      const prevButton = buttonsArr[btnNum - 1]
+
       button.id = `accordion-${accordionAttrValue}-header-${btnNum + 1}`
       button.setAttribute('aria-controls', `accordion-${accordionAttrValue}-panel-${btnNum + 1}`)
       button.setAttribute('aria-expanded', 'false')
-      button.addEventListener('click', accordionToggler)
 
       const content = contentsArr[btnNum]
       content.id = `accordion-${accordionAttrValue}-panel-${btnNum + 1}`
       content.setAttribute('aria-labelledby', `${button.id}`)
 
-      function accordionToggler() {
+      button.addEventListener('click', toggler)
+      button.addEventListener('keydown', e => {
+        if (e.code === 'Home') {
+          e.preventDefault()
+          if (firstButton) firstButton.focus()
+        }
+
+        if (e.code === 'End') {
+          e.preventDefault()
+          if (lastButton) lastButton.focus()
+        }
+
+        if (e.code === 'ArrowDown') {
+          e.preventDefault()
+          if (!nextButton) return firstButton.focus()
+          nextButton.focus()
+        }
+
+        if (e.code === 'ArrowUp') {
+          e.preventDefault()
+          if (!prevButton) return lastButton.focus()
+          prevButton.focus()
+        }
+      })
+
+      function toggler() {
         if (button.classList.contains('active')) {
           button.classList.remove('active')
-          content.classList.remove('active')
           button.setAttribute('aria-expanded', 'false')
+
+          content.classList.remove('active')
           content.style.maxHeight = null
           return
         }
 
         button.classList.add('active')
-        content.classList.add('active')
         button.setAttribute('aria-expanded', 'true')
+
+        content.classList.add('active')
         content.style.maxHeight = `${content.scrollHeight}px`
       }
     })

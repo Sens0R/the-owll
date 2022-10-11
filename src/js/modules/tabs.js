@@ -1,9 +1,10 @@
 /* 
 * 1. Select tab container element (tabbed interface) with data-tabs attribute.
-* 2. Select element that holds tabs (tablist) by adding role="tablist" attribute. Tabs in tablist element should have html button tag.
-* 3. Select elements that contain the corresponding content (tabpanel) by adding role="tabpanel" attribute.
-* 4. Activate one tab and corresponding content (tabpanel) to that tab by adding active class.
-* 5. If you have multiple tab containers (tabbed interfaces) add value to data-tabs attribute. Example: data-tabs="two", data-tabs="secondary". Value is used for tab and corresponding tablist ID's. 
+* 2. If you have multiple tabbed interfaces add any unique value to data-tabs attribute. Example: data-tabs="two", data-tabs="secondary". Value is used for tab and corresponding tablist ID's. 
+* 3. Select element that holds tabs (tablist) by adding role="tablist" attribute. Tabs in tablist element should have html button tag.
+* 4. Select elements that contain the corresponding content (tabpanel) by adding role="tabpanel" attribute.
+* 5. Activate one tab and corresponding content (tabpanel) to that tab by adding active class.
+* 6. Active tab and corresponding content (tabpanel) have 'active' class for CSS styling.
 
 *  OPTIONAL A11Y IMPROVEMENTS:
 * 1. Add data-tabs-manual attribute to tab container element (tabbed interface) if you need manual tab selection (activating tab with * enter or space key). Default behavior: tab is automatically selected when receives focus.

@@ -16,7 +16,7 @@
 
 .accordion {
   @include flex($flex-direction: column, $gap: var(--spacer));
-  
+
   &__header {
     text-align: center;
   }
@@ -32,19 +32,40 @@
     width: 100%;
     text-align: left;
     font-weight: var(--fw-semibold);
-    background-color: var(--color-secondary);
+    
+    background-color: var(--color-secondary-gray);
     color: var(--color-light);
     border-radius: var(--br-sm);
+    transition: var(--transition);
+
+    @include hover {
+      background-color: var(--color-primary) !important;
+      color: var(--color-dark) !important;
+      .accordion__icon {
+        fill: var(--color-dark) !important;
+      }
+    }
+
+    &:focus-visible {
+      background-color: var(--color-primary) !important;
+      color: var(--color-dark) !important;
+      .accordion__icon {
+        fill: var(--color-dark) !important;
+      }
+    }
   }
 
   &__button.active {
     .accordion__icon {
       rotate: 180deg;
     }
+    background-color: var(--color-secondary);
   }
 
   &__icon {
     @include box(1.25rem, 1.25rem);
+    display: flex;
+    align-self: center;
     fill: var(--color-light);
     transition: var(--transition);
   }
