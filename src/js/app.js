@@ -11,6 +11,7 @@ import { animateOnScroll } from './modules/animate-on-scroll.js'
 import { search } from './modules/search.js'
 import { tooltip } from './modules/tooltip.js'
 import { xl } from './modules/breakpoints.js'
+import { modal } from './modules/modal.js'
 
 if (document.location.pathname === '/' || document.location.pathname.indexOf('index') > -1) {
   particlesJS('banner__particles', {
@@ -142,3 +143,5 @@ tooltip(xl)
 tabs()
 
 accordion()
+
+modal()

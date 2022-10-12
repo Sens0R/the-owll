@@ -38,6 +38,7 @@
   }
 
   &__content {
+    min-width: 9.375rem;
     visibility: hidden;
     overflow: hidden;
     opacity: 0;
@@ -45,7 +46,7 @@
     z-index: var(--z-dropdown);
     border-radius: var(--br-sm);
     background-color: var(--color-secondary-light);
-    transition: all 0.2s ease-in-out;
+    transition: var(--transition);
 
     @include media-breakpoint-up(xl) {
       @include absolute(left 50%);
