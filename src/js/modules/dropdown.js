@@ -32,7 +32,6 @@ export function dropdown() {
     const dropdownButton = dropdownEl.querySelector('button')
     const dropdownContent = dropdownEl.querySelector('[data-dropdown-content]')
     const dropdownContentLinksArr = dropdownContent.querySelectorAll('a[href]')
-
     dropdownButton.setAttribute('aria-expanded', 'false')
     dropdownContent.style.maxHeight = 0
 
@@ -97,7 +96,10 @@ export function dropdown() {
     }
 
     function closeWithEsc(e) {
-      if (e.code === 'Escape') close()
+      if (e.code === 'Escape') {
+        close()
+        if (dropdownEl.contains(document.activeElement)) dropdownButton.focus()
+      }
     }
 
     function checkBoundingBox() {

@@ -58,6 +58,7 @@
     "npm": "latest",
     "rename": "latest",
     "sass": "latest",
+    "scroll-lock": "^2.1.5",
     "swiper": "latest",
     "vinyl-ftp": "latest",
     "webpack": "latest",

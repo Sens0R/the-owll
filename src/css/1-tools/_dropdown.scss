@@ -40,7 +40,7 @@
   &__content {
     min-width: 9.375rem;
     visibility: hidden;
-    overflow: hidden;
+    //overflow: hidden;
     opacity: 0;
     white-space: nowrap;
     z-index: var(--z-dropdown);
@@ -51,9 +51,12 @@
     @include media-breakpoint-up(xl) {
       @include absolute(left 50%);
       translate: -50%;
-      outline: 1px solid var(--color-dark);
       background-color: var(--color-light);
-      box-shadow: var(--shadow);
+      box-shadow: 0 4px 8px rgba(0 0 0 / 0.35);
+    }
+
+    &_nested {
+      
     }
   }
 
@@ -61,6 +64,11 @@
     .dropdown__content {
       visibility: visible;
       opacity: 1;
+     
+    }
+
+    .dropdown__content_nested {
+     
     }
 
     .dropdown__icon {
@@ -75,7 +83,6 @@
 }
 
 .dropdown-list {
- 
   &__item {
   }
 

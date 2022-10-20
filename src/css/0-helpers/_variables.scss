@@ -1,6 +1,8 @@
+
+// remove arrows from dropdown navigation. add home end
+// submenu for dropdown
+// menubutton and dropdown. dropdown esc behavior
 // es lint htmlhint
-// change tooltip to inline values in js. maybe do it for dropdowns 
-// refactor accordion
 // prevent headroom.js header from showing when using keyboard
 // make modal
 // javascript breakpoints in app object
@@ -104,7 +106,6 @@
   // z-index
   --z-tooltip: 500;
   --z-dropdown: 400;
-  --z-dialog: 300;
   --z-hamburger: 100;
   --z-hamburger-backdrop: 90;
   --z-header: 50;
