@@ -2,7 +2,7 @@
   max-height: 0;
   visibility: hidden;
   overflow: hidden;
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-in-out;
 }
 
 [data-accordion-content].active {
@@ -39,6 +39,7 @@
     transition: var(--transition);
 
     @include hover {
+      will-change: auto;
       background-color: var(--color-primary) !important;
       color: var(--color-dark) !important;
       .accordion__icon {
@@ -47,6 +48,7 @@
     }
 
     &:focus-visible {
+      will-change: auto;
       background-color: var(--color-primary) !important;
       color: var(--color-dark) !important;
       .accordion__icon {
@@ -67,7 +69,7 @@
     display: flex;
     align-self: center;
     fill: var(--color-light);
-    transition: all 0.5s ease;
+    transition: all 0.5s ease-in-out;
   }
 
   &__content {
