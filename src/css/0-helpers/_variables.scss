@@ -1,4 +1,6 @@
-
+// delay on closing mouseover dropdown
+// accordion moile lag
+// separarate dropdown styling
 // remove arrows from dropdown navigation. add home end
 // submenu for dropdown
 // menubutton and dropdown. dropdown esc behavior
@@ -91,8 +93,8 @@
 
   // borders
   --border: 1px solid var(--color-white-stroke);
-  --br: 10px;
-  --br-sm: 5px;
+  --br: 0.625rem;
+  --br-sm: 0.25rem;
   --br-pill: 100vw;
   --base-br: var(--br);
 

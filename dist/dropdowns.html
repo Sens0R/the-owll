@@ -88,8 +88,31 @@
           <li class="dropdown-list__item">
             <a href="tabs.html" class="dropdown-list__link">Tabs</a>
           </li>
-          <li class="dropdown-list__item">
-            <a href="dropdowns.html" class="dropdown-list__link">Dropdowns</a>
+          <li data-dropdown="hover" class="dropdown-nested">
+            <div class="dropdown-nested__controls">
+              <a href="dropdowns.html" class="dropdown-list__link">Dropdowns</a>
+              <button type="button" class="dropdown-nested__btn" aria-label="Dropdown menu for Dropdowns">
+                <svg aria-hidden="true" class="dropdown-nested__icon">
+                  <use href="images/icons/sprite-mono.svg#arrow"></use>
+                </svg>
+              </button>
+            </div>
+            <div data-dropdown-content class="dropdown-nested__content">
+              <ul class="dropdown-list">
+                <li class="dropdown-list__item">
+                  <a href="tabs.html" class="dropdown-list__link">Nested lvl 1</a>
+                </li>
+                <li class="dropdown-list__item">
+                  <a href="dropdowns.html" class="dropdown-list__link">Nested lvl 1</a>
+                </li>
+                <li class="dropdown-list__item">
+                  <a href="accordions.html" class="dropdown-list__link">Nested lvl 1</a>
+                </li>
+                <li class="dropdown-list__item">
+                  <a href="dialogs.html" class="dropdown-list__link">Nested lvl 1</a>
+                </li>
+              </ul>
+            </div>
           </li>
           <li class="dropdown-list__item">
             <a href="accordions.html" class="dropdown-list__link">Accordions</a>
@@ -276,17 +299,17 @@
         <li class="dropdown-list__item">
           <a href="#" class="dropdown-list__link">Lorem, ipsum dolor.</a>
         </li>
-        <li class="dropdown-list__item dropdown-list__item_nested" data-dropdown="hover">
-          <div class="dropdown__controls dropdown__controls_nested">
-          <a href="#" class="dropdown-list__link dropdown-list__link_nested">Nested Dropdown</a>
-          <button type="button" class="dropdown__btn dropdown__btn_nested" aria-label="Dropdown menu for Nested Dropdown">
-            <svg aria-hidden="true" class="dropdown__icon dropdown__icon_nested">
-              <use href="images/icons/sprite-mono.svg#arrow"></use>
-            </svg>
-          </button>
+        <li class="dropdown-nested" data-dropdown="hover">
+          <div class="dropdown-nested__controls">
+            <a href="#" class="dropdown-list__link">Nested Dropdown</a>
+            <button type="button" class="dropdown-nested__btn" aria-label="Dropdown menu for Nested Dropdown">
+              <svg aria-hidden="true" class="dropdown-nested__icon">
+                <use href="images/icons/sprite-mono.svg#arrow"></use>
+              </svg>
+            </button>
           </div>
-          <div data-dropdown-content class="dropdown__content dropdown__content_nested">
-            <ul class="dropdown-list dropdown-list_nested">
+          <div data-dropdown-content class="dropdown-nested__content">
+            <ul class="dropdown-list">
               <li class="dropdown-list__item">
                 <a href="#" class="dropdown-list__link">Lorem, ipsum dolor.</a>
               </li>
@@ -313,17 +336,32 @@
         <li class="dropdown-list__item">
           <a href="#" class="dropdown-list__link">Lorem, ipsum dolor.</a>
         </li>
-        <li class="dropdown-list__item dropdown-list__item_nested" data-dropdown>
-          <div class="dropdown__controls dropdown__controls_nested">
-          <a href="#" class="dropdown-list__link dropdown-list__link_nested">Nested Dropdown</a>
-          <button type="button" class="dropdown__btn dropdown__btn_nested" aria-label="Dropdown menu for Nested Dropdown">
-            <svg aria-hidden="true" class="dropdown__icon dropdown__icon_nested">
-              <use href="images/icons/sprite-mono.svg#arrow"></use>
-            </svg>
-          </button>
+        <li class="dropdown-list__item">
+          <a href="#" class="dropdown-list__link">Lorem, ipsum dolor.</a>
+        </li>
+        <li class="dropdown-list__item">
+          <a href="#" class="dropdown-list__link">Lorem, ipsum dolor.</a>
+        </li>
+        <li class="dropdown-list__item">
+          <a href="#" class="dropdown-list__link">Lorem, ipsum dolor.</a>
+        </li>
+        <li class="dropdown-list__item">
+          <a href="#" class="dropdown-list__link">Lorem, ipsum dolor.</a>
+        </li>
+        <li class="dropdown-nested" data-dropdown="hover">
+          <div class="dropdown-nested__controls">
+            <a href="#" class="dropdown-list__link">Nested Dropdown</a>
+            <button type="button" class="dropdown-nested__btn" aria-label="Dropdown menu for Nested Dropdown">
+              <svg aria-hidden="true" class="dropdown-nested__icon">
+                <use href="images/icons/sprite-mono.svg#arrow"></use>
+              </svg>
+            </button>
           </div>
-          <div data-dropdown-content class="dropdown__content dropdown__content_nested">
-            <ul class="dropdown-list dropdown-list_nested">
+          <div data-dropdown-content class="dropdown-nested__content">
+            <ul class="dropdown-list">
+              <li class="dropdown-list__item">
+                <a href="#" class="dropdown-list__link">Lorem, ipsum dolor.</a>
+              </li>
               <li class="dropdown-list__item">
                 <a href="#" class="dropdown-list__link">Lorem, ipsum dolor.</a>
               </li>
@@ -342,12 +380,12 @@
 
   <div data-dropdown class="nav-menu__item dropdown col-auto">
     <div class="dropdown__controls">
-    <a href="#" class="nav-menu__link dropdown__link">Click + link</a>
-    <button type="button" class="dropdown__btn" aria-label="Dropdown menu for Services">
-      <svg aria-hidden="true" class="dropdown__icon">
-        <use href="images/icons/sprite-mono.svg#arrow"></use>
-      </svg>
-    </button>
+      <a href="#" class="nav-menu__link dropdown__link">Click + link</a>
+      <button type="button" class="dropdown__btn" aria-label="Dropdown menu for Services">
+        <svg aria-hidden="true" class="dropdown__icon">
+          <use href="images/icons/sprite-mono.svg#arrow"></use>
+        </svg>
+      </button>
     </div>
     <div data-dropdown-content class="dropdown__content">
       <ul class="dropdown-list">

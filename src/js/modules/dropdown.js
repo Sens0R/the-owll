@@ -31,7 +31,11 @@ export function dropdown() {
   dropdownsArr.forEach(dropdownEl => {
     const dropdownButton = dropdownEl.querySelector('button')
     const dropdownContent = dropdownEl.querySelector('[data-dropdown-content]')
-    const dropdownContentLinksArr = dropdownContent.querySelectorAll('a[href]')
+    const parentContentEl = dropdownEl.closest('[data-dropdown-content]')
+    const dropdownContentLinksArr = dropdownContent.querySelectorAll(
+      'button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    )
+
     dropdownButton.setAttribute('aria-expanded', 'false')
     dropdownContent.style.maxHeight = 0
 
@@ -63,7 +67,13 @@ export function dropdown() {
 
     function toggle() {
       if (dropdownEl.classList.contains('active')) return close()
-      dropdownContent.style.maxHeight = dropdownContent.scrollHeight + 'px'
+      dropdownContent.style.maxHeight = `${dropdownContent.scrollHeight}px`
+
+      if (parentContentEl) {
+        parentContentEl.style.maxHeight = `${dropdownContent.scrollHeight + parentContentEl.scrollHeight}px`
+        parentContentEl.style.overflow = 'visible'
+      }
+
       dropdownEl.classList.add('active')
       document.addEventListener('keydown', closeWithEsc)
       dropdownButton.setAttribute('aria-expanded', 'true')
@@ -75,13 +85,14 @@ export function dropdown() {
     }
 
     function close() {
+      dropdownContent.style.overflow = null
       dropdownContent.style.maxHeight = 0
       document.removeEventListener('keydown', closeWithEsc)
-      dropdownEl.classList.remove('active')
       dropdownButton.setAttribute('aria-expanded', 'false')
       document.removeEventListener('click', clickOutside)
       resetBoundingBox()
       dropdownButton.removeEventListener('keydown', selectFirstLink)
+      dropdownEl.classList.remove('active')
     }
 
     function selectFirstLink(e) {

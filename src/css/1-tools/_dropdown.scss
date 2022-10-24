@@ -38,15 +38,14 @@
   }
 
   &__content {
-    min-width: 9.375rem;
     visibility: hidden;
-    //overflow: hidden;
     opacity: 0;
+    min-width: 9.375rem;
     white-space: nowrap;
-    z-index: var(--z-dropdown);
-    border-radius: var(--br-sm);
     background-color: var(--color-secondary-light);
+    border-radius: var(--br-sm);
     transition: var(--transition);
+    overflow: hidden;
 
     @include media-breakpoint-up(xl) {
       @include absolute(left 50%);
@@ -54,21 +53,12 @@
       background-color: var(--color-light);
       box-shadow: 0 4px 8px rgba(0 0 0 / 0.35);
     }
-
-    &_nested {
-      
-    }
   }
 
   &.active {
     .dropdown__content {
       visibility: visible;
       opacity: 1;
-     
-    }
-
-    .dropdown__content_nested {
-     
     }
 
     .dropdown__icon {
@@ -83,9 +73,6 @@
 }
 
 .dropdown-list {
-  &__item {
-  }
-
   &__link {
     @include space(var(--spacer-sm), padding, all);
     font-size: var(--fs-0);
@@ -99,6 +86,91 @@
     &:focus-visible {
       background-color: var(--color-secondary);
       color: var(--color-light);
+    }
+  }
+}
+
+// nested dropdown
+.dropdown-nested {
+  position: relative;
+  &__controls {
+    @include flex($justify-content: space-between, $align-items: stretch);
+    @include hover {
+      background-color: var(--color-secondary);
+      color: var(--color-light);
+
+      .dropdown-nested__icon {
+        scale: 1.25;
+        translate: 0.25rem;
+        fill: var(--color-light);
+      }
+    }
+
+    &:focus-within {
+      background-color: var(--color-secondary);
+
+      .dropdown-list__link {
+        color: var(--color-light);
+      }
+
+      .dropdown-nested__icon {
+        fill: var(--color-light);
+      }
+    }
+  }
+
+  &__btn {
+    @include flex($justify-content: center, $align-items: center);
+    @include media-breakpoint-down(xl) {
+      min-width: 2.75rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      @include space(var(--spacer-sm), padding, vertical, right);
+    }
+
+    &:focus-visible {
+      .dropdown-nested__icon {
+        scale: 1.75;
+        rotate: 90deg;
+        fill: var(--color-light);
+      }
+    }
+  }
+
+  &__icon {
+    @include box(1rem, 1rem);
+    @include media-breakpoint-up(xl) {
+      @include box(0.625rem, 0.625rem);
+    }
+    rotate: -90deg;
+    transition: var(--transition);
+  }
+
+  &__content {
+    visibility: hidden;
+    opacity: 0;
+    min-width: 9.375rem;
+    white-space: nowrap;
+    background-color: var(--color-secondary-light);
+    transition: var(--transition);
+    overflow: hidden;
+    
+
+    @include media-breakpoint-up(xl) {
+      @include absolute(left 100%);
+    
+      top: calc(100% - 3.125rem);
+      background-color: var(--color-light);
+      box-shadow: 0 4px 8px rgba(0 0 0 / 0.35);
+    }
+  }
+
+  &.active {
+    .dropdown-nested__content {
+      visibility: visible;
+      opacity: 1;
+     
     }
   }
 }

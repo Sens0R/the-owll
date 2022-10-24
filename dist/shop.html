@@ -88,8 +88,31 @@
           <li class="dropdown-list__item">
             <a href="tabs.html" class="dropdown-list__link">Tabs</a>
           </li>
-          <li class="dropdown-list__item">
-            <a href="dropdowns.html" class="dropdown-list__link">Dropdowns</a>
+          <li data-dropdown="hover" class="dropdown-nested">
+            <div class="dropdown-nested__controls">
+              <a href="dropdowns.html" class="dropdown-list__link">Dropdowns</a>
+              <button type="button" class="dropdown-nested__btn" aria-label="Dropdown menu for Dropdowns">
+                <svg aria-hidden="true" class="dropdown-nested__icon">
+                  <use href="images/icons/sprite-mono.svg#arrow"></use>
+                </svg>
+              </button>
+            </div>
+            <div data-dropdown-content class="dropdown-nested__content">
+              <ul class="dropdown-list">
+                <li class="dropdown-list__item">
+                  <a href="tabs.html" class="dropdown-list__link">Nested lvl 1</a>
+                </li>
+                <li class="dropdown-list__item">
+                  <a href="dropdowns.html" class="dropdown-list__link">Nested lvl 1</a>
+                </li>
+                <li class="dropdown-list__item">
+                  <a href="accordions.html" class="dropdown-list__link">Nested lvl 1</a>
+                </li>
+                <li class="dropdown-list__item">
+                  <a href="dialogs.html" class="dropdown-list__link">Nested lvl 1</a>
+                </li>
+              </ul>
+            </div>
           </li>
           <li class="dropdown-list__item">
             <a href="accordions.html" class="dropdown-list__link">Accordions</a>
