@@ -2,13 +2,11 @@
   max-height: 0;
   visibility: hidden;
   overflow: hidden;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease;
 }
 
 [data-accordion-content].active {
   visibility: visible;
-  opacity: 1;
 }
 
 .accordions-page {
@@ -34,7 +32,7 @@
     width: 100%;
     text-align: left;
     font-weight: var(--fw-semibold);
-    
+
     background-color: var(--color-secondary-gray);
     color: var(--color-light);
     border-radius: var(--br-sm);
@@ -69,7 +67,7 @@
     display: flex;
     align-self: center;
     fill: var(--color-light);
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease;
   }
 
   &__content {

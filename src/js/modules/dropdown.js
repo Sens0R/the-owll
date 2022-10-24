@@ -47,6 +47,8 @@ export function dropdown() {
     dropdownButton.addEventListener('click', toggle)
 
     dropdownContentLinksArr.forEach((dropdownContentLink, i) => {
+      const firstLink = dropdownContentLinksArr[0]
+      const lastLink = dropdownContentLinksArr[dropdownContentLinksArr.length - 1]
       const nextLink = dropdownContentLinksArr[i + 1]
       const prevLink = dropdownContentLinksArr[i - 1]
 
@@ -55,12 +57,14 @@ export function dropdown() {
           e.preventDefault()
           console.log(nextLink)
           if (nextLink) nextLink.focus()
+          if (!nextLink) firstLink.focus()
         }
 
         if (e.code === 'ArrowUp' || e.code === 'ArrowLeft') {
           e.preventDefault()
           console.log(prevLink)
           if (prevLink) prevLink.focus()
+          if (!prevLink) firstLink.focus()
         }
       })
     })
