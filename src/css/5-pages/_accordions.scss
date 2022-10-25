@@ -3,7 +3,6 @@
   visibility: hidden;
   overflow: hidden;
   transition: all 0.6s ease;
-  will-change: auto;
 }
 
 [data-accordion-content].active {
@@ -39,7 +38,6 @@
     transition: var(--transition);
 
     @include hover {
-      
       background-color: var(--color-primary) !important;
       color: var(--color-dark) !important;
       .accordion__icon {
@@ -48,7 +46,6 @@
     }
 
     &:focus-visible {
-     
       background-color: var(--color-primary) !important;
       color: var(--color-dark) !important;
       .accordion__icon {

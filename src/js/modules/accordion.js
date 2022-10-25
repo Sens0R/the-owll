@@ -1,8 +1,8 @@
 /*
 * 1. Select accordion container element with data-accordion attribute. 
 * 2. If you have multiple accordions add any unique value to data-accordion attribute. Example: data-accordion="two", data-accordion="secondary". Value is used for accordion headers and corresponding panels ID's. 
-* 3. Select elements that contain accordion header by adding data-accordion-button attribute.
-* 4. Select elements that contain the corresponding content (accordion panel) by adding data-accordion-content attribute.
+* 3. Select accordion header element by adding data-accordion-button attribute.
+* 4. Select corresponding content (accordion panel) by adding data-accordion-content attribute.
 * 5. Active accordion button (accordion header) and corresponding content (accordion panel) have 'active' class for CSS styling.
 
 * EXAMPLE: 
@@ -74,7 +74,6 @@ export function accordion() {
         if (button.classList.contains('active')) {
           button.classList.remove('active')
           button.setAttribute('aria-expanded', 'false')
-
           content.classList.remove('active')
           content.style.maxHeight = null
           return
@@ -82,7 +81,6 @@ export function accordion() {
 
         button.classList.add('active')
         button.setAttribute('aria-expanded', 'true')
-
         content.classList.add('active')
         content.style.maxHeight = `${content.scrollHeight}px`
       }

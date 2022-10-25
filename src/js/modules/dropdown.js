@@ -31,7 +31,7 @@ export function dropdown() {
   dropdownsArr.forEach(dropdownEl => {
     const dropdownButton = dropdownEl.querySelector('button')
     const dropdownContent = dropdownEl.querySelector('[data-dropdown-content]')
-    const parentContentEl = dropdownEl.closest('[data-dropdown-content]')
+    //const parentContentEl = dropdownEl.closest('[data-dropdown-content]') //nested dropdown
     const dropdownContentLinksArr = dropdownContent.querySelectorAll(
       'button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
     )
@@ -53,18 +53,26 @@ export function dropdown() {
       const prevLink = dropdownContentLinksArr[i - 1]
 
       dropdownContentLink.addEventListener('keydown', e => {
+        if (e.code === 'Home') {
+          e.preventDefault()
+          firstLink.focus()
+        }
+
+        if (e.code === 'End') {
+          e.preventDefault()
+          lastLink.focus()
+        }
+
         if (e.code === 'ArrowDown' || e.code === 'ArrowRight') {
           e.preventDefault()
-          console.log(nextLink)
-          if (nextLink) nextLink.focus()
-          if (!nextLink) firstLink.focus()
+          if (nextLink) return nextLink.focus()
+          firstLink.focus()
         }
 
         if (e.code === 'ArrowUp' || e.code === 'ArrowLeft') {
           e.preventDefault()
-          console.log(prevLink)
-          if (prevLink) prevLink.focus()
-          if (!prevLink) firstLink.focus()
+          if (prevLink) return prevLink.focus()
+          lastLink.focus()
         }
       })
     })
@@ -73,10 +81,10 @@ export function dropdown() {
       if (dropdownEl.classList.contains('active')) return close()
       dropdownContent.style.maxHeight = `${dropdownContent.scrollHeight}px`
 
-      if (parentContentEl) {
+      /*   if (parentContentEl) {
         parentContentEl.style.maxHeight = `${dropdownContent.scrollHeight + parentContentEl.scrollHeight}px`
         parentContentEl.style.overflow = 'visible'
-      }
+      }  */ //nested dropdown
 
       dropdownEl.classList.add('active')
       document.addEventListener('keydown', closeWithEsc)
