@@ -134,11 +134,11 @@ headroom()
 
 hamburger()
 
-dropdown(xl)
+dropdown()
 
 search()
 
-tooltip(xl)
+tooltip()
 
 tabs()
 

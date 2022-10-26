@@ -31,7 +31,7 @@ export function dropdown() {
   dropdownsArr.forEach(dropdownEl => {
     const dropdownButton = dropdownEl.querySelector('button')
     const dropdownContent = dropdownEl.querySelector('[data-dropdown-content]')
-    //const parentContentEl = dropdownEl.closest('[data-dropdown-content]') //nested dropdown
+    const parentContentEl = dropdownEl.closest('[data-dropdown-content]') //nested dropdown
     const dropdownContentLinksArr = dropdownContent.querySelectorAll(
       'button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
     )
@@ -81,10 +81,11 @@ export function dropdown() {
       if (dropdownEl.classList.contains('active')) return close()
       dropdownContent.style.maxHeight = `${dropdownContent.scrollHeight}px`
 
-      /*   if (parentContentEl) {
+      //nested dropdown
+      if (parentContentEl) {
         parentContentEl.style.maxHeight = `${dropdownContent.scrollHeight + parentContentEl.scrollHeight}px`
         parentContentEl.style.overflow = 'visible'
-      }  */ //nested dropdown
+      }
 
       dropdownEl.classList.add('active')
       document.addEventListener('keydown', closeWithEsc)

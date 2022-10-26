@@ -8,22 +8,21 @@
 * <a href="#" data-tooltip="top-right" aria-label="Tooltip text"></a>
 */
 
-export function tooltip(breakpoint = 1200) {
-  const watchBreakpoint = window.matchMedia(`(max-width: ${breakpoint}px)`)
-  let isMobile = watchBreakpoint.matches
-  watchBreakpoint.onchange = e => (isMobile = watchBreakpoint.matches)
+let mobileDevice
+if (window.matchMedia('(pointer: coarse)').matches) mobileDevice = true
 
-  const tooltipsArr = document.querySelectorAll('[data-tooltip]')
+const tooltipsArr = document.querySelectorAll('[data-tooltip]')
+
+export function tooltip() {
+  if (mobileDevice) return
   tooltipsArr.forEach(tooltipTarget => {
     let tooltipEl
     const tooltipTargetHasValue = tooltipTarget.getAttribute('data-tooltip')
-
     createTooltip()
 
     if (!tooltipTargetHasValue) tooltipTarget.setAttribute('data-tooltip', 'bottom')
 
     tooltipTarget.addEventListener('mouseenter', () => {
-      if (isMobile) return
       checkBoundingBox()
       tooltipEl.classList.add('active')
     })
@@ -32,8 +31,6 @@ export function tooltip(breakpoint = 1200) {
 
     // add { focusVisible: true } option once it is supported and remove media query list
     tooltipTarget.addEventListener('focus', () => {
-      if (isMobile) return
-
       tooltipEl.classList.add('active')
       document.addEventListener('keydown', closeWithEsc)
       checkBoundingBox()
